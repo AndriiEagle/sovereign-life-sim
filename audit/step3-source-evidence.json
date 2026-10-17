@@ -1,0 +1,1275 @@
+{
+  "schema": "sovereign.step3-source-evidence.v1",
+  "as_of_utc": "2026-10-17T19:16:10.874084+00:00",
+  "sources": {
+    "sovereign-package": {
+      "path": "D:\\sovereign-life-sim\\package.json",
+      "sha256": "caa0e7066f4b1cfe4b0508c904c47c8da30a741021a2d30874ffd58f2b05057f",
+      "bytes": 209,
+      "supports": "Active demo has no npm dependencies; Node >=20.",
+      "locators": [
+        {
+          "line": 5,
+          "match": "\"type\""
+        },
+        {
+          "line": 8,
+          "match": "\"engines\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "sovereign-view": {
+      "path": "D:\\sovereign-life-sim\\engine-isometric-ui\\index.html",
+      "sha256": "ee452d9794a13a4ee0870b0a2f61c5f83c30cac6557ebcf34c2d5780b853dae6",
+      "bytes": 4363,
+      "supports": "DOM resource/focus/event panels and CSS procedural buildings.",
+      "locators": [
+        {
+          "line": 21,
+          "match": "resource-panel"
+        },
+        {
+          "line": 22,
+          "match": "focus-panel"
+        },
+        {
+          "line": 23,
+          "match": "event-panel"
+        },
+        {
+          "line": 28,
+          "match": "type=\"module\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "sovereign-app": {
+      "path": "D:\\sovereign-life-sim\\engine-isometric-ui\\app.mjs",
+      "sha256": "0436235f488bc0a2097ff587ebf1d29e86ee745ea91f1ac815da9ab2841c9b70",
+      "bytes": 4138,
+      "supports": "Explicit local actions update HUD; manual JSON export; no real project dispatch.",
+      "locators": [
+        {
+          "line": 14,
+          "match": "function render"
+        },
+        {
+          "line": 30,
+          "match": "function act"
+        },
+        {
+          "line": 2,
+          "match": "createEventJournal"
+        },
+        {
+          "line": 11,
+          "match": "createEventJournal"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "sovereign-css": {
+      "path": "D:\\sovereign-life-sim\\engine-isometric-ui\\styles.css",
+      "sha256": "2bf3fc9199b6383299ab3da1a2c2f16626840298558829b38d65402e22e03304",
+      "bytes": 7687,
+      "supports": "CSS isometric terrain/buildings and responsive DOM layout.",
+      "locators": [
+        {
+          "line": 1,
+          "match": ".building"
+        },
+        {
+          "line": 3,
+          "match": ".building"
+        },
+        {
+          "line": 1,
+          "match": ".terrain"
+        },
+        {
+          "line": 1,
+          "match": "@media"
+        },
+        {
+          "line": 2,
+          "match": "@media"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "game-forge-project": {
+      "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\game\\project.godot",
+      "sha256": "47404fa3cb91c7c1191db6a530b0ee58784e7b94ed765059efb5afe7f2392793",
+      "bytes": 548,
+      "supports": "Godot project uses GDScript and gl_compatibility renderer.",
+      "locators": [
+        {
+          "line": 3,
+          "match": "run/main_scene"
+        },
+        {
+          "line": 17,
+          "match": "renderer/rendering_method"
+        },
+        {
+          "line": 18,
+          "match": "renderer/rendering_method"
+        },
+        {
+          "line": 14,
+          "match": "canvas_items"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "game-forge-dialog": {
+      "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\game\\scripts\\dialogue_panel.gd",
+      "sha256": "62ae2e74ca3259cd679716fbdef3e40c29ff83698ab12a036dd432e1b561fb04",
+      "bytes": 9645,
+      "supports": "Native Godot dialogue UI source, with shader/GameState/data dependencies.",
+      "locators": [
+        {
+          "line": 1,
+          "match": "extends PanelContainer"
+        },
+        {
+          "line": 5,
+          "match": "preload("
+        },
+        {
+          "line": 112,
+          "match": "GameState"
+        },
+        {
+          "line": 215,
+          "match": "GameState"
+        },
+        {
+          "line": 216,
+          "match": "GameState"
+        },
+        {
+          "line": 219,
+          "match": "GameState"
+        },
+        {
+          "line": 224,
+          "match": "GameState"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "game-forge-hero": {
+      "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\game\\scripts\\hero.gd",
+      "sha256": "a9dcca3682426bffeadb7fa449ea7f388d04de73b7f0ddf6ceae46fc75fdecfd",
+      "bytes": 4904,
+      "supports": "Native AnimatedSprite2D/TextureRect hero, dependent on character data and textures.",
+      "locators": [
+        {
+          "line": 6,
+          "match": "preload("
+        },
+        {
+          "line": 7,
+          "match": "preload("
+        },
+        {
+          "line": 8,
+          "match": "CHARACTER_PATH"
+        },
+        {
+          "line": 23,
+          "match": "CHARACTER_PATH"
+        },
+        {
+          "line": 17,
+          "match": "AnimatedSprite2D"
+        },
+        {
+          "line": 24,
+          "match": "AnimatedSprite2D"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "emberglass-package": {
+      "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\project-emberglass-web\\package.json",
+      "sha256": "156ed24e1577fbc6dd45f5fc12879bb2fc9cf3c7c1396a1ab1d55c20d47d9921",
+      "bytes": 1472,
+      "supports": "Current original Emberglass is a Vite application with dependencies, distinct from archived Canvas helper.",
+      "locators": [
+        {
+          "line": 6,
+          "match": "\"vite\""
+        },
+        {
+          "line": 37,
+          "match": "\"vite\""
+        },
+        {
+          "line": 25,
+          "match": "\"dependencies\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "emberglass-renderer": {
+      "path": "D:\\sovereign-life-sim\\engine-isometric-ui\\reference-source\\iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390,
+      "supports": "Exact inactive renderer snapshot: Canvas 2D, isometric math, picking, atlas dependency.",
+      "locators": [
+        {
+          "line": 29,
+          "match": "function worldToScreen"
+        },
+        {
+          "line": 61,
+          "match": "function clickTarget"
+        },
+        {
+          "line": 104,
+          "match": "function init"
+        },
+        {
+          "line": 243,
+          "match": "const api"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "emberglass-worldpack": {
+      "path": "D:\\sovereign-life-sim\\engine-isometric-ui\\reference-source\\iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428,
+      "supports": "Exact inactive worldpack validation source; not an atlas or a UI.",
+      "locators": [
+        {
+          "line": 41,
+          "match": "validate"
+        },
+        {
+          "line": 88,
+          "match": "validate"
+        },
+        {
+          "line": 99,
+          "match": "validate"
+        },
+        {
+          "line": 113,
+          "match": "validate"
+        },
+        {
+          "line": 125,
+          "match": "validate"
+        },
+        {
+          "line": 127,
+          "match": "validate"
+        },
+        {
+          "line": 170,
+          "match": "validate"
+        },
+        {
+          "line": 171,
+          "match": "module.exports"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "emberglass-legacy-core": {
+      "path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\core.js",
+      "sha256": "858ba0728b8fe2f7b2e6cecd347140af66a0d7625b7f0c7b3dd076d1735b9ed8",
+      "bytes": 15121,
+      "supports": "Inventory/crafting/state logic reference; no inventory UI or dependency closure imported.",
+      "locators": [
+        {
+          "line": 35,
+          "match": "function initialState"
+        },
+        {
+          "line": 82,
+          "match": "function craft"
+        },
+        {
+          "line": 235,
+          "match": "function hydrate"
+        },
+        {
+          "line": 250,
+          "match": "const api"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "arcanum-game": {
+      "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike\\game.js",
+      "sha256": "db2cf61ec3145267788ee15deb1173faf5e45b5c564ec7e96742cdc3a946d898",
+      "bytes": 24281,
+      "supports": "Classic JS DOM card UI plus Canvas 2D particles; reference only.",
+      "locators": [
+        {
+          "line": 556,
+          "match": "getContext("
+        },
+        {
+          "line": 592,
+          "match": "requestAnimationFrame"
+        },
+        {
+          "line": 354,
+          "match": "innerHTML"
+        },
+        {
+          "line": 417,
+          "match": "innerHTML"
+        },
+        {
+          "line": 443,
+          "match": "innerHTML"
+        },
+        {
+          "line": 462,
+          "match": "innerHTML"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "arcanum-html": {
+      "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike\\index.html",
+      "sha256": "4120e5b12f1ee271b0212ae1bed134f4c747988ba3d8d65a3b077712d5bb0de1",
+      "bytes": 7496,
+      "supports": "Classic browser entrypoint including particle canvas.",
+      "locators": [
+        {
+          "line": 19,
+          "match": "particle-canvas"
+        },
+        {
+          "line": 156,
+          "match": "<script"
+        },
+        {
+          "line": 157,
+          "match": "<script"
+        },
+        {
+          "line": 158,
+          "match": "<script"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "lego-project": {
+      "path": "D:\\lego-llm-viz-godot\\project.godot",
+      "sha256": "6e1291a4ab5ca877818775766c7f39ff8dd4006ecc00e34233044a84f85b9670",
+      "bytes": 579,
+      "supports": "Project declares Godot 4.7 Forward Plus; installed runtime not verified.",
+      "locators": [
+        {
+          "line": 15,
+          "match": "config/features"
+        },
+        {
+          "line": 14,
+          "match": "run/main_scene"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "memento-package": {
+      "path": "D:\\Memento_Vivere_Gemeinde_Pilot\\package.json",
+      "sha256": "93d3ff8d45e5489b2db4f0b14a0889264598b49198614d74f6843414ff697397",
+      "bytes": 1834,
+      "supports": "Declared Next/React/Tailwind versions; no current build or voice acceptance.",
+      "locators": [
+        {
+          "line": 32,
+          "match": "\"next\""
+        },
+        {
+          "line": 34,
+          "match": "\"react\""
+        },
+        {
+          "line": 51,
+          "match": "\"tailwindcss\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "memento-dialog": {
+      "path": "D:\\Memento_Vivere_Gemeinde_Pilot\\components\\echo\\ui\\echo-call-overlay-dialog.tsx",
+      "sha256": "73e40d2e11a23c9ca5f6032b4401f25e1a90c34fe4a420cbdfb4cd508aa136ea",
+      "bytes": 24981,
+      "supports": "React call overlay source with local hooks/i18n/asset dependencies.",
+      "locators": [
+        {
+          "line": 3,
+          "match": "import "
+        },
+        {
+          "line": 4,
+          "match": "import "
+        },
+        {
+          "line": 5,
+          "match": "import "
+        },
+        {
+          "line": 7,
+          "match": "import "
+        },
+        {
+          "line": 8,
+          "match": "import "
+        },
+        {
+          "line": 9,
+          "match": "import "
+        },
+        {
+          "line": 10,
+          "match": "import "
+        },
+        {
+          "line": 11,
+          "match": "import "
+        },
+        {
+          "line": 20,
+          "match": "import "
+        },
+        {
+          "line": 21,
+          "match": "import "
+        },
+        {
+          "line": 22,
+          "match": "import "
+        },
+        {
+          "line": 23,
+          "match": "import "
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "memento-state": {
+      "path": "D:\\Memento_Vivere_Gemeinde_Pilot\\components\\echo\\ui\\echo-call-presentation-state.ts",
+      "sha256": "29c5a6059acacff5b7297fc74d6773c943a8da957c9b912328e1240894e83be6",
+      "bytes": 3757,
+      "supports": "Current presentation-state helper hash; supersedes older hash for this file only.",
+      "locators": [
+        {
+          "line": 27,
+          "match": "export function"
+        },
+        {
+          "line": 58,
+          "match": "export function"
+        },
+        {
+          "line": 108,
+          "match": "export function"
+        },
+        {
+          "line": 5,
+          "match": "export type"
+        },
+        {
+          "line": 18,
+          "match": "export type"
+        },
+        {
+          "line": 92,
+          "match": "export type"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "memento-transcript": {
+      "path": "D:\\Memento_Vivere_Gemeinde_Pilot\\components\\echo\\ui\\echo-call-transcript-list.tsx",
+      "sha256": "e818b562433064f1a641f1e520d7b74d516558d252df1205daa24fa0beea5754",
+      "bytes": 3549,
+      "supports": "React transcript/message list source, requires Echo types and styling.",
+      "locators": [
+        {
+          "line": 3,
+          "match": "import "
+        },
+        {
+          "line": 4,
+          "match": "import "
+        },
+        {
+          "line": 5,
+          "match": "import "
+        },
+        {
+          "line": 7,
+          "match": "export function"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "gemeinde-package": {
+      "path": "D:\\gemeinde-mockup\\package.json",
+      "sha256": "3857266cddb9ce253ee8e266658a2d996dfa659f57fe003d69aa8c9a6d9e6cc0",
+      "bytes": 654,
+      "supports": "Declared Next/React/Tailwind/framer-motion dependencies.",
+      "locators": [
+        {
+          "line": 15,
+          "match": "\"next\""
+        },
+        {
+          "line": 16,
+          "match": "\"react\""
+        },
+        {
+          "line": 13,
+          "match": "\"framer-motion\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "gemeinde-cards": {
+      "path": "D:\\gemeinde-mockup\\src\\components\\variants\\AlpineGlass.tsx",
+      "sha256": "8635f6e12b4a8b48a724404811e40e009b29ea7ba1dd475c7edf842d11200808",
+      "bytes": 5242,
+      "supports": "React/Tailwind dashboard card composition reference.",
+      "locators": [
+        {
+          "line": 3,
+          "match": "import "
+        },
+        {
+          "line": 4,
+          "match": "import "
+        },
+        {
+          "line": 6,
+          "match": "export default"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "remotion-package": {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\remotion-factory\\package.json",
+      "sha256": "00f485a631ea68d0849c45231c8402eeae3be9f2fd49ed1082fccd08c34f9bb6",
+      "bytes": 8868,
+      "supports": "Separate media factory declares React/Remotion/Three.js.",
+      "locators": [
+        {
+          "line": 69,
+          "match": "\"react\""
+        },
+        {
+          "line": 71,
+          "match": "\"remotion\""
+        },
+        {
+          "line": 68,
+          "match": "\"@remotion/three\""
+        },
+        {
+          "line": 72,
+          "match": "\"three\""
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "remotion-chart": {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\remotion-factory\\src\\animated-bar-chart.jsx",
+      "sha256": "ff9d3b912a9a743dc6ca3221798d706795ce0c993bce4ef2f18faf6cc7e83c22",
+      "bytes": 13522,
+      "supports": "Frame-driven offline video bar-chart component, not live finance UI.",
+      "locators": [
+        {
+          "line": 9,
+          "match": "from \"remotion\""
+        },
+        {
+          "line": 7,
+          "match": "useCurrentFrame"
+        },
+        {
+          "line": 51,
+          "match": "useCurrentFrame"
+        },
+        {
+          "line": 5,
+          "match": "interpolate"
+        },
+        {
+          "line": 42,
+          "match": "interpolate"
+        },
+        {
+          "line": 57,
+          "match": "interpolate"
+        },
+        {
+          "line": 61,
+          "match": "interpolate"
+        },
+        {
+          "line": 64,
+          "match": "interpolate"
+        },
+        {
+          "line": 67,
+          "match": "interpolate"
+        },
+        {
+          "line": 82,
+          "match": "interpolate"
+        },
+        {
+          "line": 112,
+          "match": "interpolate"
+        },
+        {
+          "line": 194,
+          "match": "interpolate"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "brand-cli": {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os\\scripts\\brand-os.js",
+      "sha256": "2dbc1ae558081b465fa5808c73e13342bf903f1961ba49f7751e2705db0066f6",
+      "bytes": 74218,
+      "supports": "Existing local content preparation CLI and draft-only approval guards.",
+      "locators": [
+        {
+          "line": 1492,
+          "match": "function planMonth"
+        },
+        {
+          "line": 361,
+          "match": "function generateSprint"
+        },
+        {
+          "line": 243,
+          "match": "function approvalGuardrails"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "creator-cli": {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\scripts\\creator-os.js",
+      "sha256": "420ace9973704ae341339d5ae7605563621780b65f30bba549687b1f1eabca11",
+      "bytes": 53377,
+      "supports": "Existing monthly-plan -> media artifacts CLI, with approval and renderer contracts.",
+      "locators": [
+        {
+          "line": 734,
+          "match": "function createMediaJobs"
+        },
+        {
+          "line": 466,
+          "match": "function mediaJobFromItem"
+        },
+        {
+          "line": 268,
+          "match": "function approvalGuardrails"
+        }
+      ],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "conductor-core": {
+      "path": "D:\\sovereign-life-sim\\simulation-core\\revenue_lab\\core.py",
+      "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+      "bytes": 9957,
+      "supports": "Portable Decimal scenario economics; not marketplace order/payment integration.",
+      "locators": [],
+      "verdict": "SOURCE_INSPECTED_RUNTIME_LIMITS_SEPARATE"
+    },
+    "synera-preview-server": {
+      "repository": "https://github.com/AndriiEagle/synera_-MVPplus-",
+      "commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+      "path": "web_launch/server.mjs",
+      "sha256": "0ac0a7c96c921417d09a15116a25edea97297d7e6481de10446d92e0da3fb6b6",
+      "bytes": 4464,
+      "locators": [
+        {
+          "line": 5,
+          "match": "loadConfig"
+        },
+        {
+          "line": 12,
+          "match": "loadConfig"
+        },
+        {
+          "line": 13,
+          "match": "--local-ai"
+        },
+        {
+          "line": 22,
+          "match": "503"
+        },
+        {
+          "line": 31,
+          "match": "503"
+        },
+        {
+          "line": 10,
+          "match": "handleCascadeAPI"
+        },
+        {
+          "line": 41,
+          "match": "handleCascadeAPI"
+        }
+      ],
+      "verdict": "PINNED_SOURCE_NOT_LIVE_RUNTIME"
+    },
+    "synera-preview-html": {
+      "repository": "https://github.com/AndriiEagle/synera_-MVPplus-",
+      "commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+      "path": "web_launch/index.html",
+      "sha256": "c17c3cdbe4622d2b89eb2559c9dd61bcf7696f2f40c3b87533daa6f538f2e88a",
+      "bytes": 31118,
+      "locators": [
+        {
+          "line": 7,
+          "match": "<script"
+        },
+        {
+          "line": 8,
+          "match": "<script"
+        },
+        {
+          "line": 6,
+          "match": "<link"
+        },
+        {
+          "line": 8,
+          "match": "<link"
+        }
+      ],
+      "verdict": "PINNED_SOURCE_NOT_LIVE_RUNTIME"
+    }
+  },
+  "framework_inventory": [
+    {
+      "id": "sovereign-web",
+      "project_id": "sovereign-life-sim",
+      "ui_framework": "Vanilla HTML/CSS + browser ES modules",
+      "renderer": "DOM/CSS transforms; procedural isometric buildings",
+      "runtime": "Python 3.11+ localhost allowlist server; modern browser; Node >=20 for tests",
+      "npm_dependencies": [],
+      "active_in_simulator": true,
+      "source_refs": [
+        "sovereign-package",
+        "sovereign-view",
+        "sovereign-app",
+        "sovereign-css"
+      ],
+      "acceptance": "Prior task-530 browser actions, geometry, narrow viewport and JSON export accepted; unchanged UI in Step 3."
+    },
+    {
+      "id": "game-forge-godot",
+      "project_id": "game-forge",
+      "ui_framework": "Godot Control/PanelContainer/HFlowContainer + GDScript",
+      "renderer": "Godot 2D CanvasItem/AnimatedSprite2D, gl_compatibility",
+      "engine_version": "Godot 4 family; exact installed runtime not verified in Step 3",
+      "source_refs": [
+        "game-forge-project",
+        "game-forge-dialog",
+        "game-forge-hero"
+      ],
+      "active_in_simulator": false,
+      "integration": "Only pure Python sim snapshot is already included. Native Godot UI needs a host/runtime port."
+    },
+    {
+      "id": "emberglass-archived-canvas",
+      "project_id": "living-arcanum",
+      "ui_framework": "Classic browser JavaScript IIFE/global + CommonJS export",
+      "renderer": "CanvasRenderingContext2D, 128x64 isometric tiles, owned Image atlas required",
+      "source_refs": [
+        "emberglass-renderer",
+        "emberglass-worldpack"
+      ],
+      "active_in_simulator": false,
+      "integration": "Two exact snapshots included inactive. Math helpers can run without atlas; full render cannot."
+    },
+    {
+      "id": "emberglass-current-original",
+      "project_id": "living-arcanum",
+      "ui_framework": "Original current web application with Vite build tooling",
+      "renderer": "Canvas 2D source seam; full current app not run here",
+      "source_refs": [
+        "emberglass-package"
+      ],
+      "active_in_simulator": false,
+      "limit": "Current original package has dependencies; zero npm dependencies applies only to active Sovereign demo, not this app."
+    },
+    {
+      "id": "arcanum-cards",
+      "project_id": "arcanum-card",
+      "ui_framework": "Classic JavaScript DOM + CSS cards",
+      "renderer": "DOM cards; Canvas 2D particle overlay",
+      "source_refs": [
+        "arcanum-game",
+        "arcanum-html"
+      ],
+      "active_in_simulator": false,
+      "integration": "Reference only; narrative/assets/rights and state contract require review before copying."
+    },
+    {
+      "id": "lego-godot",
+      "project_id": "lego-godot",
+      "ui_framework": "Godot/GDScript",
+      "renderer": "Project declares Godot 4.7 / Forward Plus",
+      "source_refs": [
+        "lego-project"
+      ],
+      "active_in_simulator": false,
+      "limit": "Declared project configuration is not proof of installed engine or a successful native render."
+    },
+    {
+      "id": "memento-react",
+      "project_id": "memento",
+      "ui_framework": "Next.js / React / Tailwind",
+      "renderer": "React DOM; not a game engine",
+      "declared_versions": {
+        "next": "^16.2.4",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "tailwindcss": "^4.2.2"
+      },
+      "source_refs": [
+        "memento-package",
+        "memento-dialog",
+        "memento-state",
+        "memento-transcript"
+      ],
+      "active_in_simulator": false,
+      "integration": "Component references only; original imports/hooks/data/assets required."
+    },
+    {
+      "id": "gemeinde-react",
+      "project_id": "memento",
+      "ui_framework": "Next.js / React / Tailwind / framer-motion",
+      "renderer": "React DOM with motion components",
+      "declared_versions": {
+        "next": "16.3.0",
+        "react": "19.2.8",
+        "react-dom": "19.2.8",
+        "tailwindcss": "^4",
+        "framer-motion": "^13.0.0"
+      },
+      "source_refs": [
+        "gemeinde-package",
+        "gemeinde-cards"
+      ],
+      "active_in_simulator": false,
+      "integration": "Reference only; do not copy external stock photos or assume brand/license clearance."
+    },
+    {
+      "id": "creator-remotion",
+      "project_id": "creator-income-os",
+      "ui_framework": "React + Remotion media composition",
+      "renderer": "Remotion video pipeline; Three.js/@remotion/three available as declared dependencies",
+      "declared_versions": {
+        "react": "^19.1.1",
+        "remotion": "^4.0.376",
+        "@remotion/three": "4.0.467",
+        "three": "^0.185.1"
+      },
+      "source_refs": [
+        "remotion-package",
+        "remotion-chart"
+      ],
+      "active_in_simulator": false,
+      "limit": "Three.js belongs to the separate media factory; it is not the simulator renderer. No media build/render accepted in Step 3."
+    },
+    {
+      "id": "synera-preview",
+      "project_id": "synera",
+      "ui_framework": "Audited web_launch surface: HTML/CSS + JavaScript browser modules",
+      "renderer": "Browser DOM; Node ESM HTTP preview server",
+      "source_refs": [
+        "synera-preview-server",
+        "synera-preview-html"
+      ],
+      "active_in_simulator": false,
+      "limit": "This describes the pinned web preview surface, not every historical Synera client."
+    }
+  ],
+  "framework_scope_limit": "No PixiJS/Phaser evidence in the inspected entrypoints/package manifests. This is not a disk-wide absence claim. Versions are declared ranges, not installed runtime measurements.",
+  "reusable_components": [
+    {
+      "id": "resource-hud",
+      "category": "resources",
+      "title": "Гроші, день, шкала енергії",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app",
+        "sovereign-css"
+      ],
+      "package_entrypoint": "engine-isometric-ui/index.html + app.mjs + styles.css",
+      "dependencies": [
+        "simulation-core/model.mjs"
+      ],
+      "integration_work": "Можна використати зараз у поточному DOM; зберегти існуючі id й action contract.",
+      "proof_limit": "Синтетичні ресурси; немає банку або вимірювання здоровʼя."
+    },
+    {
+      "id": "focus-actions",
+      "category": "panels",
+      "title": "Панель проєкту, статус і кнопки дій",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "engine-isometric-ui/app.mjs: details/render/act",
+      "dependencies": [
+        "DOM nodes, model transition"
+      ],
+      "integration_work": "Можна використати зараз; це інформаційна панель, не modal dialogue.",
+      "proof_limit": "Кнопка моделює дію; не запускає Synera/Instagram/Fiverr."
+    },
+    {
+      "id": "event-feed",
+      "category": "logs",
+      "title": "Журнал подій і JSON-експорт",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "mcp-bridge/events.mjs",
+      "dependencies": [
+        "Browser Blob/URL APIs"
+      ],
+      "integration_work": "Можна використати зараз для явних локальних дій.",
+      "proof_limit": "In-memory ring 200 подій, останні 5 у UI; reload очищає; real MCP NOT_CONNECTED."
+    },
+    {
+      "id": "procedural-buildings",
+      "category": "sprites",
+      "title": "Пʼять CSS-будівель і ізометрична карта",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-css"
+      ],
+      "package_entrypoint": "engine-isometric-ui/styles.css",
+      "dependencies": [
+        "CSS transforms + semantic buttons"
+      ],
+      "integration_work": "Готові в поточному DOM без атласу й зовнішніх зображень.",
+      "proof_limit": "Це процедурні форми, не raster sprite sheet; нові sprites не заявлені."
+    },
+    {
+      "id": "iso-projection-picking",
+      "category": "geometry",
+      "title": "Ізометрична проєкція, inverse, picking, autotile helpers",
+      "status": "READY_PURE_HELPERS_INACTIVE",
+      "source_refs": [
+        "emberglass-renderer"
+      ],
+      "package_entrypoint": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "dependencies": [
+        "Browser global EmberIsoKitRenderer or CommonJS/VM loader"
+      ],
+      "integration_work": "Точний snapshot уже в пакеті; підʼєднати global/adapter, передавати scale/origin і 12x12 heights.",
+      "proof_limit": "Самостійні helpers не дорівнюють прийнятому full atlas render; див. tests/iso-helpers.test.mjs."
+    },
+    {
+      "id": "canvas-atlas-renderer",
+      "category": "renderer",
+      "title": "Canvas 2D atlas renderer",
+      "status": "REQUIRES_ASSETS_AND_STATE_ADAPTER",
+      "source_refs": [
+        "emberglass-renderer",
+        "emberglass-worldpack"
+      ],
+      "package_entrypoint": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "dependencies": [
+        "Owned atlas image",
+        "promoted manifest/metadata",
+        "worldpack/state adapter"
+      ],
+      "integration_work": "Додати оригінальні assets і точний world contract; пройти camera/depth/click QA.",
+      "proof_limit": "Не вставляється повністю зараз; атлас не перенесено, renderer inactive."
+    },
+    {
+      "id": "godot-dialogue",
+      "category": "dialogs",
+      "title": "Вікно діалогу game-forge",
+      "status": "REQUIRES_NATIVE_HOST_AND_DEPENDENCY_CLOSURE",
+      "source_refs": [
+        "game-forge-dialog"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Godot runtime",
+        "GameState autoload",
+        "word_blur.gdshader",
+        "dialogue data/localized content"
+      ],
+      "integration_work": "У Godot переносити після повного closure; у браузері потрібен окремий DOM adapter.",
+      "proof_limit": "Source reference, не drop-in модуль нинішнього вебсимулятора; native playtest не виконано."
+    },
+    {
+      "id": "godot-hero",
+      "category": "sprites",
+      "title": "AnimatedSprite2D герой",
+      "status": "REQUIRES_ASSETS_AND_RIGHTS",
+      "source_refs": [
+        "game-forge-hero"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Godot",
+        "hero.json",
+        "walk_area/background_space",
+        "owned textures/animation frames"
+      ],
+      "integration_work": "Перевірити image paths і права; перенести closure або створити нові власні sprites.",
+      "proof_limit": "Не включено в repo; жодних proprietary Arcanum/Outlive assets."
+    },
+    {
+      "id": "inventory-crafting",
+      "category": "inventory",
+      "title": "Inventory/crafting logic Emberglass",
+      "status": "REFERENCE_LOGIC_ONLY",
+      "source_refs": [
+        "emberglass-legacy-core"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Living module",
+        "item/recipe schema",
+        "approved lore and item IDs",
+        "inventory UI adapter"
+      ],
+      "integration_work": "Використовувати лише після dependency/rights/state review; UI інвентаря ще не зібрано.",
+      "proof_limit": "Логіка count/addItem/craft не є готовим візуальним інвентарем; цей core не скопійовано."
+    },
+    {
+      "id": "react-dialog-transcript",
+      "category": "dialogs",
+      "title": "Echo call overlay та transcript",
+      "status": "REQUIRES_REACT_PORT_AND_DEPENDENCY_CLOSURE",
+      "source_refs": [
+        "memento-dialog",
+        "memento-state",
+        "memento-transcript"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Next/Tailwind",
+        "Echo hooks/types",
+        "i18n/content",
+        "asset catalog"
+      ],
+      "integration_work": "Порт у DOM або свідомий перехід на React; зберегти правдиві call states.",
+      "proof_limit": "Не активний voice module; поточний hash state helper зафіксовано заново."
+    },
+    {
+      "id": "react-dashboard-cards",
+      "category": "panels",
+      "title": "Gemeinde AlpineGlass cards",
+      "status": "REQUIRES_REACT_PORT",
+      "source_refs": [
+        "gemeinde-cards",
+        "gemeinde-package"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Next/Tailwind/framer-motion",
+        "lucide icons"
+      ],
+      "integration_work": "Порт карток і layout після brand/license review; без сторонніх фото.",
+      "proof_limit": "Не готові vanilla DOM компоненти; runtime/build не перевірявся."
+    },
+    {
+      "id": "video-bar-chart",
+      "category": "charts",
+      "title": "Remotion animated bar chart",
+      "status": "REFERENCE_VIDEO_COMPONENT",
+      "source_refs": [
+        "remotion-chart",
+        "remotion-package"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Remotion",
+        "frame clock",
+        "chart data adapter"
+      ],
+      "integration_work": "Можна адаптувати для відео з установленою медіафабрикою; для live гри потрібен інший time/data adapter.",
+      "proof_limit": "Офлайн chart на кадрах відео; live фінансовий графік не реалізовано."
+    },
+    {
+      "id": "turn-clock",
+      "category": "timers",
+      "title": "Лічильник дня та explicit next-day",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "simulation-core/model.mjs",
+      "dependencies": [
+        "Explicit user action"
+      ],
+      "integration_work": "Використати поточний turn clock; для годинника реального часу спочатку визначити pause/resume/save contract.",
+      "proof_limit": "Готового прийнятого countdown/Pomodoro scheduler у перенесеному пакеті немає."
+    }
+  ],
+  "integration_status": {
+    "synera": {
+      "owner": "AndriiEagle/synera_-MVPplus-",
+      "status": "PINNED_SOURCE_AND_CI_SUCCESS_LIVE_HOLD",
+      "source_commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+      "ci": {
+        "run_id": 39053215224,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+        "url": "https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224",
+        "verification": "GitHub metadata refreshed in Step 3; not a deployed user-flow result"
+      },
+      "source_refs": [
+        "synera-preview-server",
+        "synera-preview-html"
+      ],
+      "works_in_evidence": [
+        "Pinned web preview source, asset allowlist/config, cascade API handler present.",
+        "Current/Night Map product surface and prior synthetic journey source/tests documented in audit/synera-sources*.json.",
+        "Exact current-main CI success; historical 668 Node PASS / 1 SKIP and 39 browser PASS remain attached only to their prior source slice."
+      ],
+      "disabled_or_unverified": [
+        "profile-ai and journey-ai disabled without explicit --local-ai; pinned server returns HTTP 503 in that mode.",
+        "No Step-3 server/browser/provider/Neon/production execution.",
+        "CI success does not prove deployed JWT identity, receiver acceptance, backup/recovery or physical devices."
+      ],
+      "last_connections": [
+        "Exact approved rollout + Neon migrations/backup/recovery readback.",
+        "Two real signed-JWT accounts: profile -> mutual terms -> invitation -> receiver acceptance, including withdrawal/blocked result.",
+        "Physical Android and iPhone/Safari install/update/resume/keyboard/draft checks.",
+        "Reviewable demo and Gilbert explicit yes/no/next step; no evidence of accepted payment."
+      ],
+      "next_acceptance": "Follow five actions in SYNERA_LAUNCH_CHECKLIST.md; remain preview until live/device/customer gates close.",
+      "not_just_missing_key": true
+    },
+    "instagram": {
+      "owner": "KI/brand-social-os + KI/creator-income-os",
+      "status": "LOCAL_SYNTHETIC_PREPARATION_PASS_LIVE_PUBLISH_HOLD",
+      "source_refs": [
+        "brand-cli",
+        "creator-cli",
+        "remotion-package"
+      ],
+      "fresh_probe": "audit/step3-content-probe.json",
+      "works_verified": [
+        "Brand CLI one-day sprint with Instagram variant.",
+        "Existing plan-month .items feeds existing create-media-jobs CLI without a new field adapter.",
+        "One disconnected synthetic Instagram account -> script.md, captions.srt, render-spec.json, scene_graph.json, remotion-props.json.",
+        "Approval pending/draft-only preserved; invalid zero-day request rejected; four Suno approval/voice guard tests pass."
+      ],
+      "source_present_not_executed": [
+        "Remotion/FFmpeg/ISO route contracts, approval export, analytics import/summarize commands."
+      ],
+      "last_connections": [
+        "Human-approved factual creative, owned/licensed assets, actual renderer -> fully decoded and visually accepted MP4.",
+        "Authoritative account/channel and exact Meta/Postiz/OmniSocials owner contract; live authentication/capability readback before any upload.",
+        "Explicit approved publish -> platform post ID/receipt -> readback of real published result.",
+        "Analytics import tied to actual post ID; customer/order/payout evidence if income is claimed."
+      ],
+      "proof_limits": [
+        "No original env/account config read or copied; no real account access.",
+        "No MP4/render/upload/social post/analytics/revenue accepted.",
+        "No claim credentials are globally missing; live provider state was not probed."
+      ],
+      "next_acceptance": "Accept one local real rendered reel, then separately authorize and verify one live channel operation.",
+      "not_just_missing_key": true
+    },
+    "fiverr": {
+      "owner": "Conductor Revenue Lab + Creator Income OS business references",
+      "status": "OFFLINE_ECONOMICS_ACCEPTED_NO_LIVE_ADAPTER_EVIDENCE_IN_CHECKED_SCOPE",
+      "source_refs": [
+        "conductor-core"
+      ],
+      "works_verified": [
+        "Copied stdlib Decimal scenario/quote module and its 65 upstream tests accepted in task 530.",
+        "Explicit labor/cost assumptions and scenario-not-forecast outputs."
+      ],
+      "source_present_not_execution": [
+        "Dated Fiverr/marketplace research and B2B offer/delivery references."
+      ],
+      "last_connections": [
+        "Resolve authorized Fiverr API/terms/account owner and supported operation, rather than invent a generic scraper.",
+        "Human-accepted offer + one actual buyer/order -> approved delivery -> explicit buyer acceptance.",
+        "Order/fees/payout receipt tied to the same delivery; distinguish scenario totals from settled income."
+      ],
+      "checked_scope": [
+        "Conductor research and reusable economics",
+        "brand-social-os/scripts/brand-os.js",
+        "creator-income-os/scripts/creator-os.js and named business references"
+      ],
+      "proof_limits": [
+        "No accepted Fiverr live adapter/order/delivery/payout in this scope.",
+        "No claim that every Fiverr script anywhere on disk is absent."
+      ],
+      "next_acceptance": "First accepted delivery workflow and authoritative order/payment receipt; do not auto-send proposals."
+    }
+  },
+  "seed_additions": {
+    "execution_constraints": {
+      "baseline_priority": "quality",
+      "latest_request": "Steps 3/4: act quickly and autonomously, no unnecessary questions",
+      "scope": "Enrich evidence/manifests, clean commit and push existing private task branch",
+      "source": "Direct task-530 user messages; not inferred personality"
+    },
+    "simulation_calibration": {
+      "mode": "SYNTHETIC_UNCALIBRATED",
+      "currency": "CHF",
+      "planning_horizon_user_requested": "2026–2028",
+      "geographic_context": "Switzerland from user-adopted brief; timezone Europe/Zurich",
+      "personal_finance_source": null,
+      "personal_energy_source": null,
+      "rule": "Demo defaults and game parameters are scenario assumptions; never load them as observed user finances/health."
+    },
+    "project_bindings": [
+      {
+        "project_id": "synera",
+        "state_ref": "CONTEXT_MANIFEST.json#/integration_status/synera",
+        "actual_income_chf": null,
+        "user_or_customer_acceptance": null
+      },
+      {
+        "project_id": "instagram",
+        "state_ref": "CONTEXT_MANIFEST.json#/integration_status/instagram",
+        "actual_income_chf": null,
+        "user_or_customer_acceptance": null
+      },
+      {
+        "project_id": "fiverr",
+        "state_ref": "CONTEXT_MANIFEST.json#/integration_status/fiverr",
+        "actual_income_chf": null,
+        "user_or_customer_acceptance": null
+      }
+    ],
+    "capability_evidence": {
+      "source": "CONTEXT_MANIFEST.json#/framework_inventory",
+      "interpretation": "Available project source, not proof of personal mastery, working credentials or profitable automation."
+    }
+  },
+  "evidence_precedence": [
+    "Step-3 source hashes supersede older source hashes only for the named files; old reports preserved.",
+    "Local synthetic source probes prove preparation boundaries only; pinned source and CI do not prove production.",
+    "Unknown state remains unknown, never a readiness percentage."
+  ]
+}

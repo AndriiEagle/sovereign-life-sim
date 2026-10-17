@@ -4,6 +4,8 @@
 
 Почни з [HANDOFF.md](HANDOFF.md), [CONTEXT_MANIFEST.json](CONTEXT_MANIFEST.json) та [SYNERA_LAUNCH_CHECKLIST.md](SYNERA_LAUNCH_CHECKLIST.md). Продовження іншою моделлю: [EXTERNAL_PROMPT.md](EXTERNAL_PROMPT.md).
 
+Короткий текст для копіювання на Terra: [TERRA_SUMMARY.uk.md](TERRA_SUMMARY.uk.md). Крок 3 додає 10 описаних UI/runtime surfaces, 13 компонентів із межами reuse та свіжу локальну перевірку Instagram preparation; повні джерела й SHA — `audit/step3-source-evidence.json`.
+
 ```powershell
 python -B scripts/serve.py
 # Відкрити http://127.0.0.1:4530/

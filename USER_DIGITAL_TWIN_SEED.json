@@ -81,6 +81,45 @@
     "paid_customer_count": null,
     "personal_project_readiness_percent": null
   },
+  "execution_constraints": {
+    "baseline_priority": "quality",
+    "latest_request": "Steps 3/4: act quickly and autonomously, no unnecessary questions",
+    "scope": "Enrich evidence/manifests, clean commit and push existing private task branch",
+    "source": "Direct task-530 user messages; not inferred personality"
+  },
+  "simulation_calibration": {
+    "mode": "SYNTHETIC_UNCALIBRATED",
+    "currency": "CHF",
+    "planning_horizon_user_requested": "2026–2028",
+    "geographic_context": "Switzerland from user-adopted brief; timezone Europe/Zurich",
+    "personal_finance_source": null,
+    "personal_energy_source": null,
+    "rule": "Demo defaults and game parameters are scenario assumptions; never load them as observed user finances/health."
+  },
+  "project_bindings": [
+    {
+      "project_id": "synera",
+      "state_ref": "CONTEXT_MANIFEST.json#/integration_status/synera",
+      "actual_income_chf": null,
+      "user_or_customer_acceptance": null
+    },
+    {
+      "project_id": "instagram",
+      "state_ref": "CONTEXT_MANIFEST.json#/integration_status/instagram",
+      "actual_income_chf": null,
+      "user_or_customer_acceptance": null
+    },
+    {
+      "project_id": "fiverr",
+      "state_ref": "CONTEXT_MANIFEST.json#/integration_status/fiverr",
+      "actual_income_chf": null,
+      "user_or_customer_acceptance": null
+    }
+  ],
+  "capability_evidence": {
+    "source": "CONTEXT_MANIFEST.json#/framework_inventory",
+    "interpretation": "Available project source, not proof of personal mastery, working credentials or profitable automation."
+  },
   "limits": [
     "No health or psychological inference, diagnosis, behavioral tracking or hidden scoring.",
     "Historical narrative/profile statements are not current personal measurements.",

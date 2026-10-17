@@ -1,0 +1,30 @@
+{
+  "schema": "sovereign.step3-review.v1",
+  "status": "PASS_BOUNDED_REVIEW",
+  "observed_at_utc": "2026-10-17T19:17:49.157229+00:00",
+  "reviewed_scope": [
+    "Manifest/seed enrichment",
+    "Builder consumes pinned Step-3 evidence; no new dependencies",
+    "Portable helper characterization tests integrated into canonical verifier",
+    "README/HANDOFF/EXTERNAL_PROMPT/Terra summary linked"
+  ],
+  "preserved_invariants": [
+    "Original source snapshots unchanged",
+    "Synthetic resources never become personal finance/health facts",
+    "No enabled live automation or new provider dispatch",
+    "Game/React/media stacks not labelled drop-in compatible"
+  ],
+  "defect_sensitivity": {
+    "mutation": "Reverse height lift sign in temporary renderer copy",
+    "expected": "Projection round-trip test fails",
+    "exit_code": 1,
+    "observed": "Projection round-trip test fails; tile-picking test still passes",
+    "oracle": "tests/iso-helpers.test.mjs",
+    "original_renderer_sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1"
+  },
+  "limits": [
+    "No new browser QA because active UI/model/events unchanged",
+    "No original native game, React/media build or production integration acceptance",
+    "Prior optional other-model-family review remains HOLD; no model calls introduced"
+  ]
+}

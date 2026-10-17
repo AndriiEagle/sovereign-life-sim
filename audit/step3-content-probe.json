@@ -1,0 +1,133 @@
+{
+  "schema": "sovereign.content-source-probe.v1",
+  "status": "PASS_BOUNDED_LOCAL_SYNTHETIC",
+  "observed_at_utc": "2026-10-17T19:14:05.543511+00:00",
+  "source_files": [
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os\\scripts\\brand-os.js",
+      "sha256": "2dbc1ae558081b465fa5808c73e13342bf903f1961ba49f7751e2705db0066f6",
+      "bytes": 74218
+    },
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\scripts\\creator-os.js",
+      "sha256": "420ace9973704ae341339d5ae7605563621780b65f30bba549687b1f1eabca11",
+      "bytes": 53377
+    },
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\integrations\\suno\\client.js",
+      "sha256": "0426bac4c1dd4e9931f093bcb9afeb4e5895d011450d873120a5b18e0d3b1955",
+      "bytes": 19581
+    },
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\integrations\\suno\\schema.js",
+      "sha256": "b67901f8f8582c3da45818bedc21ad93c5420e8b90b3c4ef23e9bfd27a8539fe",
+      "bytes": 3277
+    },
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\integrations\\suno\\voice.js",
+      "sha256": "ee28aedee093b62bb3f62971efa2695ffed21ba00328a14ceeb305d5ebf3a46e",
+      "bytes": 2927
+    },
+    {
+      "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\tests\\suno-approval.test.js",
+      "sha256": "4bbcd7d486c7912c3fd2b307c97b385ca483c4ec81e084928133f40343f96fb9",
+      "bytes": 1519
+    }
+  ],
+  "isolation": {
+    "workspace": "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace",
+    "original_config_or_env_copied": false,
+    "subprocess_env": "Windows runtime allowlist only, no inherited provider credentials",
+    "network": "Node preload rejects fetch/http/https/net/tls calls",
+    "original_projects_mutated": false
+  },
+  "checks": [
+    "One-day sprint generated",
+    "Disconnected synthetic Instagram account -> monthly plan -> Creator media job through existing CLI commands, no field adapter",
+    "script/SRT/render-spec/scene-graph/Remotion-props produced",
+    "Pending approval and draft-only plan preserved",
+    "No MP4 rendered; no provider ID",
+    "Four existing Suno approval/voice guard tests passed",
+    "Invalid zero-day sprint rejected, no output"
+  ],
+  "runs": [
+    {
+      "argv": [
+        "brand-social-os/scripts/brand-os.js",
+        "generate-sprint",
+        "--brand",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\synthetic-brand.json",
+        "--days",
+        "1",
+        "--start",
+        "2026-10-17",
+        "--out",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\sprint.json"
+      ],
+      "exit_code": 0,
+      "summary": "Generated sprint: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\sprint.json\nUpdated latest pointer: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\brand-social-os\\data\\content-sprints\\sprint-latest.json\n"
+    },
+    {
+      "argv": [
+        "brand-social-os/scripts/brand-os.js",
+        "plan-month",
+        "--brand",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\synthetic-brand.json",
+        "--accounts",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\synthetic-accounts.json",
+        "--days",
+        "1",
+        "--month",
+        "2026-10",
+        "--out",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\plan.json"
+      ],
+      "exit_code": 0,
+      "summary": "Generated monthly plan: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\plan.json\nGenerated monthly CSV: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\plan.csv\nItems: 1 (1 accounts x 1 days x 1 post(s))\n"
+    },
+    {
+      "argv": [
+        "creator-income-os/scripts/creator-os.js",
+        "create-media-jobs",
+        "--input",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\plan.json",
+        "--limit",
+        "1",
+        "--out",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\jobs.json"
+      ],
+      "exit_code": 0,
+      "summary": "Created media jobs: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\jobs.json\nCreated media jobs CSV: D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\jobs.csv\n"
+    },
+    {
+      "argv": [
+        "--test",
+        "creator-income-os/tests/suno-approval.test.js"
+      ],
+      "exit_code": 0,
+      "summary": "✔ Suno dry-run needs no external approval (0.9929ms)\n✔ Suno hosted calls fail closed without both approval fields (0.4883ms)\n✔ Suno hosted calls accept explicit task-scoped approval (0.1435ms)\n✔ Suno voice upload requires a separate rights attestation (0.9936ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 127.827\n"
+    },
+    {
+      "argv": [
+        "brand-social-os/scripts/brand-os.js",
+        "generate-sprint",
+        "--brand",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\synthetic-brand.json",
+        "--days",
+        "0",
+        "--out",
+        "D:\\sovereign-life-sim\\.runtime\\step3-instagram-47cade3f\\workspace\\rejected-sprint.json"
+      ],
+      "exit_code": 1,
+      "summary": "--days must be a number between 1 and 60.\n"
+    }
+  ],
+  "proof_limits": [
+    "Not OS sandbox proof",
+    "No real Instagram credentials/channel/auth/Meta or Postiz operation",
+    "No render/MP4/upload/post/analytics/payout acceptance",
+    "Synthetic job cost fields are defaults, not an inference billing receipt"
+  ],
+  "provider_calls": 0,
+  "provider_usd": "0.00"
+}

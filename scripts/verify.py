@@ -11,6 +11,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = ('PACKAGE_MANIFEST.json', 'audit/git-base.json', 'CONTEXT_MANIFEST.json', 'USER_DIGITAL_TWIN_SEED.json', 'SYNERA_LAUNCH_CHECKLIST.md',
+            'TERRA_SUMMARY.uk.md', 'audit/step3-source-evidence.json', 'audit/step3-content-probe.json',
             'HANDOFF.md', 'TASKS.md', 'EXTERNAL_PROMPT.md', 'RIGHTS.md', 'audit/source-copies.json',
             'engine-isometric-ui/index.html', 'simulation-core/game-forge/sim/core.py',
             'simulation-core/revenue_lab/core.py', 'automation-nodes/catalog.json', 'mcp-bridge/events.mjs')
@@ -97,7 +98,7 @@ def main():
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'upstream-tests', '-q'], ROOT / 'simulation-core'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'sim/tests', '-t', '.', '-q'], ROOT / 'simulation-core/game-forge'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], ROOT),
-            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs'], ROOT),
+            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs', 'tests/iso-helpers.test.mjs'], ROOT),
             ([sys.executable, '-B', 'scripts/scenario.py', '--ticks', '96', '--action', 'rest', '--seed', '42'], ROOT),
         ]
         for command, cwd in commands:

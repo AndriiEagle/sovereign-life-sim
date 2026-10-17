@@ -93,6 +93,21 @@
       "bytes": 6515
     },
     {
+      "path": "audit/step3-content-probe.json",
+      "sha256": "c0d129a0ec3c39e61b318a64e28e38a75cd2a730c116b9350e4d92f568374b73",
+      "bytes": 5906
+    },
+    {
+      "path": "audit/step3-review.json",
+      "sha256": "869149d98a580a59a0eb60d6da5fff82872709d03044aa8769c6a03cba94bcfc",
+      "bytes": 1359
+    },
+    {
+      "path": "audit/step3-source-evidence.json",
+      "sha256": "fb4c0cf4e462367147a6e327117b5c60167d0fd89b2b000d9dc6c12fe6b2234b",
+      "bytes": 44424
+    },
+    {
       "path": "audit/synera-sources-review.json",
       "sha256": "a5b898dd17375acc9fac95e045c2abeaa75b88485b2db541e72d5eee7051258f",
       "bytes": 4430
@@ -139,8 +154,8 @@
     },
     {
       "path": "CONTEXT_MANIFEST.json",
-      "sha256": "7fc90339d6ae76daa7d00ed9db003f0244192d88920567688f5b0b7343d613b7",
-      "bytes": 35042
+      "sha256": "b34076cfbedfb241b5c0d877d34361f3f68defde82f381c875dcbb2221cf4588",
+      "bytes": 57763
     },
     {
       "path": "engine-isometric-ui/app.mjs",
@@ -174,13 +189,13 @@
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "3b1bbaa46cbdb4937f4a8de450841695479f5657ae0fe90aaf0514a26853c1c8",
-      "bytes": 3859
+      "sha256": "d9a1d5b0e6b5783c663751466e31decb9a5455aadb5609dd1ca582bae6aee5e4",
+      "bytes": 4318
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "79cc5db3233c36e55d09c13f914929ef8cd8218f9f6509b2f00de723eacc1f5a",
-      "bytes": 5821
+      "sha256": "6599e51c32b8833d64622b4236dbeb2372a6740d58fae63c20b887b6d3bc1e19",
+      "bytes": 6457
     },
     {
       "path": "mcp-bridge/events.mjs",
@@ -199,8 +214,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "8e70cc7cd4eda384d4d8506f54c7adb608f92294a7ad72ae44b0297c61e7f0ee",
-      "bytes": 4265
+      "sha256": "d97439200c8ae4065a082da62dca0217f9a9765e76b93ff74a00870666751974",
+      "bytes": 4639
     },
     {
       "path": "RIGHTS.md",
@@ -214,8 +229,8 @@
     },
     {
       "path": "scripts/build_context.py",
-      "sha256": "31346f33ea1a2c3b7a410b5896f98c8aba3c6d699d326f799dd922e4155d9cee",
-      "bytes": 13929
+      "sha256": "e75ca96231326e26a1768f368361212fa0711475560e225d22ceea00765a31a4",
+      "bytes": 15479
     },
     {
       "path": "scripts/check_local_sources.py",
@@ -249,8 +264,8 @@
     },
     {
       "path": "scripts/verify.py",
-      "sha256": "b00cb82a588c137da79befa131c95e173ff8dd92cbf2b13ef110b8a0696055b4",
-      "bytes": 5947
+      "sha256": "7035017c7ce0c152c1c4355d216a3b78378ae450ee6517a1148e3a5408b915ac",
+      "bytes": 6082
     },
     {
       "path": "simulation-core/CONDUCTOR_RIGHTS.md",
@@ -343,9 +358,19 @@
       "bytes": 3545
     },
     {
+      "path": "TERRA_SUMMARY.uk.md",
+      "sha256": "da1996ca6992b2e930afbba8df6905f111e9ebe3f8bf1ac1c63d49fef3f0eea7",
+      "bytes": 5286
+    },
+    {
       "path": "tests/events.test.mjs",
       "sha256": "a44279cb405b5ae69f679b608eadc8f3bc6e8e81572393eaf086208e38f1a440",
       "bytes": 1668
+    },
+    {
+      "path": "tests/iso-helpers.test.mjs",
+      "sha256": "5c1520ae0c028f1c261b615c1df1a7ea56bb1a7e2107052d01123a4960d291d6",
+      "bytes": 1325
     },
     {
       "path": "tests/model.test.mjs",
@@ -364,8 +389,8 @@
     },
     {
       "path": "USER_DIGITAL_TWIN_SEED.json",
-      "sha256": "d2c68a7dd8e237046731a5a8c950775b5957229f638e9f0bd1c8dacd86b5b654",
-      "bytes": 2841
+      "sha256": "993743764ce02a1f4ffd7fd565f7c727d0bb30af9f7b44b2088bd0c227559f82",
+      "bytes": 4463
     }
   ]
 }

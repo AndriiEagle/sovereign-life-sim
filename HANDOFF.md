@@ -6,6 +6,8 @@
 
 Доставлено: source-pinned catalogue, curated seed, 5-кроковий checklist, точні приватні snapshots і тести двох математичних модулів, неактивні renderer/worldpack snapshots, approve-first шаблони, локальна процедурна карта, подієвий DTO/експорт. Оригінальні проєкти read-only. У `audit/` збережено первинні read-only звіти й по одному окремому targeted followup; корекції не переписують початкові докази.
 
+Крок 3: `TERRA_SUMMARY.uk.md` дає коротку передачу; manifest тепер містить exact framework/renderer inventory, 13 reusable component contracts та реальні Synera/Instagram/Fiverr gaps. `audit/step3-source-evidence.json` фіксує 27 джерел; `audit/step3-content-probe.json` — локальний synthetic plan → media job, guards і відсутність MP4/live effects. Нові hashes мають пріоритет лише для названих файлів; старі аудити збережено. Ці probes не є live-публікацією чи доходом.
+
 | Контракт | Поточний стан |
 |---|---|
 | Owner/source | `game-forge/sim` owns rich life math; Conductor owns scenario economics; Synera/Memento/Arcanum retain original owners; snapshots bound by SHA256 |

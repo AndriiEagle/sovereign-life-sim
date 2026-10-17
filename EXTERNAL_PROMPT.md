@@ -10,3 +10,5 @@
 6. Поверни зміни на окремій `codex/<result>` гілці або PR до task branch: exact base/head, змінені файли, source/dependency closure, команди + реальні exit/results/skips, semantic positive/negative та defect-sensitivity checks, unresolved gates. Окремо оцінюй component і повний user workflow. Нічого не merge/deploy автоматично. Після відповіді роботу незалежно приймає локальна координаторка.
 
 Для Terra з локальним доступом спочатку використовуй repo copy і exact SHA; приватні шляхи з manifest — locator-и, не гарантія існування на іншому хості. До worktree перевір intended base через `git rev-parse --verify <ref>^{commit}`. Не читай raw-чати або secrets для «відновлення» контексту.
+
+Уточнення кроку 3: перед вибором UI читай `CONTEXT_MANIFEST.json` → `active_simulator`, `framework_inventory`, `reusable_components`, `integration_status`; джерела — `audit/step3-source-evidence.json`. Готові DOM panels не роблять Godot/React/Remotion модулі сумісними з браузером без адаптера. Для стислого контексту — `TERRA_SUMMARY.uk.md`.

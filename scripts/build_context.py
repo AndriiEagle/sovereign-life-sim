@@ -28,6 +28,9 @@ def main():
     visual_review = json.loads((ROOT / 'audit/visual-sources-review.json').read_text(encoding='utf-8'))
     synera = json.loads((ROOT / 'audit/synera-sources.json').read_text(encoding='utf-8'))
     synera_review = json.loads((ROOT / 'audit/synera-sources-review.json').read_text(encoding='utf-8'))
+    details = json.loads((ROOT / 'audit/step3-source-evidence.json').read_text(encoding='utf-8'))
+    assert all(ref in details['sources'] for row in details['framework_inventory'] + details['reusable_components']
+               for ref in row['source_refs']), 'MISSING_STEP3_SOURCE'
     projects = []
 
     def add(pid, title, roots, status, role, sources, gaps, mode='reference'):
@@ -93,6 +96,12 @@ def main():
         [{'report': 'audit/visual-sources.json'}, {'report': 'audit/visual-sources-review.json'}],
         ['React/Tailwind/framer-motion import closure needed for original viewer', 'No fresh DB, voice, participant or customer acceptance'])
 
+    for project in projects:
+        project['framework_refs'] = [row['id'] for row in details['framework_inventory'] if row['project_id'] == project['id']]
+        integration = 'instagram' if project['id'] in {'brand-social-os', 'creator-income-os'} else project['id']
+        if integration in details['integration_status']:
+            project['integration_status_ref'] = '#/integration_status/' + integration
+
     dump('CONTEXT_MANIFEST.json', {
         'schema': 'sovereign.context-manifest.v1', 'task': 530, 'as_of': '2026-10-17', 'timezone': 'Europe/Zurich',
         'objective': 'Private, modular source-pinned foundation for Sovereign Life RTS / Cashflow 2.0, 2026–2028',
@@ -103,6 +112,13 @@ def main():
             'excluded': ['raw chats/sessions', 'secret/env/account files', 'customer profiles/media', 'native game binaries/ART', 'caches/vendor installs/backups', 'private personal journal excerpts'],
             'limit': 'No claim that every file on Sol was read or every runtime and commercial outcome verified.'},
         'projects': projects,
+        'active_simulator': {'framework': 'Vanilla HTML/CSS + ES modules', 'renderer': 'DOM/CSS procedural isometric view',
+            'framework_ref': 'sovereign-web', 'source_evidence': 'audit/step3-source-evidence.json#/sources',
+            'component_status_rule': 'ALREADY_ACTIVE is usable now in this DOM. Other stacks require their stated host, dependencies, rights and adapters.'},
+        'framework_inventory': details['framework_inventory'], 'framework_scope_limit': details['framework_scope_limit'],
+        'reusable_components': details['reusable_components'], 'integration_status': details['integration_status'],
+        'step3_evidence': {'sources': 'audit/step3-source-evidence.json', 'content_probe': 'audit/step3-content-probe.json',
+            'precedence': details['evidence_precedence']},
         'visual_candidates': visual['candidates'] + visual_review['added_candidates'],
         'latest_evidence_precedence': ['audit/visual-sources-review.json supersedes rights conclusions in initial report',
                                        'audit/synera-sources-review.json adds exact current-main and CI metadata to initial report'],
@@ -127,6 +143,7 @@ def main():
             'debt_chf': None, 'sleep_schedule': None, 'chronotype': None, 'energy_curve': None,
             'adhd_diagnosis': None, 'medical_parameters': None, 'actual_subscription_costs': None,
             'paid_customer_count': None, 'personal_project_readiness_percent': None},
+        **details['seed_additions'],
         'limits': ['No health or psychological inference, diagnosis, behavioral tracking or hidden scoring.',
                    'Historical narrative/profile statements are not current personal measurements.',
                    'Demo CHF1000/energy80 are synthetic and must never populate this personal seed.',
