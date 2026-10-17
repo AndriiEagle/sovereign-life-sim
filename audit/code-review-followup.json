@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "review_id": "task-530-code-review-r1-followup",
+  "review_of": "audit/code-review.json",
+  "verdict": "NEEDS_REVIEW",
+  "scope": "Final finite re-read of exact HTTP allowlist and typed event rejection only. No implementation source was edited.",
+  "findings": [
+    {
+      "id": "CR1-F01-untyped-clock-output",
+      "severity": "medium",
+      "status": "VERIFIED",
+      "invariant": "Typed event payload only",
+      "source": "mcp-bridge/events.mjs:4-5, :9-17",
+      "source_hash": "9b81659af99f22c85a8eaabca5a9664d664474d90ccfeaa2c0b1df16a5f4816a",
+      "defect": "createEventJournal accepts an injectable now callback but does not validate its return value before storing it as occurred_at. The exported DTO can therefore contain an arbitrary object instead of a timestamp string.",
+      "minimal_repro": "node --input-type=module -e \"import {createEventJournal} from './mcp-bridge/events.mjs'; const j=createEventJournal({now:()=>({untyped:'value'})}); j.record({type:'work'}); console.log(JSON.stringify(j.snapshot().retained_events[0]));\"",
+      "expected": "record rejects a non-string/non-ISO occurred_at value, or the construction API prevents an untyped clock from entering the DTO.",
+      "actual": "Exit 0; export contains occurred_at:{untyped:'value'} while schema, mode, action and sequence remain otherwise fixed.",
+      "minimal_fix_direction": "Validate the clock output at record time before event construction and reject an invalid value; add a semantic negative test alongside the existing free-form action tests.",
+      "acceptance_limit": "This defect is local DTO-type drift. It does not create a provider call, network effect, real income, or arbitrary action payload transfer."
+    }
+  ],
+  "confirmed_no_change": [
+    {
+      "area": "Exact HTTP allowlist",
+      "status": "VERIFIED",
+      "source": "scripts/serve.py:8-18, :26-41",
+      "source_hash": "267215a561486787a17f169155dd3deca5884b79d860110368c45384db0bd595",
+      "repro": "Direct allowed_path calls returned None for .git, audit, seed, ordinary/encoded/double-encoded traversal; query on an already allowed canonical page resolved to that canonical path.",
+      "limit": "No HTTP server was started; this is an allowlist-function result, not browser or deployment certification."
+    }
+  ],
+  "test_gap": {
+    "status": "VERIFIED",
+    "source": "tests/events.test.mjs:4-19",
+    "source_hash": "8360a6441946a072ef63b4aeb498715c3e4f90f9f92640bf556de51da6db5e93",
+    "gap": "Tests reject free-form action input but do not test that the injected now callback produces a string timestamp."
+  },
+  "semantic_limits": [
+    "This is not a full UI, browser, native-game, customer, or provider review.",
+    "Root's separately reported browser and mutation evidence was not independently re-certified here.",
+    "No different-family/provider review was requested or performed."
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "audit_id": "task-530-synera-source-audit-2026-10-17",
+  "scope": {
+    "status": "VERIFIED",
+    "inspected_roots": [
+      "D:/synera-reviewed-mobile-20261013",
+      "D:/synera-main-fresh-20261017",
+      "D:/synera-main-review-20261017",
+      "D:/synera-launch-01a0cea0",
+      "C:/Users/Andrii/Desktop/synera-premium-pwa-variant"
+    ],
+    "excluded": [
+      "live deployment probes", "provider/API calls", "secrets and environment values", "customer data", "server starts", "package installs", "production SQL", "invites and messages"
+    ]
+  },
+  "canonical_remote": {
+    "repository": "https://github.com/AndriiEagle/synera_-MVPplus-",
+    "status": "VERIFIED",
+    "read_only_ls_remote_at": "2026-10-17",
+    "main_ref": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+    "head_ref": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+    "historical_reviewed_ref": "76e189756f807cf8a6cf553cc687c626ac16ffff",
+    "warning": "Remote main differs from the historical 2026-10-13 reviewed ref. `git diff --stat 76e1897..4abbd06` reports 53 files changed, 10209 insertions and 311 deletions. Historical mobile-review evidence therefore cannot prove the current main outcome."
+  },
+  "sources": [
+    {
+      "path": "D:/synera-reviewed-mobile-20261013",
+      "status": "VERIFIED",
+      "git": {
+        "head": "76e189756f807cf8a6cf553cc687c626ac16ffff",
+        "branch": "codex/synera-reviewed-mobile-20261013",
+        "origin": "https://github.com/AndriiEagle/synera_-MVPplus-.git",
+        "tracked_dirty_entries": 0
+      },
+      "evidence": [
+        { "path": "README.md", "sha256": "EFE006B475FA67F08EB5FADBF8914E6EA9E1C88DEAF16EC29E76D649D8C9869D", "claim": "historical reviewed source" },
+        { "path": "docs/REVIEW_HANDOFF.uk.md", "sha256": "51AFE9929EADC4C9E7633EB938FD852A27C0054321E2491689DA15DA4C539E15", "claim": "historical review handoff" }
+      ]
+    },
+    {
+      "path": "D:/synera-main-fresh-20261017",
+      "status": "VERIFIED",
+      "git": {
+        "head": "cfabbcc1ff893db1417599f81aa9a940dbf0a8fb",
+        "branch": "codex/synera-cloud-audit-prompt-20261017",
+        "local_main_ancestor": "c72a370",
+        "origin": "https://github.com/AndriiEagle/synera_-MVPplus-.git",
+        "tracked_dirty_entries": 0
+      },
+      "evidence": [
+        { "path": "README.md", "sha256": "6A49071DE3D5FA2A1CE0C076D35E12B5C3B2A9C02B2A6B3FC450BEB90EF4410F", "claim": "local preview is not real two-person runtime" },
+        { "path": "docs/REVIEW_HANDOFF.uk.md", "sha256": "ED468A51CA8D83F8475D918CD9269D3D411CBEA8F219840245BFE2C67A65F8B0", "claim": "review/acceptance instructions" }
+      ]
+    },
+    {
+      "path": "D:/synera-main-review-20261017",
+      "status": "VERIFIED",
+      "git": {
+        "head": "bcff64e64db31c9bf28e7f4e7c348ee175d79cf4",
+        "branch": "codex/synera-main-review-20261017",
+        "origin": "https://github.com/AndriiEagle/synera_-MVPplus-.git",
+        "tracked_dirty_entries": 0
+      },
+      "evidence": [
+        { "path": "README.md", "sha256": "6A49071DE3D5FA2A1CE0C076D35E12B5C3B2A9C02B2A6B3FC450BEB90EF4410F", "locator": "lines 40-42", "claim": "668 Node PASS/1 SKIP and 39 browser PASS are tied to a reviewed slice; production schema/recovery, real signed-JWT two-account flow, and physical Android/iPhone remain open" },
+        { "path": "docs/REVIEW_HANDOFF.uk.md", "sha256": "AC93448591E17FD29C4116DAF61FA4A1B3910D66690A81858E595094F6D1C64B", "locator": "lines 32, 55-61, 65-88", "claim": "Current stays default; Atelier/Night Map are opt-in; reported tests use fixtures/local disposable DB and do not accept live API, signed JWT, physical devices, or rollout" },
+        { "path": "bible/STATUS.md", "locator": "lines 1-4", "claim": "source-reported local test results and live gates are explicitly separated" }
+      ]
+    },
+    {
+      "path": "D:/synera-launch-01a0cea0",
+      "status": "VERIFIED",
+      "git": {
+        "head": "b38c14d3cc638afa80d30a22d79ec6ef53461501",
+        "branch": "codex/synera-launch-01a0cea0",
+        "origin": "https://github.com/AndriiEagle/synera_-MVPplus-.git",
+        "tracked_dirty_entries": 0
+      },
+      "evidence": [
+        { "path": "README.md", "sha256": "D07DDCCA163B6B676CF8D2DB32BCD6DE4F1A0715D04BEC18B6C85166B4A61503", "claim": "launch-oriented historical source" },
+        { "path": "docs/meeting-gilbert/README.uk.md", "sha256": "D390BF4EADC8AA4895AF7FEA233009260B160D2EEB690204E28DD26EE75561E3", "claim": "meeting/demo guide labels price, demand, payment, and Gilbert commitments as hypotheses or missing" }
+      ]
+    },
+    {
+      "path": "C:/Users/Andrii/Desktop/synera-premium-pwa-variant",
+      "status": "NEEDS_REVIEW",
+      "git": {
+        "head": "a6be71a7a55d54c9c9afc5abd383bb09a6805300",
+        "branch": "codex/synera-product-20261002",
+        "origin": "https://github.com/AndriiEagle/synera_-MVPplus-.git",
+        "tracked_dirty_entries": 4,
+        "dirty_paths": ["START_HERE.uk.md", "docs/REVIEW_HANDOFF.uk.md", "task_log.jsonl", "web_launch/journey-ui.mjs"]
+      },
+      "evidence": [
+        { "path": "README.md", "sha256": "EFE006B475FA67F08EB5FADBF8914E6EA9E1C88DEAF16EC29E76D649D8C9869D", "claim": "older product branch; not a clean handoff source" },
+        { "path": "docs/REVIEW_HANDOFF.uk.md", "sha256": "402D6FD4DFF8FDF7FA5C0F3550EAFBC0AA4E9E392D6D36D4975416C656BED524", "claim": "older handoff; do not publish its dirty state" }
+      ]
+    }
+  ],
+  "verified_facts": [
+    { "status": "VERIFIED", "fact": "All five named directories exist; the old C: reviewed-mobile path was not used." },
+    { "status": "VERIFIED", "fact": "No AGENTS.md or CONTINUE_IN_CODEX.uk.md was found by bounded rg in the five named roots." },
+    { "status": "PRESENT_BUT_UNTESTED", "fact": "The handoff documents report 668 Node PASS/1 SKIP and 39 browser E2E PASS for source 76e1897, plus fixture/local-disposable acceptance. This audit did not run those tests." },
+    { "status": "MISSING", "fact": "No current remote CI run/status was inspected; source-reported test counts cannot establish a passing run for remote main 4abbd06." },
+    { "status": "MISSING", "fact": "No fresh live health/deployment probe was performed. A historical HTTP 404 is explicitly not current live-state evidence in docs/REVIEW_HANDOFF.uk.md line 88." },
+    { "status": "MISSING", "fact": "No proof was found for live signed-JWT two-account flow, production Neon schema/recovery, physical Android, physical iPhone/Safari, or Gilbert's acceptance." }
+  ],
+  "useful_references": [
+    { "status": "VERIFIED", "path": "D:/synera-main-review-20261017/web_launch/real-journey.html", "sha256": "C7B4EBAE42F7D1197240ACD11EEEE5AC6D38A6B37AC996162A67B55EB8E10994", "purpose": "two-person demo UI reference", "constraint": "local/fixture evidence does not prove signed-JWT runtime" },
+    { "status": "VERIFIED", "path": "D:/synera-main-review-20261017/web_launch/journey-ui.mjs", "sha256": "3725F354FE08CCE2486E14FD2A73B4B4E0749426160B8AFA5BCBACE833380E31", "purpose": "journey UI behavior reference", "constraint": "Current default and Atelier opt-in invariant from REVIEW_HANDOFF line 32" },
+    { "status": "VERIFIED", "path": "D:/synera-main-review-20261017/web_launch/style-switcher.mjs", "sha256": "898AFF4AA14E8767CF04A837B5CC8CAAF3D91945371A4610CE0AB40C327D4680", "purpose": "opt-in style handling", "constraint": "preserve user choice; do not make Atelier default" },
+    { "status": "VERIFIED", "path": "D:/synera-main-review-20261017/tests/browser-e2e.spec.mjs", "sha256": "ECF507234C86A9EBBAA1F579D53E2AC963138CDCABBAEB391659D21C90B4F298", "purpose": "browser regression reference", "constraint": "requires locked Playwright tooling; fixture/browser success is not device acceptance" },
+    { "status": "VERIFIED", "path": "D:/synera-main-review-20261017/tools/location-browser-acceptance.mjs", "sha256": "06B289CC0FDEF30484B2D26D7CFDFF1F8A22372134B0D8450EDDC733D1A57211", "purpose": "two-session acceptance reference", "constraint": "documented local Auth/Data API/KV/GPS fixtures, not live providers" },
+    { "status": "NEEDS_REVIEW", "path": "D:/synera-main-review-20261017/web_launch/asset-licenses.txt", "sha256": "554057F55AFE186B8729A5FC8D81DA12BD47B947AED2772B6CE5056DB712912A", "purpose": "asset-license manifest", "constraint": "read and satisfy every included asset license before redistribution; no repository-root LICENSE was found in the bounded roots" }
+  ],
+  "dependency_constraints": {
+    "status": "VERIFIED",
+    "node_version": "22 reported by docs/REVIEW_HANDOFF.uk.md line 36",
+    "package_json": "only devDependencies: @axe-core/playwright ^4.13.0, @playwright/test ^1.63.0, playwright ^1.63.0",
+    "fresh_clone_limit": "node_modules, browser binaries, and generated dist-neon-* are not included; no install was run in this audit"
+  },
+  "open_gates": [
+    { "status": "HOLD", "gate": "truthful reviewable demo", "acceptance": "local preview opens the reviewed UI with registration/live readiness closed and a reviewer sees the stated fixture boundary" },
+    { "status": "HOLD", "gate": "two people", "acceptance": "two authorized live accounts complete profile -> mutually approved terms -> invitation -> receiver acceptance over signed JWT" },
+    { "status": "HOLD", "gate": "data safety", "acceptance": "current Neon applied-migration inventory, backup/recovery proof, and approved ordered rollout package" },
+    { "status": "HOLD", "gate": "mobile", "acceptance": "physical Android and iPhone/Safari install/update/resume/keyboard/draft preservation on the exact candidate" },
+    { "status": "HOLD", "gate": "customer", "acceptance": "Gilbert explicitly accepts the demo or gives a recorded decision; a sent link or displayed demo is not acceptance" }
+  ],
+  "proposed_gilbert_checklist_24h": [
+    { "order": 1, "status": "PRESENT_BUT_UNTESTED", "action": "Pin the demo to the reviewed source/ref and write a one-sentence boundary: local preview with synthetic/fixture behavior, not a live pilot.", "proof": "SHA plus a local-preview screenshot or readback; do not call a branch push a deployment." },
+    { "order": 2, "status": "PRESENT_BUT_UNTESTED", "action": "Walk one five-minute scripted path: need -> reciprocal fit -> both approvals -> introduction request; show consent withdrawal/blocked outcome once.", "proof": "Use only synthetic profiles and retain the Current-default/Atelier-opt-in behavior." },
+    { "order": 3, "status": "NEEDS_REVIEW", "action": "Ask Gilbert for one concrete audience, one recurring problem, and whether he agrees to a small next validation conversation; do not claim payment, demand, partnership, or a production launch.", "proof": "A direct written or spoken yes/no with the agreed next step." },
+    { "order": 4, "status": "HOLD", "action": "If the demo is accepted, schedule the gated technical follow-up: live signed-JWT two-account flow and Neon migration/recovery review before any real invitation.", "proof": "Separate owner-approved run receipts; do not execute database changes during the demo." },
+    { "order": 5, "status": "HOLD", "action": "Run physical Android and iPhone/Safari acceptance on the exact candidate before calling it a mobile pilot.", "proof": "Fresh device-specific results for install, update, resume, keyboard and draft preservation." }
+  ],
+  "completion_percent": null,
+  "completion_percent_reason": "No common denominator or current end-to-end oracle supports a percentage."
+}

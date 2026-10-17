@@ -1,0 +1,2100 @@
+{
+  "schema": "life-sim-v1",
+  "sources": {
+    "design": "Game calibration, not measured physiology; SPEC_CH1_v0 S1-S4/S12 and DECISIONS O6/P6. Offline reading 2026-10-15.",
+    "lally": "Lally et al. (2010), How are habits formed: Modelling habit formation in the real world, European Journal of Social Psychology 40:998-1009, DOI 10.1002/ejsp.674. User-provided median 66 days, range 18-254; 95% asymptote criterion. Not web-verified here.",
+    "practice": "Newell & Rosenbloom (1981), Mechanisms of skill acquisition and the law of practice, in Cognitive Skills and Their Acquisition. Power-law shape only; exponent/hours are game assumptions.",
+    "burnout": "Maslach, Schaufeli & Leiter (2001), Job Burnout, Annual Review of Psychology 52:397-422. Chronic stress is qualitative motivation; all rates/thresholds are invented game calibration.",
+    "sleep": "Borbely (1982), A two process model of sleep regulation, Human Neurobiology 1:195-204. Qualitative saturation inspiration, not this energy equation.",
+    "light": "Rosenthal et al. (1984), Seasonal affective disorder: A description of the syndrome and preliminary findings with light therapy, Archives of General Psychiatry 41:72-80. Seasonal light/mood only. Decorative evening lighting is not clinical therapy; coefficients are artistic assumptions.",
+    "rng": "Numerical Recipes 32-bit LCG constants; portable game randomness, not cryptographic."
+  },
+  "clock": {
+    "step_minutes": {
+      "value": 15,
+      "unit": "minute",
+      "corridor": [
+        15,
+        15
+      ],
+      "source": "design"
+    },
+    "minutes_per_hour": {
+      "value": 60,
+      "unit": "minute/hour",
+      "corridor": [
+        60,
+        60
+      ],
+      "source": "design"
+    },
+    "hours_per_day": {
+      "value": 24,
+      "unit": "hour/day",
+      "corridor": [
+        24,
+        24
+      ],
+      "source": "design"
+    },
+    "days_per_week": {
+      "value": 7,
+      "unit": "day",
+      "corridor": [
+        7,
+        7
+      ],
+      "source": "design"
+    },
+    "days_per_season": {
+      "value": 21,
+      "unit": "game day",
+      "corridor": [
+        1,
+        365
+      ],
+      "source": "design"
+    },
+    "seasons": [
+      "autumn",
+      "winter",
+      "spring",
+      "summer"
+    ],
+    "phases": [
+      {
+        "name": "night",
+        "start_hour": {
+          "value": 0,
+          "unit": "hour",
+          "corridor": [
+            0,
+            24
+          ],
+          "source": "design"
+        }
+      },
+      {
+        "name": "morning",
+        "start_hour": {
+          "value": 6,
+          "unit": "hour",
+          "corridor": [
+            0,
+            24
+          ],
+          "source": "design"
+        }
+      },
+      {
+        "name": "day",
+        "start_hour": {
+          "value": 12,
+          "unit": "hour",
+          "corridor": [
+            0,
+            24
+          ],
+          "source": "design"
+        }
+      },
+      {
+        "name": "evening",
+        "start_hour": {
+          "value": 18,
+          "unit": "hour",
+          "corridor": [
+            0,
+            24
+          ],
+          "source": "design"
+        }
+      }
+    ]
+  },
+  "initial": {
+    "energy": {
+      "value": 0.55,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "design"
+    },
+    "burnout": {
+      "value": 0.4,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        0.4
+      ],
+      "source": "design"
+    },
+    "mood": {
+      "value": 0.5,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "design"
+    },
+    "habit": {
+      "value": 0,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "design"
+    },
+    "practice_hours": {
+      "value": 0,
+      "unit": "hour",
+      "corridor": [
+        0,
+        10000
+      ],
+      "source": "design"
+    },
+    "balance_cents": {
+      "value": 20000,
+      "unit": "rappen",
+      "corridor": [
+        0,
+        10000000
+      ],
+      "source": "design"
+    },
+    "weather": "gray_wet"
+  },
+  "energy": {
+    "burnout_penalty": {
+      "value": 0.25,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "sleep"
+    },
+    "sleep_rate_per_hour": {
+      "value": 0.35,
+      "unit": "1/hour",
+      "corridor": [
+        0.2,
+        0.6
+      ],
+      "source": "sleep"
+    },
+    "awake_rate_per_hour": {
+      "value": 0.14,
+      "unit": "1/hour",
+      "corridor": [
+        0.08,
+        0.25
+      ],
+      "source": "sleep"
+    }
+  },
+  "burnout": {
+    "accumulation_per_hour": {
+      "value": 0.006,
+      "unit": "fraction/hour",
+      "corridor": [
+        0.005,
+        0.009
+      ],
+      "source": "burnout"
+    },
+    "recovery_per_hour": {
+      "value": 0.005,
+      "unit": "1/hour",
+      "corridor": [
+        0.003,
+        0.007
+      ],
+      "source": "burnout"
+    },
+    "threshold": {
+      "value": 0.7,
+      "unit": "fraction",
+      "corridor": [
+        0.7,
+        0.8
+      ],
+      "source": "burnout"
+    },
+    "low_energy_threshold": {
+      "value": 0.2,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "burnout"
+    },
+    "low_energy_load": {
+      "value": 0.25,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "burnout"
+    },
+    "overload_max_days": {
+      "value": 30,
+      "unit": "day",
+      "corridor": [
+        30,
+        40
+      ],
+      "source": "burnout"
+    }
+  },
+  "mood": {
+    "rate_per_hour": {
+      "value": 0.25,
+      "unit": "1/hour",
+      "corridor": [
+        0.1,
+        0.5
+      ],
+      "source": "light"
+    },
+    "burnout_penalty": {
+      "value": 0.2,
+      "unit": "fraction",
+      "corridor": [
+        0,
+        1
+      ],
+      "source": "light"
+    }
+  },
+  "weather": {
+    "golden_autumn": {
+      "energy_shift": {
+        "value": 0.1,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      },
+      "mood_shift": {
+        "value": 0.2,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      }
+    },
+    "gray_wet": {
+      "energy_shift": {
+        "value": -0.1,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      },
+      "mood_shift": {
+        "value": -0.2,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      }
+    },
+    "neutral": {
+      "energy_shift": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      },
+      "mood_shift": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          -0.4,
+          0.4
+        ],
+        "source": "light"
+      }
+    }
+  },
+  "light": {
+    "start_hour": {
+      "value": 18,
+      "unit": "hour",
+      "corridor": [
+        0,
+        24
+      ],
+      "source": "light"
+    },
+    "end_hour": {
+      "value": 24,
+      "unit": "hour",
+      "corridor": [
+        0,
+        24
+      ],
+      "source": "light"
+    },
+    "negative_weather_compensation": {
+      "value": 0.5,
+      "unit": "fraction",
+      "corridor": [
+        0.1,
+        0.9
+      ],
+      "source": "light"
+    }
+  },
+  "habits": {
+    "days_to_automaticity": {
+      "value": 66,
+      "unit": "daily repetitions",
+      "corridor": [
+        18,
+        254
+      ],
+      "source": "lally"
+    },
+    "asymptote_fraction": {
+      "value": 0.95,
+      "unit": "fraction",
+      "corridor": [
+        0.95,
+        0.95
+      ],
+      "source": "lally"
+    },
+    "label_streak_days": {
+      "value": 3,
+      "unit": "day",
+      "corridor": [
+        2,
+        10
+      ],
+      "source": "design"
+    },
+    "definitions": {
+      "sleep": {
+        "dose_hours": {
+          "value": 8,
+          "unit": "hour",
+          "corridor": [
+            0.25,
+            10000
+          ],
+          "source": "design"
+        },
+        "label": "sleep_routine"
+      },
+      "exercise": {
+        "dose_hours": {
+          "value": 1,
+          "unit": "hour",
+          "corridor": [
+            0.25,
+            10000
+          ],
+          "source": "design"
+        },
+        "label": "athlete"
+      },
+      "alcohol": {
+        "dose_hours": {
+          "value": 1,
+          "unit": "hour",
+          "corridor": [
+            0.25,
+            10000
+          ],
+          "source": "design"
+        },
+        "label": "glass"
+      },
+      "screen": {
+        "dose_hours": {
+          "value": 2,
+          "unit": "hour",
+          "corridor": [
+            0.25,
+            10000
+          ],
+          "source": "design"
+        },
+        "label": "kettle"
+      },
+      "dream": {
+        "dose_hours": {
+          "value": 2,
+          "unit": "hour",
+          "corridor": [
+            0.25,
+            10000
+          ],
+          "source": "design"
+        },
+        "label": "creator"
+      }
+    }
+  },
+  "skills": {
+    "scale_hours": {
+      "value": 20,
+      "unit": "hour",
+      "corridor": [
+        1,
+        200
+      ],
+      "source": "practice"
+    },
+    "exponent": {
+      "value": 0.6,
+      "unit": "dimensionless",
+      "corridor": [
+        0.2,
+        1
+      ],
+      "source": "practice"
+    },
+    "level_thresholds": [
+      {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      },
+      {
+        "value": 0.2,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      },
+      {
+        "value": 0.4,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      },
+      {
+        "value": 0.6,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      },
+      {
+        "value": 0.8,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      },
+      {
+        "value": 0.95,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "practice"
+      }
+    ],
+    "names": [
+      "german",
+      "context",
+      "code",
+      "electronics",
+      "social",
+      "body",
+      "focus"
+    ]
+  },
+  "money": {
+    "daily_cost_cents": {
+      "value": 1800,
+      "unit": "rappen/day",
+      "corridor": [
+        0,
+        10000000
+      ],
+      "source": "design"
+    },
+    "support_cents": {
+      "value": 90000,
+      "unit": "rappen/payment",
+      "corridor": [
+        0,
+        10000000
+      ],
+      "source": "design"
+    },
+    "support_period_days": {
+      "value": 30,
+      "unit": "game day",
+      "corridor": [
+        1,
+        90
+      ],
+      "source": "design"
+    },
+    "distance_scale_cents": {
+      "value": 100000,
+      "unit": "rappen",
+      "corridor": [
+        1,
+        10000000
+      ],
+      "source": "design"
+    }
+  },
+  "rng": {
+    "modulus": {
+      "value": 4294967296,
+      "unit": "count",
+      "corridor": [
+        4294967296,
+        4294967296
+      ],
+      "source": "rng"
+    },
+    "multiplier": {
+      "value": 1664525,
+      "unit": "count",
+      "corridor": [
+        1664525,
+        1664525
+      ],
+      "source": "rng"
+    },
+    "increment": {
+      "value": 1013904223,
+      "unit": "count",
+      "corridor": [
+        1013904223,
+        1013904223
+      ],
+      "source": "rng"
+    }
+  },
+  "actions": {
+    "rest": {
+      "energy_target": {
+        "value": 0.7,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0.5,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.55,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": null,
+      "habit": null,
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": []
+    },
+    "sleep": {
+      "energy_target": {
+        "value": 1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.55,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": null,
+      "habit": "sleep",
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": []
+    },
+    "work": {
+      "energy_target": {
+        "value": 0.1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.45,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": "social",
+      "habit": null,
+      "wage_cents": {
+        "value": 450,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": [
+        "social"
+      ]
+    },
+    "study": {
+      "energy_target": {
+        "value": 0.3,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.6,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.55,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": "german",
+      "habit": null,
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0.08,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": true,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0.15,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": [
+        "german",
+        "context",
+        "code",
+        "electronics",
+        "social",
+        "body",
+        "focus"
+      ]
+    },
+    "craft": {
+      "energy_target": {
+        "value": 0.25,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.7,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.6,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": "electronics",
+      "habit": null,
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0.08,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": true,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0.15,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": [
+        "electronics"
+      ]
+    },
+    "dream": {
+      "energy_target": {
+        "value": 0.3,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.65,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.75,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": "code",
+      "habit": "dream",
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0.08,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": true,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0.15,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": [
+        "code"
+      ]
+    },
+    "exercise": {
+      "energy_target": {
+        "value": 0.35,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0.25,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.65,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": "body",
+      "habit": "exercise",
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": 0.1,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": -0.03,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": [
+        "body"
+      ]
+    },
+    "alcohol": {
+      "energy_target": {
+        "value": 0.45,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.85,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": null,
+      "habit": "alcohol",
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 150,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": -0.2,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0.05,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": -0.03,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": []
+    },
+    "screen": {
+      "energy_target": {
+        "value": 0.5,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "load": {
+        "value": 0.12,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "recovery": {
+        "value": 0.1,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "mood_target": {
+        "value": 0.65,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill": null,
+      "habit": "screen",
+      "wage_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "cost_cents": {
+        "value": 0,
+        "unit": "rappen/tick",
+        "corridor": [
+          0,
+          10000000
+        ],
+        "source": "design"
+      },
+      "morning_energy": {
+        "value": -0.05,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.2,
+          0.1
+        ],
+        "source": "design"
+      },
+      "morning_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0.05
+        ],
+        "source": "design"
+      },
+      "immediate_burnout": {
+        "value": 0,
+        "unit": "fraction/repetition",
+        "corridor": [
+          -0.03,
+          0
+        ],
+        "source": "design"
+      },
+      "minimum_energy": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "burnout_locked": false,
+      "failure_base": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "failure_burnout_factor": {
+        "value": 0,
+        "unit": "fraction",
+        "corridor": [
+          0,
+          1
+        ],
+        "source": "design"
+      },
+      "skill_options": []
+    }
+  },
+  "validation": {
+    "seed": {
+      "value": 43615,
+      "unit": "uint32",
+      "corridor": [
+        0,
+        4294967295
+      ],
+      "source": "design"
+    },
+    "random_runs": {
+      "value": 10000,
+      "unit": "count",
+      "corridor": [
+        10000,
+        10000
+      ],
+      "source": "design"
+    },
+    "random_max_steps": {
+      "value": 24,
+      "unit": "count",
+      "corridor": [
+        24,
+        24
+      ],
+      "source": "design"
+    },
+    "tolerance": {
+      "value": 1e-09,
+      "unit": "absolute",
+      "corridor": [
+        1e-09,
+        1e-09
+      ],
+      "source": "design"
+    },
+    "equilibrium_steps": {
+      "value": 10000,
+      "unit": "count",
+      "corridor": [
+        10000,
+        10000
+      ],
+      "source": "design"
+    },
+    "scenario_days": {
+      "value": 30,
+      "unit": "count",
+      "corridor": [
+        30,
+        30
+      ],
+      "source": "design"
+    },
+    "trajectory_min_distance": {
+      "value": 0.08,
+      "unit": "normalized RMS",
+      "corridor": [
+        0.01,
+        0.2
+      ],
+      "source": "design"
+    }
+  },
+  "scenarios": {
+    "workaholic": {
+      "light": false,
+      "schedule": [
+        {
+          "start": {
+            "value": 0,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 6,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        },
+        {
+          "start": {
+            "value": 6,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "work"
+        },
+        {
+          "start": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "dream"
+        }
+      ]
+    },
+    "balanced": {
+      "light": true,
+      "schedule": [
+        {
+          "start": {
+            "value": 0,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 7,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        },
+        {
+          "start": {
+            "value": 7,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 8,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "exercise"
+        },
+        {
+          "start": {
+            "value": 8,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "work"
+        },
+        {
+          "start": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 13,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 13,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 16,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "study"
+        },
+        {
+          "start": {
+            "value": 16,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "dream"
+        },
+        {
+          "start": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        }
+      ]
+    },
+    "procrastinator": {
+      "light": false,
+      "schedule": [
+        {
+          "start": {
+            "value": 0,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 3,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        },
+        {
+          "start": {
+            "value": 3,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 10,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        },
+        {
+          "start": {
+            "value": 10,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        },
+        {
+          "start": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 20,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "alcohol"
+        },
+        {
+          "start": {
+            "value": 20,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        }
+      ]
+    }
+  },
+  "scenario_weather_cycle": [
+    "gray_wet",
+    "golden_autumn",
+    "neutral",
+    "gray_wet"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "sovereign.automation-nodes.v1",
+  "dispatcher": "NONE_CATALOG_ONLY",
+  "nodes": [
+    {
+      "id": "synera",
+      "title": "Synera demo",
+      "owner": "AndriiEagle/synera_-MVPplus-",
+      "entrypoint_reference": "SYNERA_LAUNCH_CHECKLIST.md",
+      "enabled": false,
+      "dry_run": true,
+      "external_effects": [],
+      "inputs": "Reviewed commit and synthetic demo cases",
+      "outputs": "Reviewable demo; live and customer acceptance separate",
+      "errors": [
+        "MISSING_OR_STALE_SOURCE",
+        "UNAPPROVED_EFFECT",
+        "UNVERIFIED_ACCEPTANCE"
+      ],
+      "actual_revenue": null,
+      "actual_cost": null
+    },
+    {
+      "id": "instagram",
+      "title": "Instagram content preparation",
+      "owner": "KI/brand-social-os + creator-income-os",
+      "entrypoint_reference": "brand-social-os/scripts/brand-os.js export-approval",
+      "enabled": false,
+      "dry_run": true,
+      "external_effects": [],
+      "inputs": "Approved local content plan; no account secrets",
+      "outputs": "Draft/export approval artifact, never automatic publish",
+      "errors": [
+        "MISSING_OR_STALE_SOURCE",
+        "UNAPPROVED_EFFECT",
+        "UNVERIFIED_ACCEPTANCE"
+      ],
+      "actual_revenue": null,
+      "actual_cost": null
+    },
+    {
+      "id": "b2b",
+      "title": "B2B economics",
+      "owner": "Conductor Revenue Lab",
+      "entrypoint_reference": "python -B -m revenue_lab demo",
+      "enabled": false,
+      "dry_run": true,
+      "external_effects": [],
+      "inputs": "Explicit scenario rates/costs/hours",
+      "outputs": "SCENARIO_NOT_FORECAST, not a bank receipt",
+      "errors": [
+        "MISSING_OR_STALE_SOURCE",
+        "UNAPPROVED_EFFECT",
+        "UNVERIFIED_ACCEPTANCE"
+      ],
+      "actual_revenue": null,
+      "actual_cost": null
+    },
+    {
+      "id": "fiverr",
+      "title": "Fiverr planning",
+      "owner": "No accepted live adapter in checked scope",
+      "entrypoint_reference": null,
+      "enabled": false,
+      "dry_run": true,
+      "external_effects": [],
+      "inputs": "Human-authored offer and delivery assumptions",
+      "outputs": "Offline plan; no proposal/order/payment effect",
+      "errors": [
+        "MISSING_OR_STALE_SOURCE",
+        "UNAPPROVED_EFFECT",
+        "UNVERIFIED_ACCEPTANCE"
+      ],
+      "actual_revenue": null,
+      "actual_cost": null
+    }
+  ]
+}

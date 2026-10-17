@@ -1,0 +1,14 @@
+{
+  "observer": "root CUA DOM geometry readback",
+  "guard": "Each visible building body has width >=20px and height >=20px",
+  "observed_pass": false,
+  "cause": "building spans remained inline, so CSS width and height were not applied",
+  "buildings": [
+    {"node":"engine","width":1.600000023841858,"height":23.200000762939453},
+    {"node":"synera","width":1.600000023841858,"height":23.200000762939453},
+    {"node":"instagram","width":1.600000023841858,"height":23.200000762939453},
+    {"node":"b2b","width":1.600000023841858,"height":23.200000762939453},
+    {"node":"rest","width":1.600000023841858,"height":23.200000762939453}
+  ],
+  "scope": "new synthetic demo only; original projects unchanged"
+}

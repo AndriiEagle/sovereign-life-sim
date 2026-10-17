@@ -1,0 +1,15 @@
+{
+  "observer": "root independent local acceptance",
+  "findings": [
+    {"id":"PKG-01","decision":"ACCEPT","reproduction":"tests/test_integrity.py::test_missing_package_manifest_cannot_be_accepted failed with ValueError not raised before repair","repair":"PACKAGE_MANIFEST.json is now required, coverage must include all other required artifacts, hashes must match","acceptance":"same semantic guard passes after repair; final source freeze and fresh clone check required"},
+    {"id":"PKG-02","decision":"ACCEPT","repair":"Create actual initial Git commit, verify intended base, record it in audit/git-base.json and require that file in portable verifier","acceptance":"actual Git base record and final integrity gate"},
+    {"id":"PKG-03","decision":"SCOPE_CONFIRMED","evidence":"audit/local-tests.json; browser outcome remains separate"},
+    {"id":"PKG-04","decision":"BOUNDARY_CONFIRMED","evidence":"curated seed, README, rights and checklist"},
+    {"id":"PKG-05","decision":"INDEPENDENTLY_RECHECKED","evidence":"scripts/check_local_sources.py matched all 17 original and copied SHA256 values"},
+    {"id":"PKG-06","decision":"ACCEPT_DOCUMENTATION_LIMIT","repair":"HANDOFF now explicitly labels source collectors/builders/inventory host-specific maintenance only"},
+    {"id":"F01","decision":"ACCEPT","reproduction":"tests/events.test.mjs::invalid clock output cannot corrupt event DTO or advance its sequence failed with Missing expected exception before repair","repair":"Require real ISO UTC timestamp before advancing sequence or appending event, including impossible-date rejection","acceptance":"same semantic test passes after repair; source report and prior NO_CHANGE preserved"}
+  ],
+  "code_review": "NO_CHANGE on bounded source/privacy invariants; root semantic tests and browser readback accepted independently",
+  "ui_geometry": "Observed invisible building bodies as 1.6px-wide inline spans; same DOM geometry guard fails before display:block and passes after, with body widths 70-88px on desktop",
+  "limits": "Internal Codex reviewers are the same model family, not a claimed independent-family provider review. No provider call or new budget authority was created."
+}

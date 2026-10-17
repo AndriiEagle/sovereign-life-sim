@@ -1,0 +1,10 @@
+{
+  "schema": "sovereign.git-base.v1",
+  "repository": "AndriiEagle/sovereign-life-sim",
+  "visibility": "private",
+  "initial_branch": "main",
+  "task_branch": "codex/sovereign-life-sim-530",
+  "base_commit": "47800b221f16b1c1012c59245af2e240b832fe7f",
+  "verified_as_commit": true,
+  "existing_sources_changed": false
+}

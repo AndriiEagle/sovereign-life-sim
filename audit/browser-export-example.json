@@ -1,0 +1,29 @@
+{
+  "schema": "sovereign.interactions.v1",
+  "connection": "NOT_CONNECTED",
+  "total_events": 3,
+  "retained_events": [
+    {
+      "schema": "sovereign.interaction.v1",
+      "sequence": 1,
+      "occurred_at": "2026-10-17T18:48:41.485Z",
+      "mode": "SYNTHETIC",
+      "action": "select",
+      "node_id": "synera"
+    },
+    {
+      "schema": "sovereign.interaction.v1",
+      "sequence": 2,
+      "occurred_at": "2026-10-17T18:48:41.780Z",
+      "mode": "SYNTHETIC",
+      "action": "work"
+    },
+    {
+      "schema": "sovereign.interaction.v1",
+      "sequence": 3,
+      "occurred_at": "2026-10-17T18:48:42.079Z",
+      "mode": "SYNTHETIC",
+      "action": "next_day"
+    }
+  ]
+}

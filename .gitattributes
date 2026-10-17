@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.json -text
+simulation-core/** -text
+engine-isometric-ui/reference-source/** -text
+automation-nodes/source-templates/** -text
+audit/** -text

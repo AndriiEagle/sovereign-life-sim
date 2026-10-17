@@ -1,0 +1,721 @@
+{
+  "schema": "sovereign.context-manifest.v1",
+  "task": 530,
+  "as_of": "2026-10-17",
+  "timezone": "Europe/Zurich",
+  "objective": "Private, modular source-pinned foundation for Sovereign Life RTS / Cashflow 2.0, 2026–2028",
+  "destination": {
+    "owner": "AndriiEagle",
+    "repository": "sovereign-life-sim",
+    "visibility": "private",
+    "branch": "codex/sovereign-life-sim-530",
+    "reason": "Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners."
+  },
+  "coverage": {
+    "kind": "BOUNDED_SOURCE_AUDIT",
+    "complete_disk_or_chat_scan": false,
+    "included": "Named working-project roots, current refs, exact source files and selected portable modules.",
+    "excluded": [
+      "raw chats/sessions",
+      "secret/env/account files",
+      "customer profiles/media",
+      "native game binaries/ART",
+      "caches/vendor installs/backups",
+      "private personal journal excerpts"
+    ],
+    "limit": "No claim that every file on Sol was read or every runtime and commercial outcome verified."
+  },
+  "projects": [
+    {
+      "id": "game-forge",
+      "title": "Game Forge: narrative game and pure life-simulation seam",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\game-forge"
+      ],
+      "status": "SOURCE_COPIED_SEE_COMPONENT_ACCEPTANCE",
+      "role": "Existing pure 15-minute money/energy/skills/habits transition; owned source snapshots reused.",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\core.py",
+          "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+          "bytes": 14486,
+          "locator": "whole named source file",
+          "claim": "Pure step and parameter loader",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\params.json",
+          "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+          "bytes": 42824,
+          "locator": "whole named source file",
+          "claim": "Game assumptions and parameter provenance; not a personal health profile",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Browser/Godot parity adapter absent",
+        "No new narrative/native gameplay acceptance",
+        "Public/commercial rights require separate review"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "brand-social-os",
+      "title": "Brand Social OS / Instagram",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing approve-first content preparation owner",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os\\scripts\\brand-os.js",
+          "sha256": "2dbc1ae558081b465fa5808c73e13342bf903f1961ba49f7751e2705db0066f6",
+          "bytes": 74218,
+          "locator": "whole named source file",
+          "claim": "Existing approve-first content preparation owner",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "creator-income-os",
+      "title": "Creator Income OS / media pipeline",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing media-job and rendering preparation owner",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\scripts\\creator-os.js",
+          "sha256": "420ace9973704ae341339d5ae7605563621780b65f30bba549687b1f1eabca11",
+          "bytes": 53377,
+          "locator": "whole named source file",
+          "claim": "Existing media-job and rendering preparation owner",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "revenue-defense",
+      "title": "Revenue Defense / first-paid-work research",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\ki-monetization-20261003"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Dated commercial hypothesis and finite customer acceptance approach",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\ki-monetization-20261003\\REPORT.uk.md",
+          "sha256": "60c5c1dfa7e7fed34c40aaebff801e1ace41539484c0206f2bcf9f1017486df0",
+          "bytes": 21282,
+          "locator": "whole named source file",
+          "claim": "Dated commercial hypothesis and finite customer acceptance approach",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "visual-voice-lab",
+      "title": "Visual Voice Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\visual-voice-lab"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing approval-first voice-to-storyboard prototype",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\visual-voice-lab\\package.json",
+          "sha256": "a50970203c86d9b4ac26735e8ad94d957e8012474f0fd315537b1fa417bd2b92",
+          "bytes": 557,
+          "locator": "whole named source file",
+          "claim": "Existing approval-first voice-to-storyboard prototype",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "agency-backlog",
+      "title": "Future Autonomous Agency Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\future-autonomous-agency-lab"
+      ],
+      "status": "PARKED",
+      "role": "Explicitly parked architecture backlog, not an active company",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\future-autonomous-agency-lab\\README.md",
+          "sha256": "6ac30b5e76cfdd935a8515496d244a67212b703cc9ca33adc471c99005c7a5ae",
+          "bytes": 2102,
+          "locator": "whole named source file",
+          "claim": "Explicitly parked architecture backlog, not an active company",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "coiffeur-site",
+      "title": "Coiffeur website prototype",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\coiffeur-sipo-winterthur"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing static website delivery reference; customer assets excluded",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\coiffeur-sipo-winterthur\\README.md",
+          "sha256": "20cd74d812fa998cfcb7bf8da2c771e4558065e8ca0ff1b142bdcc6676520c82",
+          "bytes": 733,
+          "locator": "whole named source file",
+          "claim": "Existing static website delivery reference; customer assets excluded",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "lego-godot",
+      "title": "LEGO LLM visualization / Godot",
+      "local_roots": [
+        "D:\\lego-llm-viz-godot"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Godot source reference, no current rendering proof",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "D:\\lego-llm-viz-godot\\main.gd",
+          "sha256": "9b64cd6d7f838829b41972e107f1d1327e9d5d197d90871edd3fc6643c067b28",
+          "bytes": 6944,
+          "locator": "whole named source file",
+          "claim": "Godot source reference, no current rendering proof",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "arcanum-card",
+      "title": "Arcanum card roguelike prototype",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Historical game prototype, lore/rights review needed",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike\\game.js",
+          "sha256": "db2cf61ec3145267788ee15deb1173faf5e45b5c564ec7e96742cdc3a946d898",
+          "bytes": 24281,
+          "locator": "whole named source file",
+          "claim": "Historical game prototype, lore/rights review needed",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "control-room",
+      "title": "Control Room",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\control_room"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing diagnostic owner; source reference only, no new monitor",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\control_room\\README.md",
+          "sha256": "d725ec23dd7a5f042b59b09de52671508162cc8d5a229538ef21e195253848c4",
+          "bytes": 6245,
+          "locator": "whole named source file",
+          "claim": "Existing diagnostic owner; source reference only, no new monitor",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "conductor",
+      "title": "Conductor Revenue Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab"
+      ],
+      "status": "SOURCE_COPIED_SEE_COMPONENT_ACCEPTANCE",
+      "role": "Portable stdlib Decimal economics, explicit labor/cost and scenario limits",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\core.py",
+          "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+          "bytes": 9957,
+          "locator": "whole named source file",
+          "claim": "Quote and scenario implementation",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\LICENSE_AND_RIGHTS.md",
+          "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
+          "bytes": 906,
+          "locator": "whole named source file",
+          "claim": "Recipient may reuse original code and templates",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Not a live marketplace/payment connector",
+        "No forecast, tax/AHV/benefits or customer proof"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "fiverr",
+      "title": "Fiverr / B2B adapter candidate",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab",
+        "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\business"
+      ],
+      "status": "NO_LIVE_ADAPTER_EVIDENCE_IN_CHECKED_SCOPE",
+      "role": "Offline planning node only",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\research\\13_OFFICIAL_MARKETPLACE_MCP.uk.md",
+          "sha256": "b46f5ed67bc31ddda4565d9a19e0c99667c095a0a0e03c38ccf2319a0407fe35",
+          "bytes": 4668,
+          "locator": "whole named source file",
+          "claim": "Dated marketplace/MCP research, not a live Fiverr execution",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Exact Fiverr API/terms/account adapter not accepted",
+        "No orders, buyer acceptance or payouts verified",
+        "Do not scrape or auto-send proposals"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "mirofish",
+      "title": "MiroFish upstream",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813"
+      ],
+      "status": "PINNED_REFERENCE_ONLY",
+      "role": "Agent simulation architecture inspiration, no imported code/services",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813\\package.json",
+          "sha256": "72c69194bf934484ca67fddc63c6c9fd38ffd240bbdefee9360671d62b24c342",
+          "bytes": 723,
+          "locator": "whole named source file",
+          "claim": "Local upstream declares AGPL-3.0",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813\\LICENSE",
+          "sha256": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75",
+          "bytes": 35184,
+          "locator": "whole named source file",
+          "claim": "Exact local license snapshot",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Runtime not exercised",
+        "No prediction-accuracy evidence",
+        "License/dependency/API/privacy review before adoption"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "source_ref": {
+        "repo": "https://github.com/666ghj/MiroFish",
+        "commit": "b5b53acc57189a4a42e44a23e149dc655c98fe82"
+      }
+    },
+    {
+      "id": "synera",
+      "title": "Synera",
+      "local_roots": [
+        "D:\\synera-reviewed-mobile-20261013",
+        "D:\\synera-main-fresh-20261017",
+        "D:\\synera-main-review-20261017",
+        "D:\\synera-launch-01a0cea0",
+        "C:\\Users\\Andrii\\Desktop\\synera-premium-pwa-variant"
+      ],
+      "status": "CURRENT_REMOTE_CI_METADATA_SUCCESS_LIVE_HOLD",
+      "role": "Product/demo candidate for Gilbert; keep original project separate",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "report": "audit/synera-sources.json"
+        },
+        {
+          "report": "audit/synera-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "live signed-JWT two-account flow",
+        "current Neon schema/recovery and approved rollout",
+        "physical Android acceptance",
+        "physical iPhone/Safari acceptance",
+        "Gilbert's explicit acceptance"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "source_ref": {
+        "repo": "https://github.com/AndriiEagle/synera_-MVPplus-",
+        "commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+        "ci": {
+          "status": "VERIFIED",
+          "workflow": "CI",
+          "run_id": 39053215224,
+          "conclusion": "success",
+          "url": "https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224"
+        },
+        "historical_reviewed_commit": "76e189756f807cf8a6cf553cc687c626ac16ffff"
+      }
+    },
+    {
+      "id": "living-arcanum",
+      "title": "Living Arcanum / Virgil / archived Emberglass",
+      "local_roots": [
+        "D:\\virgil-autoplay-agent",
+        "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo"
+      ],
+      "status": "SOURCE_SNAPSHOTS_AND_REFERENCE_ONLY",
+      "role": "Original isometric source seams copied inactive; proprietary visuals excluded",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot_inactive",
+      "evidence": [
+        {
+          "report": "audit/visual-sources.json"
+        },
+        {
+          "report": "audit/visual-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "Owned atlas/manifest and state-adapter closure for archived renderer",
+        "No native game proof",
+        "No public/commercial rights grant for snapshots"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    },
+    {
+      "id": "memento",
+      "title": "Memento Vivere / Gemeinde viewers",
+      "local_roots": [
+        "D:\\Memento_Vivere_Gemeinde_Pilot",
+        "D:\\gemeinde-mockup"
+      ],
+      "status": "SOURCE_REFERENCE_ONLY",
+      "role": "Truthful presentation-state, dashboard/viewer composition patterns",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "report": "audit/visual-sources.json"
+        },
+        {
+          "report": "audit/visual-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "React/Tailwind/framer-motion import closure needed for original viewer",
+        "No fresh DB, voice, participant or customer acceptance"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null
+    }
+  ],
+  "visual_candidates": [
+    {
+      "id": "emberglass-inventory-crafting-core",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\core.js",
+      "sha256": "858ba0728b8fe2f7b2e6cecd347140af66a0d7625b7f0c7b3dd076d1735b9ed8",
+      "bytes": 15121,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Archived CommonJS/browser-stdlib state logic exposes inventory, recipe, item-use, choice, and hydration behavior suitable only as an adaptation reference for a cashflow/resource simulation.",
+      "precise_locator": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\docs\\potential-reuse\\CATALOG.json:317-356; core.js:82-135 and :235 as recorded by the catalogue.",
+      "runtime_dependencies": "Node/CommonJS or browser global; no UI/assets for its component checks.",
+      "license_conditions": "PRIVATE_CONTINUATION_ONLY in CATALOG.json:356; no permissive license found in the bounded source roots. Preserve notices and obtain public/commercial clearance before copying or release.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "A component selfcheck recorded by the prior catalogue is not a current simulator, UI, save, native-game, or customer acceptance result.",
+      "blockers": [
+        "Private-continuation rights only",
+        "Replace historical Arcanum/Virgil/Tarant IDs and lore",
+        "No current runtime acceptance executed",
+        "No full save/render/gameplay acceptance"
+      ]
+    },
+    {
+      "id": "emberglass-living-world-contract",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\living-world.js",
+      "sha256": "ff2c5668f8779d0f2c578f3bee52e355d1690e3a362c309c5051526b35d5d201",
+      "bytes": 24534,
+      "status": "NEEDS_REVIEW",
+      "claim": "Archived declarative world-pack lifecycle and quest-state candidate with validation, staging, approval, activation, and rollback concepts.",
+      "precise_locator": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\docs\\potential-reuse\\CATALOG.json:359-403; living-world.js:175-224 and :297-315 as recorded by the catalogue.",
+      "runtime_dependencies": "Node built-ins for component checks; browser global only for a proposed renderer adapter.",
+      "license_conditions": "PRIVATE_CONTINUATION_ONLY in CATALOG.json:403; no permissive license found.",
+      "reuse_mode": "parked",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Catalogue records component selfchecks only and explicit lifecycle defects; no current independent acceptance was run.",
+      "blockers": [
+        "Private-continuation rights only",
+        "Optional item adapter may permit a quest step",
+        "Staged mutation needs revalidation/hash binding",
+        "Rollback is incomplete for awarded items/flags/memory",
+        "Four referenced production PNGs intentionally absent"
+      ]
+    },
+    {
+      "id": "memento-presentation-state-machine",
+      "exact_path": "D:\\Memento_Vivere_Gemeinde_Pilot\\components\\echo\\ui\\echo-call-presentation-state.ts",
+      "sha256": "29c5a6059acacff5b7297fc74d6773c943a8da957c9b912328e1240894e83be6",
+      "bytes": 5073,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Small TypeScript pure-state derivation separates a truthful connection/call state from visual tone and one-shot arrival/departure cues; it could inform a simulator HUD state contract after independent rewrite.",
+      "precise_locator": "echo-call-presentation-state.ts:1-133; companion source test echo-call-presentation-state.test.ts exists with SHA256 d41286561ecb5a26aaf2e10835527f8af1b9058b1d0ed9208f8d13ccb2dde06e.",
+      "runtime_dependencies": "TypeScript type-only imports from the Memento application; adaptation can reduce this to an original local state union.",
+      "license_conditions": "No LICENSE/COPYING file found by bounded scan in this private project; copy/extraction is blocked until owner and redistribution terms are explicit.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Source and test presence were observed; no test or UI runtime was executed in this audit.",
+      "blockers": [
+        "License/redistribution closure missing",
+        "Imports are application-specific",
+        "Voice-call semantics require original simulator states",
+        "Source test has not been run in this audit"
+      ]
+    },
+    {
+      "id": "living-arcanum-art-authenticity-audit",
+      "exact_path": "D:\\virgil-autoplay-agent\\asset_taste_lab\\art_authenticity.py",
+      "sha256": "9d9c0fad7d1b61acd971f8a285ac6eb40a871284ffdce7dd705ed6c56509de95",
+      "bytes": 5104,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Python audit detects custom-named Arcanum ART files that are byte-identical to stock/loose assets and states its own file-level proof boundary.",
+      "precise_locator": "art_authenticity.py:22-42 and :42-130; virgil-autoplay-agent/AGENTS.md:57-77; ACTIVE_INTEGRATION_STATUS.md:55-58.",
+      "runtime_dependencies": "Python plus local .arcanum_art and .arcanum_dat modules and an Arcanum DAT/game directory.",
+      "license_conditions": "No repository license was found at the bounded root. It is coupled to proprietary Arcanum formats and must not carry Arcanum content into the new project.",
+      "reuse_mode": "reference",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Bytes and explicit limitations are present; no engine rendering or independent current run was performed.",
+      "blockers": [
+        "Arcanum-specific dependency closure",
+        "No license clearance",
+        "Only byte-level authenticity",
+        "AGENTS.md requires an in-game screenshot for rendered-art verification"
+      ]
+    },
+    {
+      "id": "living-arcanum-visual-manifest",
+      "exact_path": "D:\\virgil-autoplay-agent\\living_arcanum\\content_manifest.json",
+      "sha256": "688e6e163e80ec28f079b61bb88e06622b5241ead19794564d822d7c997cc6f1",
+      "bytes": 6278,
+      "status": "NEEDS_REVIEW",
+      "claim": "Manifest names 14 item and five schematic records and marks them PRESENT_BUT_UNTESTED; it is evidence of a staged Arcanum content registry, not portable visuals or gameplay proof.",
+      "precise_locator": "content_manifest.json:1-30; virgil-autoplay-agent/AGENTS.md:67-73; ACTIVE_INTEGRATION_STATUS.md:55-58, :75-81, :284.",
+      "runtime_dependencies": "Arcanum data/proto/ART/MES/engine chain; generated source PNGs and binary art routes are outside a generic web simulator contract.",
+      "license_conditions": "Source-proprietary game visuals and any derived item art are reference-only. No portable license/dependency closure is present.",
+      "reuse_mode": "reference",
+      "completion_percentage": null,
+      "completion_percentage_reason": "The manifest and status file expressly distinguish file-level staging from in-game proof.",
+      "blockers": [
+        "Proprietary/derived visual content cannot be imported",
+        "No in-game screenshot",
+        "Schematic PNG/manifest alone is explicitly not integration",
+        "Original lore/IDs require replacement"
+      ]
+    },
+    {
+      "id": "emberglass-isometric-renderer-camera-input",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Self-contained Canvas/DOM renderer seam provides isometric world/screen transforms, 12x12 camera bounds, click-to-tile selection, atlas initialization, deterministic depth/layer ordering, and a render function.",
+      "source_locators": [
+        "iso-kit-renderer.js:29-76 transforms, bounds, clickTarget",
+        "iso-kit-renderer.js:105-118 atlas initialization",
+        "iso-kit-renderer.js:138-158 asset gate/draw",
+        "iso-kit-renderer.js:201-249 render and exported API",
+        "docs/potential-reuse/CATALOG.json:78-84 exact snapshot/hash/rights"
+      ],
+      "runtime_dependencies": "Browser CanvasRenderingContext2D and Image for real rendering; Node/CommonJS or browser global wrapper. It requires a manifest, promoted/runtime asset metadata, and an atlas image at initialization.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned archived work. CATALOG.json:84 retains NO_NEW_PUBLIC_OR_COMMERCIAL_LICENSE; preserve notices and resolve public/commercial terms separately.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No manifest/atlas was loaded and no Canvas/browser render or click test was run.",
+      "blockers": [
+        "Needs original owned atlas and manifest",
+        "Hard-coded 12x12 grid and Emberglass asset-ID conventions",
+        "No current UI acceptance",
+        "Do not reuse proprietary/derived Arcanum visuals"
+      ]
+    },
+    {
+      "id": "emberglass-isometric-worldpack-validation",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Paired CommonJS/browser-global validator defines a narrow 12x12 world-pack schema, validates asset IDs and map objects, computes reachability, and rejects some unsafe generated prompts.",
+      "source_locators": [
+        "iso-worldpack-v11.js:3-18 schema keys/statuses/layers",
+        "iso-worldpack-v11.js:41-86 connector/reachability",
+        "iso-worldpack-v11.js:88-98 asset validation",
+        "iso-worldpack-v11.js:99-171 pack validation/API export",
+        "docs/potential-reuse/CATALOG.json:69-75 exact snapshot/hash/rights"
+      ],
+      "runtime_dependencies": "No imported package; Node/CommonJS or browser global. Its valid packs still require the renderer's original owned atlas/manifest and an external item/state adapter.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK; CATALOG.json:75 still leaves public/commercial redistribution unresolved.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Source was inspected only. Prior catalogue selfcheck is historical and cannot establish current renderer/UI acceptance.",
+      "blockers": [
+        "Hard-coded 12x12 grid/version/Emberglass IDs",
+        "Existing catalogue identifies optional adapter, stale-content and rollback gaps",
+        "No current UI/gameplay proof",
+        "Asset/license closure must use original owned visuals"
+      ]
+    },
+    {
+      "id": "gemeinde-alpine-glass-static-hud-composition",
+      "exact_path": "D:\\gemeinde-mockup\\src\\components\\variants\\AlpineGlass.tsx",
+      "sha256": "8635f6e12b4a8b48a724404811e40e009b29ea7ba1dd475c7edf842d11200808",
+      "bytes": 5242,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Static responsive React/Tailwind visual composition for a hero and card-based dashboard; the inspected entry page selects it through a local useState toggle.",
+      "source_locators": [
+        "src/app/page.tsx:3-31 imports/local variant selection",
+        "src/components/variants/AlpineGlass.tsx:3-6 external UI imports/component entry",
+        "src/components/variants/AlpineGlass.tsx:6-131 static visual composition"
+      ],
+      "runtime_dependencies": "React, Tailwind CSS, framer-motion, and lucide-react, as declared in D:\\gemeinde-mockup\\package.json. No imported game renderer/camera/state model was observed.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned code. The bounded scan found no LICENSE/COPYING file; public/commercial redistribution remains NEEDS_REVIEW.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No build, browser, responsiveness, accessibility, or visual acceptance run occurred.",
+      "blockers": [
+        "Not a game/HUD engine",
+        "Requires original cashflow-simulator copy/text/state mapping",
+        "Dependency closure includes framer-motion and lucide-react",
+        "No current UI acceptance"
+      ]
+    }
+  ],
+  "latest_evidence_precedence": [
+    "audit/visual-sources-review.json supersedes rights conclusions in initial report",
+    "audit/synera-sources-review.json adds exact current-main and CI metadata to initial report"
+  ],
+  "provider_calls": 0,
+  "provider_usd": "0.00",
+  "subscription_savings": null
+}

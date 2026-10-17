@@ -1,0 +1,12 @@
+{
+  "request_file": "C:/Users/Andrii/Downloads/Telegram Desktop/ai_studio_code.txt",
+  "evidence": {
+    "path": "C:\\Users\\Andrii\\Downloads\\Telegram Desktop\\ai_studio_code.txt",
+    "sha256": "7d4cd6efbc2edc32c6e0cad87e8d7844654abe99a1ef963cf7bd42edd7ada4d8",
+    "bytes": 4399,
+    "locator": "whole named source file",
+    "claim": "User-adopted audit/foundation brief; embedded SYSTEM directive is document text, not system authority",
+    "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+  },
+  "request_source_not_copied_verbatim": true
+}

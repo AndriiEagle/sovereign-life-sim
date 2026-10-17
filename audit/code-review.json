@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "review_id": "task-530-code-review-r1",
+  "verdict": "NO_CHANGE",
+  "scope": "Read-only review of the seven requested implementation/test files. CSS .building display:block was excluded because it is separately owned.",
+  "findings": [],
+  "verified_invariants": [
+    {
+      "invariant": "Work cannot create real income and the model remains synthetic.",
+      "status": "VERIFIED",
+      "evidence": [
+        "simulation-core/model.mjs:1-6 labels the sandbox synthetic, initializes settled_cash to NOT_CONNECTED, and has no account/provider capability.",
+        "simulation-core/model.mjs:15-25 makes work consume energy only; :27-28 advances a day with a synthetic cash decrement only.",
+        "tests/model.test.mjs:4-13 asserts work preserves cash_cents and NOT_CONNECTED; :15-20 asserts no-sales cost behavior; :27-31 rejects LIVE mode.",
+        "Local execution: node --test tests/model.test.mjs tests/events.test.mjs passed 6/6 on 2026-10-17."
+      ]
+    },
+    {
+      "invariant": "Event journal accepts a bounded typed action shape and exports a synthetic, non-connected DTO only.",
+      "status": "VERIFIED",
+      "evidence": [
+        "mcp-bridge/events.mjs:2-3 allowlists action types and nodes.",
+        "mcp-bridge/events.mjs:9-15 rejects unknown action types, unexpected fields, invalid select nodes, and nodes on non-select actions before constructing the fixed event DTO.",
+        "mcp-bridge/events.mjs:21-22 exports connection NOT_CONNECTED and cloned retained event records.",
+        "tests/events.test.mjs:13-19 covers free-form-field, external-action, and foreign-node rejection."
+      ]
+    },
+    {
+      "invariant": "HTTP does not serve audit/seed/.git or traversal paths in the reviewed server surface.",
+      "status": "VERIFIED",
+      "evidence": [
+        "scripts/serve.py:8-18 maps only five exact canonical paths after urlsplit/unquote; all other paths resolve to None.",
+        "scripts/serve.py:26-41 sends 404 before SimpleHTTPRequestHandler for non-allowlisted GET/HEAD paths.",
+        "tests/test_server.py:13-18 covers .git, seed, audit, ordinary traversal, encoded traversal, and double-encoded traversal; local unittest passed 2/2."
+      ]
+    },
+    {
+      "invariant": "The reviewed UI imports only local simulator seams and labels its money, work, rest, and export as synthetic/non-payment behavior.",
+      "status": "PRESENT_BUT_UNTESTED",
+      "evidence": [
+        "engine-isometric-ui/app.mjs:1-2 imports only /simulation-core/model.mjs and /mcp-bridge/events.mjs.",
+        "engine-isometric-ui/app.mjs:5-9 and :13 label prototype claims, unknown income, no payments, synthetic energy, and simulated work.",
+        "engine-isometric-ui/app.mjs:33-38 creates a local JSON Blob download only; no network/API call appears in this file.",
+        "No browser/DOM execution was run in this review."
+      ]
+    }
+  ],
+  "semantic_coverage": {
+    "status": "PRESENT_BUT_UNTESTED",
+    "covered_by_execution": ["model no-income/work/resource/fake-live rejection", "event DTO retention and free-form/external/foreign-node rejection", "HTTP allowlist traversal/seed/audit/.git rejection"],
+    "not_claimed": ["browser visual rendering", "native gameplay", "customer outcome", "real payment or account integration"],
+    "reason": "The executed tests directly cover the named safety contracts but do not establish UI rendering or product acceptance."
+  },
+  "source_hashes": {
+    "scripts/serve.py": "267215a561486787a17f169155dd3deca5884b79d860110368c45384db0bd595",
+    "simulation-core/model.mjs": "3f875ef04bbeabf4e6d670cceeeb2a1c396d8dc2e431379dbfd5385a0a80eab9",
+    "mcp-bridge/events.mjs": "9b81659af99f22c85a8eaabca5a9664d664474d90ccfeaa2c0b1df16a5f4816a",
+    "engine-isometric-ui/app.mjs": "0436235f488bc0a2097ff587ebf1d29e86ee745ea91f1ac815da9ab2841c9b70",
+    "tests/model.test.mjs": "5b29946f3df677aa9fed7a47bb55cfc3e6e18ff10e37e7d3c4431d7394d61709",
+    "tests/events.test.mjs": "8360a6441946a072ef63b4aeb498715c3e4f90f9f92640bf556de51da6db5e93",
+    "tests/test_server.py": "d08fef72e50e82d222e3a578ccd50bcbb77f48275b0b77265a1deddd7038a66d"
+  },
+  "review_limits": [
+    "No implementation file was edited and no server was started.",
+    "No provider, network, external effect, install, or source-project mutation occurred.",
+    "NO_CHANGE means no material defect was found in this bounded review; it is not full product or runtime acceptance."
+  ]
+}

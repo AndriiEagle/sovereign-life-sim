@@ -1,0 +1,12 @@
+# Подальша робота — у порядку користі
+
+Фундамент не активує ці кроки автоматично. Кожен — окреме bounded завдання з exact owner, бюджетом/ефектами й незалежним oracle.
+
+1. **Synera → один чесний показ.** Пройти SYNERA_LAUNCH_CHECKLIST.md на pinned source, отримати явне рішення Гілберта. Приймання: reviewable preview + direct customer decision. Live/device gaps лишаються окремими.
+2. **Один спільний simulation adapter.** Owner `simulation-core/game-forge/sim`. Узгодити minimal JSON action/state contract і negative cases; порівняти Python original і browser/Godot consumer на тих самих векторах. Включити RNG, cents, ordering, unknown input і no-mutation cases. Зберегти поточний synthetic-only режим і не тлумачити model burnout як медичний стан. Не переписувати rich core або створювати ще один control plane.
+3. **Save / replay без прихованого tracking.** Явний локальний export/import, schema/session/version/source hash; reject corrupt, foreign, stale або unsupported save. Приймання: точне відтворення дій/ресурсів після reload, negative altered-hash test. До цього in-memory state очищається при reload, event ring retention є обмеженою.
+4. **Один original isometric asset pack.** Спочатку перевірити власність, atlas/manifest closure і renderer inputs; зняти старі Emberglass IDs. Позитивний oracle: camera + click-to-tile + depth order на оригінальних assets. Негативний: чужий path/hash/asset ID rejected. Арти Arcanum/Outlive не брати. Human art acceptance окремо від успішного рендера.
+5. **Підключений host bridge через чинного власника.** Уточнити фактичний Harness/MCP tool/session API; передача лише явних подій з opt-in. Потрібні session ID, dedup, freshness, acknowledgement і read-only default. Приймання: одна реальна дозволена дія → host receipt → спостережуваний результат у симуляторі; відмова на replay/foreign/stale. Поточний export DTO не є таким доказом.
+6. **Калібрування лише за даними Андрія.** Добровільно обрати, які фінансові/робочі припущення потрібні; source/date/consent у кожного. Не витягувати медичні чи психологічні характеристики з поведінки. Фінансові моделі зберігають labor/costs, negative cash, no sales; фактична оплата підтверджується у чинному власнику, а не кліком у грі.
+
+MiroFish integration, нова глобальна автономна агенція, production deploy, Chinese provider work і комерційний запуск — PARKED, не приховані залежності цього фундаменту. Платних model calls у задачі 530 не дозволяли й не запускали.

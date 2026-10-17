@@ -1,0 +1,100 @@
+{
+  "review_id": "task-530-package-review-r1-2026-10-17",
+  "scope": "Named handoff documents, manifests and scripts only; read-only review. No tests, server, provider, GitHub, secrets or original-project mutations were performed.",
+  "verdict": "NEEDS_REVIEW",
+  "source_hashes": {
+    "README.md": "8E70CC7CD4EDA384D4D8506F54C7ADB608F92294A7AD72AE44B0297C61E7F0EE",
+    "CONTEXT_MANIFEST.json": "CB4677CC5DD965F708535AC756117CC3EE4B2057EEF71C5A112431A900A9B9A3",
+    "USER_DIGITAL_TWIN_SEED.json": "D2C68A7DD8E237046731A5A8C950775B5957229F638E9F0BD1C8DACD86B5B654",
+    "SYNERA_LAUNCH_CHECKLIST.md": "5A2B3A9C7E7908D2266FA123FE431EE937C7894D0CA69FA93039D18E7D8609C2",
+    "HANDOFF.md": "76BE9836BEC6F1E8A4A315300BAA28A6A18C5C1117E313C1F72F017DADCB8ED2",
+    "EXTERNAL_PROMPT.md": "3B1BBAA46CBDB4937F4A8DE450841695479F5657AE0FE90AAF0514A26853C1C8",
+    "RIGHTS.md": "8CE385902937E83C6DBAEA8618DA3E398468D18C138DE18F1DE089823F8B6EE6",
+    "audit/source-copies.json": "6E2D652A8BE9316FBF888AA6DB30B6B8465248628E0BDC61BEEEA19D0A4AC219",
+    "scripts/build_context.py": "C3EDE7934517FEEDD724C71E707EBEA2AF837E71D3AB29A574A603C50338A00D",
+    "scripts/verify.py": "423E900C8E8E46E145B2D8967000723B97FBE141B7338509214FEA73803A23C8"
+  },
+  "findings": [
+    {
+      "id": "PKG-01",
+      "status": "MISSING",
+      "severity": "handoff_blocker",
+      "claim": "The package has an integrity manifest that a recipient must verify.",
+      "evidence": [
+        "README.md:27 says PACKAGE_MANIFEST.json protects package integrity",
+        "HANDOFF.md:25 requires a recipient to verify PACKAGE_MANIFEST",
+        "EXTERNAL_PROMPT.md:5 requires a recipient to verify PACKAGE_MANIFEST.json",
+        "scripts/verify.py:60-65 only verifies that manifest if it exists"
+      ],
+      "reproduction": "Test-Path D:/sovereign-life-sim/PACKAGE_MANIFEST.json returned false.",
+      "impact": "A receiving model cannot execute the required whole-package integrity check, and the local verifier can still return PASS without it.",
+      "required_resolution": "Either add a source-pinned PACKAGE_MANIFEST.json covering the handoff-critical files and make its absence fail verification, or remove each promise/instruction that requires it. Do not state package integrity is verified before one of those choices is accepted."
+    },
+    {
+      "id": "PKG-02",
+      "status": "MISSING",
+      "severity": "handoff_provenance_gap",
+      "claim": "audit/git-base.json records the true starting commit for later remote readback.",
+      "evidence": ["HANDOFF.md:3 names audit/git-base.json as the starting-commit record", "scripts/verify.py:14-66 does not require it"],
+      "reproduction": "Test-Path D:/sovereign-life-sim/audit/git-base.json returned false.",
+      "impact": "The stated base-commit provenance cannot be reviewed from this package, and the verifier does not detect that omission.",
+      "required_resolution": "Add the stated non-secret base-ref record or remove/replace the claim with an exact reproducible provenance locator."
+    },
+    {
+      "id": "PKG-03",
+      "status": "PRESENT_BUT_UNTESTED",
+      "severity": "acceptance_scope",
+      "claim": "scripts/verify.py supplies portable component/source acceptance.",
+      "evidence": [
+        "scripts/verify.py:36-66 checks required files, source-copy hashes, null readiness values, null personal unknowns, disabled nodes and five checklist actions",
+        "scripts/verify.py:91-108 defines component tests and explicitly limits its boundary to portable component/source acceptance"
+      ],
+      "reproduction": "The script was inspected, not executed in this review.",
+      "impact": "No current test receipt is available here. Even a future PASS cannot accept browser interactions, native engines, live Synera, MCP transport or customer outcome, as the script itself states."
+    },
+    {
+      "id": "PKG-04",
+      "status": "VERIFIED",
+      "severity": "privacy_and_claim_boundary",
+      "claim": "The package avoids invented personal, medical, revenue and live-readiness claims in the inspected material.",
+      "evidence": [
+        "README.md:3, 16, 21, 27-31 labels the product synthetic/private and separates live Synera gates",
+        "USER_DIGITAL_TWIN_SEED.json: stack costs and personal financial/health/customer fields are null; limits forbid health/psychological inference",
+        "HANDOFF.md:19-25 excludes raw chats/secrets and labels customer demand, payment, recurring revenue, savings and recipient access unverified",
+        "RIGHTS.md:3-9 retains private/UNLICENSED and source-specific rights limits",
+        "SYNERA_LAUNCH_CHECKLIST.md:3-11 separates preview, signed-JWT/Neon/device gates, direct Gilbert decision and historical test evidence"
+      ],
+      "qualification": "This verifies document wording and JSON structure only; it does not prove recipient access, customer outcome, rights, host integration or runtime behavior."
+    },
+    {
+      "id": "PKG-05",
+      "status": "VERIFIED",
+      "severity": "snapshot_closure",
+      "claim": "Copied active snapshots listed in audit/source-copies.json are internally hash-closed.",
+      "evidence": ["audit/source-copies.json records 17 target SHA256 values"],
+      "reproduction": "Read-only independent SHA256 comparison found 17/17 targets exist and match the listed hashes.",
+      "qualification": "This establishes package-copy integrity only. It does not prove current external originals stayed unchanged, runtime behavior, redistribution rights, inactive renderer assets, or full external dependency closure."
+    },
+    {
+      "id": "PKG-06",
+      "status": "NEEDS_REVIEW",
+      "severity": "rebuild_safety",
+      "claim": "scripts/build_context.py can rebuild curated root metadata.",
+      "evidence": ["scripts/build_context.py:27-30 reads audit reports", "scripts/build_context.py:35-108 reads absolute original-project paths and regenerates CONTEXT_MANIFEST.json", "scripts/build_context.py:146-147 reads a Downloads request-file locator and writes audit/request-source.json"],
+      "impact": "It is not a self-contained fresh-clone command and writes handoff metadata from external local locators. EXTERNAL_PROMPT does not instruct a recipient to run it, which is correct; this limitation should stay explicit.",
+      "required_resolution": "Keep it maintenance-only on the audited host, or replace it with a deterministic package-only rebuild contract. Do not call it a recipient verification step."
+    }
+  ],
+  "cross_checks": {
+    "json_parse": {
+      "status": "VERIFIED",
+      "files": ["CONTEXT_MANIFEST.json", "USER_DIGITAL_TWIN_SEED.json", "audit/source-copies.json"]
+    },
+    "private_recipient_access": "UNVERIFIED, correctly stated in HANDOFF.md:25 and EXTERNAL_PROMPT.md:5",
+    "synera_chronology": "VERIFIED in SYNERA_LAUNCH_CHECKLIST.md:5,8,11: current main/CI metadata is separated from historical 668/39 claims and from live/device/customer gates",
+    "completion_percent": "VERIFIED absent/null in the inspected package claims; no readiness percentage was fabricated",
+    "provider_calls": "No provider call was made for this review; USD=0.00"
+  },
+  "recommended_triage_order": ["PKG-01", "PKG-02", "PKG-03"],
+  "models_used": "none (provider calls=0, USD=$0.00)"
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+node_modules/
+audit/local-*
+audit/screenshots/
+audit/remote-readback.json
+audit/acceptance-local.json
+.runtime/

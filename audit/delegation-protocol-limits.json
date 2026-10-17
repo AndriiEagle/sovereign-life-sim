@@ -1,0 +1,45 @@
+{
+  "note": "No canonical terminal turn IDs are exposed by the supported collaboration result, so no IDs were invented and the metadata reducer is not claimed COMPLETE. Finite targeted reviews were actually read back and artifacts accepted by root tests/source/browser checks. This is not provider execution proof.",
+  "rows": [
+    {
+      "worker": "visual_source_audit",
+      "supported_terminal_readback": "collaboration terminal FINAL_ANSWER and on-disk report read by root",
+      "fresh_followup_readback": "code-review-followup.json",
+      "canonical_projection": {
+        "schema_version": 1,
+        "action": "HOLD",
+        "reasons": [
+          "missing_readback_terminal_turn_id"
+        ],
+        "harness_event_metadata": {
+          "delegation_review_action": "HOLD",
+          "delegation_review_reasons": [
+            "missing_readback_terminal_turn_id"
+          ]
+        },
+        "side_effect_free": true,
+        "trust_boundary": "caller_supplied_metadata_is_not_authenticated; coordinator must perform supported-tool readback and Harness acceptance"
+      }
+    },
+    {
+      "worker": "synera_launch_audit",
+      "supported_terminal_readback": "collaboration terminal FINAL_ANSWER and on-disk report read by root",
+      "fresh_followup_readback": "package-review-followup.json",
+      "canonical_projection": {
+        "schema_version": 1,
+        "action": "HOLD",
+        "reasons": [
+          "missing_readback_terminal_turn_id"
+        ],
+        "harness_event_metadata": {
+          "delegation_review_action": "HOLD",
+          "delegation_review_reasons": [
+            "missing_readback_terminal_turn_id"
+          ]
+        },
+        "side_effect_free": true,
+        "trust_boundary": "caller_supplied_metadata_is_not_authenticated; coordinator must perform supported-tool readback and Harness acceptance"
+      }
+    }
+  ]
+}

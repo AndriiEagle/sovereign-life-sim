@@ -1,0 +1,90 @@
+{
+  "schema": "sovereign.user-seed.v1",
+  "as_of": "2026-10-17",
+  "mode": "CURATED_USER_AUTHORIZED_PRIVATE_SEED",
+  "identity": {
+    "preferred_name": "Andrii",
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "timezone": "Europe/Zurich"
+  },
+  "current_task": {
+    "priority": "quality",
+    "source": "Direct answer in task 530",
+    "goal": "Life/finance/energy/AI-scaling simulator in Switzerland, 2026–2028",
+    "goal_source": "User-adopted task brief"
+  },
+  "working_preferences": {
+    "reuse_before_build": true,
+    "preserve_originals": true,
+    "local_first": true,
+    "one_concrete_next_action": true,
+    "evidence_before_completion_claim": true,
+    "no_fixed_speech_or_thought_cutoffs": true,
+    "source": "Explicit user operating instructions"
+  },
+  "capabilities": [
+    {
+      "name": "AI engineering and workflow composition",
+      "status": "USER_STATED_AND_PROJECT_SOURCE_SUPPORTED_NOT_SKILL_SCORED"
+    }
+  ],
+  "stack_claims": [
+    {
+      "name": "OpenAI Pro / Codex",
+      "status": "USER_BRIEF_CLAIM_NOT_LIVE_ACCOUNT_VERIFIED",
+      "cost_actual": null
+    },
+    {
+      "name": "Claude",
+      "status": "USER_BRIEF_CLAIM_NOT_LIVE_ACCOUNT_VERIFIED",
+      "cost_actual": null
+    },
+    {
+      "name": "Argon",
+      "status": "USER_BRIEF_CLAIM_NOT_LIVE_ACCOUNT_VERIFIED",
+      "cost_actual": null
+    },
+    {
+      "name": "OpenRouter Chinese LLMs",
+      "status": "USER_BRIEF_CLAIM_NOT_LIVE_ACCOUNT_VERIFIED",
+      "cost_actual": null
+    }
+  ],
+  "goals": [
+    "Prepare a reviewable Synera demo for Gilbert",
+    "Accept a first paid customer workflow",
+    "Use existing AI/media/automation assets in a coherent simulator"
+  ],
+  "attention_support": [
+    "Concise recap when context is lost",
+    "One voluntary next action",
+    "Manual check-in only when wanted"
+  ],
+  "hypotheses_to_confirm": [
+    "Which project has a real near-term buyer",
+    "Which working rhythm the user wants to model"
+  ],
+  "unknowns": {
+    "cash_chf": null,
+    "income_chf_per_month": null,
+    "expenses_chf_per_month": null,
+    "debt_chf": null,
+    "sleep_schedule": null,
+    "chronotype": null,
+    "energy_curve": null,
+    "adhd_diagnosis": null,
+    "medical_parameters": null,
+    "actual_subscription_costs": null,
+    "paid_customer_count": null,
+    "personal_project_readiness_percent": null
+  },
+  "limits": [
+    "No health or psychological inference, diagnosis, behavioral tracking or hidden scoring.",
+    "Historical narrative/profile statements are not current personal measurements.",
+    "Demo CHF1000/energy80 are synthetic and must never populate this personal seed.",
+    "No raw chat, private profile journal, legal status, home address or account credentials are included."
+  ]
+}

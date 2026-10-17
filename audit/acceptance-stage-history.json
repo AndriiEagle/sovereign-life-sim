@@ -1,0 +1,28 @@
+[
+  {
+    "step": 1,
+    "action": "Read back source copies and review corrections",
+    "result": "PASS",
+    "objective": "Source-pinned Sovereign Life Simulator foundation",
+    "invariant": "Original projects preserved; synthetic behavior and personal unknowns remain explicit; private complete package is independently accepted.",
+    "evidence": [
+      {
+        "path": "D:\\sovereign-life-sim\\audit\\source-copies.json",
+        "sha256": "6e2d652a8be9316fbf888aa6db30b6b8465248628e0bdc61beeea19d0a4ac219"
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "action": "Accept semantic tests and actual browser outcome",
+    "result": "PASS",
+    "objective": "Source-pinned Sovereign Life Simulator foundation",
+    "invariant": "Original projects preserved; synthetic behavior and personal unknowns remain explicit; private complete package is independently accepted.",
+    "evidence": [
+      {
+        "path": "D:\\sovereign-life-sim\\audit\\browser-acceptance.json",
+        "sha256": "b676495cc92b135bfd37160392edc80876295222fa3cdc7441661cf106a9f00f"
+      }
+    ]
+  }
+]

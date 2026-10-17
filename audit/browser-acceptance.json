@@ -1,0 +1,15 @@
+{
+  "observer": "root via supported CUA browser controls",
+  "surface": "http://127.0.0.1:4530/",
+  "scope": "Synthetic local demo, not Synera/native games/live host integration",
+  "checks": [
+    {"check":"select Synera -> work -> next day","pass":true,"observed":{"day":2,"cash_chf":"975.00","energy":95,"real_money":"NOT_CONNECTED"}},
+    {"check":"manual JSON download readback after timestamp fix","pass":true,"observed":{"connection":"NOT_CONNECTED","actions":["select","work","next_day"],"typed_iso_utc":true},"artifact":"audit/browser-export-example.json"},
+    {"check":"building body semantic geometry","before_pass":false,"before_width_px":1.6,"after_pass":true,"after_widths_px":[74,70,88,74,78],"after_heights_px":[80,115,65,65,52],"baseline":"audit/ui-regression-before.json"},
+    {"check":"narrow viewport horizontal layout","pass":true,"observed":{"inner_width":390,"document_width":375,"node_buttons_inside_viewport":true}},
+    {"check":"browser console warnings/errors","pass":true,"observed":[]}
+  ],
+  "local_screenshots":["audit/screenshots/sovereign-desktop.jpg","audit/screenshots/sovereign-mobile.jpg"],
+  "screenshot_scope":"Agent-created synthetic app only. Screenshots are local, ignored in Git; source remains runnable from the package.",
+  "limits":["Responsive Chromium is not a physical iPhone/Safari test","No artistic/customer acceptance asserted","Journal is bounded and in memory; host transport remains NOT_CONNECTED"]
+}

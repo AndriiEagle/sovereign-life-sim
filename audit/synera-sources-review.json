@@ -1,0 +1,75 @@
+{
+  "review_id": "task-530-synera-source-audit-finite-review-2026-10-17",
+  "review_of": "audit/synera-sources.json",
+  "verdict": "CORRECTION",
+  "scope": "Read-only verification of current remote-main source evidence and stale-proof negative control. No original audit content was changed.",
+  "commands_and_results": [
+    {
+      "command": "git -C D:/synera-main-fresh-20261017 cat-file -e 4abbd06aa6faa98a69a6bcad4fec4470e11e7676^{commit}",
+      "status": "VERIFIED",
+      "result": "commit_object=present"
+    },
+    {
+      "command": "git show 4abbd06:README.md and git show 4abbd06:docs/REVIEW_HANDOFF.uk.md",
+      "status": "VERIFIED",
+      "result": "Both current-main blobs were present and read. README preserves the explicit boundary: reported 668 Node PASS/1 SKIP and 39 browser PASS belong to the 15.10 reviewed slice, while production schema/recovery, signed-JWT two-account path and physical Android/iPhone remain open. REVIEW_HANDOFF preserves Current-default/Atelier-opt-in, fixture/local-disposable limits, and live/device gates."
+    },
+    {
+      "command": "gh run list --repo AndriiEagle/synera_-MVPplus- --commit 4abbd06aa6faa98a69a6bcad4fec4470e11e7676 --limit 5 --json databaseId,headSha,status,conclusion,workflowName,createdAt,updatedAt,url",
+      "status": "VERIFIED",
+      "result": "CI run 39053215224: workflow CI, headSha 4abbd06aa6faa98a69a6bcad4fec4470e11e7676, completed/success, 2026-10-17T17:19:01Z to 17:21:04Z, https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224. This is current remote CI metadata, not a replacement for live/device/customer acceptance."
+    },
+    {
+      "command": "Test-Path <root>/AGENTS.md and Test-Path <root>/CONTINUE_IN_CODEX.uk.md for each of the five named roots",
+      "status": "VERIFIED",
+      "result": "All ten exact top-level paths returned false. This corrects the earlier rg-only absence check."
+    },
+    {
+      "command": "Get-FileHash -Algorithm SHA256 D:/synera-main-review-20261017/bible/STATUS.md",
+      "status": "VERIFIED",
+      "result": "353D565F182FDA6DBA8DFCA187808BE70EA561BA215DD485BBB94071F9A1D794"
+    }
+  ],
+  "current_main_source": {
+    "status": "VERIFIED",
+    "commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+    "commit_object_checked_in": "D:/synera-main-fresh-20261017",
+    "read_blobs": [
+      { "path": "README.md", "git_blob": "180b6fe6be50d44d40b298b5ae0fda4939b0285d", "assertion": "status text labels local reviewed candidate and separately leaves production launch acceptance open" },
+      { "path": "docs/REVIEW_HANDOFF.uk.md", "git_blob": "770497d1ea4e0f6b2e10acbf95de300fed606175", "assertion": "documents Current default / Atelier opt-in and live signed-JWT, device and rollout gates" }
+    ],
+    "current_ci_metadata": {
+      "status": "VERIFIED",
+      "workflow": "CI",
+      "run_id": 39053215224,
+      "conclusion": "success",
+      "url": "https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224"
+    }
+  },
+  "stale_proof_negative_control": {
+    "status": "VERIFIED",
+    "current_main": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+    "historical_reviewed": "76e189756f807cf8a6cf553cc687c626ac16ffff",
+    "equal": false,
+    "result": "The historical 76e1897 test acceptance cannot be inherited merely because current-main documentation cites it. Current remote CI success is evidence only of the CI metadata for 4abbd06; it does not accept live signed-JWT, Neon recovery, physical Android/iPhone, or Gilbert acceptance."
+  },
+  "terminology_correction": {
+    "status": "VERIFIED",
+    "meaning": "MISSING in the original report means no evidence was found in the five named read-only source roots or in the specifically inspected remote metadata. It does not claim that a runtime, deployment, account, device, or customer evidence is globally absent."
+  },
+  "supplemented_evidence_hashes": [
+    {
+      "path": "D:/synera-main-review-20261017/bible/STATUS.md",
+      "sha256": "353D565F182FDA6DBA8DFCA187808BE70EA561BA215DD485BBB94071F9A1D794",
+      "note": "Completes the only original evidence-file entry that lacked a hash."
+    }
+  ],
+  "unchanged_open_gates": [
+    "live signed-JWT two-account flow",
+    "current Neon schema/recovery and approved rollout",
+    "physical Android acceptance",
+    "physical iPhone/Safari acceptance",
+    "Gilbert's explicit acceptance"
+  ],
+  "models_used": "none (provider calls=0, USD=$0.00)"
+}

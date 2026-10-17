@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "review_type": "finite_targeted_correction",
+  "review_of": "audit/visual-sources.json",
+  "verdict": "CORRECTION",
+  "scope": "Added renderer/camera/HUD evidence only. No source copy, test, runtime, provider, network, or asset action was performed.",
+  "rights_correction": {
+    "status": "PRESENT_BUT_UNTESTED",
+    "statement": "The current task authorizes copying Andrii-owned work into the new private repository. Missing permissive LICENSE files and CATALOG rights labels remain redistribution/public-commercial uncertainty; they do not prove private local reuse is forbidden.",
+    "limit": "This authorization does not make proprietary/derived Arcanum assets portable and does not establish public/commercial clearance."
+  },
+  "source_instruction_hashes": [
+    {
+      "path": "D:\\virgil-autoplay-agent\\AGENTS.md",
+      "sha256": "200e29941231996ba64e8d3a4f6f4a9207c84f887d2c67c379967afea71e00aa",
+      "claim_used_for": "File presence and generated ART bytes do not prove rendered integration; schematic PNG/manifest alone is not integration."
+    },
+    {
+      "path": "D:\\virgil-autoplay-agent\\ACTIVE_INTEGRATION_STATUS.md",
+      "sha256": "d9445ad859f9d541877fd57fa3c6b4363923f1bbf8c8a35a10bbe9e5cc37ab09",
+      "claim_used_for": "The project itself labels its art/proto/schematic chain PRESENT_BUT_UNTESTED and requires a fresh in-game screenshot for VERIFIED."
+    },
+    {
+      "path": "D:\\gemeinde-mockup\\AGENTS.md",
+      "sha256": "9e2e0cc44a7ae83b8394bc766c44f6b1c8a7b36deca522833758379aa7b1d54b",
+      "claim_used_for": "Read as local instruction before inspecting the page and its two variant imports."
+    }
+  ],
+  "added_candidates": [
+    {
+      "id": "emberglass-isometric-renderer-camera-input",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Self-contained Canvas/DOM renderer seam provides isometric world/screen transforms, 12x12 camera bounds, click-to-tile selection, atlas initialization, deterministic depth/layer ordering, and a render function.",
+      "source_locators": ["iso-kit-renderer.js:29-76 transforms, bounds, clickTarget", "iso-kit-renderer.js:105-118 atlas initialization", "iso-kit-renderer.js:138-158 asset gate/draw", "iso-kit-renderer.js:201-249 render and exported API", "docs/potential-reuse/CATALOG.json:78-84 exact snapshot/hash/rights"],
+      "runtime_dependencies": "Browser CanvasRenderingContext2D and Image for real rendering; Node/CommonJS or browser global wrapper. It requires a manifest, promoted/runtime asset metadata, and an atlas image at initialization.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned archived work. CATALOG.json:84 retains NO_NEW_PUBLIC_OR_COMMERCIAL_LICENSE; preserve notices and resolve public/commercial terms separately.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No manifest/atlas was loaded and no Canvas/browser render or click test was run.",
+      "blockers": ["Needs original owned atlas and manifest", "Hard-coded 12x12 grid and Emberglass asset-ID conventions", "No current UI acceptance", "Do not reuse proprietary/derived Arcanum visuals"]
+    },
+    {
+      "id": "emberglass-isometric-worldpack-validation",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Paired CommonJS/browser-global validator defines a narrow 12x12 world-pack schema, validates asset IDs and map objects, computes reachability, and rejects some unsafe generated prompts.",
+      "source_locators": ["iso-worldpack-v11.js:3-18 schema keys/statuses/layers", "iso-worldpack-v11.js:41-86 connector/reachability", "iso-worldpack-v11.js:88-98 asset validation", "iso-worldpack-v11.js:99-171 pack validation/API export", "docs/potential-reuse/CATALOG.json:69-75 exact snapshot/hash/rights"],
+      "runtime_dependencies": "No imported package; Node/CommonJS or browser global. Its valid packs still require the renderer's original owned atlas/manifest and an external item/state adapter.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK; CATALOG.json:75 still leaves public/commercial redistribution unresolved.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Source was inspected only. Prior catalogue selfcheck is historical and cannot establish current renderer/UI acceptance.",
+      "blockers": ["Hard-coded 12x12 grid/version/Emberglass IDs", "Existing catalogue identifies optional adapter, stale-content and rollback gaps", "No current UI/gameplay proof", "Asset/license closure must use original owned visuals"]
+    },
+    {
+      "id": "gemeinde-alpine-glass-static-hud-composition",
+      "exact_path": "D:\\gemeinde-mockup\\src\\components\\variants\\AlpineGlass.tsx",
+      "sha256": "8635f6e12b4a8b48a724404811e40e009b29ea7ba1dd475c7edf842d11200808",
+      "bytes": 5242,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Static responsive React/Tailwind visual composition for a hero and card-based dashboard; the inspected entry page selects it through a local useState toggle.",
+      "source_locators": ["src/app/page.tsx:3-31 imports/local variant selection", "src/components/variants/AlpineGlass.tsx:3-6 external UI imports/component entry", "src/components/variants/AlpineGlass.tsx:6-131 static visual composition"],
+      "runtime_dependencies": "React, Tailwind CSS, framer-motion, and lucide-react, as declared in D:\\gemeinde-mockup\\package.json. No imported game renderer/camera/state model was observed.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned code. The bounded scan found no LICENSE/COPYING file; public/commercial redistribution remains NEEDS_REVIEW.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No build, browser, responsiveness, accessibility, or visual acceptance run occurred.",
+      "blockers": ["Not a game/HUD engine", "Requires original cashflow-simulator copy/text/state mapping", "Dependency closure includes framer-motion and lucide-react", "No current UI acceptance"]
+    }
+  ],
+  "inspected_not_added": [
+    {
+      "path": "D:\\gemeinde-mockup\\src\\app\\page.tsx",
+      "sha256": "8f899c9182e24ff33e48c2e051ba7f09b8532aca1843385a21126ad76e6d4234",
+      "status": "PRESENT_BUT_UNTESTED",
+      "reason": "Thin two-variant selector, not an isometric renderer/camera/HUD extraction candidate."
+    },
+    {
+      "path": "D:\\gemeinde-mockup\\src\\components\\variants\\CivicBento.tsx",
+      "sha256": "3d040c114de6cf72c2b931c20d96f1ef6839661474d1076af688fb2b0db47c62",
+      "status": "NEEDS_REVIEW",
+      "reason": "Contains an external Unsplash image URL at :106, so it is not a self-contained private visual candidate."
+    }
+  ],
+  "negative_acceptance": [
+    { "status": "VERIFIED", "finding": "No added candidate is represented as current UI acceptance: no renderer, browser, Canvas, atlas, or test command was run." },
+    { "status": "VERIFIED", "finding": "No proprietary/derived Arcanum asset was selected for copying. AGENTS.md and ACTIVE_INTEGRATION_STATUS.md hashes above anchor the continuing reference-only boundary." },
+    { "status": "NEEDS_REVIEW", "finding": "Historical catalogue selfcheck statements remain advisory source evidence only, not current simulator UI or native gameplay acceptance." }
+  ]
+}

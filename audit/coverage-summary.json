@@ -1,0 +1,428 @@
+{
+  "schema": "sovereign.coverage.v1",
+  "scope": "FILE-NAME METADATA ONLY; no contents, runtime or whole-drive completion claim",
+  "excluded_directories": [
+    ".claude",
+    ".codegraph",
+    ".codegraphcontext",
+    ".codex",
+    ".git",
+    ".kilo",
+    ".next",
+    ".pytest_cache",
+    ".tools",
+    ".venv",
+    ".vercel",
+    "__pycache__",
+    "_deploy_worktrees",
+    "_to_delete",
+    "account",
+    "accounts",
+    "artifacts",
+    "backups",
+    "captures",
+    "codex-health",
+    "data",
+    "downloads",
+    "graphify-out",
+    "logs",
+    "memory",
+    "node_modules",
+    "out",
+    "output",
+    "outputs",
+    "quarantine",
+    "reports",
+    "runs",
+    "sessions",
+    "tools-cache",
+    "venv"
+  ],
+  "roots": [
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 99,
+      "extension_counts": {
+        ".md": 3,
+        ".json": 7,
+        ".py": 62,
+        ".html": 1,
+        ".js": 9,
+        ".png": 10,
+        ".jpeg": 4,
+        ".svg": 2,
+        ".jpg": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 7,
+      "extension_counts": {
+        ".md": 1,
+        ".js": 3,
+        ".html": 1,
+        ".py": 1,
+        ".css": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\control_room",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 15,
+      "extension_counts": {
+        ".md": 2,
+        ".py": 11,
+        ".json": 2
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 14,
+      "extension_counts": {
+        ".md": 8,
+        ".ps1": 1,
+        ".json": 3,
+        ".js": 2
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\coiffeur-sipo-winterthur",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 30,
+      "extension_counts": {
+        ".md": 3,
+        ".html": 1,
+        ".js": 1,
+        ".css": 1,
+        ".json": 1,
+        ".jpeg": 3,
+        ".png": 2,
+        ".jpg": 11,
+        ".svg": 7
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 265,
+      "extension_counts": {
+        ".md": 29,
+        ".ps1": 6,
+        ".json": 62,
+        ".js": 21,
+        ".ts": 1,
+        ".jpg": 7,
+        ".png": 82,
+        ".mjs": 49,
+        ".py": 6,
+        ".html": 1,
+        ".css": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\business",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 3,
+      "extension_counts": {
+        ".md": 2,
+        ".json": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\future-autonomous-agency-lab",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 26,
+      "extension_counts": {
+        ".md": 17,
+        ".ps1": 9
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\KI\\visual-voice-lab",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 35,
+      "extension_counts": {
+        ".json": 1,
+        ".js": 5,
+        ".css": 4,
+        ".html": 1,
+        ".png": 1,
+        ".mjs": 23
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 115,
+      "extension_counts": {
+        ".md": 68,
+        ".json": 22,
+        ".html": 1,
+        ".py": 24
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\game-forge",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 2012,
+      "extension_counts": {
+        ".md": 312,
+        ".py": 288,
+        ".json": 683,
+        ".ps1": 4,
+        ".png": 540,
+        ".jpg": 36,
+        ".tscn": 22,
+        ".godot": 16,
+        ".gd": 75,
+        ".html": 5,
+        ".gdshader": 19,
+        ".js": 12
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\ki-monetization-20261003",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 7,
+      "extension_counts": {
+        ".md": 3,
+        ".json": 3,
+        ".py": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "C:\\Users\\Andrii\\Desktop\\synera-premium-pwa-variant",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 4531,
+      "extension_counts": {
+        ".md": 99,
+        ".html": 445,
+        ".mjs": 2620,
+        ".json": 244,
+        ".png": 302,
+        ".frag": 3,
+        ".svg": 262,
+        ".js": 49,
+        ".py": 37,
+        ".css": 359,
+        ".webp": 111
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 735,
+      "extension_counts": {
+        ".md": 178,
+        ".py": 170,
+        ".jpg": 1,
+        ".png": 335,
+        ".js": 11,
+        ".html": 2,
+        ".css": 2,
+        ".json": 29,
+        ".gd": 3,
+        ".ps1": 4
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\Memento_Vivere_Gemeinde_Pilot",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 1418,
+      "extension_counts": {
+        ".md": 68,
+        ".ts": 232,
+        ".mjs": 14,
+        ".json": 13,
+        ".png": 999,
+        ".css": 14,
+        ".tsx": 53,
+        ".svg": 20,
+        ".py": 5
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\gemeinde-mockup",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 21,
+      "extension_counts": {
+        ".md": 3,
+        ".mjs": 2,
+        ".ts": 3,
+        ".json": 3,
+        ".svg": 5,
+        ".css": 1,
+        ".tsx": 4
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\lego-llm-viz-godot",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 10,
+      "extension_counts": {
+        ".md": 1,
+        ".json": 1,
+        ".gd": 6,
+        ".tscn": 1,
+        ".godot": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\synera-launch-01a0cea0",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 621,
+      "extension_counts": {
+        ".md": 73,
+        ".html": 11,
+        ".mjs": 163,
+        ".json": 159,
+        ".png": 176,
+        ".frag": 3,
+        ".svg": 3,
+        ".js": 8,
+        ".py": 20,
+        ".css": 5
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\synera-main-fresh-20261017",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 664,
+      "extension_counts": {
+        ".md": 109,
+        ".html": 25,
+        ".mjs": 388,
+        ".json": 53,
+        ".py": 43,
+        ".png": 6,
+        ".css": 19,
+        ".svg": 14,
+        ".webp": 6,
+        ".js": 1
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    },
+    {
+      "root": "D:\\synera-main-review-20261017",
+      "status": "COMPLETE_WITHIN_GIT_INDEX_FILTER",
+      "files": 882,
+      "extension_counts": {
+        ".md": 116,
+        ".png": 173,
+        ".json": 174,
+        ".frag": 3,
+        ".html": 16,
+        ".svg": 10,
+        ".js": 8,
+        ".py": 43,
+        ".mjs": 326,
+        ".css": 10,
+        ".webp": 3
+      },
+      "errors": [],
+      "cap_reached": false,
+      "limit": "Tracked index metadata only; not an assertion that every ignored/untracked or working-tree file exists."
+    },
+    {
+      "root": "D:\\synera-reviewed-mobile-20261013",
+      "status": "COMPLETE_WITHIN_GIT_INDEX_FILTER",
+      "files": 839,
+      "extension_counts": {
+        ".md": 97,
+        ".png": 173,
+        ".json": 158,
+        ".frag": 3,
+        ".html": 16,
+        ".svg": 10,
+        ".js": 8,
+        ".mjs": 326,
+        ".py": 35,
+        ".css": 10,
+        ".webp": 3
+      },
+      "errors": [],
+      "cap_reached": false,
+      "limit": "Tracked index metadata only; not an assertion that every ignored/untracked or working-tree file exists."
+    },
+    {
+      "root": "D:\\virgil-autoplay-agent",
+      "status": "COMPLETE_WITHIN_FILTERED_SCOPE",
+      "files": 566,
+      "extension_counts": {
+        ".md": 87,
+        ".py": 166,
+        ".jpg": 8,
+        ".png": 278,
+        ".js": 1,
+        ".html": 3,
+        ".css": 1,
+        ".json": 20,
+        ".ps1": 2
+      },
+      "errors": [],
+      "cap_reached": false,
+      "stop_reason": null
+    }
+  ],
+  "private_filename_index": "audit/local-file-inventory.json (local only, excluded from Git)",
+  "total_files_in_filtered_roots": 12915
+}

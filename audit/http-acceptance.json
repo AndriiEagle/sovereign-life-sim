@@ -1,0 +1,22 @@
+{
+  "observer": "root HTTP integration readback",
+  "results": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/USER_DIGITAL_TWIN_SEED.json",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/engine-isometric-ui/%2e%2e/USER_DIGITAL_TWIN_SEED.json",
+      "status": 404
+    }
+  ],
+  "accepted": true
+}

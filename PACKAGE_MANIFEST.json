@@ -1,0 +1,371 @@
+{
+  "schema": "sovereign.package.v1",
+  "boundary": "SHA256 integrity only, not a signature or an acceptance verdict.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "da4b81cb61452ce40e8ccbe7e2ed8fd97138c80d131eb5c05228d3cf4e05196e",
+      "bytes": 161
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "cfa370abb90e3a13614df6e5e7460dae03b39fc6b1f2a9910a9eaa2fdbe30aaa",
+      "bytes": 157
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "033d3af82ae984c73ed444cfe3192d9dabc1c34fe29d2d4437879e2ce0fcdd3f",
+      "bytes": 1339
+    },
+    {
+      "path": "audit/acceptance-stage-history.json",
+      "sha256": "114d87753e2932ffa50658df1dd20fee3660d9c4c11d4ea8631599afcb5187d9",
+      "bytes": 1104
+    },
+    {
+      "path": "audit/ACCEPTANCE.md",
+      "sha256": "8142c25708c320ca6fff20ddd5ed3a9faa0fe041fcf6f52f4409f158fb5c30e6",
+      "bytes": 3734
+    },
+    {
+      "path": "audit/browser-acceptance.json",
+      "sha256": "b676495cc92b135bfd37160392edc80876295222fa3cdc7441661cf106a9f00f",
+      "bytes": 1460
+    },
+    {
+      "path": "audit/browser-export-example.json",
+      "sha256": "b6bfe872f3a7773cee2b6295b6b69bf20f926bb3334bae9c372177b5ee5fabaa",
+      "bytes": 688
+    },
+    {
+      "path": "audit/code-review-followup.json",
+      "sha256": "ca1d6506764f784432f6a123fd2e6d0a73a90a35d79718e94c1151e68ab0246d",
+      "bytes": 2916
+    },
+    {
+      "path": "audit/code-review.json",
+      "sha256": "a9562c3552cf9708a8b5cc5b5d7ea4cb8bc2c17d4aac182bc2aa779e645dcfa3",
+      "bytes": 4462
+    },
+    {
+      "path": "audit/coverage-summary.json",
+      "sha256": "d34b6ea04f8ab459df04985732f953ef5ecd2bbdacd486ffb749680b0efd0b48",
+      "bytes": 10381
+    },
+    {
+      "path": "audit/delegation-protocol-limits.json",
+      "sha256": "10885a3b0f48fe5661efa4d51c9ac993a6f32cc1632f2dd2697c7bec1d562c36",
+      "bytes": 1922
+    },
+    {
+      "path": "audit/git-base.json",
+      "sha256": "21f19f8ceb8e8fdb14ff6691f965eaf0f914bd778d619c31cb5dd3b81441f011",
+      "bytes": 332
+    },
+    {
+      "path": "audit/http-acceptance.json",
+      "sha256": "04a588eb63e9dac97610cb77f87a2ea1f511a900ed17daf4bb81102f414560ae",
+      "bytes": 412
+    },
+    {
+      "path": "audit/package-review-followup.json",
+      "sha256": "c2ec0949a2dfaa2cef8edee40c9b4864a1b8402f8df6b00d008978a6111405c2",
+      "bytes": 4921
+    },
+    {
+      "path": "audit/package-review.json",
+      "sha256": "178da3f14d438be42b8b3fa6c4e3a59756c03b9d4f40216091383bf13758131b",
+      "bytes": 7273
+    },
+    {
+      "path": "audit/repair-triage.json",
+      "sha256": "17dff0df9c9513d6ed59ddc6b7680881add470286d992a8de16dbfa7ad1cefe7",
+      "bytes": 2193
+    },
+    {
+      "path": "audit/request-source.json",
+      "sha256": "30aa6f67cb78536bd4d7da1f8c6a738be7427308097e26003fcd22731d4d6c3f",
+      "bytes": 563
+    },
+    {
+      "path": "audit/source-copies.json",
+      "sha256": "6e2d652a8be9316fbf888aa6db30b6b8465248628e0bdc61beeea19d0a4ac219",
+      "bytes": 6515
+    },
+    {
+      "path": "audit/synera-sources-review.json",
+      "sha256": "a5b898dd17375acc9fac95e045c2abeaa75b88485b2db541e72d5eee7051258f",
+      "bytes": 4430
+    },
+    {
+      "path": "audit/synera-sources.json",
+      "sha256": "1dce7b6d12ee5012eacdc0b14ecad67e0ba937ae9f2bd871fdefa8903a9b8c94",
+      "bytes": 11445
+    },
+    {
+      "path": "audit/ui-regression-before.json",
+      "sha256": "02c8385a20a8aafbbbc3d6198c67114420d440e69ab0340e96525e17cf68fde6",
+      "bytes": 711
+    },
+    {
+      "path": "audit/visual-sources-review.json",
+      "sha256": "3c43f999cb7752dd211aa346398abb7706e4a776c55c8a15a322c022988a26d2",
+      "bytes": 7913
+    },
+    {
+      "path": "audit/visual-sources.json",
+      "sha256": "3dba524e6d0305be405f2a99f1e9aea812ae5913d3b275bbb7f83e4d44fbe021",
+      "bytes": 11480
+    },
+    {
+      "path": "automation-nodes/catalog.json",
+      "sha256": "1e5c173de46da2c3e17c0d62ecf0baa95f3acb8c4d5e8eed6b0ea08e3b03d780",
+      "bytes": 2463
+    },
+    {
+      "path": "automation-nodes/README.md",
+      "sha256": "685d56c14e37fb76f2b2033a27b25159f3c9d14a4d352ac7ec919d0820f11d1b",
+      "bytes": 1486
+    },
+    {
+      "path": "automation-nodes/source-templates/short-video-script.md",
+      "sha256": "11e5479c8c21cc71d135451ac24be6569abc212c626ca040f4abd8f3403d2deb",
+      "bytes": 285
+    },
+    {
+      "path": "automation-nodes/source-templates/viral-lab.md",
+      "sha256": "0f7ec5d9e557b55e0c4a15c98d5705b8fe5702ab6147cb0cbd95a3dc4f96d593",
+      "bytes": 1589
+    },
+    {
+      "path": "CONTEXT_MANIFEST.json",
+      "sha256": "7fc90339d6ae76daa7d00ed9db003f0244192d88920567688f5b0b7343d613b7",
+      "bytes": 35042
+    },
+    {
+      "path": "engine-isometric-ui/app.mjs",
+      "sha256": "0436235f488bc0a2097ff587ebf1d29e86ee745ea91f1ac815da9ab2841c9b70",
+      "bytes": 4138
+    },
+    {
+      "path": "engine-isometric-ui/index.html",
+      "sha256": "ee452d9794a13a4ee0870b0a2f61c5f83c30cac6557ebcf34c2d5780b853dae6",
+      "bytes": 4363
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/README.md",
+      "sha256": "8cb0d95088899f4923aa7bb6bd4ffab3b0a1db35630c73931c882656c3113f76",
+      "bytes": 1451
+    },
+    {
+      "path": "engine-isometric-ui/styles.css",
+      "sha256": "2bf3fc9199b6383299ab3da1a2c2f16626840298558829b38d65402e22e03304",
+      "bytes": 7687
+    },
+    {
+      "path": "EXTERNAL_PROMPT.md",
+      "sha256": "3b1bbaa46cbdb4937f4a8de450841695479f5657ae0fe90aaf0514a26853c1c8",
+      "bytes": 3859
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "79cc5db3233c36e55d09c13f914929ef8cd8218f9f6509b2f00de723eacc1f5a",
+      "bytes": 5821
+    },
+    {
+      "path": "mcp-bridge/events.mjs",
+      "sha256": "b7e3425486b7ca3b3bdea8984e31b391fa7eaa50ab8346173777bfad71773a45",
+      "bytes": 1784
+    },
+    {
+      "path": "mcp-bridge/README.md",
+      "sha256": "e60761fd1e698642391cfe0614d2750f0b685d6709ffbe8cc861e2abe6d3cc3f",
+      "bytes": 1638
+    },
+    {
+      "path": "package.json",
+      "sha256": "caa0e7066f4b1cfe4b0508c904c47c8da30a741021a2d30874ffd58f2b05057f",
+      "bytes": 209
+    },
+    {
+      "path": "README.md",
+      "sha256": "8e70cc7cd4eda384d4d8506f54c7adb608f92294a7ad72ae44b0297c61e7f0ee",
+      "bytes": 4265
+    },
+    {
+      "path": "RIGHTS.md",
+      "sha256": "8ce385902937e83c6dbaea8618da3e398468d18c138de18f1de089823f8b6ee6",
+      "bytes": 1824
+    },
+    {
+      "path": "scripts/adversarial.py",
+      "sha256": "033fb477b03f9f255ccbd834086ffe3a474facab6b43b2392e690ffcbefc0d9a",
+      "bytes": 1912
+    },
+    {
+      "path": "scripts/build_context.py",
+      "sha256": "31346f33ea1a2c3b7a410b5896f98c8aba3c6d699d326f799dd922e4155d9cee",
+      "bytes": 13929
+    },
+    {
+      "path": "scripts/check_local_sources.py",
+      "sha256": "37155a5cd38a934b40538491a1a1d8432d8648d51e01d72ddc733a8585bacc4b",
+      "bytes": 879
+    },
+    {
+      "path": "scripts/collect_sources.py",
+      "sha256": "b8503343cd3b9479c00fe5a9948f45842dd249034270d38bf9f017a53fb2a0e9",
+      "bytes": 3643
+    },
+    {
+      "path": "scripts/freeze.py",
+      "sha256": "f6aa7987553e77dbe9640d0449fc5b0f8041ab3da1d90803dad1b87c0ac886e7",
+      "bytes": 1344
+    },
+    {
+      "path": "scripts/inventory.py",
+      "sha256": "137e37996040c6f489f9d6e41a8d23d983819c4da105c214171848b83f343209",
+      "bytes": 6447
+    },
+    {
+      "path": "scripts/scenario.py",
+      "sha256": "6be83a156cabe1ecb73abfabb683bb8a16625f740e8d41e9cc07406666ac8046",
+      "bytes": 1336
+    },
+    {
+      "path": "scripts/serve.py",
+      "sha256": "267215a561486787a17f169155dd3deca5884b79d860110368c45384db0bd595",
+      "bytes": 1954
+    },
+    {
+      "path": "scripts/verify.py",
+      "sha256": "b00cb82a588c137da79befa131c95e173ff8dd92cbf2b13ef110b8a0696055b4",
+      "bytes": 5947
+    },
+    {
+      "path": "simulation-core/CONDUCTOR_RIGHTS.md",
+      "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
+      "bytes": 906
+    },
+    {
+      "path": "simulation-core/game-forge/README.md",
+      "sha256": "853df6f472560421dafaa91e23b70be3864521b20c6fce4172743b83d906a7b7",
+      "bytes": 1766
+    },
+    {
+      "path": "simulation-core/game-forge/sim/__init__.py",
+      "sha256": "e3c93911a13818eada06fc2043ace11ed6420bf2f9422b789818913a52c6f12e",
+      "bytes": 61
+    },
+    {
+      "path": "simulation-core/game-forge/sim/core.py",
+      "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+      "bytes": 14486
+    },
+    {
+      "path": "simulation-core/game-forge/sim/MATH.md",
+      "sha256": "ffe5784053017836b8b75b3d14df426f1f456b9b384285360d24f15b213611ef",
+      "bytes": 20182
+    },
+    {
+      "path": "simulation-core/game-forge/sim/params.json",
+      "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+      "bytes": 42824
+    },
+    {
+      "path": "simulation-core/game-forge/sim/tests/__init__.py",
+      "sha256": "bcde2110739e45ab382e28d5d95cbbb99e8d969da86662cc463aad8abab22ced",
+      "bytes": 65
+    },
+    {
+      "path": "simulation-core/game-forge/sim/tests/test_math.py",
+      "sha256": "b890973bc11a78cb02cbfde32a9bb85bb3edd1368f3b1c5d76c6ccc35b10ee6f",
+      "bytes": 12979
+    },
+    {
+      "path": "simulation-core/model.mjs",
+      "sha256": "3f875ef04bbeabf4e6d670cceeeb2a1c396d8dc2e431379dbfd5385a0a80eab9",
+      "bytes": 1604
+    },
+    {
+      "path": "simulation-core/README.md",
+      "sha256": "397cc6b4c31a65ba70c17a312a3610dc047835935d0c2aec4662569305d41a60",
+      "bytes": 2015
+    },
+    {
+      "path": "simulation-core/revenue_lab/__init__.py",
+      "sha256": "8a0cb7682b1617b4736b34a362a2884d27f2837a263e07061b40ec87464a9e81",
+      "bytes": 108
+    },
+    {
+      "path": "simulation-core/revenue_lab/__main__.py",
+      "sha256": "466f204a197c0a04e93dd83f1060b10f355ddaffb70f07633a0fcc8d33809fd3",
+      "bytes": 2652
+    },
+    {
+      "path": "simulation-core/revenue_lab/core.py",
+      "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+      "bytes": 9957
+    },
+    {
+      "path": "simulation-core/revenue_lab/README.md",
+      "sha256": "edfe6c97ba1d0b225ad5886268fa220d4f9cb5481f5f9386a76786eb326f2c8b",
+      "bytes": 2392
+    },
+    {
+      "path": "simulation-core/upstream-tests/test_cli.py",
+      "sha256": "4f3649c874161d8e7bac776ce330be77381e5a821476a425a4fe53d17f8767f4",
+      "bytes": 2111
+    },
+    {
+      "path": "simulation-core/upstream-tests/test_core.py",
+      "sha256": "ecd94c613e3d80d0ac85544a7368d7166ffd9945d3624c1c21ed0dc87de61899",
+      "bytes": 9668
+    },
+    {
+      "path": "SYNERA_LAUNCH_CHECKLIST.md",
+      "sha256": "5a2b3a9c7e7908d2266fa123fe431ee937c7894d0ca69fa93039d18e7d8609c2",
+      "bytes": 4573
+    },
+    {
+      "path": "TASKS.md",
+      "sha256": "1db6c21baab6f6934a64ed8e6ad90d6e29cd301ded776917e797ab631d70398b",
+      "bytes": 3545
+    },
+    {
+      "path": "tests/events.test.mjs",
+      "sha256": "a44279cb405b5ae69f679b608eadc8f3bc6e8e81572393eaf086208e38f1a440",
+      "bytes": 1668
+    },
+    {
+      "path": "tests/model.test.mjs",
+      "sha256": "5b29946f3df677aa9fed7a47bb55cfc3e6e18ff10e37e7d3c4431d7394d61709",
+      "bytes": 1537
+    },
+    {
+      "path": "tests/test_integrity.py",
+      "sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a",
+      "bytes": 2536
+    },
+    {
+      "path": "tests/test_server.py",
+      "sha256": "d08fef72e50e82d222e3a578ccd50bcbb77f48275b0b77265a1deddd7038a66d",
+      "bytes": 908
+    },
+    {
+      "path": "USER_DIGITAL_TWIN_SEED.json",
+      "sha256": "d2c68a7dd8e237046731a5a8c950775b5957229f638e9f0bd1c8dacd86b5b654",
+      "bytes": 2841
+    }
+  ]
+}

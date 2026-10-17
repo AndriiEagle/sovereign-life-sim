@@ -1,0 +1,143 @@
+{
+  "schema": "sovereign.source-copies.v1",
+  "copies": [
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\__init__.py",
+      "target": "simulation-core/revenue_lab/__init__.py",
+      "sha256": "8a0cb7682b1617b4736b34a362a2884d27f2837a263e07061b40ec87464a9e81",
+      "bytes": 108,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\__main__.py",
+      "target": "simulation-core/revenue_lab/__main__.py",
+      "sha256": "466f204a197c0a04e93dd83f1060b10f355ddaffb70f07633a0fcc8d33809fd3",
+      "bytes": 2652,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\core.py",
+      "target": "simulation-core/revenue_lab/core.py",
+      "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+      "bytes": 9957,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\README.md",
+      "target": "simulation-core/revenue_lab/README.md",
+      "sha256": "edfe6c97ba1d0b225ad5886268fa220d4f9cb5481f5f9386a76786eb326f2c8b",
+      "bytes": 2392,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\tests\\test_core.py",
+      "target": "simulation-core/upstream-tests/test_core.py",
+      "sha256": "ecd94c613e3d80d0ac85544a7368d7166ffd9945d3624c1c21ed0dc87de61899",
+      "bytes": 9668,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\tests\\test_cli.py",
+      "target": "simulation-core/upstream-tests/test_cli.py",
+      "sha256": "4f3649c874161d8e7bac776ce330be77381e5a821476a425a4fe53d17f8767f4",
+      "bytes": 2111,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\LICENSE_AND_RIGHTS.md",
+      "target": "simulation-core/CONDUCTOR_RIGHTS.md",
+      "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
+      "bytes": 906,
+      "rights": "CONDUCTOR_RECIPIENT_REUSE_GRANT",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\templates\\short-video-script.md",
+      "target": "automation-nodes/source-templates/short-video-script.md",
+      "sha256": "11e5479c8c21cc71d135451ac24be6569abc212c626ca040f4abd8f3403d2deb",
+      "bytes": 285,
+      "rights": "PRIVATE_USER_AUTHORIZED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os\\references\\viral-lab.md",
+      "target": "automation-nodes/source-templates/viral-lab.md",
+      "sha256": "0f7ec5d9e557b55e0c4a15c98d5705b8fe5702ab6147cb0cbd95a3dc4f96d593",
+      "bytes": 1589,
+      "rights": "PRIVATE_USER_AUTHORIZED",
+      "mode": "reused"
+    },
+    {
+      "source": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-kit-renderer.js",
+      "target": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "snapshot_inactive"
+    },
+    {
+      "source": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-worldpack-v11.js",
+      "target": "engine-isometric-ui/reference-source/iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "snapshot_inactive"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\__init__.py",
+      "target": "simulation-core/game-forge/sim/__init__.py",
+      "sha256": "e3c93911a13818eada06fc2043ace11ed6420bf2f9422b789818913a52c6f12e",
+      "bytes": 61,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\core.py",
+      "target": "simulation-core/game-forge/sim/core.py",
+      "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+      "bytes": 14486,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\params.json",
+      "target": "simulation-core/game-forge/sim/params.json",
+      "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+      "bytes": 42824,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\MATH.md",
+      "target": "simulation-core/game-forge/sim/MATH.md",
+      "sha256": "ffe5784053017836b8b75b3d14df426f1f456b9b384285360d24f15b213611ef",
+      "bytes": 20182,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\tests\\__init__.py",
+      "target": "simulation-core/game-forge/sim/tests/__init__.py",
+      "sha256": "bcde2110739e45ab382e28d5d95cbbb99e8d969da86662cc463aad8abab22ced",
+      "bytes": 65,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    },
+    {
+      "source": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\tests\\test_math.py",
+      "target": "simulation-core/game-forge/sim/tests/test_math.py",
+      "sha256": "b890973bc11a78cb02cbfde32a9bb85bb3edd1368f3b1c5d76c6ccc35b10ee6f",
+      "bytes": 12979,
+      "rights": "PRIVATE_USER_AUTHORIZED_PUBLIC_COMMERCIAL_RIGHTS_UNRESOLVED",
+      "mode": "reused"
+    }
+  ],
+  "originals_modified": false,
+  "runtime_note": "Archived renderer snapshots are inactive; their atlas/worldpack closure is not bundled."
+}

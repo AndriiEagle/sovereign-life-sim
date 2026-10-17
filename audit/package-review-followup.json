@@ -1,0 +1,82 @@
+{
+  "review_id": "task-530-package-review-r1-followup-2026-10-17",
+  "review_of": "audit/package-review.json",
+  "verdict": "CORRECTION_ACCEPTED_WITH_REFREEZE_PENDING",
+  "scope": "Read-only targeted recheck of PKG-01/PKG-02 and documented integrity boundaries. No full math/browser suite, server, provider, secret, original-project or external action was used.",
+  "source_hashes": {
+    "PACKAGE_MANIFEST.json": "3716B2416484C7EF21B2753B790613C54585B8E4486BC76FBBA23B0A5D3BB3A0",
+    "audit/git-base.json": "21F19F8CEB8E8FDB14FF6691F965EAF0F914BD778D619C31CB5DD3B81441F011",
+    "scripts/verify.py": "B00CB82A588C137DA79BEFA131C95E173FF8DD92CBF2B13EF110B8A0696055B4",
+    "tests/test_integrity.py": "75B913E579E900C4A27C5EF93069CD5B2E74E4845FAAD4212DFE0AEDC6DC1B2A",
+    ".gitattributes": "94FA5D8B3633D35AFB55930467D99DFC3D67069977E3DFB6628F05CE9AF493C2",
+    "HANDOFF.md": "79CC5DB3233C36E55D09C13F914929EF8CD8218F9F6509B2F00DE723EACC1F5A",
+    "RIGHTS.md": "8CE385902937E83C6DBAEA8618DA3E398468D18C138DE18F1DE089823F8B6EE6",
+    "USER_DIGITAL_TWIN_SEED.json": "D2C68A7DD8E237046731A5A8C950775B5957229F638E9F0BD1C8DACD86B5B654",
+    "SYNERA_LAUNCH_CHECKLIST.md": "5A2B3A9C7E7908D2266FA123FE431EE937C7894D0CA69FA93039D18E7D8609C2",
+    "CONTEXT_MANIFEST.json": "7FC90339D6AE76DAA7D00ED9DB003F0244192D88920567688F5B0B7343D613B7"
+  },
+  "closure": [
+    {
+      "id": "PKG-01",
+      "status": "VERIFIED",
+      "previous_issue": "Required PACKAGE_MANIFEST.json was absent and verify.py permitted its absence.",
+      "current_evidence": [
+        "Test-Path PACKAGE_MANIFEST.json=true",
+        "PACKAGE_MANIFEST.json parses as sovereign.package.v1 and contains 69 rows",
+        "scripts/verify.py:10 now lists PACKAGE_MANIFEST.json in REQUIRED",
+        "scripts/verify.py:60-68 reads the lock, rejects duplicate/missing required covered paths, and rejects a changed/missing locked file",
+        "python -B scripts/verify.py --integrity-only returned PASS, source_copies=17, projects=16, seed_unknowns_preserved=true, commands=0",
+        "tests/test_integrity.py source test test_missing_package_manifest_cannot_be_accepted expects MISSING_REQUIRED_FILE: PACKAGE_MANIFEST.json; isolated test file ran 3 tests, all PASS"
+      ],
+      "coverage": "All 14 non-self REQUIRED paths are present in the 69-row lock. PACKAGE_MANIFEST.json itself is required as a file but intentionally cannot self-hash."
+    },
+    {
+      "id": "PKG-02",
+      "status": "VERIFIED",
+      "previous_issue": "HANDOFF named audit/git-base.json but it was absent.",
+      "current_evidence": [
+        "Test-Path audit/git-base.json=true",
+        "JSON parses as sovereign.git-base.v1",
+        "base_commit=47800b221f16b1c1012c59245af2e240b832fe7f and verified_as_commit=true",
+        "git -C D:/sovereign-life-sim cat-file -e <base>^{commit} succeeded",
+        "audit/git-base.json is REQUIRED and lock-covered"
+      ]
+    }
+  ],
+  "negative_controls": [
+    {
+      "status": "VERIFIED",
+      "control": "Missing package lock rejection",
+      "result": "Isolated tests/test_integrity.py passed. Its temporary-root case omits PACKAGE_MANIFEST.json and asserts ValueError MISSING_REQUIRED_FILE: PACKAGE_MANIFEST.json."
+    },
+    {
+      "status": "VERIFIED",
+      "control": "Changed snapshot rejection",
+      "result": "The same isolated test file includes exact-copy acceptance followed by altered-copy rejection using SNAPSHOT_MISSING_OR_CHANGED; all 3 isolated tests passed."
+    }
+  ],
+  "boundaries_retained": [
+    {
+      "status": "VERIFIED",
+      "evidence": "USER_DIGITAL_TWIN_SEED.json:70-83 keeps finance, health, diagnosis, subscription cost and customer count null; scripts/verify.py:49-53 rejects a non-null seed unknown."
+    },
+    {
+      "status": "VERIFIED",
+      "evidence": "RIGHTS.md:3-11 retains private/UNLICENSED terms, source-specific reuse limits and separate recipient-access verification."
+    },
+    {
+      "status": "VERIFIED",
+      "evidence": "CONTEXT_MANIFEST.json:444-465 labels Synera current CI metadata with live signed-JWT, recovery, device and Gilbert gates open; SYNERA_LAUNCH_CHECKLIST.md:5-11 preserves the historical-test/live-gate split."
+    },
+    {
+      "status": "PRESENT_BUT_UNTESTED",
+      "evidence": "HANDOFF.md labels receiving-model GitHub access UNVERIFIED. This review did not and cannot establish a future recipient's authenticated private-repository access."
+    }
+  ],
+  "refreeze_requirement": {
+    "status": "NEEDS_REVIEW",
+    "reason": "This newly created follow-up file is not in the already-read 69-row PACKAGE_MANIFEST.json. The stated next mutation is solely to re-freeze the lock so it includes this review evidence; until that occurs, this is not a final locked-package claim."
+  },
+  "independence": "This was an internal Codex review. It is not another-model-family independent acceptance.",
+  "models_used": "none (provider calls=0, USD=$0.00)"
+}
