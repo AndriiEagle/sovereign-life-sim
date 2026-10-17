@@ -14,8 +14,8 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "033d3af82ae984c73ed444cfe3192d9dabc1c34fe29d2d4437879e2ce0fcdd3f",
-      "bytes": 1339
+      "sha256": "702820049cf42f61f57faca026d78b32ba2c52202b29eb790392e549ea9a19be",
+      "bytes": 1739
     },
     {
       "path": "audit/acceptance-stage-history.json",
@@ -104,8 +104,8 @@
     },
     {
       "path": "audit/step3-source-evidence.json",
-      "sha256": "fb4c0cf4e462367147a6e327117b5c60167d0fd89b2b000d9dc6c12fe6b2234b",
-      "bytes": 44424
+      "sha256": "5a4342447a80c756ee44d03a764f0e5719a67081968dfe352a142d1f3d958ab3",
+      "bytes": 45425
     },
     {
       "path": "audit/synera-sources-review.json",
@@ -154,8 +154,8 @@
     },
     {
       "path": "CONTEXT_MANIFEST.json",
-      "sha256": "b34076cfbedfb241b5c0d877d34361f3f68defde82f381c875dcbb2221cf4588",
-      "bytes": 57763
+      "sha256": "6954feaead03abbe2aa0f3fcd2d387c4ae7f7ca3ed8babc7280c97871ebb4ed0",
+      "bytes": 58926
     },
     {
       "path": "engine-isometric-ui/app.mjs",
@@ -189,13 +189,13 @@
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "d9a1d5b0e6b5783c663751466e31decb9a5455aadb5609dd1ca582bae6aee5e4",
-      "bytes": 4318
+      "sha256": "1ebaeb7a219f7a8390dc803324dd737b318d76e85f46b8a45b9bb0861344ebba",
+      "bytes": 7684
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "6599e51c32b8833d64622b4236dbeb2372a6740d58fae63c20b887b6d3bc1e19",
-      "bytes": 6457
+      "sha256": "dff859264c2becf16d6b4068c67a4939c701e2badc885c87912d2354366d4624",
+      "bytes": 7486
     },
     {
       "path": "mcp-bridge/events.mjs",
@@ -214,13 +214,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "d97439200c8ae4065a082da62dca0217f9a9765e76b93ff74a00870666751974",
-      "bytes": 4639
+      "sha256": "7196a845f45e4d8169d8d036e76779a4cbefcf4ae501cd3b2d66d5c23fbb8083",
+      "bytes": 5197
     },
     {
       "path": "RIGHTS.md",
-      "sha256": "8ce385902937e83c6dbaea8618da3e398468d18c138de18f1de089823f8b6ee6",
-      "bytes": 1824
+      "sha256": "a18728045d341f408888b5d063f79cb4205445ada8bac6ef1dd3b7fda85cc1ac",
+      "bytes": 2641
     },
     {
       "path": "scripts/adversarial.py",
@@ -229,8 +229,8 @@
     },
     {
       "path": "scripts/build_context.py",
-      "sha256": "e75ca96231326e26a1768f368361212fa0711475560e225d22ceea00765a31a4",
-      "bytes": 15479
+      "sha256": "169f307cc9c72b4d6c80ccc9af4fe1470ccd2fa09a14807778c50d7e93558f42",
+      "bytes": 15687
     },
     {
       "path": "scripts/check_local_sources.py",
@@ -359,8 +359,8 @@
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
-      "sha256": "da1996ca6992b2e930afbba8df6905f111e9ebe3f8bf1ac1c63d49fef3f0eea7",
-      "bytes": 5286
+      "sha256": "e50929929efd82b81482e75d70bbd0bdbdcecb407a601299b666f516df328b5d",
+      "bytes": 5608
     },
     {
       "path": "tests/events.test.mjs",

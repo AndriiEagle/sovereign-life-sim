@@ -1271,5 +1271,18 @@
     "Step-3 source hashes supersede older source hashes only for the named files; old reports preserved.",
     "Local synthetic source probes prove preparation boundaries only; pinned source and CI do not prove production.",
     "Unknown state remains unknown, never a readiness percentage."
-  ]
+  ],
+  "temporary_public_review": {
+    "authorization": "Direct user request in task 530 on 2026-10-17: make this repository public now, write an external review prompt, return it private tomorrow, record the scoped exception in global memory.",
+    "repository_id": 1423646041,
+    "scope": "This prepared repository, read-only external review; no blanket license, paid dispatch, implementation, remote writes or permission to publish other work.",
+    "return_private_at": "2026-10-18T09:00:00+02:00",
+    "timezone": "Europe/Zurich",
+    "automation_id": "sovereign-private",
+    "automation_status_at_recording": "ACTIVE_SCHEDULED_NOT_EXECUTED",
+    "rule_single_occurrence": true,
+    "live_visibility_authority": "GitHub repository metadata; schedule/configuration is not execution proof.",
+    "runtime_limit": "Local Codex host, internet and existing GitHub authentication must be available.",
+    "copies_limit": "Private restoration cannot erase previously downloaded copies."
+  }
 }

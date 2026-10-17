@@ -1,6 +1,6 @@
 # Sovereign Life Simulator — передача на Terra, кроки 3/4
 
-Repo: https://github.com/AndriiEagle/sovereign-life-sim (private). Гілка: `codex/sovereign-life-sim-530`. Точний опублікований SHA звірити через `git rev-parse HEAD` і remote branch; self-referential SHA сюди не вписується.
+Repo: https://github.com/AndriiEagle/sovereign-life-sim (private за замовчуванням; прямо дозволений Андрієм public-показ 17.10.2026, повернення в private заплановано на 18.10.2026 09:00 Europe/Zurich через `sovereign-private`). Гілка: `codex/sovereign-life-sim-530`. Точний опублікований SHA та поточну visibility звірити в GitHub; self-referential SHA сюди не вписується. Зовнішній моделі передавати `EXTERNAL_PROMPT.md`; це read-only review.
 
 **CONTEXT_MANIFEST.json:** 16 проєктів/напрямів, 10 конкретних UI/runtime surfaces, 13 компонентів із source refs, залежностями та чесним статусом вставлення. SHA256 і локатори 27 джерел — `audit/step3-source-evidence.json`.
 

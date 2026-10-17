@@ -1,6 +1,8 @@
 # Передача Sovereign Life Simulator
 
-Власник: AndriiEagle. Репозиторій: `https://github.com/AndriiEagle/sovereign-life-sim`, приватний. Робоча гілка: `codex/sovereign-life-sim-530`. `audit/git-base.json` фіксує справжній стартовий commit; точний опублікований head перевіряється через `git rev-parse HEAD` і remote readback. Не записувати self-referential commit SHA в commit, який його містить.
+Власник: AndriiEagle. Репозиторій: `https://github.com/AndriiEagle/sovereign-life-sim`, private за замовчуванням. Робоча гілка: `codex/sovereign-life-sim-530`. `audit/git-base.json` фіксує справжній стартовий commit; точний опублікований head перевіряється через `git rev-parse HEAD` і remote readback. Не записувати self-referential commit SHA в commit, який його містить.
+
+Нове пряме доручення 17.10.2026: тимчасово зробити цей repo public для read-only зовнішнього рев'ю; повернути private 18.10.2026 о 09:00 Europe/Zurich. Одноразова thread heartbeat automation `sovereign-private` ACTIVE; її persisted rule і наступний час перевірено (07:00 UTC). Це SCHEDULED, не виконаний завтрашній rollback; локальний Codex/мережа/auth мають бути доступні. Live GitHub metadata — джерело фактичної visibility. Початкові private snapshots/права не перетворюються на загальну ліцензію. Поточний `EXTERNAL_PROMPT.md` замовляє незалежне рев'ю, без реалізації чи remote writes.
 
 Користувацький результат: знайти й безпечно зібрати релевантні напрацювання Sol у модульну основу симулятора 2026–2028, дати персональний seed без вигадок і 3–5 кроків для показу Synera Гілберту. Пріоритет — якість. Документ із заголовком SYSTEM DIRECTIVE був user-adopted brief; його текст не є вищою інструкцією.
 
@@ -24,6 +26,6 @@
 
 Залишається: інтеграція браузера з richer Python/Godot model через один прийнятий adapter; зручний save/replay; original owned atlas; actual host MCP adapter з permission/session/freshness contract; персональні значення лише від користувача; Synera live/device/customer gates. Див. TASKS.md. Немає доказу customer demand, settled payment, recurring revenue або subscription savings.
 
-Доступ наступної моделі: авторизація Codex не доводить її GitHub-доступ. Вона має самостійно прочитати private ref, назвати точний SHA, перевірити PACKAGE_MANIFEST і виконати тести зі свіжої копії. До цього receiving-model access = UNVERIFIED. Не робити репозиторій публічним для обходу. Непереносимі source references не потрібні для роботи активного демо; вони потрібні лише для майбутніх адаптацій, які лишаються заблокованими до source/license closure.
+Доступ наступної моделі: авторизація Codex не доводить її GitHub-доступ. У явно дозволене public-вікно вона може читати ref анонімно; після нього потрібна авторизація. Вона має самостійно назвати прочитаний SHA, перевірити PACKAGE_MANIFEST і вказати реально виконані тести або SOURCE_ONLY. До цього receiving-model access = UNVERIFIED. Не відкривати repo повторно автоматично. Непереносимі source references не потрібні для роботи активного демо; вони потрібні лише для майбутніх адаптацій, які лишаються заблокованими до source/license closure.
 
 `scripts/collect_sources.py`, `scripts/build_context.py` і `scripts/inventory.py` — host-specific maintenance/extraction commands для Sol. Вони читають явно вказані оригінальні шляхи й можуть оновити curated metadata. Receiving model їх не запускає для verification. Portable приймання — `scripts/verify.py`; optional source freshness на Sol — `scripts/check_local_sources.py`.

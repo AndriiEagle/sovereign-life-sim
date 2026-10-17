@@ -2,6 +2,8 @@
 
 Приватний фундамент симулятора життя, фінансів, енергії та AI-проєктів у Швейцарії на 2026–2028 роки. Зібрано на Sol у задачі 530, 17.10.2026. **Це перевірювана основа й синтетичне вебдемо, а не завершена гра або запущений бізнес.**
 
+Явний виняток Андрія від 17.10.2026: тимчасовий public-показ для незалежного рев'ю, повернення в private заплановано на **18.10.2026 09:00 Europe/Zurich** через `sovereign-private`. Це не public license; фактичну видимість звіряти в GitHub. Автоматика потребує доступного локального Codex та GitHub auth. Промпт для зовнішньої моделі — [EXTERNAL_PROMPT.md](EXTERNAL_PROMPT.md).
+
 Почни з [HANDOFF.md](HANDOFF.md), [CONTEXT_MANIFEST.json](CONTEXT_MANIFEST.json) та [SYNERA_LAUNCH_CHECKLIST.md](SYNERA_LAUNCH_CHECKLIST.md). Продовження іншою моделлю: [EXTERNAL_PROMPT.md](EXTERNAL_PROMPT.md).
 
 Короткий текст для копіювання на Terra: [TERRA_SUMMARY.uk.md](TERRA_SUMMARY.uk.md). Крок 3 додає 10 описаних UI/runtime surfaces, 13 компонентів із межами reuse та свіжу локальну перевірку Instagram preparation; повні джерела й SHA — `audit/step3-source-evidence.json`.

@@ -105,7 +105,9 @@ def main():
     dump('CONTEXT_MANIFEST.json', {
         'schema': 'sovereign.context-manifest.v1', 'task': 530, 'as_of': '2026-10-17', 'timezone': 'Europe/Zurich',
         'objective': 'Private, modular source-pinned foundation for Sovereign Life RTS / Cashflow 2.0, 2026–2028',
-        'destination': {'owner': 'AndriiEagle', 'repository': 'sovereign-life-sim', 'visibility': 'private', 'branch': 'codex/sovereign-life-sim-530',
+        'destination': {'owner': 'AndriiEagle', 'repository': 'sovereign-life-sim', 'visibility': 'public', 'default_visibility': 'private',
+            'visibility_recorded_for_date': '2026-10-17', 'live_visibility_requires_readback': True,
+            'temporary_public_review': details['temporary_public_review'], 'branch': 'codex/sovereign-life-sim-530',
             'reason': 'Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners.'},
         'coverage': {'kind': 'BOUNDED_SOURCE_AUDIT', 'complete_disk_or_chat_scan': False,
             'included': 'Named working-project roots, current refs, exact source files and selected portable modules.',
