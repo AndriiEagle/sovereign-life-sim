@@ -3,19 +3,59 @@
   "boundary": "SHA256 integrity only, not a signature or an acceptance verdict.",
   "files": [
     {
+      "path": ".env.example",
+      "sha256": "248eebd47a9b2d1f07c0638f7e77d259e6080185d96a082eb84e0191f1e75b4c",
+      "bytes": 123
+    },
+    {
       "path": ".gitattributes",
       "sha256": "da4b81cb61452ce40e8ccbe7e2ed8fd97138c80d131eb5c05228d3cf4e05196e",
       "bytes": 161
     },
     {
       "path": ".gitignore",
-      "sha256": "cfa370abb90e3a13614df6e5e7460dae03b39fc6b1f2a9910a9eaa2fdbe30aaa",
-      "bytes": 157
+      "sha256": "6b3d26679437667a7e10fbe711f67426d46802b58a321f2fa6e8c75f326f44b8",
+      "bytes": 237
     },
     {
       "path": "AGENTS.md",
-      "sha256": "702820049cf42f61f57faca026d78b32ba2c52202b29eb790392e549ea9a19be",
-      "bytes": 1739
+      "sha256": "4dbc04ba780d06150b6fe8e05e84afa35373ac700abfb350f07d7aa84cee2edb",
+      "bytes": 2144
+    },
+    {
+      "path": "ai-architect/assetforge.py",
+      "sha256": "cc95c14d303fcc2665c0a3ee9704cb87f336dd969095cd59d923e79b3921d36e",
+      "bytes": 3269
+    },
+    {
+      "path": "ai-architect/provider_worker.py",
+      "sha256": "8b0605f49fa03053500f7f7b62dd7c0fa839f40f58b3cd921fffda3d8d99ec8d",
+      "bytes": 3111
+    },
+    {
+      "path": "ai-architect/providers.py",
+      "sha256": "6fed93786dd76d148b93f1c28122f0d17c79deafc829963b1d6b69d52ed77938",
+      "bytes": 5871
+    },
+    {
+      "path": "ai-architect/README.md",
+      "sha256": "019b714fc7529a4c603c3919205e1134f4cca808a9af7853958e84a06bd21697",
+      "bytes": 3980
+    },
+    {
+      "path": "ai-architect/ruleforge.py",
+      "sha256": "1bd652619be3ea77b9f216857ac44bc7a46e456b010daa403b71b35a14475345",
+      "bytes": 4219
+    },
+    {
+      "path": "ai-architect/runtime.py",
+      "sha256": "993f9272a6fe42a598b6a9918dfb7a4455cfc712ab5e25548d3f40de79f9482b",
+      "bytes": 11355
+    },
+    {
+      "path": "ai-architect/sandbox.py",
+      "sha256": "e56a48eaab19d8485bbc45e4a329ccf5e98c5e5778491c1ecaaba0f6c1398493",
+      "bytes": 7198
     },
     {
       "path": "audit/acceptance-stage-history.json",
@@ -76,6 +116,16 @@
       "path": "audit/package-review.json",
       "sha256": "178da3f14d438be42b8b3fa6c4e3a59756c03b9d4f40216091383bf13758131b",
       "bytes": 7273
+    },
+    {
+      "path": "audit/phase2-acceptance.json",
+      "sha256": "c6b75e063b0f2ac6c8203cb082bd19bcca77030a25456ae178587197ace9c789",
+      "bytes": 4428
+    },
+    {
+      "path": "audit/phase2-negative-controls.json",
+      "sha256": "06bc0057f887875c67612e307ab61c21c0606ae97194e404c3369998a33872ee",
+      "bytes": 304
     },
     {
       "path": "audit/repair-triage.json",
@@ -154,18 +204,28 @@
     },
     {
       "path": "CONTEXT_MANIFEST.json",
-      "sha256": "6954feaead03abbe2aa0f3fcd2d387c4ae7f7ca3ed8babc7280c97871ebb4ed0",
-      "bytes": 58926
+      "sha256": "4d15b5b8771a0600cae63e96bffc96f1b5749aa13efa8ccb033a7ca1640946d0",
+      "bytes": 59749
     },
     {
       "path": "engine-isometric-ui/app.mjs",
-      "sha256": "0436235f488bc0a2097ff587ebf1d29e86ee745ea91f1ac815da9ab2841c9b70",
-      "bytes": 4138
+      "sha256": "5a279ecce10da81d23f6756ac0932134876349d7bfc716fc97b1c0dc75e934d7",
+      "bytes": 11325
+    },
+    {
+      "path": "engine-isometric-ui/atlas.svg",
+      "sha256": "2fcbbcd678592f8e63931b80a0d6326ca072c76253ada22274b1a57119520bcb",
+      "bytes": 1312
+    },
+    {
+      "path": "engine-isometric-ui/emberglass.mjs",
+      "sha256": "a532bdb1b83701d0571390434b4be182a511c14c744713d07752a1611eba76c4",
+      "bytes": 4401
     },
     {
       "path": "engine-isometric-ui/index.html",
-      "sha256": "ee452d9794a13a4ee0870b0a2f61c5f83c30cac6557ebcf34c2d5780b853dae6",
-      "bytes": 4363
+      "sha256": "0660ce879c58da72e21343b3b4ad1eaa60b772352a59793a88e3c6ad07b9358f",
+      "bytes": 7335
     },
     {
       "path": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
@@ -184,18 +244,23 @@
     },
     {
       "path": "engine-isometric-ui/styles.css",
-      "sha256": "2bf3fc9199b6383299ab3da1a2c2f16626840298558829b38d65402e22e03304",
-      "bytes": 7687
+      "sha256": "77a07602217c827ba134d251224746303a999e26d8e051e459bfa66122a845c6",
+      "bytes": 6510
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "1ebaeb7a219f7a8390dc803324dd737b318d76e85f46b8a45b9bb0861344ebba",
-      "bytes": 7684
+      "sha256": "6a0412033be10d933b461bcdd593ba675a619f3dfa62e1037a3bace17ea6ba05",
+      "bytes": 7904
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "dff859264c2becf16d6b4068c67a4939c701e2badc885c87912d2354366d4624",
-      "bytes": 7486
+      "sha256": "301eaf1ad38f4c3acf6736418a3fff150fa89960eb40f449a8ca8ee0003128dc",
+      "bytes": 9532
+    },
+    {
+      "path": "mcp-bridge/client.py",
+      "sha256": "ac59a6b4f8bc1cfd591a9d69bd9a7d546240f17352d9e3fe5d7b3e581181401d",
+      "bytes": 2291
     },
     {
       "path": "mcp-bridge/events.mjs",
@@ -204,8 +269,8 @@
     },
     {
       "path": "mcp-bridge/README.md",
-      "sha256": "e60761fd1e698642391cfe0614d2750f0b685d6709ffbe8cc861e2abe6d3cc3f",
-      "bytes": 1638
+      "sha256": "e3e5c691865df434ce65b16b55de9ddbfbe63b9f8c8416ce4a7c67b96a110677",
+      "bytes": 2596
     },
     {
       "path": "package.json",
@@ -213,9 +278,24 @@
       "bytes": 209
     },
     {
+      "path": "PHASE2_HANDOFF_PROMPT.uk.md",
+      "sha256": "86cc7e3c760273f0ae0405c37cf225906760d2f7c7b841c1f500f6e75d2b2359",
+      "bytes": 5157
+    },
+    {
       "path": "README.md",
-      "sha256": "7196a845f45e4d8169d8d036e76779a4cbefcf4ae501cd3b2d66d5c23fbb8083",
-      "bytes": 5197
+      "sha256": "6c6fdcbf734334ba376a18e2b5394e6e3aa15eb7860cd575fef0b8656f211d6b",
+      "bytes": 10115
+    },
+    {
+      "path": "requirements-bridge.txt",
+      "sha256": "3bc5f12d660bb17036ef0926f12943eef978589e0cb6a54a917d341d8d8f3d46",
+      "bytes": 84
+    },
+    {
+      "path": "requirements-images.txt",
+      "sha256": "2c2169ab8b29859f7b1fa94b49b9b07107ce2841001e0a0adbfe039d8897f758",
+      "bytes": 95
     },
     {
       "path": "RIGHTS.md",
@@ -244,8 +324,8 @@
     },
     {
       "path": "scripts/freeze.py",
-      "sha256": "f6aa7987553e77dbe9640d0449fc5b0f8041ab3da1d90803dad1b87c0ac886e7",
-      "bytes": 1344
+      "sha256": "af939e3d374f960ba67ce13b6ceb1565fc8ea30b5a3cc07a79255f9905e3635c",
+      "bytes": 1464
     },
     {
       "path": "scripts/inventory.py",
@@ -253,24 +333,44 @@
       "bytes": 6447
     },
     {
+      "path": "scripts/mcp_server.py",
+      "sha256": "ccbd645c393f5cef1e33959823f81078643e18a74d6bdd2cc5c850c2dff11d97",
+      "bytes": 1371
+    },
+    {
       "path": "scripts/scenario.py",
-      "sha256": "6be83a156cabe1ecb73abfabb683bb8a16625f740e8d41e9cc07406666ac8046",
-      "bytes": 1336
+      "sha256": "01010dd7cd1f01d353203d7ee937642bb76c24046ba671ab435ee7b1a938bc0c",
+      "bytes": 1457
     },
     {
       "path": "scripts/serve.py",
-      "sha256": "267215a561486787a17f169155dd3deca5884b79d860110368c45384db0bd595",
-      "bytes": 1954
+      "sha256": "8cccbc48eb607c8a45f750e37bc07086b90225b24726c4d68e1f7c9bf00990fb",
+      "bytes": 9837
     },
     {
       "path": "scripts/verify.py",
-      "sha256": "7035017c7ce0c152c1c4355d216a3b78378ae450ee6517a1148e3a5408b915ac",
-      "bytes": 6082
+      "sha256": "9b242dded7ebbd1e00a92c899c81476fc136154bdfd12eef5c45387582f2e6e9",
+      "bytes": 6770
+    },
+    {
+      "path": "scripts/verify_mcp.py",
+      "sha256": "9470c5bfeabe36f85a05f9b11d06acd54cb988353bdf385d5ef59a963bbd2d4e",
+      "bytes": 1538
+    },
+    {
+      "path": "scripts/verify_sandbox.py",
+      "sha256": "6b620860196ac816a3f211b362c178af9874c38acfd3b7082e93b1220da14304",
+      "bytes": 1109
     },
     {
       "path": "simulation-core/CONDUCTOR_RIGHTS.md",
       "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
       "bytes": 906
+    },
+    {
+      "path": "simulation-core/contracts.py",
+      "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134",
+      "bytes": 1295
     },
     {
       "path": "simulation-core/game-forge/README.md",
@@ -308,14 +408,29 @@
       "bytes": 12979
     },
     {
+      "path": "simulation-core/game_theory_shield.py",
+      "sha256": "24cfd4d60b2534ac9b7b3c9e2006ca5442c9ecb27bae0bfb498b5666d96ba006",
+      "bytes": 2557
+    },
+    {
       "path": "simulation-core/model.mjs",
       "sha256": "3f875ef04bbeabf4e6d670cceeeb2a1c396d8dc2e431379dbfd5385a0a80eab9",
       "bytes": 1604
     },
     {
+      "path": "simulation-core/persistence.py",
+      "sha256": "cc66eb856e44cc9538f1baae0d5b0cc8fc679a591d60516a27b303433a51a42a",
+      "bytes": 5675
+    },
+    {
+      "path": "simulation-core/plugins/README.md",
+      "sha256": "8359c8dce0f529f17ce67f357d8b68f4650b8849c56c19ad644e930fb4dd805c",
+      "bytes": 510
+    },
+    {
       "path": "simulation-core/README.md",
-      "sha256": "397cc6b4c31a65ba70c17a312a3610dc047835935d0c2aec4662569305d41a60",
-      "bytes": 2015
+      "sha256": "9528ce1fcd6a49f42a60ad267192e768c42efc6c8e12b5ecb73e08b8d7af8420",
+      "bytes": 2468
     },
     {
       "path": "simulation-core/revenue_lab/__init__.py",
@@ -338,6 +453,11 @@
       "bytes": 2392
     },
     {
+      "path": "simulation-core/unified_tick.py",
+      "sha256": "af0bcfe3348958589a4f3a17cc480804b67aa456a19480914117470d202c935b",
+      "bytes": 14841
+    },
+    {
       "path": "simulation-core/upstream-tests/test_cli.py",
       "sha256": "4f3649c874161d8e7bac776ce330be77381e5a821476a425a4fe53d17f8767f4",
       "bytes": 2111
@@ -349,8 +469,8 @@
     },
     {
       "path": "SYNERA_LAUNCH_CHECKLIST.md",
-      "sha256": "5a2b3a9c7e7908d2266fa123fe431ee937c7894d0ca69fa93039d18e7d8609c2",
-      "bytes": 4573
+      "sha256": "d6d99aa1ef597f476f475786cb406fef61357f732b14db2d2bd6922c27c7075d",
+      "bytes": 7389
     },
     {
       "path": "TASKS.md",
@@ -359,8 +479,13 @@
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
-      "sha256": "e50929929efd82b81482e75d70bbd0bdbdcecb407a601299b666f516df328b5d",
-      "bytes": 5608
+      "sha256": "b27fd31d5c9c2b4e1a4aa1b5a5bd283978958671910dfa730cc0acd896baa912",
+      "bytes": 7654
+    },
+    {
+      "path": "tests/emberglass.test.mjs",
+      "sha256": "f8fd0bd4003c9e3331936c8b69b71063c1f59ed2f0220978a94645b76586a7bf",
+      "bytes": 596
     },
     {
       "path": "tests/events.test.mjs",
@@ -381,6 +506,11 @@
       "path": "tests/test_integrity.py",
       "sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a",
       "bytes": 2536
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "sha256": "f03180ebc836122a29ead463f771c0b1158d5f325867fd2d1b4fe29426621b74",
+      "bytes": 17581
     },
     {
       "path": "tests/test_server.py",

@@ -1,0 +1,2 @@
+# Optional, for fully decoding/validating AI-generated PNG/WebP replacements.
+Pillow>=10.4,<13

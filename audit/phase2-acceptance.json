@@ -1,0 +1,121 @@
+{
+  "schema": "sovereign.phase2-acceptance.v1",
+  "date": "2026-10-18",
+  "base_commit": "ec0ac62336d305c44653268215a066ceb1101cad",
+  "status": "LOCAL_PASS_PYTHON_ISOLATION_BLOCKED",
+  "test_suites": {
+    "status": "PASS",
+    "python_counts": [
+      65,
+      14,
+      39
+    ],
+    "node_tests": 10,
+    "total": 128,
+    "commands": 5,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "source_integrity": {
+    "source_copies": 17,
+    "projects": 16,
+    "seed_unknowns_preserved": true
+  },
+  "inventory": {
+    "projects": 16,
+    "visual_candidates": 8,
+    "framework_surfaces": 10,
+    "reusable_components": 13
+  },
+  "browser": {
+    "status": "PASS",
+    "observed": [
+      "live Emberglass canvas",
+      "all 16 project controls",
+      "one-hour tick",
+      "JSON AI Architect adds 17th node and SVG",
+      "sprite regeneration changes SHA",
+      "quest activation",
+      "restart preserves nodes/life/quest/assets/rules",
+      "Python BLOCKED_SANDBOX leaves 17 nodes unchanged"
+    ],
+    "restart": {
+      "bridge_after_restart": "NOT_CONNECTED",
+      "nodes": 17,
+      "persisted_fields": [
+        "assets",
+        "life",
+        "nodes",
+        "quest",
+        "rules"
+      ],
+      "quest_hours": 48.0,
+      "status": "PASS",
+      "tick": 5
+    },
+    "screenshot": "local-only .runtime/screenshots/phase2.jpg"
+  },
+  "mcp": {
+    "status": "PASS",
+    "sdk": "mcp==1.30.0",
+    "transport": "Official SDK stdio adapter to loopback HTTP JSON-RPC and SSE",
+    "observed": [
+      "initialize",
+      "tools/list",
+      "tools/call",
+      "state change",
+      "SSE event",
+      "fresh ack after restart"
+    ],
+    "runtime_status": "LIVE_LOCAL_BRIDGE",
+    "model_sessions": "NOT_CONNECTED"
+  },
+  "negative_controls": "audit/phase2-negative-controls.json",
+  "privacy": {
+    "findings": [],
+    "history_blobs": 97,
+    "limits": "Credential-pattern and tracked env-name scan only; no universal secret-detection guarantee.",
+    "reviewed_false_positives": "Six existing task-identifier strings contained embedded sk- substrings; boundary check excludes those, no values printed.",
+    "status": "PASS",
+    "worktree_files": 104
+  },
+  "push_authorization": "Latest direct user instruction: push this repository even while Public; no secret/runtime publication.",
+  "capabilities": {
+    "python": {
+      "status": "BLOCKED_SANDBOX",
+      "reason": "Rootless OCI runtime and pinned image are required."
+    },
+    "paid_providers": "NOT_RUN",
+    "live_synera": "NOT_RUN",
+    "image_validator": "PRESENT"
+  },
+  "provider_calls": 0,
+  "provider_usd": "0.00",
+  "limits": [
+    "Real generated-Python execution is BLOCKED_SANDBOX: no rootless OCI runtime available.",
+    "Paid rule/image adapters were tested with mocks and disabled by default; no live provider acceptance.",
+    "Live Synera JWT, Neon recovery, physical devices and customer acceptance NOT_RUN.",
+    "No independent external model review was run.",
+    "Credential-pattern scan is bounded, not a universal secret guarantee."
+  ],
+  "source_sha256": {
+    "scripts/serve.py": "8cccbc48eb607c8a45f750e37bc07086b90225b24726c4d68e1f7c9bf00990fb",
+    "scripts/scenario.py": "01010dd7cd1f01d353203d7ee937642bb76c24046ba671ab435ee7b1a938bc0c",
+    "simulation-core/unified_tick.py": "af0bcfe3348958589a4f3a17cc480804b67aa456a19480914117470d202c935b",
+    "simulation-core/persistence.py": "cc66eb856e44cc9538f1baae0d5b0cc8fc679a591d60516a27b303433a51a42a",
+    "simulation-core/game_theory_shield.py": "24cfd4d60b2534ac9b7b3c9e2006ca5442c9ecb27bae0bfb498b5666d96ba006",
+    "ai-architect/runtime.py": "993f9272a6fe42a598b6a9918dfb7a4455cfc712ab5e25548d3f40de79f9482b",
+    "ai-architect/ruleforge.py": "1bd652619be3ea77b9f216857ac44bc7a46e456b010daa403b71b35a14475345",
+    "ai-architect/assetforge.py": "cc95c14d303fcc2665c0a3ee9704cb87f336dd969095cd59d923e79b3921d36e",
+    "ai-architect/sandbox.py": "e56a48eaab19d8485bbc45e4a329ccf5e98c5e5778491c1ecaaba0f6c1398493",
+    "ai-architect/providers.py": "6fed93786dd76d148b93f1c28122f0d17c79deafc829963b1d6b69d52ed77938",
+    "engine-isometric-ui/app.mjs": "5a279ecce10da81d23f6756ac0932134876349d7bfc716fc97b1c0dc75e934d7",
+    "engine-isometric-ui/emberglass.mjs": "a532bdb1b83701d0571390434b4be182a511c14c744713d07752a1611eba76c4",
+    "tests/test_phase2.py": "f03180ebc836122a29ead463f771c0b1158d5f325867fd2d1b4fe29426621b74"
+  }
+}

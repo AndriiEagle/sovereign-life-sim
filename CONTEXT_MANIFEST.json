@@ -25,7 +25,12 @@
       "copies_limit": "Private restoration cannot erase previously downloaded copies."
     },
     "branch": "codex/sovereign-life-sim-530",
-    "reason": "Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners."
+    "reason": "Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners.",
+    "phase2_push_authorization": {
+      "date": "2026-10-18",
+      "source": "Direct user instruction to implement and push even while this repository remains Public.",
+      "scope": "This branch and reviewed Phase 2 source only; no secrets, raw runtime data, other repositories, or new public/commercial license."
+    }
   },
   "coverage": {
     "kind": "BOUNDED_SOURCE_AUDIT",
@@ -1256,5 +1261,17 @@
   ],
   "provider_calls": 0,
   "provider_usd": "0.00",
-  "subscription_savings": null
+  "subscription_savings": null,
+  "phase2_runtime": {
+    "base_commit": "ec0ac62336d305c44653268215a066ceb1101cad",
+    "implemented_on": "2026-10-18",
+    "status": "LOCAL_IMPLEMENTATION_PYTHON_ISOLATION_BLOCKED",
+    "core": "simulation-core/unified_tick.py",
+    "server": "scripts/serve.py",
+    "mcp_adapter": "scripts/mcp_server.py",
+    "architect": "ai-architect",
+    "python": "BLOCKED_SANDBOX",
+    "paid_providers": "DISABLED_NOT_LIVE_VERIFIED",
+    "acceptance": "audit/phase2-acceptance.json"
+  }
 }

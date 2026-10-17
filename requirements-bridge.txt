@@ -1,0 +1,2 @@
+# Official SDK v1 transport contract, tested in an isolated local venv.
+mcp==1.30.0

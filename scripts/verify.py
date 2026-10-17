@@ -2,6 +2,7 @@
 from pathlib import Path, PurePosixPath
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import shutil
@@ -98,7 +99,7 @@ def main():
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'upstream-tests', '-q'], ROOT / 'simulation-core'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'sim/tests', '-t', '.', '-q'], ROOT / 'simulation-core/game-forge'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], ROOT),
-            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs', 'tests/iso-helpers.test.mjs'], ROOT),
+            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs', 'tests/iso-helpers.test.mjs', 'tests/emberglass.test.mjs'], ROOT),
             ([sys.executable, '-B', 'scripts/scenario.py', '--ticks', '96', '--action', 'rest', '--seed', '42'], ROOT),
         ]
         for command, cwd in commands:
@@ -108,13 +109,19 @@ def main():
             if row['exit_code']:
                 break
     success = all(row['exit_code'] == 0 for row in runs)
+    sys.path.insert(0,str(ROOT/'ai-architect'))
+    from sandbox import Sandbox
+    sandbox=Sandbox(ROOT/'.runtime/simulator/sandbox.json').report() if not args.integrity_only else {'status':'NOT_RUN'}
     report = {'status': 'PASS' if success else 'FAIL', 'facts': facts, 'runs': runs,
-              'boundary': 'Portable component/source acceptance only. Browser, native engines, live Synera, real MCP transport and customers require separate observed evidence.'}
+              'phase2_status': 'BLOCKED_SANDBOX' if sandbox['status']!='READY' else 'LOCAL_CHECKS_PASS' if success else 'FAIL',
+              'capabilities': {'python':sandbox,'paid_providers':'NOT_RUN','live_synera':'NOT_RUN',
+                               'image_validator':'PRESENT' if importlib.util.find_spec('PIL') else 'BLOCKED_DEPENDENCY'},
+              'boundary': 'Local component/source acceptance. Browser and official MCP SDK roundtrip have separate observed receipts. Python requires real isolation; no live Synera or paid-provider acceptance is implied.'}
     if args.report:
         target = safe_target(ROOT, args.report.as_posix())
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'status': report['status'], **facts, 'commands': len(runs)}))
+    print(json.dumps({'status': report['status'], **facts, 'commands': len(runs), 'phase2_status':report['phase2_status']}))
     if not success:
         print(runs[-1]['summary'])
     return int(not success)

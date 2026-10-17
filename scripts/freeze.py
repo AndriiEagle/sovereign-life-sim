@@ -8,7 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def included(path):
     relative = path.relative_to(ROOT)
-    if any(part in {'.git', '__pycache__', '.runtime', 'node_modules', 'screenshots'} for part in relative.parts):
+    if any(part in {'.git', '__pycache__', '.runtime', '.venv', 'node_modules', 'screenshots', 'generated'} for part in relative.parts):
+        return False
+    if relative.name.startswith('.env') and relative.name != '.env.example':
         return False
     if relative.name in {'PACKAGE_MANIFEST.json', 'remote-readback.json', 'acceptance-local.json'}:
         return False

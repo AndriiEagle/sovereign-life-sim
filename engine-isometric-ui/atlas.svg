@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="160" viewBox="0 0 512 160">
+<!-- Original Sovereign geometric atlas; no game art. Emberglass frame/pivot contract. -->
+<g stroke="#597465" stroke-width="1"><path d="M0 96 64 64 128 96 64 128Z" fill="#30463b"/><path d="M4 96 64 66 124 96 64 126Z" fill="none" opacity=".3"/>
+<g transform="translate(128)"><path d="M16 112 64 88 112 112 64 140Z" fill="#152c26"/><path d="M32 66 64 82 64 128 32 112Z" fill="#66806c"/><path d="M64 82 96 66 96 112 64 128Z" fill="#354e42"/><path d="M32 66 64 50 96 66 64 82Z" fill="#9aa985"/><path d="M43 94 55 100 M74 100 86 94" stroke="#dbbf83" stroke-width="4"/></g>
+<g transform="translate(256)"><path d="M16 112 64 88 112 112 64 140Z" fill="#152c26"/><path d="M36 24 64 38 64 128 36 114Z" fill="#7a8f76"/><path d="M64 38 92 24 92 114 64 128Z" fill="#3a5a48"/><path d="M36 24 64 10 92 24 64 38Z" fill="#b9bd94"/><path d="M46 70 57 76 M72 76 83 70 M46 90 57 96 M72 96 83 90" stroke="#deebb7" stroke-width="4"/></g>
+<g transform="translate(384)"><path d="M32 110 64 94 96 110 64 126Z" fill="#486e68"/><path d="M48 58 64 66 64 110 48 102Z" fill="#83a8a2"/><path d="M64 66 80 58 80 102 64 110Z" fill="#365956"/><path d="M48 58 64 50 80 58 64 66Z" fill="#b9d1bd"/><circle cx="64" cy="40" r="12" fill="#91c4af"/></g></g></svg>

@@ -4,8 +4,9 @@ import json
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'simulation-core/game-forge'))
-from sim.core import initial_state, load_params, step
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'simulation-core'))
+from unified_tick import initial_state, advance
 
 
 def main():
@@ -16,13 +17,14 @@ def main():
     args = parser.parse_args()
     if not 1 <= args.ticks <= 10000:
         parser.error('--ticks must be in 1..10000')
-    params = load_params()
-    state = initial_state(params, seed=args.seed)
-    start = {key: state[key] for key in ('tick', 'energy', 'burnout', 'balance_cents')}
-    for _ in range(args.ticks):
-        state = step(state, {'kind': args.action}, params, state['rng'])
-    print(json.dumps({'status': 'SYNTHETIC_NOT_PERSONAL_OR_FORECAST', 'source': 'game-forge/sim',
-                     'start': start, 'finish': {key: state[key] for key in start},
+    manifest=json.loads((ROOT/'CONTEXT_MANIFEST.json').read_text(encoding='utf-8'))
+    state = initial_state(manifest, seed=args.seed)
+    start = {key: state['life'][key] for key in ('tick', 'energy', 'burnout', 'balance_cents')}
+    remaining=args.ticks
+    while remaining:
+        count=min(remaining,672);state=advance(state,count,args.action);remaining-=count
+    print(json.dumps({'status': 'SYNTHETIC_NOT_PERSONAL_OR_FORECAST', 'source': 'unified_tick + game-forge + Conductor',
+                     'start': start, 'finish': {key: state['life'][key] for key in start},
                      'action': args.action, 'real_payment': 'NOT_CONNECTED'}, indent=2))
 
 

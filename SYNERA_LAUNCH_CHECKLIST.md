@@ -1,3 +1,32 @@
+# Phase 2: швидкий старт 48h MVP Check
+
+Команди нижче звірені з canonical source `4abbd06aa6faa98a69a6bcad4fec4470e11e7676` ([handoff](https://github.com/AndriiEagle/synera_-MVPplus-/blob/4abbd06aa6faa98a69a6bcad4fec4470e11e7676/docs/REVIEW_HANDOFF.uk.md)). Ця фаза їх не виконувала проти live Synera. Перші 24 години — показ; до 48 годин — закриття погоджених live gates або точний BLOCKED.
+
+```powershell
+# Окрема нова копія. Node 22; без ключів для preview.
+git clone --branch main https://github.com/AndriiEagle/synera_-MVPplus-.git .runtime/synera-review
+git -C .runtime/synera-review switch --detach 4abbd06aa6faa98a69a6bcad4fec4470e11e7676
+Set-Location .runtime/synera-review
+node --test web_launch/*.test.mjs web_launch/iceberg/*.test.mjs neon/*.test.mjs plan/v6/workflow/approval-boundary.test.mjs
+node web_launch/server.mjs
+# Відкрити надрукований loopback URL. Це preview, не live JWT.
+```
+
+**JWT двох людей — NOT_RUN.** Для справжнього проходу потрібні погоджений rollout URL, увімкнені live readiness flags і дві окремі авторизовані browser-сесії з реальними signed JWT. Перевірена сторінка — `/real-journey.html`. У двох різних профілях пройти profile → terms → дві згоди → invitation → receiver acceptance; окремо withdrawal і заборону sender self-accept. Не вставляти JWT в команди, Git чи звіт. Preview та fixture-прохід цього не доводять.
+
+**SQL-передумова — лише одноразовий loopback PostgreSQL:**
+
+```powershell
+# Порт уже підготовленого одноразового сервера, НЕ production.
+$env:SYNERA_ACCEPTANCE_PGPORT = '55432'
+node tools/meeting-status-guard-sql-acceptance.mjs --receipt=sql-local-receipt.json
+Remove-Item Env:SYNERA_ACCEPTANCE_PGPORT
+```
+
+Це точний runner із canonical source: він використовує identity shim, створює й видаляє лише власні тестові бази. **Це не Neon recovery і не signed-JWT acceptance.** У перевірених джерелах немає підтвердженої універсальної команди Neon restore. Recovery залишається BLOCKED до доступу до погодженої ізольованої копії, backup/branch identifier і процедури власника; production restore не запускати. Потрібен фактичний receipt відновлення та readback даних.
+
+---
+
 # Synera → показ Гілберту протягом 24 годин
 
 Мета цих 24 годин — підготувати чесний, зрозумілий показ і конкретне рішення Гілберта. Production-пілот потребує окремих live/device gates. Нижче — робота, яку ще треба виконати; ця задача не надсилала Гілберту повідомлень і не запускала Synera.

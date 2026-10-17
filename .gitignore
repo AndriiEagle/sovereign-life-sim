@@ -9,3 +9,6 @@ audit/screenshots/
 audit/remote-readback.json
 audit/acceptance-local.json
 .runtime/
+simulation-core/plugins/generated/
+engine-isometric-ui/assets/generated/
+.venv/

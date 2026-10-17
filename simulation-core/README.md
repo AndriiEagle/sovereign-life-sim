@@ -1,3 +1,13 @@
+# Phase 2 — unified adapter
+
+`unified_tick.py` is the active pure adapter over the byte-preserved game-forge and Conductor snapshots. Both the HTTP runtime and `scripts/scenario.py` use it. `game_theory_shield.py` contains explicit toy strategies; `persistence.py` owns the durable event transaction boundary. Generated plugins are never imported into this process.
+
+History and original source contracts follow.
+
+---
+
+## Historical foundation notes
+
 # Математичне ядро
 
 `revenue_lab/` — точна копія оригінального Conductor Revenue Lab з дозволом одержувачу повторно використовувати код; умови в `CONDUCTOR_RIGHTS.md`, provenance в `audit/source-copies.json`. Python 3.10+; лише стандартна бібліотека. Збережені upstream-тести перевіряються заново в цьому пакеті.

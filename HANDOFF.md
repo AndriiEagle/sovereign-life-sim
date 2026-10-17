@@ -1,3 +1,17 @@
+## Phase 2 — оновлення 18.10.2026
+
+Робоча гілка `codex/sovereign-life-sim-530`; база `ec0ac62336d305c44653268215a066ceb1101cad`. Поточний HEAD звір через Git, не через self-referential SHA в документі.
+
+Реалізовано: unified_tick поверх byte-preserved game-forge/Conductor; автентифікований loopback API; атомарний журнал/відновлення/idempotency; Bio/Sleep/Weather та 48h-квест; параметризована теорія ігор; активний Emberglass renderer з оригінальним atlas і SVG-спрайтами; 16 проєктів і хвилі; RuleForge JSON/Python boundary; AssetForge cache/regen; офіційний MCP SDK stdio adapter до HTTP JSON-RPC/SSE.
+
+Офлайн JSON та SVG працюють без ключів. Python — BLOCKED_SANDBOX до реального rootless OCI runtime і перевірки `scripts/verify_sandbox.py`. Платні адаптери — NOT_LIVE_VERIFIED, вимкнені, витрат немає. Реальні Synera JWT/Neon/device/customer gates — NOT_RUN; fixtures їх не замінюють. Інтеграція MiroFish лишається локальним сценарним placeholder.
+
+Остання пряма інструкція користувача 18.10: виконати push у цей репозиторій навіть поки він Public; очікування Private більше не є умовою push. Це точковий дозвіл, без нової ліцензії чи дозволу публікувати інші дані. Секрети й приватний runtime виключені. Фактичну visibility читати в GitHub.
+
+Запуск і приклади — README.md. Промпт для наступного інженера — PHASE2_HANDOFF_PROMPT.uk.md. Історичний handoff нижче не є поточним статусом нових модулів.
+
+---
+
 # Передача Sovereign Life Simulator
 
 Власник: AndriiEagle. Репозиторій: `https://github.com/AndriiEagle/sovereign-life-sim`, private за замовчуванням. Робоча гілка: `codex/sovereign-life-sim-530`. `audit/git-base.json` фіксує справжній стартовий commit; точний опублікований head перевіряється через `git rev-parse HEAD` і remote readback. Не записувати self-referential commit SHA в commit, який його містить.
