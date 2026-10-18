@@ -2,7 +2,7 @@
 
 Репозиторій: `AndriiEagle/sovereign-life-sim`, гілка `codex/sovereign-life-sim-530`. Новий follow-up виправляє SOURCE_ONLY аудит реалізації `08555703a19f85aacbf3497012e3c1b910d74d88`. Поточний опублікований SHA звіряти через Git/remote; SHA не записується сам у свій commit.
 
-Поточне завдання передачі: доказовий незалежний cloud-аудит runtime-бази `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`. Весь необхідний оглядачеві контекст, source map, дозволи, відомі gates й межі недоступних зовнішніх проєктів — у `AUDIT_CONTEXT.md`; виконуваний контракт — `AUDIT_PROMPT.uk.md`; фактичний portable rerun у свіжому clone — `audit/cloud-audit-baseline.json`. Цей handoff не змінює runtime/тести й не є виконаним зовнішнім аудитом.
+Поточне завдання передачі: доказовий незалежний cloud-аудит runtime-бази `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`. Весь необхідний оглядачеві контекст, source map, дозволи, відомі gates й межі недоступних зовнішніх проєктів — у `AUDIT_CONTEXT.md`; виконуваний контракт — `AUDIT_PROMPT.uk.md`; фактичний portable rerun у свіжому clone — `audit/cloud-audit-baseline.json`. Це опис попереднього handoff commit 8f60a10: він не змінював runtime/тести. Наступна візуальна доробка нижче змінює UI та відповідні тести; зовнішній звіт коду не прочитав.
 
 Попередній private rollback фактично завершено 18.10 о 07:03:30 UTC; `sovereign-private` PAUSED. Нове пряме доручення Андрія того самого дня дозволяє повторно зробити саме цей repo public для суворого read-only review. Нового закриття/monitor/paid run не замовлено й не створено. Review findings приймаються лише після незалежної перевірки; implementation/remote writes не входять у промпт.
 
@@ -22,3 +22,7 @@ MCP: `scripts/configure_mcp.py` створює ignored проєктний Codex 
 Відкрито: реальна Python-ізоляція BLOCKED_SANDBOX; paid providers NOT_RUN/disabled; Synera signed-JWT/Neon/device/customer gates NOT_RUN; upstream MiroFish NOT_CONNECTED. Не виконувати generated Python на хості. Чужі/native game art не включено; exact snapshots і rights notices збережено. Фактичні особисті гроші/здоров’я/приймання лишаються невідомими.
 
 Попереднє пряме доручення дозволило точкові виправлення зовнішніх Quantum_Trinity/token-monster реалізацій. Вони виконані поза цим Git-репозиторієм; `repairs/` містить bounded maintenance/test harness, а не копію цих застосунків. Push цього repo не доставляє зовнішні canonical файли. Paid checkout лишається fail-closed до окремої перевіреної інтеграції; live payment не заявляється. Приватні preimages/patches/receipts не публікуються.
+
+## Візуальна доробка після поверненого аудиту
+
+За новим прямим дорученням користувача перевірено cloud-звіт (код NOT_READ), відремонтовано втрату keyboard focus і дороблено Sovereign до художнього орієнтира 8–9/10. Додано оригінальний imagegen-острів, живі контрастні Canvas overlays, responsive HUD, мобільне центрування/pan та image-failure fallback. `DESIGN.md` — контракт, `audit/returned-audit-triage.uk.md` — висновки щодо вхідного звіту, `audit/visual-refinement-acceptance.json` — актуальні перевірки й межі. Для зовнішнього браузера з обмеженням URL використовуй повний `CLOUD_AUDIT_START.uk.md`; не повторюй README-only висновки як code audit. Snapshots/економіка/Python isolation/provider gates збережені.

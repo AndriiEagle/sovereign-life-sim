@@ -1,4 +1,4 @@
-import {createMap,labelFor} from './emberglass.mjs';
+import {createMap,titleFor,syncProjectButtons} from './emberglass.mjs';
 import {cents,expenseRule,towerParams} from './scenario-forms.mjs';
 import {createDurableQueue} from '../mcp-bridge/command-queue.mjs';
 const $=id=>document.getElementById(id);let state,token,map,stream,reconnectTimer,busy=false;
@@ -55,8 +55,11 @@ function render(){
   $('retry-command').hidden=!commandQueue.hasPending();
   $('scenario-multiplier').textContent=`Надходження ×${state.config.revenue_multiplier??1} · явне сценарне припущення`;
   $('use-provider').disabled=state.capabilities.provider.status!=='CONFIGURED_NOT_LIVE_VERIFIED';if($('use-provider').disabled)$('use-provider').checked=false;
-  const focus=state.nodes.find(n=>n.id===state.selected);$('focus-name').textContent=focus?.title||'Обери вузол';$('focus-status').textContent=focus?`ХВИЛЯ ${focus.wave} · ${focus.status}`:'—';
-  $('focus-description').textContent=focus?`${focus.source_status}. Прогрес сценарію: ${focus.progress.toFixed(1)}%. Наступна дія: ${focus.status==='Queued'?'дочекатися вільного слота':focus.status==='FOCUSED'?'робоча сесія або завершення':focus.status==='SHIPPED'?'задати модель cashflow':'перегляд параметрів'}.`:'';
+  const focus=state.nodes.find(n=>n.id===state.selected);$('focus-name').textContent=focus?titleFor(focus):'Обери вузол';$('focus-status').textContent=focus?`ХВИЛЯ ${focus.wave} · ${focus.status}`:'—';
+  $('focus-description').textContent=focus?`Наступний крок: ${focus.status==='Queued'?'дочекайся вільного слота у фокусі':focus.status==='FOCUSED'?'виділи годину на роботу або заверши етап':focus.status==='SHIPPED'?'задай припущення для cashflow':'переглянь параметри сценарію'}.`:'';
+  $('focus-source-status').textContent=focus?.source_status||'Джерело не вказано';
+  $('focus-progress').textContent=focus?`${focus.progress.toFixed(1)}%`:'—';
+  $('focus-progress-bar').style.width=(focus?.progress||0)+'%';
   $('work').disabled=focus?.status!=='FOCUSED';$('ship').disabled=focus?.status!=='FOCUSED';$('cashflow').disabled=focus?.status!=='SHIPPED';
   const asset=focus&&state.assets[focus.id];if(asset){$('asset-preview').src=asset.url;$('asset-origin').textContent=`${asset.origin}\n${asset.status} · SHA ${asset.sha256.slice(0,10)}`;}
   $('node-economics').textContent=focus?`База CHF/день: +${focus.revenue_day_cents/100} / −${focus.cost_day_cents/100}. Старт списано: CHF ${(focus.setup_paid_cents??0)/100}. ROI після списання: ${state.economy.ROI[focus.id]??'базу не задано'}.`:'';
@@ -65,7 +68,7 @@ function render(){
     $('auto-deduct-setup').checked=focus.auto_deduct_setup??false;
   }
   $('node-count').textContent=`${state.nodes.length} вузлів · ${state.nodes.filter(n=>n.status==='FOCUSED').length}/2 у фокусі`;
-  $('nodes').replaceChildren(...state.nodes.map(n=>{const b=button(labelFor(n),()=>act('select_node',{node_id:n.id}),`project ${n.status.toLowerCase()} ${n.id===state.selected?'selected':''}`);b.dataset.nodeId=n.id;b.setAttribute('aria-pressed',String(n.id===state.selected));const s=document.createElement('span');s.textContent=`W${n.wave} · ${n.status}`;b.append(s);return b;}));
+  syncProjectButtons($('nodes'),state.nodes,state.selected,id=>act('select_node',{node_id:id}).catch(e=>notice(e.message)));
   $('rules').replaceChildren(...Object.values(state.rules).map(r=>{const div=document.createElement('div');div.textContent=`${r.id} · ${r.pending?'PENDING_TICK':r.active?'ACTIVE':'DISABLED'} · ${r.format||'—'}`;div.append(button('Відкотити',()=>act('rollback_rule',{rule_id:r.id})));return div;}));
   $('recovery').textContent=state.bio.debuff_active?`${state.bio.debuff_reason}: будівництво ×0.6 до тіку ${state.bio.debuff_until_step}. Одна дія: ${state.bio.recovery}.`:'Дебаф не активний. Параметри — добровільна самооцінка сценарію.';
   if(document.activeElement?.tagName!=='INPUT'){

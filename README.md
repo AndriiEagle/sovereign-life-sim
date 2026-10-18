@@ -1,6 +1,6 @@
 # Sovereign і Argon
 
-Для незалежного хмарного аудитора: почни з [AUDIT_CONTEXT.md](AUDIT_CONTEXT.md) → [AUDIT_PROMPT.uk.md](AUDIT_PROMPT.uk.md), звір точний published SHA й [свіжий portable baseline](audit/cloud-audit-baseline.json). Runtime-база цього review package — `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`; решта контексту доступна в цьому GitHub tree. 18.10.2026 Андрій прямо доручив повторний public-показ цього repo для аудиту; попередній private rollback виконано, job PAUSED, нового закриття не заплановано. Live visibility перевіряється в GitHub.
+Для незалежного хмарного аудитора: почни з [AUDIT_CONTEXT.md](AUDIT_CONTEXT.md) → [AUDIT_PROMPT.uk.md](AUDIT_PROMPT.uk.md), звір точний published SHA й [свіжий portable baseline](audit/cloud-audit-baseline.json). Історична runtime-база цього review package — `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`; решта контексту доступна в цьому GitHub tree. 18.10.2026 Андрій прямо доручив повторний public-показ цього repo для аудиту; попередній private rollback виконано, job PAUSED, нового закриття не заплановано. Live visibility перевіряється в GitHub.
 
 Два окремі локальні застосунки. Sovereign — сценарний симулятор проєктів, ресурсів і cashflow. Argon — завершена коротка пригодницька глава «Останній трамвай», у яку можна пограти. Усі CHF, події, енергія й прогрес вигадані; фактичні особисті показники залишаються невідомими.
 
@@ -13,6 +13,8 @@ python -B scripts/serve_argon.py  # Argon: http://127.0.0.1:4532/
 Python 3.11+; Node 20+ для повних перевірок. Обидва застосунки працюють без AI-ключів. Сервери слухають лише loopback і віддають лише дозволені файли. Зупинка — Ctrl+C.
 
 ## Sovereign: поточна реалізація
+
+Оригінальний згенерований альпійський острів із живими баштами, чіткішими підписами, адаптивними картками й клавіатурним керуванням. Усі дії та числа залишаються станом симуляції. [Фактичний десктопний кадр](audit/visual/sovereign-desktop.jpg), [390px кадр](audit/visual/sovereign-mobile.jpg), [візуальний контракт](DESIGN.md), [перевірки](audit/visual-refinement-acceptance.json). Повернений cloud-звіт читав лише README: [перевірений розбір](audit/returned-audit-triage.uk.md), [буквальні URL для повторного аудиту](CLOUD_AUDIT_START.uk.md).
 
 Єдиний `unified_tick` використовує незмінені snapshots game-forge і Conductor. Активний Emberglass renderer з оригінальним atlas показує 16 початкових проєктів, хвилі й максимум дві фокусні башти. Доступні робота/відпочинок, добровільні Bio/Sleep/Weather, дебаф ×0.6, 48h-квест, параметризована теорія ігор, SVG-іконки та офлайн JSON RuleForge. Один диспетчер обслуговує UI й MCP; зміни зберігаються в fsync-журналі з idempotency та відновленням.
 

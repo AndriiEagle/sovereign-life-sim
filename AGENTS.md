@@ -12,3 +12,5 @@ Read README.md, HANDOFF.md, CONTEXT_MANIFEST.json and TASKS.md first. This is a 
 - Latest direct user authorization (2026-10-18): implement Phase 2, commit and push this branch even while this repository is Public. Do not wait for Private to push these reviewed changes. This does not authorize secrets, runtime data, paid calls, production rollout or publishing other repositories.
 
 - Current external review contract: read AUDIT_CONTEXT.md and AUDIT_PROMPT.uk.md. Audit source and run disposable synthetic tests; do not implement, commit/push, change visibility, install dependencies or call paid providers. Historical reports and catalogs do not supersede current source. Changes to runtime require a separate implementation request.
+
+- Visual followup authorized directly by Andrii on 2026-10-18: implement the verified audit repairs and generated-image visual refinement in this branch, preserving mechanics and source snapshots. This local implementation request is separate from the read-only external-auditor contract above. See DESIGN.md and audit/visual-refinement-acceptance.json.

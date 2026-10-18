@@ -19,8 +19,8 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "5be90d223d1d42621c3781633176921affe41fb4b4fe255cd8ddd05ddf9da533",
-      "bytes": 2550
+      "sha256": "3cdadcb9027be3521a26480b79ca70c1012f61a04f57c1ed2216bfe5b9c201e6",
+      "bytes": 2905
     },
     {
       "path": "ai-architect/assetforge.py",
@@ -208,6 +208,11 @@
       "bytes": 563
     },
     {
+      "path": "audit/returned-audit-triage.uk.md",
+      "sha256": "b9a922faf4fc98782a97899a0f80ad633efec67364d21434ebf080e6ba5cc698",
+      "bytes": 4350
+    },
+    {
       "path": "audit/source-copies.json",
       "sha256": "6e2d652a8be9316fbf888aa6db30b6b8465248628e0bdc61beeea19d0a4ac219",
       "bytes": 6515
@@ -243,6 +248,26 @@
       "bytes": 711
     },
     {
+      "path": "audit/visual/sovereign-before.jpg",
+      "sha256": "5a9c40d22761791c89d86561e1af93718d47853fe7c93daa951ae7a4b6107282",
+      "bytes": 66111
+    },
+    {
+      "path": "audit/visual/sovereign-desktop.jpg",
+      "sha256": "1006d43f92d72d2233ccdba620b8429c48fa91d54eb2cb57269baa5a8ada9780",
+      "bytes": 148540
+    },
+    {
+      "path": "audit/visual/sovereign-mobile.jpg",
+      "sha256": "08456223325d1c1b0f9bb7c97cc71c1552227764ece4e49c44b17c5130617b86",
+      "bytes": 59741
+    },
+    {
+      "path": "audit/visual-refinement-acceptance.json",
+      "sha256": "be5e39643ff170fc7826603ee3787f182aa2a6d771285fcf85cf869071f2ae43",
+      "bytes": 10447
+    },
+    {
       "path": "audit/visual-sources-review.json",
       "sha256": "3c43f999cb7752dd211aa346398abb7706e4a776c55c8a15a322c022988a26d2",
       "bytes": 7913
@@ -254,8 +279,8 @@
     },
     {
       "path": "AUDIT_CONTEXT.md",
-      "sha256": "77529317230b080e44164dda309a97bb9a2e37830cd4f45ebfee1323c557fd46",
-      "bytes": 12804
+      "sha256": "a45bb9f1b7d05bb605757d14794d016fd825c66c38073f15015e2dd11e14c702",
+      "bytes": 14375
     },
     {
       "path": "AUDIT_PROMPT.uk.md",
@@ -283,14 +308,34 @@
       "bytes": 1589
     },
     {
+      "path": "CLOUD_AUDIT_START.uk.md",
+      "sha256": "8910081991870c43c75de1cc289cd1167652dfd63d07f516e4a6502f9403b557",
+      "bytes": 6529
+    },
+    {
       "path": "CONTEXT_MANIFEST.json",
-      "sha256": "336485701638c46fe1d6179a0bffad76a264ebb3b580ee7e8cd0fc8446bda969",
-      "bytes": 62371
+      "sha256": "5b8c38c2941824fcf8265a2e0d7f0f626e3461931180689791e210ae2c160025",
+      "bytes": 64202
+    },
+    {
+      "path": "DESIGN.md",
+      "sha256": "c27fdefe49d6b5d2915205aaa66e305a46f5da2fda5f3b33ffc3f93c938f489c",
+      "bytes": 6218
     },
     {
       "path": "engine-isometric-ui/app.mjs",
-      "sha256": "0cf020c013e9bd048a0b1db1aa4d5b71e8ec5e7351b684060b6aa39b03ca637a",
-      "bytes": 14177
+      "sha256": "10c6c5888d35d0fa540aa086114e6b3413c3d2d53746b6d82470dc782596c7b8",
+      "bytes": 14171
+    },
+    {
+      "path": "engine-isometric-ui/assets/visual/ART_DIRECTION.md",
+      "sha256": "6490264e2f0cc8122246492dd0ecef7888f22fdec983616f2889e71e14bd392d",
+      "bytes": 2967
+    },
+    {
+      "path": "engine-isometric-ui/assets/visual/sovereign-island-v1.png",
+      "sha256": "279962e120fe65274e10fb67b5692a8284b3212a46b8ff3adb32318a153b538c",
+      "bytes": 2892226
     },
     {
       "path": "engine-isometric-ui/atlas.svg",
@@ -299,13 +344,13 @@
     },
     {
       "path": "engine-isometric-ui/emberglass.mjs",
-      "sha256": "a532bdb1b83701d0571390434b4be182a511c14c744713d07752a1611eba76c4",
-      "bytes": 4401
+      "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700",
+      "bytes": 8938
     },
     {
       "path": "engine-isometric-ui/index.html",
-      "sha256": "9d41ce1f4382c347d4b69c31785d778cbbbb34ad279d166ab5be78b5f56ef47f",
-      "bytes": 9429
+      "sha256": "0518d2cc8eabcd1772efee7562282aa9b78b95561b78beabddb8c26db2a7cc0e",
+      "bytes": 11207
     },
     {
       "path": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
@@ -329,18 +374,18 @@
     },
     {
       "path": "engine-isometric-ui/styles.css",
-      "sha256": "77a07602217c827ba134d251224746303a999e26d8e051e459bfa66122a845c6",
-      "bytes": 6510
+      "sha256": "60879fdcd651b860533fab6d4707d8a7d8a2bf21ee2e6b484b3b047788fa4f7c",
+      "bytes": 17250
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "e2d48f826e906afd88c5ff234c74a091dd4cc5cec64760b66b4e4c2dd567ff90",
-      "bytes": 1291
+      "sha256": "5911f4330de163cc85c95f5862f35d9f94001b801b8e1bab3364a461deaa3783",
+      "bytes": 1969
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "e810a99293577e0ece78c254b8c670dce81c27b7f42ca10737afdc6a3db152a3",
-      "bytes": 5980
+      "sha256": "62be2d27f02e2a800e2a7c6d141d0a9e2b87c4954fcbb13b669f1ccb7f37e7c0",
+      "bytes": 7221
     },
     {
       "path": "mcp-bridge/client.py",
@@ -374,8 +419,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "b54fc156a652b471d1fa911a1867ed15b200ecb471b8c8d56d69adbeab17dfd6",
-      "bytes": 10567
+      "sha256": "6a6d8ca8479cedb87a9facd7e00e605829228e53384e2e0c45c0a4afbfb8d4ce",
+      "bytes": 11408
     },
     {
       "path": "repairs/apply_hardening.py",
@@ -414,8 +459,8 @@
     },
     {
       "path": "RIGHTS.md",
-      "sha256": "803dc6510354982e7463ab7838be8a954df4de4352ea7ec11f0a2450dc0b3c11",
-      "bytes": 3323
+      "sha256": "e92133bf0207ff5e346f4277e8277995fca03ab5751f77485dcccf5514e01967",
+      "bytes": 3960
     },
     {
       "path": "scripts/adversarial.py",
@@ -464,8 +509,8 @@
     },
     {
       "path": "scripts/serve.py",
-      "sha256": "4b1537fd2bedd1de997b0d3cca449e769adf9a9f10b36a0a1112d88166fab222",
-      "bytes": 9911
+      "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda",
+      "bytes": 9974
     },
     {
       "path": "scripts/serve_argon.py",
@@ -604,8 +649,8 @@
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
-      "sha256": "65fb5ecba82ddb9f7f1593e75987c8abe1a2b262aac7c97ba7d8cd0c13b71729",
-      "bytes": 8225
+      "sha256": "14de31c29a3c727c38224fb0c0ac828c7ab11230269f4073f693318eec367e5f",
+      "bytes": 9198
     },
     {
       "path": "tests/argon-client.test.mjs",
@@ -614,8 +659,8 @@
     },
     {
       "path": "tests/emberglass.test.mjs",
-      "sha256": "f8fd0bd4003c9e3331936c8b69b71063c1f59ed2f0220978a94645b76586a7bf",
-      "bytes": 596
+      "sha256": "c67fb6972ac9ccd9d7ce9d14c1e3816fe150a2d58d91ecb64b6fb7c3d3d7d4d4",
+      "bytes": 6143
     },
     {
       "path": "tests/events.test.mjs",
@@ -659,8 +704,8 @@
     },
     {
       "path": "tests/test_server.py",
-      "sha256": "d08fef72e50e82d222e3a578ccd50bcbb77f48275b0b77265a1deddd7038a66d",
-      "bytes": 908
+      "sha256": "0c5f8cf59cdfaac813e9afd9377991351bf7729f711721f110ef979e18fdc69b",
+      "bytes": 1331
     },
     {
       "path": "USER_DIGITAL_TWIN_SEED.json",

@@ -45,6 +45,11 @@
       "previous_restore_automation": "sovereign-private",
       "previous_restore_status": "PAUSED",
       "scope_limit": "No new license, paid calls, accounts, raw chats/runtime data, other-repository publication or implementation."
+    },
+    "visual_followup_authorization": {
+      "date": "2026-10-18",
+      "source": "Direct user request to verify the returned audit, repair confirmed issues, perform our own visual audit and improve the simulator to an artistic 8–9/10 with generated imagery.",
+      "scope": "Task-scoped reviewed source, original generated visual asset and sanitized evidence on this existing branch; no paid provider inference, credentials, raw chats, production actions or other repositories."
     }
   },
   "coverage": {
@@ -606,13 +611,13 @@
   ],
   "active_simulator": {
     "framework": "HTML/CSS + ES modules with authenticated Python loopback runtime",
-    "renderer": "Canvas 2D Emberglass via emberglass.mjs with original SVG atlas; DOM forms/HUD",
+    "renderer": "Canvas 2D Emberglass projection/sprites in the active adapter; original generated alpine PNG scenery, owned live SVG node assets, DOM forms/HUD",
     "core": "simulation-core/unified_tick.py",
     "server": "scripts/serve.py",
     "durability": "simulation-core/persistence.py",
     "argon": "argon-game/README.md",
-    "current_source_baseline": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
-    "source_evidence": "AUDIT_CONTEXT.md and audit/cloud-audit-baseline.json",
+    "current_source_baseline": "8f60a10bef2e3c014d03091d61f6ec4fdd748db0 (base before visual refinement; use published HEAD and package hashes for current source)",
+    "source_evidence": "audit/visual-refinement-acceptance.json; DESIGN.md; older runtime component evidence remains explicitly pinned",
     "component_status_rule": "Current source and phase2_runtime supersede historical Phase 1 catalog activation flags."
   },
   "framework_inventory": [
@@ -1327,7 +1332,21 @@
     "contract": "AUDIT_PROMPT.uk.md",
     "baseline": "audit/cloud-audit-baseline.json",
     "runtime_base_commit": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
-    "external_execution": "NOT_STARTED_BY_CODEX",
-    "source_and_test_files_unchanged": true
-  }
+    "external_execution": "RETURNED_README_ONLY_NO_CODE_OR_RUNTIME_AUDIT",
+    "source_and_test_files_unchanged": false,
+    "baseline_scope": "Historical checks on 290cea8; latest UI/source changes require the separate visual acceptance receipt.",
+    "returned_report_triage": "audit/returned-audit-triage.uk.md",
+    "literal_url_bootstrap": "CLOUD_AUDIT_START.uk.md"
+  },
+  "visual_refinement": {
+    "date": "2026-10-18",
+    "design_contract": "DESIGN.md",
+    "acceptance": "audit/visual-refinement-acceptance.json",
+    "art": "engine-isometric-ui/assets/visual/sovereign-island-v1.png",
+    "art_provenance": "engine-isometric-ui/assets/visual/ART_DIRECTION.md",
+    "method": "Built-in imagegen; no API credential or paid provider worker route used. Image-tool billing was not reported.",
+    "target": "8–9/10 artistic target; requires human judgment, not a measured completion percentage.",
+    "scope": "Sovereign UI, map overlays, keyboard focus and responsive interaction; frozen snapshots and simulation economics preserved."
+  },
+  "provider_accounting_scope": "External API/provider-worker calls in this task only; built-in imagegen tool billing is unavailable, see visual_refinement."
 }

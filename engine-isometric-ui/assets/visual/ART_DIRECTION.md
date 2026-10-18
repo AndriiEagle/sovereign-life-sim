@@ -1,0 +1,14 @@
+# Sovereign island v1
+
+Original environment generated with the built-in OpenAI imagegen tool on 2026-10-18, at Andrii's request. The PNG is decorative scenery. Buildings, selection, labels, resources and actions remain live Canvas/DOM state; nothing in the painting proves income or project readiness. No external game art or remote font service is used.
+
+The unmodified selected image is `sovereign-island-v1.png` (1536 x 1024). The local original was preserved. If the PNG cannot load, the app draws its native grid and sprites; selecting projects and commands must still work.
+
+## Generation prompt
+
+Use case: stylized-concept.
+Asset type: original production environment background for the Sovereign Life Simulator, a premium isometric strategy game. Landscape 3:2 composition, at least 1536 pixels wide.
+Primary request: a beautiful, inviting handcrafted miniature island sanctuary in a quiet Swiss alpine lake at blue-green twilight, polished art direction for a thoughtful life-building strategy game. Rich material detail with a calm readable center, sophisticated moss-green and deep petrol palette, warm pale gold practical lighting, ivory stone, aged brass, subtle luminous teal water. Painterly high-end 3D diorama illustration, elegant and tactile, not pixel art and not photorealism.
+Composition: fixed isometric camera, about 30 degrees elevation, no perspective convergence on the ground plane. ONE large flat buildable diamond-shaped green meadow plateau occupies the middle of the image: its far vertex approximately (50%,17%), right vertex (94%,52%), near vertex (50%,88%), left vertex (6%,52%). Keep this ENTIRE central plateau smoothly textured, quiet and UNBUILT, with no structures, trees, rocks, paths or grid inside it; it is reserved for sixteen real interactive game buildings which the application will draw later. The diamond meadow is an actual coherent island landform, not a UI panel. Handcrafted rocky cliff rim follows the diamond perimeter, a few sculptural pines and terraced gardens OUTSIDE the plateau at the left and right perimeter, two tiny warm-lit architectural outposts at the extreme far corners, soft falls and crystalline lake below the near cliff. Low distant alpine silhouettes and fog behind, tiny warm firefly-like light specks at the outskirts. A dark subtle lake vignette at the edges lets the island glow gently. Clear art-directed silhouette, refined material separation, controlled detail.
+Lighting: restrained cinematic twilight, soft turquoise reflected lake light, amber light pockets, ambient depth, no neon.
+Constraints: this is scenery only. NO interface, NO cards, NO dashboards, NO charts, NO text, NO letters, NO numbers, NO logo, NO watermark, NO people. No buildings or objects across the central meadow, no roads or drawn tile grid. Avoid generic fantasy castles, purple cyberpunk, overly busy ornament, photographic noise, blurred muddy shapes. This asset must support crisp legible live overlays.

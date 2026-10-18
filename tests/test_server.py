@@ -11,6 +11,13 @@ class ServerPrivacyTests(unittest.TestCase):
     def test_entrypoint_is_demo(self):
         self.assertEqual(server.allowed_path('/'), '/engine-isometric-ui/index.html')
 
+    def test_only_the_reviewed_visual_asset_is_public(self):
+        path = '/engine-isometric-ui/assets/visual/sovereign-island-v1.png'
+        self.assertEqual(server.allowed_path(path), path)
+        for private in ['/engine-isometric-ui/assets/visual/ART_DIRECTION.md',
+                        '/engine-isometric-ui/assets/visual/../generated/private.png']:
+            self.assertIsNone(server.allowed_path(private))
+
     def test_private_paths_and_encoded_traversal_are_rejected(self):
         for path in ['/.git/config', '/USER_DIGITAL_TWIN_SEED.json', '/CONTEXT_MANIFEST.json',
                      '/audit/source-copies.json', '/engine-isometric-ui/../USER_DIGITAL_TWIN_SEED.json',

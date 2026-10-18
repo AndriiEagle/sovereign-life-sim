@@ -1,0 +1,288 @@
+{
+  "schema": "sovereign.visual-refinement.v1",
+  "status": "PASS_LOCAL_COMPONENTS_AND_OBSERVED_UI",
+  "base_commit": "8f60a10bef2e3c014d03091d61f6ec4fdd748db0",
+  "recorded_at_utc": "2026-10-18T14:11:42.615563+00:00",
+  "scope": "Sovereign visual refinement and keyboard repair; synthetic disposable state only",
+  "source_files": [
+    {
+      "path": "engine-isometric-ui/index.html",
+      "sha256": "0518d2cc8eabcd1772efee7562282aa9b78b95561b78beabddb8c26db2a7cc0e"
+    },
+    {
+      "path": "engine-isometric-ui/styles.css",
+      "sha256": "60879fdcd651b860533fab6d4707d8a7d8a2bf21ee2e6b484b3b047788fa4f7c"
+    },
+    {
+      "path": "engine-isometric-ui/emberglass.mjs",
+      "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700"
+    },
+    {
+      "path": "engine-isometric-ui/app.mjs",
+      "sha256": "10c6c5888d35d0fa540aa086114e6b3413c3d2d53746b6d82470dc782596c7b8"
+    },
+    {
+      "path": "scripts/serve.py",
+      "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda"
+    },
+    {
+      "path": "tests/emberglass.test.mjs",
+      "sha256": "c67fb6972ac9ccd9d7ce9d14c1e3816fe150a2d58d91ecb64b6fb7c3d3d7d4d4"
+    },
+    {
+      "path": "tests/test_server.py",
+      "sha256": "0c5f8cf59cdfaac813e9afd9377991351bf7729f711721f110ef979e18fdc69b"
+    }
+  ],
+  "art": {
+    "path": "engine-isometric-ui/assets/visual/sovereign-island-v1.png",
+    "sha256": "279962e120fe65274e10fb67b5692a8284b3212a46b8ff3adb32318a153b538c",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "unmodified_original": true,
+    "tool": "built-in imagegen",
+    "calls": 1,
+    "billing_usd": null,
+    "prompt": "engine-isometric-ui/assets/visual/ART_DIRECTION.md"
+  },
+  "browser": {
+    "keyboard": {
+      "active": "synera",
+      "pressed": "true",
+      "selected": "Synera"
+    },
+    "beforeWork": {
+      "cash": "CHF 200.00",
+      "energy": "80.0 / 100",
+      "progress": "0.0%"
+    },
+    "afterWork": {
+      "cash": "CHF 218.00",
+      "energy": "72.8 / 100",
+      "progress": "2.0%",
+      "time": "18.10.2026, 03:00:00"
+    },
+    "forge": "17 вузлів · 2/2 у фокусі",
+    "expense": {
+      "cash": "CHF 208.00",
+      "energy": "75.1 / 100",
+      "multiplier": "Надходження ×1.2 · явне сценарне припущення"
+    },
+    "persisted": {
+      "cash": "CHF 208.00",
+      "energy": "75.1 / 100",
+      "multiplier": "Надходження ×1.2 · явне сценарне припущення",
+      "nodes": "17 вузлів · 2/2 у фокусі"
+    },
+    "mobile": {
+      "art": "ready",
+      "client": 375,
+      "columns": "167.6px 167.6px",
+      "document": 375,
+      "mapScroll": 188.8000030517578,
+      "mapWidth": 720,
+      "mapWindow": 342,
+      "viewport": 390
+    },
+    "mapClick": "Instagram",
+    "panBefore": 228.8000030517578,
+    "panAfter": 228.8000030517578,
+    "keyboardAfterRefresh": "synera",
+    "tablet": {
+      "art": "ready",
+      "client": 753,
+      "document": 753,
+      "mainColumns": "752.8px",
+      "panelColumns": "346.4px 346.4px",
+      "viewport": 768
+    },
+    "imageFailure": {
+      "art": "fallback",
+      "cash": "CHF 218.00",
+      "progress": "2.0%",
+      "selected": "Instagram"
+    },
+    "desktop": {
+      "art": "ready",
+      "canvasLogicalWidth": 1021,
+      "canvasPixels": [
+        1021,
+        681
+      ],
+      "client": 1425,
+      "devicePixelRatio": 1.0000000149011612,
+      "document": 1425,
+      "mainColumns": "1082.8px 342px",
+      "selected": "Synera",
+      "viewport": 1440
+    },
+    "consoleErrors": [],
+    "recordedAt": "2026-10-18T14:38:21.923Z",
+    "finalReload": {
+      "active": "synera",
+      "art": "ready",
+      "cash": "CHF 208.00",
+      "energy": "75.1 / 100",
+      "nodes": "17 вузлів · 2/2 у фокусі"
+    }
+  },
+  "mutation_checks": {
+    "status": "PASS",
+    "source_sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700",
+    "probes": [
+      {
+        "probe": "high-DPI coordinate guard",
+        "rejected": true,
+        "exit_code": 1
+      },
+      {
+        "probe": "keyboard focus guard",
+        "rejected": true,
+        "exit_code": 1
+      }
+    ]
+  },
+  "snapshots": {
+    "source_copies": 17,
+    "projects": 16,
+    "seed_unknowns_preserved": true
+  },
+  "full_suite": {
+    "status": "PASS",
+    "test_count": 163,
+    "groups": {
+      "conductor": 65,
+      "game_forge": 14,
+      "root_python": 62,
+      "node": 22
+    },
+    "scenario_ticks": 96,
+    "runs": [
+      {
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "upstream-tests",
+          "-q"
+        ],
+        "cwd": "simulation-core",
+        "exit_code": 0,
+        "elapsed_seconds": 1.203,
+        "summary": "----------------------------------------------------------------------\nRan 65 tests in 0.195s\n\nOK\n"
+      },
+      {
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "sim/tests",
+          "-t",
+          ".",
+          "-q"
+        ],
+        "cwd": "simulation-core\\game-forge",
+        "exit_code": 0,
+        "elapsed_seconds": 88.531,
+        "summary": "----------------------------------------------------------------------\nRan 14 tests in 87.657s\n\nOK\n"
+      },
+      {
+        "command": [
+          "python",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_*.py",
+          "-q"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "elapsed_seconds": 27.875,
+        "summary": "----------------------------------------------------------------------\nRan 62 tests in 23.808s\n\nOK\n"
+      },
+      {
+        "command": [
+          "node",
+          "--test",
+          "tests/model.test.mjs",
+          "tests/events.test.mjs",
+          "tests/iso-helpers.test.mjs",
+          "tests/emberglass.test.mjs",
+          "tests/argon-client.test.mjs",
+          "tests/scenario-forms.test.mjs"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "elapsed_seconds": 2.735,
+        "summary": "reserves the pending ID on a manual retry (43.5781ms)\n✔ a definite rejection clears pending; an ambiguous success retains it (1.5571ms)\n✔ honest postponement never claims a demo presentation (0.5611ms)\n✔ actual UI checklist leaves the presentation incomplete after an honest ending (5.1477ms)\n✔ live adapter places 100 stable IDs inside the original 12x12 world (12.8929ms)\n✔ crowded labels preserve selection and never cover one another (1.0666ms)\n✔ label plates and buildings select their actual project, empty scenery does not (0.9423ms)\n✔ missing art keeps the map usable; high-DPI pixels do not move click targets (79.0357ms)\n✔ state refresh retains the selected project button and its keyboard target (2.223ms)\n✔ typed event export preserves order while exposing bounded retention (7.2984ms)\n✔ no free-form payload, external action or foreign node enters events (1.9999ms)\n✔ invalid clock output cannot corrupt event DTO or advance its sequence (1.0862ms)\n✔ isometric projection round-trips coordinates across height, origin and scale (5.6154ms)\n✔ tile picking finds the projected cell and rejects points outside the map (4.4544ms)\n✔ work consumes resource without inventing money or actual payment (57.5433ms)\n✔ no sales still costs money, including a negative balance (0.5718ms)\n✔ exhaustion blocks work and rest does not overflow (1.1868ms)\n✔ foreign actions, nodes and real-world modes are rejected (0.5767ms)\n✔ UI expresses explicit synthetic modifiers and exact cents; plain expense infers none (5.8693ms)\n✔ simulator lost-ack retry after reload reuses one request and one expense (4.3943ms)\n✔ actual simulator UI retries the durable command rather than creating a new request (4.5923ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2035.2241\n"
+      },
+      {
+        "command": [
+          "python",
+          "-B",
+          "scripts/scenario.py",
+          "--ticks",
+          "96",
+          "--action",
+          "rest",
+          "--seed",
+          "42"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "elapsed_seconds": 1.296,
+        "summary": "{\n  \"status\": \"SYNTHETIC_NOT_PERSONAL_OR_FORECAST\",\n  \"source\": \"unified_tick + game-forge + Conductor\",\n  \"start\": {\n    \"tick\": 0,\n    \"energy\": 0.55,\n    \"burnout\": 0.4,\n    \"balance_cents\": 20000\n  },\n  \"finish\": {\n    \"tick\": 96,\n    \"energy\": 0.5058833990559315,\n    \"burnout\": 0.37669874732157566,\n    \"balance_cents\": 18200\n  },\n  \"action\": \"rest\",\n  \"real_payment\": \"NOT_CONNECTED\"\n}\n"
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "audit/visual/sovereign-before.jpg",
+      "sha256": "5a9c40d22761791c89d86561e1af93718d47853fe7c93daa951ae7a4b6107282"
+    },
+    {
+      "path": "audit/visual/sovereign-desktop.jpg",
+      "sha256": "1006d43f92d72d2233ccdba620b8429c48fa91d54eb2cb57269baa5a8ada9780"
+    },
+    {
+      "path": "audit/visual/sovereign-mobile.jpg",
+      "sha256": "08456223325d1c1b0f9bb7c97cc71c1552227764ece4e49c44b17c5130617b86"
+    }
+  ],
+  "limits": [
+    "Artistic 8–9/10 is a human target, not a measured quality or readiness score.",
+    "Returned external report did not read code. A fresh independent external code audit remains NOT_RUN.",
+    "Reduced-motion rules inspected; OS media emulation and screen-reader session NOT_RUN.",
+    "Argon UI, live Synera, paid providers, connected model sessions and Python isolation receive no new acceptance."
+  ],
+  "provider_worker_calls": 0,
+  "provider_worker_usd": 0,
+  "git_text_canonicalization": {
+    "files": [
+      "AGENTS.md",
+      "AUDIT_CONTEXT.md",
+      "HANDOFF.md",
+      "README.md",
+      "RIGHTS.md",
+      "TERRA_SUMMARY.uk.md",
+      "CLOUD_AUDIT_START.uk.md",
+      "DESIGN.md",
+      "engine-isometric-ui/index.html",
+      "engine-isometric-ui/styles.css"
+    ],
+    "change": "CRLF to LF only, as required by existing .gitattributes; JS/Python/test executable bytes unchanged.",
+    "fresh_clone_verification": "Required after publication; this field is not a remote acceptance claim."
+  }
+}

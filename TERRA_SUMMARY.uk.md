@@ -1,3 +1,5 @@
+Візуальне оновлення після cloud-звіту: звіт не прочитав код, тому його нуль findings не є прийманням. Sovereign тепер має оригінальний згенерований альпійський острів, живі башти й контрастні підписи, адаптивні картки, мобільну карту з центруванням і збереженням pan, стабільний keyboard focus. Команди, synthetic-ресурси й snapshots збережені. Фактичні перевірки: `audit/visual-refinement-acceptance.json`; кадри: `audit/visual/`; prompt/буквальні URL: `CLOUD_AUDIT_START.uk.md`. Художній орієнтир 8–9/10 потребує людської оцінки. Python isolation, live Synera та provider/model sessions залишаються окремими відкритими гейтами.
+
 Актуальний cloud audit handoff 18.10.2026: `AUDIT_CONTEXT.md` → `AUDIT_PROMPT.uk.md`, runtime base `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`, fresh portable baseline 158 tests PASS / Python isolation BLOCKED. Репозиторій повторно відкривається public за новим прямим дорученням; старий private rollback виконано й PAUSED, нового закриття не заплановано. Нижче збережені також датовані попередні підсумки.
 
 ## Phase 2 — оновлення 18.10.2026
