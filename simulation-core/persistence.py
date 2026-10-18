@@ -1,6 +1,7 @@
 """Durable transactions. The fsynced, hash-chained journal is authoritative."""
 from copy import deepcopy
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -73,7 +74,7 @@ class Store:
             return
         data = self.path.read_bytes()
         good = 0
-        for line in data.splitlines(keepends=True):
+        for line in io.BytesIO(data):
             if not line.endswith(b'\n'):
                 # Preserve the interrupted tail before truncating it. Never skip a corrupt committed row.
                 atomic_write(self.directory / ('interrupted-' + uuid.uuid4().hex + '.bin'), line)

@@ -1,5 +1,7 @@
 # Поточні результати й наступні кроки
 
+Для цієї review-гілки перший крок — [обмежений повторний аудит журналу, його викликів і регресій](audit/repeat-journal-20261018/TASKS.md) за [точним промптом](audit/repeat-journal-20261018/EXTERNAL_PROMPT.md). Перевірити кандидата до будь-якого злиття; старі PASS нижче не є прийманням нової зміни.
+
 Локально реалізовано: unified core, активний original Emberglass renderer, HTTP/MCP, fsync save/replay, JSON RuleForge, SVG AssetForge, opt-in setup debit, явні expense KPI та їх UI. Окрема глава Argon має переходи, предмети, три фінали й збереження. Приймання: `audit/argon-followup-acceptance.json`; запуск — README.md. Історичний Phase 1 backlog — `audit/phase1-tasks-snapshot.md`.
 
 Відкриті задачі, у порядку практичної користі:

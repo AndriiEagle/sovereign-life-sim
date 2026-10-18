@@ -203,6 +203,101 @@
       "bytes": 2193
     },
     {
+      "path": "audit/repeat-journal-20261018/01-journal-1.md",
+      "sha256": "894f8943a2f6c8d07b34d56a0857dfc31713088787afcdccd214714b439124ac",
+      "bytes": 22219
+    },
+    {
+      "path": "audit/repeat-journal-20261018/02-state-1.md",
+      "sha256": "bc21e8b9bcb5a54b141896df481bef30c7aa3cf65f28d853f1645061b9771a4f",
+      "bytes": 23414
+    },
+    {
+      "path": "audit/repeat-journal-20261018/03-guards-1.md",
+      "sha256": "04cb7469ffd727d980d2c31bc8483fef3071815f84ae66f691d032e4d411ff2a",
+      "bytes": 28678
+    },
+    {
+      "path": "audit/repeat-journal-20261018/04-economics-1.md",
+      "sha256": "e06906431c897060ade81f61894aeb184d9a3d3d38ae96aecb71337fa8403c3b",
+      "bytes": 17630
+    },
+    {
+      "path": "audit/repeat-journal-20261018/04-economics-2.md",
+      "sha256": "efd687c53b30f164325a83db150c4d458f4b4b895bc80f6e8231e7eacb6e0f3c",
+      "bytes": 58029
+    },
+    {
+      "path": "audit/repeat-journal-20261018/04-economics-3.md",
+      "sha256": "f57a7484f9147523ccb9ad85767e4385ddc632342e9fa987eacf2d83163678a2",
+      "bytes": 12430
+    },
+    {
+      "path": "audit/repeat-journal-20261018/05-transport-ui-1.md",
+      "sha256": "da00d3f39a5dbaeb39565620d859b7fbebc720aee9ea1d2dac873264bcb9bf44",
+      "bytes": 45007
+    },
+    {
+      "path": "audit/repeat-journal-20261018/06-argon-1.md",
+      "sha256": "5547dd10dac9b8823966b58399370726a832e670cf52f299006f0d8b2397a78f",
+      "bytes": 32202
+    },
+    {
+      "path": "audit/repeat-journal-20261018/06-argon-2.md",
+      "sha256": "d93d8495f55a0dee90b05d71d81078681be0c9061c98b838790fc5af7aa2aa63",
+      "bytes": 18130
+    },
+    {
+      "path": "audit/repeat-journal-20261018/07-tests-1.md",
+      "sha256": "ab7143ea9e3b30a6eff65695e69f86a9f5e772721ed4a7bc59d375af5952dc9a",
+      "bytes": 44941
+    },
+    {
+      "path": "audit/repeat-journal-20261018/07-tests-2.md",
+      "sha256": "f939932b64dfb5280b775ac7c7d9ae12e02d7e2ead7b22d194304e8fefb68ac8",
+      "bytes": 34720
+    },
+    {
+      "path": "audit/repeat-journal-20261018/BASELINE_CHECKS.json",
+      "sha256": "a1c4d4ebd4b85e11c17ee1d98635d95c7594051bd1d172d7d9437d51f894cc85",
+      "bytes": 5360
+    },
+    {
+      "path": "audit/repeat-journal-20261018/build_reader.py",
+      "sha256": "e10b4924aeb931699f5bc7f2e3580f06de653d5bd918ed5e69c03e89ba102836",
+      "bytes": 6906
+    },
+    {
+      "path": "audit/repeat-journal-20261018/EXTERNAL_PROMPT.md",
+      "sha256": "72435346fed894dbd19af2557fb879d1a1d253a9f15c8108944eeb67ad7a9584",
+      "bytes": 4584
+    },
+    {
+      "path": "audit/repeat-journal-20261018/HANDOFF.md",
+      "sha256": "ff91536152d1ceeeb479523aae52abeddf1b73b381ddf1ef75b9406ebff740f9",
+      "bytes": 6562
+    },
+    {
+      "path": "audit/repeat-journal-20261018/LOCAL_CHECKS.json",
+      "sha256": "489547226285d96dc9d924c7ec5a24f89591fb5a27cd7a9616e411fe1dc7108c",
+      "bytes": 5169
+    },
+    {
+      "path": "audit/repeat-journal-20261018/run_checks.py",
+      "sha256": "fe51f3a61cf0dfb4c1a4dc35b82ba290886ee3185443b90edeab9648ddbf0533",
+      "bytes": 4708
+    },
+    {
+      "path": "audit/repeat-journal-20261018/SOURCE_MANIFEST.json",
+      "sha256": "98a32a76e5270efce1176586b12bfd8397c14d91e0d32dcde0a6eca599ec8b1c",
+      "bytes": 17971
+    },
+    {
+      "path": "audit/repeat-journal-20261018/TASKS.md",
+      "sha256": "ad49493baa5d8582dda23c80b8afad51e2c4a2d186c3fc8f01d0020b42881feb",
+      "bytes": 2479
+    },
+    {
       "path": "audit/request-source.json",
       "sha256": "30aa6f67cb78536bd4d7da1f8c6a738be7427308097e26003fcd22731d4d6c3f",
       "bytes": 563
@@ -379,13 +474,13 @@
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "5911f4330de163cc85c95f5862f35d9f94001b801b8e1bab3364a461deaa3783",
-      "bytes": 1969
+      "sha256": "c9fa82ac62b4e671c4dce6e038420edea76e7cd6be2c271277220d8b5bab53ea",
+      "bytes": 2547
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "62be2d27f02e2a800e2a7c6d141d0a9e2b87c4954fcbb13b669f1ccb7f37e7c0",
-      "bytes": 7221
+      "sha256": "f47d414655012f96c054182141aec1557879a2c1dafcb86b9d97d886416dcd51",
+      "bytes": 7797
     },
     {
       "path": "mcp-bridge/client.py",
@@ -589,8 +684,8 @@
     },
     {
       "path": "simulation-core/persistence.py",
-      "sha256": "cc66eb856e44cc9538f1baae0d5b0cc8fc679a591d60516a27b303433a51a42a",
-      "bytes": 5675
+      "sha256": "bceaa99608eb24b6783ca740e44a2f6f7dd8cb7cba6fd740b6329a3a732acab7",
+      "bytes": 5671
     },
     {
       "path": "simulation-core/plugins/README.md",
@@ -644,8 +739,8 @@
     },
     {
       "path": "TASKS.md",
-      "sha256": "5c2652efc674f2fbc3be0292341507454fc2492d994e17562268d33d402f8bec",
-      "bytes": 3323
+      "sha256": "287bc10bd8f785f0aebd424b66d953e76f9845d7c571bc0000bdb72842cc81fd",
+      "bytes": 3783
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
@@ -696,6 +791,11 @@
       "path": "tests/test_integrity.py",
       "sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a",
       "bytes": 2536
+    },
+    {
+      "path": "tests/test_journal_review.py",
+      "sha256": "9c028b48bb2b9a5eec1a50f0fff5e135bdf618c45ef0117425534a200abdff6e",
+      "bytes": 5854
     },
     {
       "path": "tests/test_phase2.py",

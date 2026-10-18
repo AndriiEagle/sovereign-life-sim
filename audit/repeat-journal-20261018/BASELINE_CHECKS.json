@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "facts": {
+    "source_copies": 17,
+    "projects": 16,
+    "seed_unknowns_preserved": true
+  },
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "upstream-tests",
+        "-q"
+      ],
+      "cwd": "simulation-core",
+      "exit_code": 0,
+      "elapsed_seconds": 0.359,
+      "summary": "----------------------------------------------------------------------\nRan 65 tests in 0.056s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sim/tests",
+        "-t",
+        ".",
+        "-q"
+      ],
+      "cwd": "simulation-core/game-forge",
+      "exit_code": 0,
+      "elapsed_seconds": 108.297,
+      "summary": "----------------------------------------------------------------------\nRan 14 tests in 108.007s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 10.437,
+      "summary": "----------------------------------------------------------------------\nRan 62 tests in 9.593s\n\nOK\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/model.test.mjs",
+        "tests/events.test.mjs",
+        "tests/iso-helpers.test.mjs",
+        "tests/emberglass.test.mjs",
+        "tests/argon-client.test.mjs",
+        "tests/scenario-forms.test.mjs"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.563,
+      "summary": "t preserves the pending ID on a manual retry (4.5075ms)\n✔ a definite rejection clears pending; an ambiguous success retains it (1.4768ms)\n✔ honest postponement never claims a demo presentation (0.5291ms)\n✔ actual UI checklist leaves the presentation incomplete after an honest ending (3.7169ms)\n✔ live adapter places 100 stable IDs inside the original 12x12 world (17.3581ms)\n✔ crowded labels preserve selection and never cover one another (1.3373ms)\n✔ label plates and buildings select their actual project, empty scenery does not (0.7605ms)\n✔ missing art keeps the map usable; high-DPI pixels do not move click targets (18.1787ms)\n✔ state refresh retains the selected project button and its keyboard target (1.6284ms)\n✔ typed event export preserves order while exposing bounded retention (17.2957ms)\n✔ no free-form payload, external action or foreign node enters events (1.3458ms)\n✔ invalid clock output cannot corrupt event DTO or advance its sequence (0.9347ms)\n✔ isometric projection round-trips coordinates across height, origin and scale (2.619ms)\n✔ tile picking finds the projected cell and rejects points outside the map (5.829ms)\n✔ work consumes resource without inventing money or actual payment (5.8701ms)\n✔ no sales still costs money, including a negative balance (0.9052ms)\n✔ exhaustion blocks work and rest does not overflow (1.2475ms)\n✔ foreign actions, nodes and real-world modes are rejected (0.6776ms)\n✔ UI expresses explicit synthetic modifiers and exact cents; plain expense infers none (5.8302ms)\n✔ simulator lost-ack retry after reload reuses one request and one expense (3.2635ms)\n✔ actual simulator UI retries the durable command rather than creating a new request (4.3223ms)\nℹ tests 22\nℹ suites 0\nℹ pass 22\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 419.3644\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "scripts/scenario.py",
+        "--ticks",
+        "96",
+        "--action",
+        "rest",
+        "--seed",
+        "42"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.391,
+      "summary": "{\n  \"status\": \"SYNTHETIC_NOT_PERSONAL_OR_FORECAST\",\n  \"source\": \"unified_tick + game-forge + Conductor\",\n  \"start\": {\n    \"tick\": 0,\n    \"energy\": 0.55,\n    \"burnout\": 0.4,\n    \"balance_cents\": 20000\n  },\n  \"finish\": {\n    \"tick\": 96,\n    \"energy\": 0.5058833990559315,\n    \"burnout\": 0.37669874732157566,\n    \"balance_cents\": 18200\n  },\n  \"action\": \"rest\",\n  \"real_payment\": \"NOT_CONNECTED\"\n}\n"
+    }
+  ],
+  "phase2_status": "BLOCKED_SANDBOX",
+  "capabilities": {
+    "python": {
+      "status": "BLOCKED_SANDBOX",
+      "reason": "Rootless OCI runtime and pinned image are required."
+    },
+    "paid_providers": "NOT_RUN",
+    "live_synera": "NOT_RUN",
+    "image_validator": "PRESENT"
+  },
+  "boundary": "Local component/source acceptance. Browser and official MCP SDK roundtrip have separate observed receipts. Python requires real isolation; no live Synera or paid-provider acceptance is implied.",
+  "source_commit": "5963e7d1dc54057db73f61159171f1bb94f94604",
+  "observed_at": "2026-10-18T15:11:21.706324+00:00",
+  "provenance": "Actual local fresh-clone baseline before the journal repair. Interpreter absolute paths normalized only.",
+  "test_counts": {
+    "upstream_python": 65,
+    "game_forge_python": 14,
+    "root_python": 62,
+    "node": 22
+  },
+  "total_tests": 163
+}

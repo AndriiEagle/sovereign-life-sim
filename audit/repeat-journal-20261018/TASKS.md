@@ -1,0 +1,12 @@
+# Finite review tasks and acceptance
+
+1. Resolve the user-supplied immutable SHA and read the source manifest plus actual code. Report access separately for each bundle/file; detect truncated responses. A README-only result is ACCESS_INCOMPLETE, not implementation acceptance.
+2. Trace UI durable request -> HTTP validation/auth -> Runtime.execute lock/fingerprint -> state transition -> Store.commit fsync -> HTTP response -> client acknowledgement -> restart/replay. Trace Argon's separate caller through the same Store. State which parts you actually read or ran.
+3. Challenge the candidate against complete corruption, CR/CRLF and EOF distinctions, sequence/previous-hash tampering, conflicting and concurrent request IDs, lost acknowledgement, restart, failed fsync, process lease and snapshot/cache independence. Distinguish probabilistic hardware durability and an attacker rewriting the full store from the actual local consistency contract.
+4. If execution is available, run the published commands in a fresh pinned clone, then inspect actual outputs. Run both finite mutation checks and confirm their negative assertions, not just the wrapper's PASS. Add no dependencies or hosted calls. With no shell, provide runnable repro steps as NOT_RUN.
+5. Make a finite second pass that tries to disprove your three strongest findings using callers, constraints, tests and counterexamples. Correct or withdraw a finding when its premise fails. Documentation saying a safeguard exists is not a counterexample to a source defect.
+6. Return findings in severity order with original path:line, trigger, observable effect, reproduction/counterexample, minimal repair and proof limits. Separately identify verified facts, plausible risks and unknowns. Do not fabricate a quota of defects or a 100/150 score. Finish with one ranked next action and an explicit code-audit coverage verdict.
+
+Acceptance for the handoff: exact source hashes and rebuilt reader match; remote branch/SHA and essential files are anonymously readable; fresh-clone integrity and focused regressions pass; owned changes contain no runtime/private payload. This establishes delivery and bounded local behavior, not external audit completion or full product readiness.
+
+Do not implement, merge, push, deploy or change visibility. Andrii will return the report for independent local acceptance. An inability to execute is a precise evidence limit; it does not justify simulated terminal output or an overall PASS.

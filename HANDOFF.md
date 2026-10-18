@@ -1,5 +1,7 @@
 # Передача Sovereign та Argon — 18.10.2026
 
+Поточна окрема review-гілка — `codex/journal-audit-530` від `5963e7d1dc54057db73f61159171f1bb94f94604`. [Повторний handoff](audit/repeat-journal-20261018/HANDOFF.md) містить відтворений дефект CR у journal recovery, ізольованого кандидата виправлення, регресії та прямий browser-reader вихідного коду. Кандидат не інтегровано в основну гілку; наведені нижче SHA описують історичні етапи.
+
 Репозиторій: `AndriiEagle/sovereign-life-sim`, гілка `codex/sovereign-life-sim-530`. Новий follow-up виправляє SOURCE_ONLY аудит реалізації `08555703a19f85aacbf3497012e3c1b910d74d88`. Поточний опублікований SHA звіряти через Git/remote; SHA не записується сам у свій commit.
 
 Поточне завдання передачі: доказовий незалежний cloud-аудит runtime-бази `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`. Весь необхідний оглядачеві контекст, source map, дозволи, відомі gates й межі недоступних зовнішніх проєктів — у `AUDIT_CONTEXT.md`; виконуваний контракт — `AUDIT_PROMPT.uk.md`; фактичний portable rerun у свіжому clone — `audit/cloud-audit-baseline.json`. Це опис попереднього handoff commit 8f60a10: він не змінював runtime/тести. Наступна візуальна доробка нижче змінює UI та відповідні тести; зовнішній звіт коду не прочитав.

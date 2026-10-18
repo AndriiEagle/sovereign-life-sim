@@ -1,0 +1,136 @@
+{
+  "schema": "sovereign.journal-review.v1",
+  "created_at": "2026-10-18T15:26:22.944838+00:00",
+  "status": "PASS",
+  "platform": "win32",
+  "python": "3.12.10",
+  "source_base": "5963e7d1dc54057db73f61159171f1bb94f94604",
+  "fingerprints": {
+    "simulation-core/persistence.py": "bceaa99608eb24b6783ca740e44a2f6f7dd8cb7cba6fd740b6329a3a732acab7",
+    "ai-architect/runtime.py": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce",
+    "tests/test_phase2.py": "b92324fa3cc6cfa49fe139e7f38383170147ace64054d32545c16ef427cd8f4f",
+    "tests/test_journal_review.py": "9c028b48bb2b9a5eec1a50f0fff5e135bdf618c45ef0117425534a200abdff6e",
+    "audit/repeat-journal-20261018/run_checks.py": "fe51f3a61cf0dfb4c1a4dc35b82ba290886ee3185443b90edeab9648ddbf0533"
+  },
+  "checks": [
+    {
+      "case": "candidate_journal_checks",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_journal_review.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.625,
+      "output": "----------------------------------------------------------------------\nRan 4 tests in 2.531s\n\nOK\n",
+      "accepted": true
+    },
+    {
+      "case": "candidate_root_python_suite",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 23.219,
+      "output": "----------------------------------------------------------------------\nRan 66 tests in 21.311s\n\nOK\n",
+      "accepted": true
+    },
+    {
+      "case": "candidate_concurrent_retry",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_phase2.py",
+        "-k",
+        "concurrent_retry",
+        "-q"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.406,
+      "output": "----------------------------------------------------------------------\nRan 1 test in 0.443s\n\nOK\n",
+      "accepted": true
+    },
+    {
+      "case": "preimage_cr_splits_complete_record",
+      "mutation_path": "simulation-core/persistence.py",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_journal_review.py",
+        "-q"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 5.188,
+      "output": "======================================================================\nFAIL: test_corrupt_complete_row_is_rejected_without_truncation (test_journal_review.JournalReviewTests.test_corrupt_complete_row_is_rejected_without_truncation) (damage='invalid_json_with_cr')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_journal_review.py\", line 59, in test_corrupt_complete_row_is_rejected_without_truncation\n    with self.assertRaises(ValueError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 4 tests in 3.201s\n\nFAILED (failures=1)\n",
+      "accepted": true
+    },
+    {
+      "case": "duplicate_guard_removed",
+      "mutation_path": "ai-architect/runtime.py",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_phase2.py",
+        "-k",
+        "concurrent_retry",
+        "-q"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 3.0,
+      "output": "======================================================================\nFAIL: test_concurrent_retry_applies_only_once (test_phase2.RuntimeTests.test_concurrent_retry_applies_only_once)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_phase2.py\", line 85, in test_concurrent_retry_applies_only_once\n    self.assertEqual(self.app.get()['life']['tick'],4)\nAssertionError: 64 != 4\n\n----------------------------------------------------------------------\nRan 1 test in 0.748s\n\nFAILED (failures=1)\n",
+      "accepted": true
+    }
+  ],
+  "effects": "Disposable synthetic state and temporary mutations only. No provider calls.",
+  "limits": [
+    "No physical power-loss or disk-controller durability test",
+    "No Linux filesystem/lock run",
+    "No hosted providers, real customer data or live Synera",
+    "No new visual, official SDK or rootless-sandbox acceptance"
+  ],
+  "boundary": "Actual candidate tests and expected negative mutation failures; coordinator evidence, not external acceptance. No raw user/runtime state."
+}

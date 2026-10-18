@@ -1,0 +1,486 @@
+{
+  "schema": "sovereign.browser-source-reader.v1",
+  "repository": "AndriiEagle/sovereign-life-sim",
+  "repository_id": 1423646041,
+  "source_base_commit": "5963e7d1dc54057db73f61159171f1bb94f94604",
+  "review_branch": "codex/journal-audit-530",
+  "boundary": "Finite source slice, not full UI/SDK/provider/runtime or product acceptance. Candidate modifies only persistence.py; read originals at the supplied review commit.",
+  "files": [
+    {
+      "path": "simulation-core/persistence.py",
+      "bytes": 5671,
+      "sha256": "bceaa99608eb24b6783ca740e44a2f6f7dd8cb7cba6fd740b6329a3a732acab7",
+      "source_lines": 145,
+      "status": "candidate_change",
+      "base_sha256": "cc66eb856e44cc9538f1baae0d5b0cc8fc679a591d60516a27b303433a51a42a"
+    },
+    {
+      "path": "ai-architect/runtime.py",
+      "bytes": 11559,
+      "sha256": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce",
+      "source_lines": 178,
+      "status": "unchanged_from_base",
+      "base_sha256": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce"
+    },
+    {
+      "path": "simulation-core/contracts.py",
+      "bytes": 1295,
+      "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134",
+      "source_lines": 36,
+      "status": "unchanged_from_base",
+      "base_sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134"
+    },
+    {
+      "path": "simulation-core/unified_tick.py",
+      "bytes": 17557,
+      "sha256": "4f13745e5237ba5136caeb529828aa0aa6eb505d3fb2b8ef5e951033ebadd20b",
+      "source_lines": 285,
+      "status": "unchanged_from_base",
+      "base_sha256": "4f13745e5237ba5136caeb529828aa0aa6eb505d3fb2b8ef5e951033ebadd20b"
+    },
+    {
+      "path": "simulation-core/game_theory_shield.py",
+      "bytes": 2557,
+      "sha256": "24cfd4d60b2534ac9b7b3c9e2006ca5442c9ecb27bae0bfb498b5666d96ba006",
+      "source_lines": 46,
+      "status": "unchanged_from_base",
+      "base_sha256": "24cfd4d60b2534ac9b7b3c9e2006ca5442c9ecb27bae0bfb498b5666d96ba006"
+    },
+    {
+      "path": "ai-architect/ruleforge.py",
+      "bytes": 4843,
+      "sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47",
+      "source_lines": 78,
+      "status": "unchanged_from_base",
+      "base_sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47"
+    },
+    {
+      "path": "ai-architect/assetforge.py",
+      "bytes": 3269,
+      "sha256": "cc95c14d303fcc2665c0a3ee9704cb87f336dd969095cd59d923e79b3921d36e",
+      "source_lines": 58,
+      "status": "unchanged_from_base",
+      "base_sha256": "cc95c14d303fcc2665c0a3ee9704cb87f336dd969095cd59d923e79b3921d36e"
+    },
+    {
+      "path": "ai-architect/sandbox.py",
+      "bytes": 7198,
+      "sha256": "e56a48eaab19d8485bbc45e4a329ccf5e98c5e5778491c1ecaaba0f6c1398493",
+      "source_lines": 131,
+      "status": "unchanged_from_base",
+      "base_sha256": "e56a48eaab19d8485bbc45e4a329ccf5e98c5e5778491c1ecaaba0f6c1398493"
+    },
+    {
+      "path": "ai-architect/providers.py",
+      "bytes": 5871,
+      "sha256": "6fed93786dd76d148b93f1c28122f0d17c79deafc829963b1d6b69d52ed77938",
+      "source_lines": 88,
+      "status": "unchanged_from_base",
+      "base_sha256": "6fed93786dd76d148b93f1c28122f0d17c79deafc829963b1d6b69d52ed77938"
+    },
+    {
+      "path": "ai-architect/provider_worker.py",
+      "bytes": 3111,
+      "sha256": "8b0605f49fa03053500f7f7b62dd7c0fa839f40f58b3cd921fffda3d8d99ec8d",
+      "source_lines": 46,
+      "status": "unchanged_from_base",
+      "base_sha256": "8b0605f49fa03053500f7f7b62dd7c0fa839f40f58b3cd921fffda3d8d99ec8d"
+    },
+    {
+      "path": "simulation-core/game-forge/sim/__init__.py",
+      "bytes": 61,
+      "sha256": "e3c93911a13818eada06fc2043ace11ed6420bf2f9422b789818913a52c6f12e",
+      "source_lines": 1,
+      "status": "unchanged_from_base",
+      "base_sha256": "e3c93911a13818eada06fc2043ace11ed6420bf2f9422b789818913a52c6f12e"
+    },
+    {
+      "path": "simulation-core/game-forge/sim/core.py",
+      "bytes": 14486,
+      "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+      "source_lines": 302,
+      "status": "unchanged_from_base",
+      "base_sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931"
+    },
+    {
+      "path": "simulation-core/game-forge/sim/params.json",
+      "bytes": 42824,
+      "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+      "source_lines": 2100,
+      "status": "unchanged_from_base",
+      "base_sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b"
+    },
+    {
+      "path": "simulation-core/revenue_lab/__init__.py",
+      "bytes": 108,
+      "sha256": "8a0cb7682b1617b4736b34a362a2884d27f2837a263e07061b40ec87464a9e81",
+      "source_lines": 2,
+      "status": "unchanged_from_base",
+      "base_sha256": "8a0cb7682b1617b4736b34a362a2884d27f2837a263e07061b40ec87464a9e81"
+    },
+    {
+      "path": "simulation-core/revenue_lab/core.py",
+      "bytes": 9957,
+      "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+      "source_lines": 211,
+      "status": "unchanged_from_base",
+      "base_sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d"
+    },
+    {
+      "path": "scripts/serve.py",
+      "bytes": 9974,
+      "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda",
+      "source_lines": 163,
+      "status": "unchanged_from_base",
+      "base_sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda"
+    },
+    {
+      "path": "mcp-bridge/client.py",
+      "bytes": 3120,
+      "sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187",
+      "source_lines": 56,
+      "status": "unchanged_from_base",
+      "base_sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187"
+    },
+    {
+      "path": "mcp-bridge/command-queue.mjs",
+      "bytes": 1708,
+      "sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952",
+      "source_lines": 36,
+      "status": "unchanged_from_base",
+      "base_sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952"
+    },
+    {
+      "path": "engine-isometric-ui/app.mjs",
+      "bytes": 14171,
+      "sha256": "10c6c5888d35d0fa540aa086114e6b3413c3d2d53746b6d82470dc782596c7b8",
+      "source_lines": 124,
+      "status": "unchanged_from_base",
+      "base_sha256": "10c6c5888d35d0fa540aa086114e6b3413c3d2d53746b6d82470dc782596c7b8"
+    },
+    {
+      "path": "engine-isometric-ui/emberglass.mjs",
+      "bytes": 8938,
+      "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700",
+      "source_lines": 135,
+      "status": "unchanged_from_base",
+      "base_sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700"
+    },
+    {
+      "path": "engine-isometric-ui/scenario-forms.mjs",
+      "bytes": 1396,
+      "sha256": "22aa5f049d9f5658004fa1e2cd7d7deeda14b80913c989fa293669f25b4f7a50",
+      "source_lines": 24,
+      "status": "unchanged_from_base",
+      "base_sha256": "22aa5f049d9f5658004fa1e2cd7d7deeda14b80913c989fa293669f25b4f7a50"
+    },
+    {
+      "path": "argon-game/game.py",
+      "bytes": 8886,
+      "sha256": "102516d3e47409e4b2226db09a8dfb016e10381e67c4fb94aa9f4a8b616e83ca",
+      "source_lines": 139,
+      "status": "unchanged_from_base",
+      "base_sha256": "102516d3e47409e4b2226db09a8dfb016e10381e67c4fb94aa9f4a8b616e83ca"
+    },
+    {
+      "path": "argon-game/world.json",
+      "bytes": 12896,
+      "sha256": "4c0bf37b5ca8eddec1e35016869aad717604c96399b7f8b5fcf49db6702d8b72",
+      "source_lines": 83,
+      "status": "unchanged_from_base",
+      "base_sha256": "4c0bf37b5ca8eddec1e35016869aad717604c96399b7f8b5fcf49db6702d8b72"
+    },
+    {
+      "path": "scripts/serve_argon.py",
+      "bytes": 6154,
+      "sha256": "f89c93eae2e6268e44fca06bd97ac86a59f1f3e18a64141b2f9923dbec8a7cb9",
+      "source_lines": 120,
+      "status": "unchanged_from_base",
+      "base_sha256": "f89c93eae2e6268e44fca06bd97ac86a59f1f3e18a64141b2f9923dbec8a7cb9"
+    },
+    {
+      "path": "argon-game/client.mjs",
+      "bytes": 480,
+      "sha256": "67835067629643d8e87c8e0e0f317417c63368034c33a707e55edb5926bec1cd",
+      "source_lines": 10,
+      "status": "unchanged_from_base",
+      "base_sha256": "67835067629643d8e87c8e0e0f317417c63368034c33a707e55edb5926bec1cd"
+    },
+    {
+      "path": "argon-game/app.mjs",
+      "bytes": 16687,
+      "sha256": "0e1392b0b1a6d53d9163f70e67f66aa48581f03c4ef9bf40d73675b855262d35",
+      "source_lines": 121,
+      "status": "unchanged_from_base",
+      "base_sha256": "0e1392b0b1a6d53d9163f70e67f66aa48581f03c4ef9bf40d73675b855262d35"
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "bytes": 17607,
+      "sha256": "b92324fa3cc6cfa49fe139e7f38383170147ace64054d32545c16ef427cd8f4f",
+      "source_lines": 254,
+      "status": "unchanged_from_base",
+      "base_sha256": "b92324fa3cc6cfa49fe139e7f38383170147ace64054d32545c16ef427cd8f4f"
+    },
+    {
+      "path": "tests/test_audit_followup.py",
+      "bytes": 12477,
+      "sha256": "f302b9d750b164c91e79a40c2c7ddb3c9716acb2e0640de98ef45b298b1dd3f0",
+      "source_lines": 232,
+      "status": "unchanged_from_base",
+      "base_sha256": "f302b9d750b164c91e79a40c2c7ddb3c9716acb2e0640de98ef45b298b1dd3f0"
+    },
+    {
+      "path": "tests/test_argon.py",
+      "bytes": 8881,
+      "sha256": "8d732d687843c38680b3586e7d7f0bb33831e32458ce30f7f48246d4d14529ef",
+      "source_lines": 163,
+      "status": "unchanged_from_base",
+      "base_sha256": "8d732d687843c38680b3586e7d7f0bb33831e32458ce30f7f48246d4d14529ef"
+    },
+    {
+      "path": "tests/test_journal_review.py",
+      "bytes": 5854,
+      "sha256": "9c028b48bb2b9a5eec1a50f0fff5e135bdf618c45ef0117425534a200abdff6e",
+      "source_lines": 126,
+      "status": "new_regression_test",
+      "base_sha256": null
+    },
+    {
+      "path": "tests/test_integrity.py",
+      "bytes": 2536,
+      "sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a",
+      "source_lines": 48,
+      "status": "unchanged_from_base",
+      "base_sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a"
+    },
+    {
+      "path": "tests/test_server.py",
+      "bytes": 1331,
+      "sha256": "0c5f8cf59cdfaac813e9afd9377991351bf7729f711721f110ef979e18fdc69b",
+      "source_lines": 26,
+      "status": "unchanged_from_base",
+      "base_sha256": "0c5f8cf59cdfaac813e9afd9377991351bf7729f711721f110ef979e18fdc69b"
+    },
+    {
+      "path": "tests/scenario-forms.test.mjs",
+      "bytes": 3190,
+      "sha256": "54f8a04eca95142cd79d75164898a7e39ebe60403dc3be7b4e19704b6e579afd",
+      "source_lines": 51,
+      "status": "unchanged_from_base",
+      "base_sha256": "54f8a04eca95142cd79d75164898a7e39ebe60403dc3be7b4e19704b6e579afd"
+    },
+    {
+      "path": "tests/argon-client.test.mjs",
+      "bytes": 5018,
+      "sha256": "e236f8edd2e49c82b26f90f06529791e551095ee736edb84c245326e7308e109",
+      "source_lines": 63,
+      "status": "unchanged_from_base",
+      "base_sha256": "e236f8edd2e49c82b26f90f06529791e551095ee736edb84c245326e7308e109"
+    },
+    {
+      "path": "scripts/configure_mcp.py",
+      "bytes": 2347,
+      "sha256": "2872eb3f0bf0e498a4ea694cfaff02f9e4301e997259a19a9bfc985d4516052f",
+      "source_lines": 48,
+      "status": "unchanged_from_base",
+      "base_sha256": "2872eb3f0bf0e498a4ea694cfaff02f9e4301e997259a19a9bfc985d4516052f"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 6834,
+      "sha256": "b254c7a91b10894f10405e952ab848e8bcdc2e99ad766e506cb2eb3a8c688e35",
+      "source_lines": 131,
+      "status": "unchanged_from_base",
+      "base_sha256": "b254c7a91b10894f10405e952ab848e8bcdc2e99ad766e506cb2eb3a8c688e35"
+    },
+    {
+      "path": "scripts/freeze.py",
+      "bytes": 1687,
+      "sha256": "8a42efdf09da524faa5c4f4bd73550796eec42ff11ba9e9511dc7fb2b4934e38",
+      "source_lines": 38,
+      "status": "unchanged_from_base",
+      "base_sha256": "8a42efdf09da524faa5c4f4bd73550796eec42ff11ba9e9511dc7fb2b4934e38"
+    },
+    {
+      "path": "CONTEXT_MANIFEST.json",
+      "bytes": 64202,
+      "sha256": "5b8c38c2941824fcf8265a2e0d7f0f626e3461931180689791e210ae2c160025",
+      "source_lines": 1352,
+      "status": "unchanged_from_base",
+      "base_sha256": "5b8c38c2941824fcf8265a2e0d7f0f626e3461931180689791e210ae2c160025"
+    },
+    {
+      "path": "requirements-bridge.txt",
+      "bytes": 84,
+      "sha256": "3bc5f12d660bb17036ef0926f12943eef978589e0cb6a54a917d341d8d8f3d46",
+      "source_lines": 2,
+      "status": "unchanged_from_base",
+      "base_sha256": "3bc5f12d660bb17036ef0926f12943eef978589e0cb6a54a917d341d8d8f3d46"
+    },
+    {
+      "path": "RIGHTS.md",
+      "bytes": 3960,
+      "sha256": "e92133bf0207ff5e346f4277e8277995fca03ab5751f77485dcccf5514e01967",
+      "source_lines": 17,
+      "status": "unchanged_from_base",
+      "base_sha256": "e92133bf0207ff5e346f4277e8277995fca03ab5751f77485dcccf5514e01967"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2905,
+      "sha256": "3cdadcb9027be3521a26480b79ca70c1012f61a04f57c1ed2216bfe5b9c201e6",
+      "source_lines": 16,
+      "status": "unchanged_from_base",
+      "base_sha256": "3cdadcb9027be3521a26480b79ca70c1012f61a04f57c1ed2216bfe5b9c201e6"
+    },
+    {
+      "path": "AUDIT_CONTEXT.md",
+      "bytes": 14375,
+      "sha256": "a45bb9f1b7d05bb605757d14794d016fd825c66c38073f15015e2dd11e14c702",
+      "source_lines": 74,
+      "status": "unchanged_from_base",
+      "base_sha256": "a45bb9f1b7d05bb605757d14794d016fd825c66c38073f15015e2dd11e14c702"
+    },
+    {
+      "path": "AUDIT_PROMPT.uk.md",
+      "bytes": 13247,
+      "sha256": "28e0c5df1561daf1b04d0c6d7b9f92cd947f513354cdcc4584021c3bc7c3875f",
+      "source_lines": 66,
+      "status": "unchanged_from_base",
+      "base_sha256": "28e0c5df1561daf1b04d0c6d7b9f92cd947f513354cdcc4584021c3bc7c3875f"
+    }
+  ],
+  "bundles": [
+    {
+      "path": "01-journal-1.md",
+      "bytes": 22219,
+      "sha256": "894f8943a2f6c8d07b34d56a0857dfc31713088787afcdccd214714b439124ac",
+      "source_files": [
+        "simulation-core/persistence.py",
+        "ai-architect/runtime.py",
+        "simulation-core/contracts.py"
+      ]
+    },
+    {
+      "path": "02-state-1.md",
+      "bytes": 23414,
+      "sha256": "bc21e8b9bcb5a54b141896df481bef30c7aa3cf65f28d853f1645061b9771a4f",
+      "source_files": [
+        "simulation-core/unified_tick.py",
+        "simulation-core/game_theory_shield.py"
+      ]
+    },
+    {
+      "path": "03-guards-1.md",
+      "bytes": 28678,
+      "sha256": "04cb7469ffd727d980d2c31bc8483fef3071815f84ae66f691d032e4d411ff2a",
+      "source_files": [
+        "ai-architect/ruleforge.py",
+        "ai-architect/assetforge.py",
+        "ai-architect/sandbox.py",
+        "ai-architect/providers.py",
+        "ai-architect/provider_worker.py"
+      ]
+    },
+    {
+      "path": "04-economics-1.md",
+      "bytes": 17630,
+      "sha256": "e06906431c897060ade81f61894aeb184d9a3d3d38ae96aecb71337fa8403c3b",
+      "source_files": [
+        "simulation-core/game-forge/sim/__init__.py",
+        "simulation-core/game-forge/sim/core.py"
+      ]
+    },
+    {
+      "path": "04-economics-2.md",
+      "bytes": 58029,
+      "sha256": "efd687c53b30f164325a83db150c4d458f4b4b895bc80f6e8231e7eacb6e0f3c",
+      "source_files": [
+        "simulation-core/game-forge/sim/params.json"
+      ]
+    },
+    {
+      "path": "04-economics-3.md",
+      "bytes": 12430,
+      "sha256": "f57a7484f9147523ccb9ad85767e4385ddc632342e9fa987eacf2d83163678a2",
+      "source_files": [
+        "simulation-core/revenue_lab/__init__.py",
+        "simulation-core/revenue_lab/core.py"
+      ]
+    },
+    {
+      "path": "05-transport-ui-1.md",
+      "bytes": 45007,
+      "sha256": "da00d3f39a5dbaeb39565620d859b7fbebc720aee9ea1d2dac873264bcb9bf44",
+      "source_files": [
+        "scripts/serve.py",
+        "mcp-bridge/client.py",
+        "mcp-bridge/command-queue.mjs",
+        "engine-isometric-ui/app.mjs",
+        "engine-isometric-ui/emberglass.mjs",
+        "engine-isometric-ui/scenario-forms.mjs"
+      ]
+    },
+    {
+      "path": "06-argon-1.md",
+      "bytes": 32202,
+      "sha256": "5547dd10dac9b8823966b58399370726a832e670cf52f299006f0d8b2397a78f",
+      "source_files": [
+        "argon-game/game.py",
+        "argon-game/world.json",
+        "scripts/serve_argon.py",
+        "argon-game/client.mjs"
+      ]
+    },
+    {
+      "path": "06-argon-2.md",
+      "bytes": 18130,
+      "sha256": "d93d8495f55a0dee90b05d71d81078681be0c9061c98b838790fc5af7aa2aa63",
+      "source_files": [
+        "argon-game/app.mjs"
+      ]
+    },
+    {
+      "path": "07-tests-1.md",
+      "bytes": 44941,
+      "sha256": "ab7143ea9e3b30a6eff65695e69f86a9f5e772721ed4a7bc59d375af5952dc9a",
+      "source_files": [
+        "tests/test_phase2.py",
+        "tests/test_audit_followup.py",
+        "tests/test_argon.py"
+      ]
+    },
+    {
+      "path": "07-tests-2.md",
+      "bytes": 34720,
+      "sha256": "f939932b64dfb5280b775ac7c7d9ae12e02d7e2ead7b22d194304e8fefb68ac8",
+      "source_files": [
+        "tests/test_journal_review.py",
+        "tests/test_integrity.py",
+        "tests/test_server.py",
+        "tests/scenario-forms.test.mjs",
+        "tests/argon-client.test.mjs",
+        "scripts/configure_mcp.py",
+        "scripts/verify.py",
+        "scripts/freeze.py"
+      ]
+    }
+  ],
+  "link_only": [
+    "CONTEXT_MANIFEST.json",
+    "requirements-bridge.txt",
+    "RIGHTS.md",
+    "AGENTS.md",
+    "AUDIT_CONTEXT.md",
+    "AUDIT_PROMPT.uk.md"
+  ],
+  "optional_dependencies": {
+    "mcp": "requirements-bridge.txt; no install authorized by this handoff",
+    "Pillow": "image validation only; no dependency installation performed"
+  },
+  "external_dependencies": {
+    "hosted_provider_governor": "Host-only, outside this repository; live provider execution remains NOT_RUN",
+    "python_rule_isolation": "Rootless OCI + pinned local image required; BLOCKED_SANDBOX"
+  }
+}
