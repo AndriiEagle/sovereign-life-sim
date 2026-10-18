@@ -19,8 +19,8 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "4dbc04ba780d06150b6fe8e05e84afa35373ac700abfb350f07d7aa84cee2edb",
-      "bytes": 2144
+      "sha256": "5be90d223d1d42621c3781633176921affe41fb4b4fe255cd8ddd05ddf9da533",
+      "bytes": 2550
     },
     {
       "path": "ai-architect/assetforge.py",
@@ -121,6 +121,11 @@
       "path": "audit/browser-export-example.json",
       "sha256": "b6bfe872f3a7773cee2b6295b6b69bf20f926bb3334bae9c372177b5ee5fabaa",
       "bytes": 688
+    },
+    {
+      "path": "audit/cloud-audit-baseline.json",
+      "sha256": "0c10d2f320e25a0cf2ac16bb01c074c85c8756db90ff283bab2178ac6c2083f5",
+      "bytes": 16943
     },
     {
       "path": "audit/code-review-followup.json",
@@ -248,9 +253,14 @@
       "bytes": 11480
     },
     {
+      "path": "AUDIT_CONTEXT.md",
+      "sha256": "77529317230b080e44164dda309a97bb9a2e37830cd4f45ebfee1323c557fd46",
+      "bytes": 12804
+    },
+    {
       "path": "AUDIT_PROMPT.uk.md",
-      "sha256": "55025aad2b9c9f8776cebbf9319eacd11d7f02db23044a408642b9e97640a4c5",
-      "bytes": 5804
+      "sha256": "28e0c5df1561daf1b04d0c6d7b9f92cd947f513354cdcc4584021c3bc7c3875f",
+      "bytes": 13247
     },
     {
       "path": "automation-nodes/catalog.json",
@@ -274,8 +284,8 @@
     },
     {
       "path": "CONTEXT_MANIFEST.json",
-      "sha256": "1b24ea3e20e2f65852c5b7047e9736dc96e4b468802d9e08416c630dabfd452e",
-      "bytes": 60423
+      "sha256": "336485701638c46fe1d6179a0bffad76a264ebb3b580ee7e8cd0fc8446bda969",
+      "bytes": 62371
     },
     {
       "path": "engine-isometric-ui/app.mjs",
@@ -324,13 +334,13 @@
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "a0ff32985b8d41ea7e62a0bb069abf5214f03b156e36eebb161ea505b47a4e42",
-      "bytes": 435
+      "sha256": "e2d48f826e906afd88c5ff234c74a091dd4cc5cec64760b66b4e4c2dd567ff90",
+      "bytes": 1291
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "93931effc11533f434f347e722d4e4300e633d7e809e153f1ebcddfca66a0562",
-      "bytes": 4728
+      "sha256": "e810a99293577e0ece78c254b8c670dce81c27b7f42ca10737afdc6a3db152a3",
+      "bytes": 5980
     },
     {
       "path": "mcp-bridge/client.py",
@@ -364,8 +374,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "7f9dd26b19993fd19717c8330802e8660e32429259160c7db65139d7646350ab",
-      "bytes": 9828
+      "sha256": "b54fc156a652b471d1fa911a1867ed15b200ecb471b8c8d56d69adbeab17dfd6",
+      "bytes": 10567
     },
     {
       "path": "repairs/apply_hardening.py",
@@ -404,8 +414,8 @@
     },
     {
       "path": "RIGHTS.md",
-      "sha256": "a18728045d341f408888b5d063f79cb4205445ada8bac6ef1dd3b7fda85cc1ac",
-      "bytes": 2641
+      "sha256": "803dc6510354982e7463ab7838be8a954df4de4352ea7ec11f0a2450dc0b3c11",
+      "bytes": 3323
     },
     {
       "path": "scripts/adversarial.py",
@@ -594,8 +604,8 @@
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
-      "sha256": "b27fd31d5c9c2b4e1a4aa1b5a5bd283978958671910dfa730cc0acd896baa912",
-      "bytes": 7654
+      "sha256": "65fb5ecba82ddb9f7f1593e75987c8abe1a2b262aac7c97ba7d8cd0c13b71729",
+      "bytes": 8225
     },
     {
       "path": "tests/argon-client.test.mjs",

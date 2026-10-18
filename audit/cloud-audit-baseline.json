@@ -1,0 +1,468 @@
+{
+  "schema": "sovereign.cloud-audit-baseline.v1",
+  "observed_at_utc": "2026-10-18T13:07:10.836494+00:00",
+  "source_commit": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
+  "mode": "EXECUTED_IN_FRESH_CLONE",
+  "status": "PASS",
+  "test_counts": {
+    "python": [
+      65,
+      14,
+      61
+    ],
+    "node": 18,
+    "total": 158
+  },
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.10",
+    "node": "v24.16.0"
+  },
+  "facts": {
+    "source_copies": 17,
+    "projects": 16,
+    "seed_unknowns_preserved": true
+  },
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "upstream-tests",
+        "-q"
+      ],
+      "cwd": "simulation-core",
+      "exit_code": 0,
+      "elapsed_seconds": 1.469,
+      "summary": "----------------------------------------------------------------------\nRan 65 tests in 0.275s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sim/tests",
+        "-t",
+        ".",
+        "-q"
+      ],
+      "cwd": "simulation-core\\game-forge",
+      "exit_code": 0,
+      "elapsed_seconds": 82.953,
+      "summary": "----------------------------------------------------------------------\nRan 14 tests in 81.974s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 13.25,
+      "summary": "----------------------------------------------------------------------\nRan 61 tests in 11.507s\n\nOK\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/model.test.mjs",
+        "tests/events.test.mjs",
+        "tests/iso-helpers.test.mjs",
+        "tests/emberglass.test.mjs",
+        "tests/argon-client.test.mjs",
+        "tests/scenario-forms.test.mjs"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 1.062,
+      "summary": "✔ two lost responses then a retry commit only one turn, even after reload (5.4438ms)\n✔ actual UI act entrypoint preserves the pending ID on a manual retry (7.4792ms)\n✔ a definite rejection clears pending; an ambiguous success retains it (2.4482ms)\n✔ honest postponement never claims a demo presentation (0.5519ms)\n✔ actual UI checklist leaves the presentation incomplete after an honest ending (4.737ms)\n✔ live adapter places 100 stable IDs inside the original 12x12 world (16.0968ms)\n✔ typed event export preserves order while exposing bounded retention (8.8456ms)\n✔ no free-form payload, external action or foreign node enters events (5.1189ms)\n✔ invalid clock output cannot corrupt event DTO or advance its sequence (1.0088ms)\n✔ isometric projection round-trips coordinates across height, origin and scale (3.1689ms)\n✔ tile picking finds the projected cell and rejects points outside the map (3.5301ms)\n✔ work consumes resource without inventing money or actual payment (2.8591ms)\n✔ no sales still costs money, including a negative balance (0.6574ms)\n✔ exhaustion blocks work and rest does not overflow (1.2988ms)\n✔ foreign actions, nodes and real-world modes are rejected (0.714ms)\n✔ UI expresses explicit synthetic modifiers and exact cents; plain expense infers none (6.0166ms)\n✔ simulator lost-ack retry after reload reuses one request and one expense (3.9131ms)\n✔ actual simulator UI retries the durable command rather than creating a new request (4.6539ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 756.7733\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "scripts/scenario.py",
+        "--ticks",
+        "96",
+        "--action",
+        "rest",
+        "--seed",
+        "42"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.704,
+      "summary": "{\n  \"status\": \"SYNTHETIC_NOT_PERSONAL_OR_FORECAST\",\n  \"source\": \"unified_tick + game-forge + Conductor\",\n  \"start\": {\n    \"tick\": 0,\n    \"energy\": 0.55,\n    \"burnout\": 0.4,\n    \"balance_cents\": 20000\n  },\n  \"finish\": {\n    \"tick\": 96,\n    \"energy\": 0.5058833990559315,\n    \"burnout\": 0.37669874732157566,\n    \"balance_cents\": 18200\n  },\n  \"action\": \"rest\",\n  \"real_payment\": \"NOT_CONNECTED\"\n}\n"
+    }
+  ],
+  "phase2_status": "BLOCKED_SANDBOX",
+  "capabilities": {
+    "python": {
+      "status": "BLOCKED_SANDBOX",
+      "reason": "Rootless OCI runtime and pinned image are required."
+    },
+    "paid_providers": "NOT_RUN",
+    "live_synera": "NOT_RUN",
+    "image_validator": "PRESENT"
+  },
+  "source_files": [
+    {
+      "path": "ai-architect/assetforge.py",
+      "sha256": "cc95c14d303fcc2665c0a3ee9704cb87f336dd969095cd59d923e79b3921d36e",
+      "bytes": 3269
+    },
+    {
+      "path": "ai-architect/provider_worker.py",
+      "sha256": "8b0605f49fa03053500f7f7b62dd7c0fa839f40f58b3cd921fffda3d8d99ec8d",
+      "bytes": 3111
+    },
+    {
+      "path": "ai-architect/providers.py",
+      "sha256": "6fed93786dd76d148b93f1c28122f0d17c79deafc829963b1d6b69d52ed77938",
+      "bytes": 5871
+    },
+    {
+      "path": "ai-architect/README.md",
+      "sha256": "241434289ec5dda05d3a13fd09b14e9af33aa013150800a16d078c61cab14078",
+      "bytes": 5582
+    },
+    {
+      "path": "ai-architect/ruleforge.py",
+      "sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47",
+      "bytes": 4843
+    },
+    {
+      "path": "ai-architect/runtime.py",
+      "sha256": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce",
+      "bytes": 11559
+    },
+    {
+      "path": "ai-architect/sandbox.py",
+      "sha256": "e56a48eaab19d8485bbc45e4a329ccf5e98c5e5778491c1ecaaba0f6c1398493",
+      "bytes": 7198
+    },
+    {
+      "path": "argon-game/app.mjs",
+      "sha256": "0e1392b0b1a6d53d9163f70e67f66aa48581f03c4ef9bf40d73675b855262d35",
+      "bytes": 16687
+    },
+    {
+      "path": "argon-game/client.mjs",
+      "sha256": "67835067629643d8e87c8e0e0f317417c63368034c33a707e55edb5926bec1cd",
+      "bytes": 480
+    },
+    {
+      "path": "argon-game/game.py",
+      "sha256": "102516d3e47409e4b2226db09a8dfb016e10381e67c4fb94aa9f4a8b616e83ca",
+      "bytes": 8886
+    },
+    {
+      "path": "argon-game/index.html",
+      "sha256": "c283628cd2bc7de18e3ecd19d752c6321a5fc6388799a2f8e2b3d14abff4a3dc",
+      "bytes": 3262
+    },
+    {
+      "path": "argon-game/README.md",
+      "sha256": "617ed3e1f21b0662e35fbd3ad15f4f0ce7b07283ed061f864568ebf7f444223e",
+      "bytes": 3472
+    },
+    {
+      "path": "argon-game/styles.css",
+      "sha256": "8a8c7d45c97649ddbfc05429410ce524653deef768a504fc8cc001276e90d95d",
+      "bytes": 7750
+    },
+    {
+      "path": "argon-game/world.json",
+      "sha256": "4c0bf37b5ca8eddec1e35016869aad717604c96399b7f8b5fcf49db6702d8b72",
+      "bytes": 12896
+    },
+    {
+      "path": "engine-isometric-ui/app.mjs",
+      "sha256": "0cf020c013e9bd048a0b1db1aa4d5b71e8ec5e7351b684060b6aa39b03ca637a",
+      "bytes": 14177
+    },
+    {
+      "path": "engine-isometric-ui/atlas.svg",
+      "sha256": "2fcbbcd678592f8e63931b80a0d6326ca072c76253ada22274b1a57119520bcb",
+      "bytes": 1312
+    },
+    {
+      "path": "engine-isometric-ui/emberglass.mjs",
+      "sha256": "a532bdb1b83701d0571390434b4be182a511c14c744713d07752a1611eba76c4",
+      "bytes": 4401
+    },
+    {
+      "path": "engine-isometric-ui/index.html",
+      "sha256": "9d41ce1f4382c347d4b69c31785d778cbbbb34ad279d166ab5be78b5f56ef47f",
+      "bytes": 9429
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/README.md",
+      "sha256": "8cb0d95088899f4923aa7bb6bd4ffab3b0a1db35630c73931c882656c3113f76",
+      "bytes": 1451
+    },
+    {
+      "path": "engine-isometric-ui/scenario-forms.mjs",
+      "sha256": "22aa5f049d9f5658004fa1e2cd7d7deeda14b80913c989fa293669f25b4f7a50",
+      "bytes": 1396
+    },
+    {
+      "path": "engine-isometric-ui/styles.css",
+      "sha256": "77a07602217c827ba134d251224746303a999e26d8e051e459bfa66122a845c6",
+      "bytes": 6510
+    },
+    {
+      "path": "mcp-bridge/client.py",
+      "sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187",
+      "bytes": 3120
+    },
+    {
+      "path": "mcp-bridge/command-queue.mjs",
+      "sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952",
+      "bytes": 1708
+    },
+    {
+      "path": "mcp-bridge/events.mjs",
+      "sha256": "b7e3425486b7ca3b3bdea8984e31b391fa7eaa50ab8346173777bfad71773a45",
+      "bytes": 1784
+    },
+    {
+      "path": "mcp-bridge/README.md",
+      "sha256": "098808fcd045033747ce728cecdccc86c7869d609fedafa1a791f0180e3e9043",
+      "bytes": 2382
+    },
+    {
+      "path": "scripts/configure_mcp.py",
+      "sha256": "2872eb3f0bf0e498a4ea694cfaff02f9e4301e997259a19a9bfc985d4516052f",
+      "bytes": 2347
+    },
+    {
+      "path": "scripts/scenario.py",
+      "sha256": "01010dd7cd1f01d353203d7ee937642bb76c24046ba671ab435ee7b1a938bc0c",
+      "bytes": 1457
+    },
+    {
+      "path": "scripts/serve.py",
+      "sha256": "4b1537fd2bedd1de997b0d3cca449e769adf9a9f10b36a0a1112d88166fab222",
+      "bytes": 9911
+    },
+    {
+      "path": "scripts/serve_argon.py",
+      "sha256": "f89c93eae2e6268e44fca06bd97ac86a59f1f3e18a64141b2f9923dbec8a7cb9",
+      "bytes": 6154
+    },
+    {
+      "path": "scripts/verify.py",
+      "sha256": "b254c7a91b10894f10405e952ab848e8bcdc2e99ad766e506cb2eb3a8c688e35",
+      "bytes": 6834
+    },
+    {
+      "path": "scripts/verify_mcp.py",
+      "sha256": "481951451b3174c75bc75eacac134100bd3a2e9cea622e08ae65cbf39506bbae",
+      "bytes": 2717
+    },
+    {
+      "path": "scripts/verify_sandbox.py",
+      "sha256": "6b620860196ac816a3f211b362c178af9874c38acfd3b7082e93b1220da14304",
+      "bytes": 1109
+    },
+    {
+      "path": "simulation-core/CONDUCTOR_RIGHTS.md",
+      "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
+      "bytes": 906
+    },
+    {
+      "path": "simulation-core/contracts.py",
+      "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134",
+      "bytes": 1295
+    },
+    {
+      "path": "simulation-core/game-forge/README.md",
+      "sha256": "853df6f472560421dafaa91e23b70be3864521b20c6fce4172743b83d906a7b7",
+      "bytes": 1766
+    },
+    {
+      "path": "simulation-core/game-forge/sim/__init__.py",
+      "sha256": "e3c93911a13818eada06fc2043ace11ed6420bf2f9422b789818913a52c6f12e",
+      "bytes": 61
+    },
+    {
+      "path": "simulation-core/game-forge/sim/core.py",
+      "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+      "bytes": 14486
+    },
+    {
+      "path": "simulation-core/game-forge/sim/MATH.md",
+      "sha256": "ffe5784053017836b8b75b3d14df426f1f456b9b384285360d24f15b213611ef",
+      "bytes": 20182
+    },
+    {
+      "path": "simulation-core/game-forge/sim/params.json",
+      "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+      "bytes": 42824
+    },
+    {
+      "path": "simulation-core/game-forge/sim/tests/__init__.py",
+      "sha256": "bcde2110739e45ab382e28d5d95cbbb99e8d969da86662cc463aad8abab22ced",
+      "bytes": 65
+    },
+    {
+      "path": "simulation-core/game-forge/sim/tests/test_math.py",
+      "sha256": "b890973bc11a78cb02cbfde32a9bb85bb3edd1368f3b1c5d76c6ccc35b10ee6f",
+      "bytes": 12979
+    },
+    {
+      "path": "simulation-core/game_theory_shield.py",
+      "sha256": "24cfd4d60b2534ac9b7b3c9e2006ca5442c9ecb27bae0bfb498b5666d96ba006",
+      "bytes": 2557
+    },
+    {
+      "path": "simulation-core/model.mjs",
+      "sha256": "3f875ef04bbeabf4e6d670cceeeb2a1c396d8dc2e431379dbfd5385a0a80eab9",
+      "bytes": 1604
+    },
+    {
+      "path": "simulation-core/persistence.py",
+      "sha256": "cc66eb856e44cc9538f1baae0d5b0cc8fc679a591d60516a27b303433a51a42a",
+      "bytes": 5675
+    },
+    {
+      "path": "simulation-core/plugins/README.md",
+      "sha256": "8359c8dce0f529f17ce67f357d8b68f4650b8849c56c19ad644e930fb4dd805c",
+      "bytes": 510
+    },
+    {
+      "path": "simulation-core/README.md",
+      "sha256": "9528ce1fcd6a49f42a60ad267192e768c42efc6c8e12b5ecb73e08b8d7af8420",
+      "bytes": 2468
+    },
+    {
+      "path": "simulation-core/revenue_lab/__init__.py",
+      "sha256": "8a0cb7682b1617b4736b34a362a2884d27f2837a263e07061b40ec87464a9e81",
+      "bytes": 108
+    },
+    {
+      "path": "simulation-core/revenue_lab/__main__.py",
+      "sha256": "466f204a197c0a04e93dd83f1060b10f355ddaffb70f07633a0fcc8d33809fd3",
+      "bytes": 2652
+    },
+    {
+      "path": "simulation-core/revenue_lab/core.py",
+      "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+      "bytes": 9957
+    },
+    {
+      "path": "simulation-core/revenue_lab/README.md",
+      "sha256": "edfe6c97ba1d0b225ad5886268fa220d4f9cb5481f5f9386a76786eb326f2c8b",
+      "bytes": 2392
+    },
+    {
+      "path": "simulation-core/unified_tick.py",
+      "sha256": "4f13745e5237ba5136caeb529828aa0aa6eb505d3fb2b8ef5e951033ebadd20b",
+      "bytes": 17557
+    },
+    {
+      "path": "simulation-core/upstream-tests/test_cli.py",
+      "sha256": "4f3649c874161d8e7bac776ce330be77381e5a821476a425a4fe53d17f8767f4",
+      "bytes": 2111
+    },
+    {
+      "path": "simulation-core/upstream-tests/test_core.py",
+      "sha256": "ecd94c613e3d80d0ac85544a7368d7166ffd9945d3624c1c21ed0dc87de61899",
+      "bytes": 9668
+    },
+    {
+      "path": "tests/argon-client.test.mjs",
+      "sha256": "e236f8edd2e49c82b26f90f06529791e551095ee736edb84c245326e7308e109",
+      "bytes": 5018
+    },
+    {
+      "path": "tests/emberglass.test.mjs",
+      "sha256": "f8fd0bd4003c9e3331936c8b69b71063c1f59ed2f0220978a94645b76586a7bf",
+      "bytes": 596
+    },
+    {
+      "path": "tests/events.test.mjs",
+      "sha256": "a44279cb405b5ae69f679b608eadc8f3bc6e8e81572393eaf086208e38f1a440",
+      "bytes": 1668
+    },
+    {
+      "path": "tests/iso-helpers.test.mjs",
+      "sha256": "5c1520ae0c028f1c261b615c1df1a7ea56bb1a7e2107052d01123a4960d291d6",
+      "bytes": 1325
+    },
+    {
+      "path": "tests/model.test.mjs",
+      "sha256": "5b29946f3df677aa9fed7a47bb55cfc3e6e18ff10e37e7d3c4431d7394d61709",
+      "bytes": 1537
+    },
+    {
+      "path": "tests/scenario-forms.test.mjs",
+      "sha256": "54f8a04eca95142cd79d75164898a7e39ebe60403dc3be7b4e19704b6e579afd",
+      "bytes": 3190
+    },
+    {
+      "path": "tests/test_argon.py",
+      "sha256": "8d732d687843c38680b3586e7d7f0bb33831e32458ce30f7f48246d4d14529ef",
+      "bytes": 8881
+    },
+    {
+      "path": "tests/test_audit_followup.py",
+      "sha256": "f302b9d750b164c91e79a40c2c7ddb3c9716acb2e0640de98ef45b298b1dd3f0",
+      "bytes": 12477
+    },
+    {
+      "path": "tests/test_integrity.py",
+      "sha256": "75b913e579e900c4a27c5ef93069cd5b2e74e4845faad4212dfe0aedc6dc1b2a",
+      "bytes": 2536
+    },
+    {
+      "path": "tests/test_phase2.py",
+      "sha256": "b92324fa3cc6cfa49fe139e7f38383170147ace64054d32545c16ef427cd8f4f",
+      "bytes": 17607
+    },
+    {
+      "path": "tests/test_server.py",
+      "sha256": "d08fef72e50e82d222e3a578ccd50bcbb77f48275b0b77265a1deddd7038a66d",
+      "bytes": 908
+    }
+  ],
+  "stable_inputs": {
+    "manifest_projects_canonical_sha256": "b77b7f7aaa86d00fc2aeacc4b16ddccc45d6dce9d2d1b8dc5cc44b0903256a7c",
+    "seed_sha256": "993743764ce02a1f4ffd7fd565f7c727d0bb30af9f7b44b2088bd0c227559f82",
+    "automation_catalog_sha256": "1e5c173de46da2c3e17c0d62ecf0baa95f3acb8c4d5e8eed6b0ea08e3b03d780"
+  },
+  "proof_limits": [
+    "Portable component/source suite only; not an external independent model verdict.",
+    "Current handoff adds documentation/metadata; runtime/test bytes match the pinned baseline files listed above.",
+    "Browser/SDK/OCI/provider/customer proof remains separately scoped; this rerun does not refresh them.",
+    "Scripts/verify.py PASS and BLOCKED_SANDBOX are deliberately separate verdicts."
+  ],
+  "provider_calls": 0,
+  "provider_usd": "0.00"
+}

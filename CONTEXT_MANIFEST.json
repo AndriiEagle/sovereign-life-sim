@@ -1,7 +1,7 @@
 {
   "schema": "sovereign.context-manifest.v1",
   "task": 530,
-  "as_of": "2026-10-17",
+  "as_of": "2026-10-18",
   "timezone": "Europe/Zurich",
   "objective": "Private, modular source-pinned foundation for Sovereign Life RTS / Cashflow 2.0, 2026–2028",
   "destination": {
@@ -9,27 +9,42 @@
     "repository": "sovereign-life-sim",
     "visibility": "public",
     "default_visibility": "private",
-    "visibility_recorded_for_date": "2026-10-17",
+    "visibility_recorded_for_date": "2026-10-18",
     "live_visibility_requires_readback": true,
-    "temporary_public_review": {
-      "authorization": "Direct user request in task 530 on 2026-10-17: make this repository public now, write an external review prompt, return it private tomorrow, record the scoped exception in global memory.",
-      "repository_id": 1423646041,
-      "scope": "This prepared repository, read-only external review; no blanket license, paid dispatch, implementation, remote writes or permission to publish other work.",
-      "return_private_at": "2026-10-18T09:00:00+02:00",
-      "timezone": "Europe/Zurich",
-      "automation_id": "sovereign-private",
-      "automation_status_at_recording": "ACTIVE_SCHEDULED_NOT_EXECUTED",
-      "rule_single_occurrence": true,
-      "live_visibility_authority": "GitHub repository metadata; schedule/configuration is not execution proof.",
-      "runtime_limit": "Local Codex host, internet and existing GitHub authentication must be available.",
-      "copies_limit": "Private restoration cannot erase previously downloaded copies."
-    },
     "branch": "codex/sovereign-life-sim-530",
     "reason": "Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners.",
     "phase2_push_authorization": {
       "date": "2026-10-18",
       "source": "Direct user instruction to implement and push even while this repository remains Public.",
       "scope": "This branch and reviewed Phase 2 source only; no secrets, raw runtime data, other repositories, or new public/commercial license."
+    },
+    "prior_public_review_window": {
+      "request": {
+        "authorization": "Direct user request in task 530 on 2026-10-17: make this repository public now, write an external review prompt, return it private tomorrow, record the scoped exception in global memory.",
+        "repository_id": 1423646041,
+        "scope": "This prepared repository, read-only external review; no blanket license, paid dispatch, implementation, remote writes or permission to publish other work.",
+        "return_private_at": "2026-10-18T09:00:00+02:00",
+        "timezone": "Europe/Zurich",
+        "automation_id": "sovereign-private",
+        "automation_status_at_recording": "ACTIVE_SCHEDULED_NOT_EXECUTED",
+        "rule_single_occurrence": true,
+        "live_visibility_authority": "GitHub repository metadata; schedule/configuration is not execution proof.",
+        "runtime_limit": "Local Codex host, internet and existing GitHub authentication must be available.",
+        "copies_limit": "Private restoration cannot erase previously downloaded copies."
+      },
+      "status": "COMPLETE_PRIVATE_RETURN_VERIFIED",
+      "actual_private_readback_at_utc": "2026-10-18T07:03:30.258019+00:00",
+      "automation_status": "PAUSED"
+    },
+    "current_public_review": {
+      "authorization": "Direct user instruction on 2026-10-18 to make this canonical repository public again and publish complete relevant context plus a rigorous cloud audit prompt.",
+      "repository_id": 1423646041,
+      "purpose": "Read-only independent cloud audit of this prepared repository.",
+      "return_private_at": null,
+      "new_automation_created": false,
+      "previous_restore_automation": "sovereign-private",
+      "previous_restore_status": "PAUSED",
+      "scope_limit": "No new license, paid calls, accounts, raw chats/runtime data, other-repository publication or implementation."
     }
   },
   "coverage": {
@@ -590,11 +605,15 @@
     }
   ],
   "active_simulator": {
-    "framework": "Vanilla HTML/CSS + ES modules",
-    "renderer": "DOM/CSS procedural isometric view",
-    "framework_ref": "sovereign-web",
-    "source_evidence": "audit/step3-source-evidence.json#/sources",
-    "component_status_rule": "ALREADY_ACTIVE is usable now in this DOM. Other stacks require their stated host, dependencies, rights and adapters."
+    "framework": "HTML/CSS + ES modules with authenticated Python loopback runtime",
+    "renderer": "Canvas 2D Emberglass via emberglass.mjs with original SVG atlas; DOM forms/HUD",
+    "core": "simulation-core/unified_tick.py",
+    "server": "scripts/serve.py",
+    "durability": "simulation-core/persistence.py",
+    "argon": "argon-game/README.md",
+    "current_source_baseline": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
+    "source_evidence": "AUDIT_CONTEXT.md and audit/cloud-audit-baseline.json",
+    "component_status_rule": "Current source and phase2_runtime supersede historical Phase 1 catalog activation flags."
   },
   "framework_inventory": [
     {
@@ -1290,5 +1309,25 @@
       "live_synera": "NOT_RUN",
       "model_sessions": "NOT_CONNECTED"
     }
+  },
+  "historical_catalog_scope": {
+    "as_of": "2026-10-17",
+    "fields": [
+      "framework_inventory",
+      "reusable_components",
+      "visual_candidates",
+      "step3_evidence",
+      "integration_status"
+    ],
+    "limit": "Dated source/reuse assessment, not current runtime activation or a new live acceptance. See active_simulator, phase2_runtime and AUDIT_CONTEXT.md for current implementation and gates."
+  },
+  "cloud_audit": {
+    "context": "AUDIT_CONTEXT.md",
+    "entrypoint": "EXTERNAL_PROMPT.md",
+    "contract": "AUDIT_PROMPT.uk.md",
+    "baseline": "audit/cloud-audit-baseline.json",
+    "runtime_base_commit": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
+    "external_execution": "NOT_STARTED_BY_CODEX",
+    "source_and_test_files_unchanged": true
   }
 }

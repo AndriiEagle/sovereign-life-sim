@@ -1,3 +1,5 @@
+Актуальний cloud audit handoff 18.10.2026: `AUDIT_CONTEXT.md` → `AUDIT_PROMPT.uk.md`, runtime base `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`, fresh portable baseline 158 tests PASS / Python isolation BLOCKED. Репозиторій повторно відкривається public за новим прямим дорученням; старий private rollback виконано й PAUSED, нового закриття не заплановано. Нижче збережені також датовані попередні підсумки.
+
 ## Phase 2 — оновлення 18.10.2026
 
 Робоча гілка `codex/sovereign-life-sim-530`; база `ec0ac62336d305c44653268215a066ceb1101cad`. Поточний HEAD звір через Git, не через self-referential SHA в документі.
@@ -14,7 +16,7 @@
 
 # Sovereign Life Simulator — передача на Terra, кроки 3/4
 
-Repo: https://github.com/AndriiEagle/sovereign-life-sim (private за замовчуванням; прямо дозволений Андрієм public-показ 17.10.2026, повернення в private заплановано на 18.10.2026 09:00 Europe/Zurich через `sovereign-private`). Гілка: `codex/sovereign-life-sim-530`. Точний опублікований SHA та поточну visibility звірити в GitHub; self-referential SHA сюди не вписується. Зовнішній моделі передавати `EXTERNAL_PROMPT.md`; це read-only review.
+Repo: https://github.com/AndriiEagle/sovereign-life-sim (private за замовчуванням; прямо дозволений Андрієм public-показ 17.10.2026, те повернення у private виконано 18.10.2026 о 09:03 Europe/Zurich; старий job `sovereign-private` PAUSED). Гілка: `codex/sovereign-life-sim-530`. Точний опублікований SHA та поточну visibility звірити в GitHub; self-referential SHA сюди не вписується. Зовнішній моделі передавати `EXTERNAL_PROMPT.md`; це read-only review.
 
 **CONTEXT_MANIFEST.json:** 16 проєктів/напрямів, 10 конкретних UI/runtime surfaces, 13 компонентів із source refs, залежностями та чесним статусом вставлення. SHA256 і локатори 27 джерел — `audit/step3-source-evidence.json`.
 
