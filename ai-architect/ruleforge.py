@@ -4,7 +4,7 @@ import hashlib
 import json
 import re
 
-from contracts import canonical, identifier, keys, text
+from contracts import canonical, identifier, keys, number, text
 from sandbox import check_source
 from unified_tick import apply_operations
 
@@ -24,14 +24,19 @@ def validate_rule(rule):
     return dict(deepcopy(rule),sha256=hashlib.sha256(canonical(rule).encode()).hexdigest())
 
 
-def compile_offline(prompt, format='json'):
+def compile_offline(prompt, format='json', template_params=None):
     prompt=text(prompt,2000)
     if format not in {'json','python'}: raise ValueError('UNKNOWN_RULE_FORMAT')
     lowered=prompt.casefold()
     id='rule-'+hashlib.sha256(prompt.encode()).hexdigest()[:16]
     assumptions=['Synthetic scenario; no actual income, diagnosis, or causal sales prediction.']
+    params=keys(template_params if template_params is not None else {},['setup_cents','auto_deduct_setup'])
     if any(word in lowered for word in ('бот','bot','башт','tower')):
         operations=[dict(op='add_node',id='bot-'+id[5:],title='AI Bot / нова башта',kind='tower')]
+        if params:
+            auto=params.get('auto_deduct_setup',False)
+            if type(auto) is not bool: raise ValueError('INVALID_BOOLEAN')
+            operations[0].update(setup_cents=number(params.get('setup_cents',0),'SETUP',0,100000000,True),auto_deduct_setup=auto)
         assumptions+=['Revenue defaults to zero until explicit scenario parameters are supplied.']
     elif any(word in lowered for word in ('імплан','имплан','implant','стомат')):
         match=re.search(r'(\d{1,7}(?:[.,]\d{1,2})?)\s*(?:chf|франк)',lowered)
@@ -45,6 +50,8 @@ def compile_offline(prompt, format='json'):
         assumptions+=['MiroFish-style local placeholder; upstream MiroFish is NOT_CONNECTED.']
     else:
         raise ValueError('OFFLINE_UNSUPPORTED: supported templates are bot tower, explicit CHF expense, and client agent')
+    if params and operations[0]['op']!='add_node': raise ValueError('TOWER_TEMPLATE_PARAMS_REQUIRED')
+    if params and operations[0].get('kind')!='tower': raise ValueError('TOWER_TEMPLATE_PARAMS_REQUIRED')
     rule=dict(schema='sovereign.rule.v1',id=id,format=format,assumptions=assumptions,origin='offline-template')
     if format=='python': rule['source']='def evaluate(state, params, seed):\n    return '+repr(operations)+'\n'
     else: rule['operations']=operations

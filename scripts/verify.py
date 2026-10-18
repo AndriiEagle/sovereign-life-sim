@@ -99,7 +99,7 @@ def main():
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'upstream-tests', '-q'], ROOT / 'simulation-core'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'sim/tests', '-t', '.', '-q'], ROOT / 'simulation-core/game-forge'),
             ([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], ROOT),
-            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs', 'tests/iso-helpers.test.mjs', 'tests/emberglass.test.mjs'], ROOT),
+            ([node, '--test', 'tests/model.test.mjs', 'tests/events.test.mjs', 'tests/iso-helpers.test.mjs', 'tests/emberglass.test.mjs', 'tests/argon-client.test.mjs', 'tests/scenario-forms.test.mjs'], ROOT),
             ([sys.executable, '-B', 'scripts/scenario.py', '--ticks', '96', '--action', 'rest', '--seed', '42'], ROOT),
         ]
         for command, cwd in commands:

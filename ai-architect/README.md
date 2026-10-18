@@ -5,13 +5,38 @@ Offline-first RuleForge and AssetForge share the server command dispatcher. No p
 ## Rules and rollback
 
 JSON rule schema: `sovereign.rule.v1`, safe `id`, `format: json`, `origin`, `assumptions`, and up to eight `operations`.
-Allowlisted operations: `add_node` (safe ID, title, kind, optional integer-cent daily revenue/cost and ROI base), `expense` (integer cents), and `set_modifier` (explicit confidence/B2B assumptions, 0–100).
+Allowlisted operations: `add_node` (safe ID, title, kind, optional integer-cent daily revenue/cost, `setup_cents` and boolean `auto_deduct_setup`), `expense` (integer `amount_cents`, optional `kpi_modifiers`), and `set_modifier` (explicit confidence/B2B assumptions, 0–100).
 Python uses the same schema with `format: python` and `source` defining only `evaluate(state, params, seed)`.
 The result is the same allowlisted operation list. No generated module is imported into the host.
 
 Rules are validated and dry-run before staging, then evaluated again on the next tick boundary. Activation is once per version; tower economics continue in the shared core. The UI creates and activates with one 15-minute tick. Provider jobs do the same after successful validation. Failed/conflicting pending rules preserve the last working version and do not stop the clock.
 
-`rollback_rule` cancels a pending version, stages the previous version, or disables a first-version rule's towers. It does not refund historical expenses or erase the journal. Generated artifacts are content-addressed and ignored by Git.
+`auto_deduct_setup` defaults to false for compatibility. If true, an `add_node`
+operation debits setup once on activation, never in the dry-run. Each node retains
+`setup_deducted` and `setup_paid_cents` across edits/versions/rollback/restart;
+changing its ROI basis does not recharge or refund setup. Existing nodes configured
+through `configure_node` debit on first cashflow activation, or immediately on
+configuration if already active. Insufficient funds reject the entire candidate.
+ROI subtracts the setup actually debited from the operating result. Other later
+costs require an explicit expense. Offline tower prompts accept `template_params`
+with `setup_cents` and `auto_deduct_setup`; these parameters are rejected for other
+templates/provider input rather than silently ignored.
+
+Example operator rule operation:
+
+```json
+{"op":"expense","amount_cents":2000,"kpi_modifiers":{"revenue_multiplier":1.5,"Bio_RAM":60}}
+```
+
+Modifiers are absolute operator-authored synthetic hypotheses, not measured causal
+effects. Allowlist: global `revenue_multiplier` 0–5, `Bio_RAM` 0–100,
+`confidence_assumption` and `b2b_uplift_assumption` 0–100. Only revenue_multiplier
+changes tower revenue; confidence/B2B values remain labelled hypotheses. Effective
+daily revenue rounds half up to integer cents before Conductor evaluation; costs
+are unchanged. Ordinary text expenses infer no modifiers. Expense+KPI apply once
+per new rule version and do not replay on rollback to an already-applied version.
+
+`rollback_rule` cancels a pending version, stages the previous version, or disables a first-version rule's towers. It does not refund historical expenses/setup, undo one-shot KPI effects, or erase the journal. Generated artifacts are content-addressed and ignored by Git.
 
 ## Real Python isolation
 

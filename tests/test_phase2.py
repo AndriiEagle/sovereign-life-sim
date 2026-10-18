@@ -182,7 +182,7 @@ class BoundaryTests(unittest.TestCase):
             result=forge.accept_image(n,transparent.getvalue());self.assertEqual(result['format'],'png')
     def test_freeze_never_hashes_env_or_runtime_generated_data(self):
         spec=importlib.util.spec_from_file_location('freeze',ROOT/'scripts/freeze.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-        for path in (ROOT/'.env',ROOT/'.env.local',ROOT/'engine-isometric-ui/assets/generated/secret.svg',ROOT/'.runtime/bridge-venv/pyvenv.cfg'):
+        for path in (ROOT/'.env',ROOT/'.env.local',ROOT/'engine-isometric-ui/assets/generated/secret.svg',ROOT/'.runtime/bridge-venv/pyvenv.cfg',ROOT/'.codex/config.toml'):
             self.assertFalse(module.included(path))
         self.assertTrue(module.included(ROOT/'.env.example'))
 

@@ -1,19 +1,22 @@
-# Phase 2 — current transport
+# Local MCP transport
 
-`client.py` forwards authenticated local JSON-RPC to `127.0.0.1:4530/api/mcp` and reads SSE at `/api/mcp/stream`. The server and UI share one command dispatcher and durable journal. A fresh observed command/event acknowledgement sets `LIVE_LOCAL_BRIDGE`; restart invalidates that current-connection claim.
+`client.py` forwards authenticated loopback JSON-RPC and observes the durable SSE journal. HTTP, UI and the official SDK stdio adapter use one Runtime/Store. `events.mjs` is only a compatibility helper for the archived Phase 1 DTO; `command-queue.mjs` is the durable browser request queue shared with Argon.
 
-`scripts/mcp_server.py` uses the official pinned MCP SDK over stdio (initialize, tools/list, tools/call). `scripts/verify_mcp.py` exercises that SDK and the actual HTTP/SSE roundtrip without calling an LLM. Configure an MCP client explicitly; no global Codex/Claude configuration is changed. Model/provider sessions stay `NOT_CONNECTED` independently.
+Run the app, prepare the pinned SDK environment and register this checkout:
 
-Tokens are read only from ignored local session files, never URLs or Git. `events.mjs` remains a compatibility helper for the earlier browser DTO; it does not own live state. Historical notes below describe that earlier slice.
+```powershell
+python -B scripts/serve.py
+# Separate terminal:
+python -B scripts/configure_mcp.py
+.runtime/bridge-venv/Scripts/python.exe -B scripts/verify_mcp.py --project-config
+```
 
----
+For first-time SDK installation see the root README. The registrar writes only ignored `.codex/config.toml` inside this repository, using absolute paths to this checkout's venv interpreter and `scripts/mcp_server.py`. Existing unrelated settings are preserved; conflicting `sovereign_local` settings are rejected without rewriting them. Global/account configuration and secrets are never copied. Re-run after moving the checkout. [Official Codex MCP project configuration](https://learn.chatgpt.com/docs/extend/mcp?surface=cli) is loaded for trusted projects on the next client startup/reconnect. Registration does not hot-load tools into an existing chat.
 
-## Historical foundation notes
+For a custom app state directory, supply `--session-file .runtime/<state>/session.json`
+to registration and SDK verification. The file must remain under this checkout's
+private `.runtime`; the client accepts only an authenticated IPv4 loopback URL.
 
-# Міст: контракт готовий, підключення NOT_CONNECTED
+On startup, and before a tool call after server-token rotation, the adapter performs a harmless `select_node` of the already selected node, observes its real SSE event, then acknowledges it. Only that successful exchange sets `LIVE_LOCAL_BRIDGE`. A server restart invalidates freshness; the next adapter exchange restores it. An unavailable server leaves the adapter callable for a later retry; it never invents a live status. Concurrent tool starts share the connection lock. Tokens are read from ignored local session files, never URLs/stdout/Git.
 
-`events.mjs` записує лише явні дії в цьому демо: вибір вузла, модельна робота, відпочинок, наступний день, скидання. Буфер у пам'яті — 200 подій; експорт JSON запускає користувач. Перезавантаження сторінки очищає стан. Немає спостереження за браузером/робочим столом, персональних даних, мережевого dispatch або виконання команд.
-
-Приклад: `{"schema":"sovereign.interaction.v1","sequence":1,"occurred_at":"2026-10-17T18:00:00Z","mode":"SYNTHETIC","action":"select","node_id":"synera"}`.
-
-Майбутній адаптер має належати чинному Harness/Token Monster або підтримуваному MCP-власнику. Він повинен перевіряти schema, версію, повторні sequence/session IDs, свіжість і дозволені ефекти; отримувати явну згоду на передачу; підтверджувати приймання кожної події та стан підключення. Цей DTO не є MCP-сервером і не доводить, що Codex/Claude бачать кліки. Втрату перших подій у кільцевому буфері видно через total_events. Повний журнал, persistence і real-time transport — окремі завдання з TASKS.md.
+Tools: `get_state`, `command`, `probe_bridge`. The adapter allowlists local scenario commands. Model/provider sessions stay `NOT_CONNECTED`; SDK transport acceptance is not evidence that Claude/Codex used a tool. No inference is requested by registration or health verification. Historical DTO notes: `audit/phase1-mcp-notes.md`.

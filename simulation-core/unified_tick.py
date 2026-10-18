@@ -1,7 +1,7 @@
 """Single pure adapter over the unchanged game-forge and Conductor snapshots."""
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
-from decimal import Decimal
+from decimal import Decimal, ROUND_HALF_UP
 import math
 from pathlib import Path
 import sys
@@ -32,14 +32,16 @@ def initial_state(manifest, seed=42, now='2026-10-18T00:00:00+00:00'):
         nodes.append(dict(id=p['id'], title=p['title'], manifest_id=p['id'], source_status=p['status'],
                           status='FOCUSED' if i<2 else 'Queued', wave=1 if i<2 else 2 if i<9 else 3,
                           kind='tower' if i<2 else 'mine', progress=0., revenue_day_cents=0,
-                          cost_day_cents=0, setup_cents=0, net_cents=0, owner_rule=None))
+                          cost_day_cents=0, setup_cents=0, auto_deduct_setup=False,
+                          setup_deducted=False, setup_paid_cents=0, net_cents=0, owner_rule=None))
     life = life_initial(PARAMS, seed=seed)
     state = dict(schema='sovereign.state.v2', revision=0, seed=seed, start_time=now, sim_time=now,
                  life=life, nodes=nodes, selected='synera',
                  bio=dict(Bio_RAM=80, Sleep_Sync_Index=80, Swiss_Grey_Weather_Modifier=0,
                           debuff_reason=None, debuff_until_step=None, reduced_fog=False, recovery='Відпочинок'),
                  config=dict(trust_min=0, trust_max=100, trust_k=.6, gemeinde_deadline=None,
-                             build_per_hour=2, confidence_assumption=50, b2b_uplift_assumption=0),
+                             build_per_hour=2, confidence_assumption=50, b2b_uplift_assumption=0,
+                             revenue_multiplier=1),
                  quest=dict(start_step=None, verified_milestones=[], milestones=['jwt-two-users','neon-recovery']),
                  rules={}, assets={}, bridge=dict(status='NOT_CONNECTED', providers='NOT_CONNECTED'),
                  economic_remainder=0., tower_net_cents=0)
@@ -54,6 +56,11 @@ def node(state, node_id):
 
 
 def refresh(state):
+    # Additive defaults keep pre-audit journal states usable without rewriting history.
+    state['config'].setdefault('revenue_multiplier',1)
+    for n in state['nodes']:
+        for key,value in dict(auto_deduct_setup=False,setup_deducted=False,setup_paid_cents=0).items():
+            n.setdefault(key,value)
     state['sim_time'] = (timestamp(state['start_time']) + timedelta(minutes=15*state['life']['tick'])).isoformat()
     b = state['bio']
     active = b['debuff_until_step'] is not None and state['life']['tick'] < b['debuff_until_step']
@@ -67,23 +74,30 @@ def refresh(state):
     trust = cfg['trust_min']+(cfg['trust_max']-cfg['trust_min'])*(1-math.exp(-cfg['trust_k']*verified))
     deadline = cfg['gemeinde_deadline']
     cash = state['life']['balance_cents']
-    burn = PARAMS['money']['daily_cost_cents'] + sum(n['cost_day_cents']-n['revenue_day_cents'] for n in state['nodes'] if n['status']=='ACTIVE_CASHFLOW')
+    multiplier=cfg['revenue_multiplier']
+    burn = PARAMS['money']['daily_cost_cents'] + sum(n['cost_day_cents']-scenario_revenue(n,multiplier) for n in state['nodes'] if n['status']=='ACTIVE_CASHFLOW')
     state['economy'] = dict(status='SYNTHETIC_SCENARIO_NOT_ACTUAL', currency='CHF', cash_cents=cash,
                            Runway_CHF=money(Decimal(cash)/100), runway_days=round(cash/burn,2) if burn>0 else None,
                            actual_cash_chf=None, daily_burn_cents=burn, gilbert_trust_index=round(trust,4),
                            trust_formula='min + (max-min) * (1-exp(-k * verified_milestones))',
                            gemeinde_days_remaining=None if deadline is None else round((timestamp(deadline)-timestamp(state['sim_time'])).total_seconds()/86400,2),
                            gemeinde_status='UNCONFIGURED' if deadline is None else 'SCENARIO_DATE',
-                           ROI={n['id']:round(n['net_cents']/n['setup_cents'],4) if n['setup_cents'] else None for n in state['nodes']})
-    state['economy']['conductor_nodes']={n['id']:daily_economics(n) for n in state['nodes'] if n['status']=='ACTIVE_CASHFLOW'}
+                           revenue_multiplier=multiplier, setup_paid_cents=sum(n['setup_paid_cents'] for n in state['nodes']),
+                           ROI={n['id']:round((n['net_cents']-n['setup_paid_cents'])/n['setup_cents'],4) if n['setup_cents'] else None for n in state['nodes']})
+    state['economy']['conductor_nodes']={n['id']:daily_economics(n,multiplier) for n in state['nodes'] if n['status']=='ACTIVE_CASHFLOW'}
     validate(state)
     return state
 
 
-def daily_economics(n):
-    if not n['revenue_day_cents']:
+def scenario_revenue(n, multiplier=1):
+    return int((Decimal(n['revenue_day_cents'])*Decimal(str(multiplier))).quantize(Decimal(1),rounding=ROUND_HALF_UP))
+
+
+def daily_economics(n, multiplier=1):
+    revenue=scenario_revenue(n,multiplier)
+    if not revenue:
         return dict(contribution_after_reserve=money(-Decimal(n['cost_day_cents'])/100),status='ZERO_SALES_SCENARIO')
-    return evaluate_quote(Quote.from_mapping(dict(currency='CHF',price=money(Decimal(n['revenue_day_cents'])/100),
+    return evaluate_quote(Quote.from_mapping(dict(currency='CHF',price=money(Decimal(revenue)/100),
         fee_rate='0',fee_fixed='0',variable_cost=money(Decimal(n['cost_day_cents'])/100),reserve_rate='0',
         acquisition_hours='0',delivery_hours='1',support_hours='0',hourly_value='0')))
 
@@ -96,10 +110,22 @@ def validate(state):
     for n in state['nodes']:
         identifier(n['id']); text(n['title'])
         number(n['progress'],'PROGRESS',0,100)
-        for key in ('revenue_day_cents','cost_day_cents','setup_cents'):
+        for key in ('revenue_day_cents','cost_day_cents','setup_cents','setup_paid_cents'):
             number(n[key],key,0,100000000,True)
+        for key in ('auto_deduct_setup','setup_deducted'):
+            if type(n[key]) is not bool: raise ValueError('INVALID_BOOLEAN')
+    number(state['config']['revenue_multiplier'],'REVENUE_MULTIPLIER',0,5)
     for key in ('Bio_RAM','Sleep_Sync_Index'):
         number(state['bio'][key],key,0,100)
+
+
+def deduct_setup(state, n):
+    """One lifetime debit per tower, retained through edits, rollback and replay."""
+    if not n.get('auto_deduct_setup',False) or n.get('setup_deducted',False): return
+    amount=n['setup_cents']
+    if state['life']['balance_cents'] < amount: raise ValueError('INSUFFICIENT_SCENARIO_FUNDS')
+    state['life']['balance_cents']-=amount; state['life']['net_cents']-=amount
+    n.update(setup_deducted=True,setup_paid_cents=amount)
 
 
 def apply_operations(state, operations, owner, charge=True):
@@ -110,21 +136,32 @@ def apply_operations(state, operations, owner, charge=True):
         if not isinstance(op,dict): raise ValueError('INVALID_OPERATION')
         kind = op.get('op')
         if kind == 'add_node':
-            keys(op,['op','id','title','kind','revenue_day_cents','cost_day_cents','setup_cents'],['op','id','title'])
+            keys(op,['op','id','title','kind','revenue_day_cents','cost_day_cents','setup_cents','auto_deduct_setup'],['op','id','title'])
             id = identifier(op['id']); title = text(op['title'])
             existing = next((n for n in candidate['nodes'] if n['id']==id),None)
             if existing and existing['owner_rule'] != owner: raise ValueError('NODE_OWNED_ELSEWHERE')
             if op.get('kind','tower') not in {'tower','mine','agent'}: raise ValueError('INVALID_NODE_KIND')
-            fields = dict(title=title, kind=op.get('kind','tower'), **{k:number(op.get(k,0),k,0,100000000,True) for k in ('revenue_day_cents','cost_day_cents','setup_cents')})
+            auto=op.get('auto_deduct_setup',False)
+            if type(auto) is not bool: raise ValueError('INVALID_BOOLEAN')
+            fields = dict(title=title, kind=op.get('kind','tower'), auto_deduct_setup=auto,
+                          **{k:number(op.get(k,0),k,0,100000000,True) for k in ('revenue_day_cents','cost_day_cents','setup_cents')})
             if existing: existing.update(fields)
-            else: candidate['nodes'].append(dict(id=id, manifest_id=None, source_status='GENERATED_SCENARIO',
-                status='Queued', wave=4, progress=0., net_cents=0, owner_rule=owner, **fields))
+            else:
+                existing=dict(id=id, manifest_id=None, source_status='GENERATED_SCENARIO',
+                    status='Queued', wave=4, progress=0., net_cents=0, owner_rule=owner,
+                    setup_deducted=False,setup_paid_cents=0,**fields)
+                candidate['nodes'].append(existing)
+            if charge: deduct_setup(candidate,existing)
         elif kind == 'expense':
-            keys(op,['op','amount_cents'],['op','amount_cents'])
+            keys(op,['op','amount_cents','kpi_modifiers'],['op','amount_cents'])
             amount = number(op['amount_cents'],'EXPENSE',0,100000000,True)
+            modifiers=keys(op.get('kpi_modifiers',{}),['revenue_multiplier','Bio_RAM','confidence_assumption','b2b_uplift_assumption'])
+            modifiers={k:number(v,k,0,5 if k=='revenue_multiplier' else 100) for k,v in modifiers.items()}
             if charge:
                 if candidate['life']['balance_cents'] < amount: raise ValueError('INSUFFICIENT_SCENARIO_FUNDS')
                 candidate['life']['balance_cents'] -= amount; candidate['life']['net_cents'] -= amount
+                for key,value in modifiers.items():
+                    candidate['bio' if key=='Bio_RAM' else 'config'][key]=value
         elif kind == 'set_modifier':
             keys(op,['op','name','value'],['op','name','value'])
             if op['name'] not in {'confidence_assumption','b2b_uplift_assumption'}: raise ValueError('MODIFIER_NOT_ALLOWED')
@@ -163,7 +200,7 @@ def advance(state, steps=4, action='rest', rule_operations=None):
                 n['progress'] = min(100.,round(n['progress']+result['config']['build_per_hour']*.25*multiplier,6))
             if n['status']=='ACTIVE_CASHFLOW':
                 # Integer cents allocated by cumulative fractional-day boundaries; no lost hourly rounding.
-                rate = int(Decimal(daily_economics(n)['contribution_after_reserve'])*100)
+                rate = int(Decimal(daily_economics(n,result['config']['revenue_multiplier'])['contribution_after_reserve'])*100)
                 delta = math.floor(rate*(before+1)/96)-math.floor(rate*before/96)
                 n['net_cents'] += delta
                 result['life']['balance_cents'] += delta; result['life']['net_cents'] += delta
@@ -176,10 +213,14 @@ def command(state, name, payload):
     if name == 'select_node':
         keys(payload,['node_id'],['node_id']); node(result,payload['node_id']); result['selected']=payload['node_id']
     elif name == 'configure_node':
-        keys(payload,['node_id','revenue_day_cents','cost_day_cents','setup_cents'],['node_id'])
+        keys(payload,['node_id','revenue_day_cents','cost_day_cents','setup_cents','auto_deduct_setup'],['node_id'])
         n=node(result,payload['node_id'])
         for key in ('revenue_day_cents','cost_day_cents','setup_cents'):
             if key in payload:n[key]=number(payload[key],key,0,100000000,True)
+        if 'auto_deduct_setup' in payload:
+            if type(payload['auto_deduct_setup']) is not bool: raise ValueError('INVALID_BOOLEAN')
+            n['auto_deduct_setup']=payload['auto_deduct_setup']
+        if n['status']=='ACTIVE_CASHFLOW':deduct_setup(result,n)
     elif name == 'node_status':
         keys(payload,['node_id','status'],['node_id','status'])
         n = node(result,payload['node_id']); target=payload['status']
@@ -190,6 +231,7 @@ def command(state, name, payload):
         if target=='FOCUSED' or (old in COMPLETE and target != 'ACTIVE_CASHFLOW'):
             raise ValueError('INVALID_STATUS_TRANSITION')
         if target=='ACTIVE_CASHFLOW' and old!='SHIPPED': raise ValueError('SHIP_FIRST')
+        if target=='ACTIVE_CASHFLOW':deduct_setup(result,n)
         n['status']=target
         if old not in COMPLETE and target in COMPLETE:
             for candidate in result['nodes']:
@@ -234,7 +276,7 @@ def command(state, name, payload):
 
 
 def public_state(state):
-    result=deepcopy(state)
+    result=refresh(deepcopy(state))
     result['rules']={id:{'id':id,'active':r['active']['sha256'] if r.get('active') else None,
         'pending':r['pending']['sha256'] if r.get('pending') else None,
         'format':(r.get('pending') or r.get('active') or {}).get('format'),

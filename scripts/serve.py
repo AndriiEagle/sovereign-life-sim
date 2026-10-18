@@ -17,7 +17,7 @@ from persistence import atomic_write
 from runtime import Runtime
 
 ALLOWED={'/engine-isometric-ui/index.html','/engine-isometric-ui/styles.css','/engine-isometric-ui/app.mjs',
- '/engine-isometric-ui/emberglass.mjs','/engine-isometric-ui/atlas.svg',
+ '/engine-isometric-ui/emberglass.mjs','/engine-isometric-ui/atlas.svg','/engine-isometric-ui/scenario-forms.mjs','/mcp-bridge/command-queue.mjs',
  '/engine-isometric-ui/reference-source/iso-kit-renderer.js','/simulation-core/model.mjs','/mcp-bridge/events.mjs'}
 
 

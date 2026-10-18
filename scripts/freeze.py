@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def included(path):
     relative = path.relative_to(ROOT)
+    if relative.as_posix()=='.codex/config.toml':
+        return False
     if any(part in {'.git', '__pycache__', '.runtime', '.venv', 'node_modules', 'screenshots', 'generated'} for part in relative.parts):
         return False
     if relative.name.startswith('.env') and relative.name != '.env.example':
@@ -24,8 +26,11 @@ def main():
             with path.open('rb') as handle:
                 digest = hashlib.file_digest(handle, 'sha256').hexdigest()
             files.append({'path': path.relative_to(ROOT).as_posix(), 'sha256': digest, 'bytes': path.stat().st_size})
-    (ROOT / 'PACKAGE_MANIFEST.json').write_text(json.dumps({'schema': 'sovereign.package.v1',
-        'boundary': 'SHA256 integrity only, not a signature or an acceptance verdict.', 'files': files}, indent=2) + '\n', encoding='utf-8')
+    target=ROOT/'PACKAGE_MANIFEST.json'
+    newline='\r\n' if target.exists() and b'\r\n' in target.read_bytes() else '\n'
+    with target.open('w',encoding='utf-8',newline=newline) as handle:
+        handle.write(json.dumps({'schema': 'sovereign.package.v1',
+            'boundary': 'SHA256 integrity only, not a signature or an acceptance verdict.', 'files': files}, indent=2) + '\n')
     print(json.dumps({'hashed_files': len(files), 'bytes': sum(row['bytes'] for row in files)}))
 
 

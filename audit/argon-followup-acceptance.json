@@ -1,0 +1,121 @@
+{
+  "schema": "sovereign.argon-followup-acceptance.v1",
+  "date": "2026-10-18",
+  "reviewed_base_commit": "08555703a19f85aacbf3497012e3c1b910d74d88",
+  "status": "LOCAL_PASS_PYTHON_ISOLATION_BLOCKED",
+  "scope": "audit/argon-followup-scope.md",
+  "counterfactual": {
+    "status": "PASS",
+    "source_base": "08555703a19f85aacbf3497012e3c1b910d74d88",
+    "oracle_sha256": "f302b9d750b164c91e79a40c2c7ddb3c9716acb2e0640de98ef45b298b1dd3f0",
+    "same_oracle": true,
+    "old_exit": 1,
+    "new_exit": 0,
+    "negative_summary": "FAILED (errors=9)",
+    "positive_summary": "OK",
+    "provider_calls": 0
+  },
+  "restart": {
+    "status": "PASS",
+    "preserved_fields": [
+      "life",
+      "nodes",
+      "assets",
+      "rules",
+      "config",
+      "economy",
+      "revision"
+    ],
+    "revision": 13,
+    "cash_cents": 15027,
+    "setup_paid_cents": 3000,
+    "revenue_multiplier": 1.5,
+    "bridge_after_restart": "NOT_CONNECTED"
+  },
+  "browser": {
+    "status": "PASS",
+    "mode": "local disposable synthetic state",
+    "observed": [
+      "existing tower setup debits 2000 cents on cashflow activation",
+      "expense 2000 cents + explicit multiplier 1.5 and Bio_RAM 60",
+      "Conductor cashflow and runway reflect multiplier",
+      "AI Architect creates a 17th node with 1000-cent setup debit",
+      "reload/restart preserves costs, nodes, rules and multiplier",
+      "LIVE_LOCAL_BRIDGE shown after real SDK roundtrip"
+    ]
+  },
+  "mcp": {
+    "status": "PASS",
+    "project_registration_readback": "codex mcp get sovereign_local --json",
+    "sdk": "mcp==1.30.0",
+    "startup_roundtrip": "PASS",
+    "server_restart_reconnect": "PASS",
+    "transport": "SDK stdio -> authenticated HTTP JSON-RPC -> observed SSE -> ack",
+    "model_sessions": "NOT_CONNECTED",
+    "project_config_excluded_from_git_and_freeze": true
+  },
+  "capabilities": {
+    "python": "BLOCKED_SANDBOX",
+    "paid_providers": "DISABLED_NOT_RUN",
+    "live_synera_jwt": "NOT_RUN",
+    "neon_recovery": "BLOCKED_SEPARATE_ENVIRONMENT",
+    "physical_android_iphone": "NOT_RUN",
+    "gilbert_acceptance": "NOT_RUN"
+  },
+  "additional_provider_calls_in_this_followup": 0,
+  "additional_provider_usd_in_this_followup": "0.00",
+  "limits": [
+    "Local simulation/game verification is not Synera production or customer acceptance.",
+    "No OS/VM/runtime installation, model inference, account connection, payment or customer message.",
+    "Project MCP registration needs client reload before tools appear in an existing chat.",
+    "External canonical repairs are outside this repository; only bounded maintenance/test harness is included.",
+    "Original running servers were preserved after automatic review rejected their stop command. Updated apps run separately against private copies; their state and replay were checked.",
+    "Historical reports retain their original source/claim boundaries."
+  ],
+  "portable": {
+    "status": "PASS",
+    "commands": 5,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "python_test_counts": [
+      65,
+      14,
+      61
+    ],
+    "node_tests": 18,
+    "facts": {
+      "source_copies": 17,
+      "projects": 16,
+      "seed_unknowns_preserved": true
+    }
+  },
+  "privacy": {
+    "status": "PASS",
+    "package_files_scanned": 131,
+    "credential_pattern_findings": 0,
+    "limits": "Bounded source/filename pattern scan only, not a universal secret detection guarantee."
+  },
+  "source_sha256": {
+    "simulation-core/unified_tick.py": "4f13745e5237ba5136caeb529828aa0aa6eb505d3fb2b8ef5e951033ebadd20b",
+    "ai-architect/ruleforge.py": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47",
+    "ai-architect/runtime.py": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce",
+    "mcp-bridge/client.py": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187",
+    "mcp-bridge/command-queue.mjs": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952",
+    "scripts/mcp_server.py": "f8c31a6e00bd983c9fdf8976ecb4531cfe8a315dee6f5e5ea314e82662aa8381",
+    "scripts/configure_mcp.py": "2872eb3f0bf0e498a4ea694cfaff02f9e4301e997259a19a9bfc985d4516052f",
+    "scripts/verify_mcp.py": "481951451b3174c75bc75eacac134100bd3a2e9cea622e08ae65cbf39506bbae",
+    "scripts/serve.py": "4b1537fd2bedd1de997b0d3cca449e769adf9a9f10b36a0a1112d88166fab222",
+    "scripts/serve_argon.py": "f89c93eae2e6268e44fca06bd97ac86a59f1f3e18a64141b2f9923dbec8a7cb9",
+    "engine-isometric-ui/app.mjs": "0cf020c013e9bd048a0b1db1aa4d5b71e8ec5e7351b684060b6aa39b03ca637a",
+    "engine-isometric-ui/scenario-forms.mjs": "22aa5f049d9f5658004fa1e2cd7d7deeda14b80913c989fa293669f25b4f7a50",
+    "tests/test_audit_followup.py": "f302b9d750b164c91e79a40c2c7ddb3c9716acb2e0640de98ef45b298b1dd3f0",
+    "tests/scenario-forms.test.mjs": "54f8a04eca95142cd79d75164898a7e39ebe60403dc3be7b4e19704b6e579afd",
+    "argon-game/game.py": "102516d3e47409e4b2226db09a8dfb016e10381e67c4fb94aa9f4a8b616e83ca",
+    "argon-game/client.mjs": "67835067629643d8e87c8e0e0f317417c63368034c33a707e55edb5926bec1cd"
+  }
+}

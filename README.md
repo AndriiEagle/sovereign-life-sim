@@ -1,73 +1,60 @@
-# Phase 2 — поточний локальний runtime
+# Sovereign і Argon
 
-Єдине ядро `unified_tick` об'єднує незмінені snapshots game-forge та Conductor. Жива Emberglass-карта показує 16 проєктів, хвилі з максимум двома фокусними баштами, сценарні фінанси, Bio/Sleep/Weather, 48h-квест і теорію ігор. Усі зміни проходять через один локальний диспетчер і fsync-журнал із відновленням та idempotency keys.
+Два окремі локальні застосунки. Sovereign — сценарний симулятор проєктів, ресурсів і cashflow. Argon — завершена коротка пригодницька глава «Останній трамвай», у яку можна пограти. Усі CHF, події, енергія й прогрес вигадані; фактичні особисті показники залишаються невідомими.
 
 ```powershell
-python -B scripts/serve.py
-# http://127.0.0.1:4530/
-python -B scripts/verify.py
-python -B scripts/scenario.py --ticks 96 --action rest --seed 42
+python -B scripts/serve.py        # Sovereign: http://127.0.0.1:4530/
+# В іншому терміналі:
+python -B scripts/serve_argon.py  # Argon: http://127.0.0.1:4532/
 ```
 
-У AI Architect обери JSON, введи «Додай нову башту доходу на базі нового бота» і натисни «Створити й активувати». Офлайн-компілятор створить вузол і SVG; той самий вузол залишиться після перезапуску. Другий приклад: «Додай клієнта з агентною поведінкою в стилі MiroFish» — локальний сценарний агент, без upstream-інтеграції. Витрати приймаються в межах модельного залишку; приклад «Імпланти за 20 CHF» не змінює припущення щодо продажів автоматично.
+Python 3.11+; Node 20+ для повних перевірок. Обидва застосунки працюють без AI-ключів. Сервери слухають лише loopback і віддають лише дозволені файли. Зупинка — Ctrl+C.
 
-Правила Python: **BLOCKED_SANDBOX** на цьому хості. Реалізовано rootless OCI adapter, але Docker/Podman/WSL відсутні; успішне виконання Python не заявляється. Платні text/image adapters вимкнені: немає погодженого бюджету, викликів не виконано. Конфігурація, формати правил і межі — [ai-architect/README.md](ai-architect/README.md).
+## Sovereign: поточна реалізація
 
-## MCP — реальний локальний адаптер
+Єдиний `unified_tick` використовує незмінені snapshots game-forge і Conductor. Активний Emberglass renderer з оригінальним atlas показує 16 початкових проєктів, хвилі й максимум дві фокусні башти. Доступні робота/відпочинок, добровільні Bio/Sleep/Weather, дебаф ×0.6, 48h-квест, параметризована теорія ігор, SVG-іконки та офлайн JSON RuleForge. Один диспетчер обслуговує UI й MCP; зміни зберігаються в fsync-журналі з idempotency та відновленням.
 
-Основний застосунок потребує Python 3.11+; Node 20+ потрібен для повного набору перевірок. Для офіційного MCP SDK використовується окреме середовище:
+### Башти й витрати
+
+- В AI Architect обери JSON та приклад «Башта бота». У «Початкова вартість нової башти» задай CHF і прапорець списання. `auto_deduct_setup: true` списує `setup_cents` один раз при активації правила; dry-run грошей не змінює. Без прапорця сума лишається лише базою ROI.
+- Для існуючого вузла відкрий «Економіка башти», задай надходження/витрати/старт і прапорець. Списання відбудеться при переході SHIPPED → Cashflow; для вже активної башти — при збереженні. Зміна параметрів, повтор запиту, відкат і перезапуск не повторюють та не повертають попереднє списання. Наступні додаткові витрати задаються окремо. ROI = (накопичений операційний результат − фактично списаний старт) / поточна явно задана база.
+- «Витрата та сценарні наслідки» поєднує суму й опціональні абсолютні `kpi_modifiers`: загальний `revenue_multiplier` (0–5), `Bio_RAM` (0–100). JSON також приймає confidence/B2B hypothesis (0–100). Множник застосовується до надходжень усіх активних башт; витрати не множаться. CHF округлюються до цілих сантимів, щоденний результат розподіляється без втрати дробових тіків.
+- Звичайне «Імпланти за 20 CHF» лише списує суму. Причинний вплив витрат на здоров’я чи продажі не вигадується. KPI — введені оператором гіпотези. При відкаті вже проведена витрата та її одноразові KPI-ефекти не переграються. Змінити гіпотезу можна новим явним правилом.
+
+Відмова через нестачу сценарних коштів або невалідний параметр атомарна. При втраті відповіді кнопка «Повторити підтвердження» використовує той самий збережений ID; він переживає reload.
+
+### MCP
 
 ```powershell
 python -m venv .runtime/bridge-venv
 .runtime/bridge-venv/Scripts/python.exe -m pip install -r requirements-bridge.txt
-.runtime/bridge-venv/Scripts/python.exe -B scripts/verify_mcp.py
-# Конфігурація MCP-клієнта: цей executable + аргументи -B scripts/mcp_server.py
+python -B scripts/configure_mcp.py
+.runtime/bridge-venv/Scripts/python.exe -B scripts/verify_mcp.py --project-config
 ```
 
-`/api/mcp` — автентифікований локальний JSON-RPC command bus; `/api/mcp/stream` — SSE. Стандартний MCP handshake/tools/list/tools/call забезпечує SDK stdio adapter. Тест проходить SDK → HTTP → зміна стану → SSE → ack, після чого `LIVE_LOCAL_BRIDGE`; це не підключення Claude/Codex/OpenRouter як моделей. Після перезапуску потрібен новий roundtrip. Токен зберігається лише у приватному `.runtime/simulator/session.json`, UI використовує ту саму сесію без токенів у URL.
+На Linux/macOS interpreter — `.runtime/bridge-venv/bin/python`. Реєстратор створює лише приватний `.codex/config.toml` цього checkout, з абсолютними шляхами поточного хоста; він виключений із Git та package freeze. Чинний конфліктний запис не перезаписується. Codex завантажує проєктний MCP у trusted project при наступному старті/перепідключенні; [офіційна документація](https://learn.chatgpt.com/docs/extend/mcp?surface=cli). Наявний чат не отримує нові tools автоматично.
 
-## Збереження й відкат
+Адаптер автоматично проходить реальний HTTP command → SSE → ack при старті та зміні сесії сервера. SDK-перевірка виконує initialize/list/call і перевіряє цей обмін. Після рестарту статус спочатку NOT_CONNECTED; свіжий успішний обмін знову дає LIVE_LOCAL_BRIDGE. Простий health-ping цього статусу не встановлює. Claude/Codex/provider model sessions лишаються окремо NOT_CONNECTED. Жодна модель не викликається під час цих перевірок. Деталі: [mcp-bridge/README.md](mcp-bridge/README.md).
 
-Канонічний локальний журнал — `.runtime/simulator/events.jsonl`, snapshot — відновлюваний кеш. Після зупинки сервера можна скопіювати всю цю директорію як приватний backup. Відновлення — запустити сервер із `--state-dir <копія>`. Обрізаний незавершений хвіст зберігається окремо; пошкоджений завершений запис блокує старт. Не редагуй JSON вручну, щоб обійти перевірку цілісності.
+### Збереження та межі
 
-«Відкотити» на картці правила скасовує pending, повертає попередню версію або вимикає його башти. Витрачені гроші сценарію та історія не стираються. `setup_cents` — явно задана база ROI; одноразове списання задається окремим expense-правилом. Пороги Bio_RAM <30 / Sleep Sync <40 та відновлення за 8 год — видимі ігрові припущення, не медичні вимірювання.
+Канонічний журнал — `.runtime/simulator/events.jsonl`, snapshot — відновлюваний кеш. Для приватного backup зупини сервер і скопіюй усю директорію; відновлення — `python -B scripts/serve.py --state-dir <копія>`. Нова версія приймає старі journals без переписування історії; прапорець автосписання за замовчуванням false. Обрізаний незавершений хвіст зберігається окремо; зіпсований завершений запис блокує старт.
 
-Готовий промпт передачі: [PHASE2_HANDOFF_PROMPT.uk.md](PHASE2_HANDOFF_PROMPT.uk.md). Фактичне приймання й блокери — `audit/phase2-acceptance.json`. Історичні докази нижче стосуються попереднього зрізу.
+Python-правила — **BLOCKED_SANDBOX** до реального rootless OCI runtime, pinned локального образу та успіху `python -B scripts/verify_sandbox.py`. На перевіреному хості runtime відсутній. Host exec як fallback заборонений. Офлайн JSON працює без пісочниці. Платні text/image adapters вимкнені й не перевірені live; [контракти RuleForge, ізоляція та бюджетні межі](ai-architect/README.md).
 
----
+Live Synera JWT двох користувачів, Neon recovery, фізичні Android/iPhone та рішення Гілберта — окремі **NOT_RUN/BLOCKED** гейти. Натискання SHIPPED або verify_milestone у сценарії їх не закриває. [Потрібні реальні докази](SYNERA_LAUNCH_CHECKLIST.md).
 
-# SOVEREIGN LIFE RTS / CASHFLOW 2.0
+## Argon: гра
 
-Приватний фундамент симулятора життя, фінансів, енергії та AI-проєктів у Швейцарії на 2026–2028 роки. Зібрано на Sol у задачі 530, 17.10.2026. **Це перевірювана основа й синтетичне вебдемо, а не завершена гра або запущений бізнес.**
+Чотири локації, предмети, переходи, альтернативні маршрути, три фінали, автозбереження та ручна контрольна точка. [Керування, старт і збереження](argon-game/README.md). Процедурні сцени працюють без зовнішніх файлів; опціональні локальні PNG не копіюються в пакет. Argon використовує окреме збереження `.runtime/argon` і той самий перевірений Store.
 
-Явний виняток Андрія від 17.10.2026: тимчасовий public-показ для незалежного рев'ю, повернення в private заплановано на **18.10.2026 09:00 Europe/Zurich** через `sovereign-private`. Це не public license; фактичну видимість звіряти в GitHub. Автоматика потребує доступного локального Codex та GitHub auth. Промпт для зовнішньої моделі — [EXTERNAL_PROMPT.md](EXTERNAL_PROMPT.md).
-
-Почни з [HANDOFF.md](HANDOFF.md), [CONTEXT_MANIFEST.json](CONTEXT_MANIFEST.json) та [SYNERA_LAUNCH_CHECKLIST.md](SYNERA_LAUNCH_CHECKLIST.md). Продовження іншою моделлю: [EXTERNAL_PROMPT.md](EXTERNAL_PROMPT.md).
-
-Короткий текст для копіювання на Terra: [TERRA_SUMMARY.uk.md](TERRA_SUMMARY.uk.md). Крок 3 додає 10 описаних UI/runtime surfaces, 13 компонентів із межами reuse та свіжу локальну перевірку Instagram preparation; повні джерела й SHA — `audit/step3-source-evidence.json`.
+## Перевірка та передача
 
 ```powershell
-python -B scripts/serve.py
-# Відкрити http://127.0.0.1:4530/
 python -B scripts/verify.py
 python -B scripts/scenario.py --ticks 96 --action rest --seed 42
-cd simulation-core
-python -B -m revenue_lab demo
 ```
 
-Python 3.11+ і Node.js 20+ для всіх перевірок; вебдемо потребує лише Python та сучасний браузер. Встановлення залежностей, credentials, платні API і production-сервіси не потрібні. Сервер слухає лише localhost і не віддає seed, audit, `.git` або інші файли репозиторію. Зупинка — Ctrl+C.
+Пакет перевіряє 17 точних source snapshots, збереження невідомих параметрів, Python/Node-контракти й сценарій. Browser, SDK та rootless sandbox мають окремі результати. [Розбір аудиту Аргона](audit/argon-followup-scope.md), [поточне приймання](audit/argon-followup-acceptance.json), [новий промпт аудиту](AUDIT_PROMPT.uk.md), [HANDOFF](HANDOFF.md), [наступні кроки](TASKS.md).
 
-| Частина | Що вже тут | Межа |
-|---|---|---|
-| `CONTEXT_MANIFEST.json` | 16 проєктів/напрямів, 8 візуальних кандидатів, шляхи, хеші, статуси й прогалини | Обмежений аудит названих робочих тек; не всі файли ноутбука й не raw-чати |
-| `USER_DIGITAL_TWIN_SEED.json` | Явні цілі, робочі вподобання, source labels, невідомі значення | Без медичних висновків, реального балансу й вигаданих біоритмів |
-| `engine-isometric-ui/` | Оригінальна інтерактивна карта + два точні Emberglass renderer/worldpack snapshots | Карта процедурна; старий renderer не активовано, game art не перенесено |
-| `simulation-core/` | Точні reusable Conductor economics та game-forge life-transition imports із тестами | Ігрові сценарії не є прогнозом, персональною/медичною моделлю або обліком платежів |
-| `automation-nodes/` | Каталог існуючих власників і два approve-first source templates | Вузли вимкнено; немає автопублікації, продажів чи запуску чужих скриптів |
-| `mcp-bridge/` | Типізований журнал явних дій і ручний JSON-експорт | Real-time MCP/Codex/Claude transport: NOT_CONNECTED |
-
-Джерела скопійовано побайтно, оригінали не змінювалися. `audit/source-copies.json` містить права й SHA256; `PACKAGE_MANIFEST.json` захищає цілісність пакета, але не є підписом автора. Оригінальні повідомлення, аккаунти, `.env`, приватні клієнтські фото, ігрові бінарники й персональні журнали не включено.
-
-Поточний Synera main на момент аудиту — `4abbd06aa6faa98a69a6bcad4fec4470e11e7676`; CI metadata для нього — success. Це не приймання live JWT-циклу двох людей, Neon recovery, фізичних Android/iPhone чи Гілберта.
-
-Новий репозиторій — окремий агрегуючий симулятор. Канонічні game-forge, Living Arcanum, Memento й Synera зберігають своїх власників. Не замінює Harness, Context Gateway, Token Monster або KI-BUS. Публічні/комерційні права на приватні source snapshots лишаються окремою перевіркою. Не робити репозиторій публічним автоматично.
+Історичні описи Phase 1 винесено в [архів README](audit/phase1-readme-snapshot.md); попередній `audit/phase2-acceptance.json` стосується попереднього зрізу. [Manifest](CONTEXT_MANIFEST.json) містить джерела й межі; [RIGHTS](RIGHTS.md) зберігає права. Public review не надає нової public/commercial ліцензії. Видимість репозиторію перевіряється в GitHub; графік повернення private не є доказом його виконання. Поточне пряме доручення дозволяє push цієї гілки навіть поки Public; secrets/runtime/account config не публікуються.

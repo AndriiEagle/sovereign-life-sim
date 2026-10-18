@@ -1272,6 +1272,23 @@
     "architect": "ai-architect",
     "python": "BLOCKED_SANDBOX",
     "paid_providers": "DISABLED_NOT_LIVE_VERIFIED",
-    "acceptance": "audit/phase2-acceptance.json"
+    "acceptance": "audit/phase2-acceptance.json",
+    "followup": {
+      "reviewed_base_commit": "08555703a19f85aacbf3497012e3c1b910d74d88",
+      "scope": "audit/argon-followup-scope.md",
+      "acceptance": "audit/argon-followup-acceptance.json",
+      "audit_prompt": "AUDIT_PROMPT.uk.md",
+      "features": [
+        "one-time opt-in tower setup debit",
+        "explicit expense KPI hypotheses",
+        "durable browser request IDs",
+        "MCP startup and session-rotation roundtrip",
+        "current-only runtime documentation"
+      ],
+      "argon_game": "argon-game/README.md",
+      "python": "BLOCKED_SANDBOX",
+      "live_synera": "NOT_RUN",
+      "model_sessions": "NOT_CONNECTED"
+    }
   }
 }

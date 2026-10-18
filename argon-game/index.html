@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARGON · Останній трамвай</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header><a class="brand" href="/">ARGON<span>ОСТАННІЙ ТРАМВАЙ</span></a><div class="header-right"><span id="save-status" role="status">Підключення…</span><button id="save">Зберегти</button><button id="load">Завантажити</button><button id="new" class="quiet">Нова гра</button></div></header>
+<main>
+<section class="world">
+  <div class="location-heading"><div><span id="chapter" class="eyebrow"></span><h1 id="location-title">Цюрих після дощу</h1><p id="location-subtitle">Чотири локації. Одна зустріч.</p></div><div class="clock"><strong id="clock">18:42</strong><span>ЗУСТРІЧ О 19:30</span></div></div>
+  <div class="stage" id="stage"><canvas id="scene" width="1280" height="720" role="img" aria-label="Ігрова сцена Цюриха"></canvas><div id="hotspots"></div><div id="location-transition" aria-hidden="true"></div><span class="scene-caption" id="scene-caption">Клацни по мітці, щоб взаємодіяти</span></div>
+  <nav id="route" aria-label="Маршрут пригоди"></nav>
+  <div class="story-line"><span class="story-icon">✦</span><p id="last-note" role="status"></p></div>
+  <div class="controls-hint">МИША · обрати предмет або пройтися <span>1–7 · предмети</span><span>E · дія</span><span>J · щоденник</span></div>
+</section>
+<aside>
+  <section class="mission"><span class="eyebrow">СПРАВА НА СЬОГОДНІ</span><h2 id="objective">Показати те, що працює.</h2><ul id="tasks"></ul></section>
+  <section class="resources"><div><span>СИЛИ ПЕРСОНАЖА</span><strong id="energy">70 / 100</strong><meter id="energy-meter" min="0" max="100" value="70"></meter></div><div><span>ІГРОВІ ГРОШІ</span><strong id="cash">CHF 12.00</strong></div></section>
+  <section class="interaction" id="interaction"><span class="eyebrow">ОБРАНЕ</span><h2 id="interaction-title">Прибути — вже початок.</h2><p id="interaction-description"></p><form id="code-form" hidden><label for="locker-code">Код камери C7</label><input id="locker-code" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="••••"></form><div id="choices"></div><p class="error" id="error" role="alert" hidden></p><button id="retry-turn" hidden>Повторити підтвердження</button></section>
+  <section class="inventory"><span class="eyebrow">У РЮКЗАКУ</span><ul id="inventory"></ul></section>
+  <details id="journal"><summary>Щоденник пригоди <span>↗</span></summary><ol id="journal-entries"></ol></details>
+</aside>
+</main>
+<footer><span>ВИГАДАНА ІСТОРІЯ · ІГРОВІ CHF · ЖОДНИХ РЕАЛЬНИХ ПЛАТЕЖІВ</span><span>Прогрес зберігається на цьому комп’ютері</span></footer>
+<script type="module" src="/app.mjs"></script>
+</body></html>

@@ -68,7 +68,7 @@ class Runtime:
         with self.store.lock:
             previous=self.store.duplicate(request_id,fingerprint)
             if previous is not None:return previous
-            state=self.store.get();summary={};result=dict(status='PASS',event_id=state['revision']+1)
+            state=self.store.get();summary={};result=dict(status='PASS',event_id=state['revision']+1,request_id=request_id)
             if name=='tick':
                 keys(payload,['steps','hours','days','action'])
                 dimensions=[k for k in ('steps','hours','days') if k in payload]
@@ -89,19 +89,20 @@ class Runtime:
                 self.ensure_assets(state);result['rule_errors']=errors
                 summary=dict(steps=steps,action=payload.get('action','rest'),rule_errors=errors)
             elif name=='forge_rule':
-                keys(payload,['prompt','format','rule','use_provider'])
+                keys(payload,['prompt','format','rule','use_provider','template_params'])
                 use_provider=payload.get('use_provider',False)
                 if type(use_provider) is not bool:raise ValueError('INVALID_BOOLEAN')
                 if 'rule' in payload:
-                    if 'prompt' in payload or use_provider:raise ValueError('AMBIGUOUS_RULE_INPUT')
+                    if 'prompt' in payload or use_provider or 'template_params' in payload:raise ValueError('AMBIGUOUS_RULE_INPUT')
                     rule=validate_rule(payload['rule'])
                 elif use_provider:
+                    if 'template_params' in payload:raise ValueError('OFFLINE_TEMPLATE_PARAMS_ONLY')
                     prompt=text(payload.get('prompt'),2000);self.providers.check('rule')
                     job_id='job-'+uuid.uuid4().hex
                     state.setdefault('jobs',{})[job_id]=dict(status='QUEUED',kind='rule')
                     background=('rule',job_id,dict(prompt=prompt,format=payload.get('format','json')))
                     rule=None;result.update(status='QUEUED',job_id=job_id);summary=dict(job_id=job_id)
-                else:rule=compile_offline(payload.get('prompt'),payload.get('format','json'))
+                else:rule=compile_offline(payload.get('prompt'),payload.get('format','json'),payload.get('template_params'))
                 if rule:
                     state=stage(state,rule,self.sandbox);self.persist_rule(rule)
                     result.update(status='PENDING_TICK',rule_id=rule['id'],sha256=rule['sha256'])
