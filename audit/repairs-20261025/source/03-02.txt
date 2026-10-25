@@ -1,0 +1,88 @@
+            if n['status']=='FOCUSED' and action=='work' and result['life']['effective_action']=='work':
+                n['progress'] = min(100.,round(n['progress']+result['config']['build_per_hour']*.25*multiplier,6))
+            if n['status']=='ACTIVE_CASHFLOW':
+                # Integer cents allocated by cumulative fractional-day boundaries; no lost hourly rounding.
+                rate = int(Decimal(daily_economics(n,result['config']['revenue_multiplier'])['contribution_after_reserve'])*100)
+                delta = math.floor(rate*(before+1)/96)-math.floor(rate*before/96)
+                n['net_cents'] += delta
+                result['life']['balance_cents'] += delta; result['life']['net_cents'] += delta
+                result['tower_net_cents'] += delta
+    return refresh(result)
+
+
+def command(state, name, payload):
+    result = deepcopy(state)
+    if name == 'select_node':
+        keys(payload,['node_id'],['node_id']); node(result,payload['node_id']); result['selected']=payload['node_id']
+    elif name == 'configure_node':
+        keys(payload,['node_id','revenue_day_cents','cost_day_cents','setup_cents','auto_deduct_setup'],['node_id'])
+        n=node(result,payload['node_id'])
+        for key in ('revenue_day_cents','cost_day_cents','setup_cents'):
+            if key in payload:n[key]=number(payload[key],key,0,100000000,True)
+        if 'auto_deduct_setup' in payload:
+            if type(payload['auto_deduct_setup']) is not bool: raise ValueError('INVALID_BOOLEAN')
+            n['auto_deduct_setup']=payload['auto_deduct_setup']
+        if n['status']=='ACTIVE_CASHFLOW':deduct_setup(result,n)
+    elif name == 'node_status':
+        keys(payload,['node_id','status'],['node_id','status'])
+        n = node(result,payload['node_id']); target=payload['status']
+        if target not in {'FOCUSED','SHIPPED','ACTIVE_CASHFLOW'}: raise ValueError('INVALID_STATUS')
+        old = n['status']
+        if old == 'DISABLED': raise ValueError('DISABLED_NODE_LOCKED')
+        if target == old: return refresh(result)
+        if old == 'Queued': raise ValueError('QUEUED_NODE_LOCKED')
+        if target=='FOCUSED' or (old in COMPLETE and target != 'ACTIVE_CASHFLOW'):
+            raise ValueError('INVALID_STATUS_TRANSITION')
+        if target=='ACTIVE_CASHFLOW' and old!='SHIPPED': raise ValueError('SHIP_FIRST')
+        if target=='ACTIVE_CASHFLOW':deduct_setup(result,n)
+        n['status']=target
+        if old not in COMPLETE and target in COMPLETE:
+            for candidate in result['nodes']:
+                if candidate['status']=='Queued':
+                    candidate['status']='FOCUSED'; break
+    elif name == 'activate_quest':
+        keys(payload,[])
+        if result['quest']['start_step'] is None: result['quest']['start_step']=result['life']['tick']
+    elif name == 'verify_milestone':
+        keys(payload,['milestone','evidence'],['milestone','evidence'])
+        milestone=payload['milestone']; text(payload['evidence'],300)
+        if milestone not in result['quest']['milestones']: raise ValueError('UNKNOWN_MILESTONE')
+        # An explicit operator-attested milestone, never inferred from model progress.
+        result['quest']['verified_milestones']=sorted(set(result['quest']['verified_milestones']+[milestone]))
+    elif name == 'update_params':
+        keys(payload,['bio','config'])
+        bio=keys(payload.get('bio',{}),['Bio_RAM','Sleep_Sync_Index','Swiss_Grey_Weather_Modifier','reduced_fog','debuff_hours','debuff_reason','recovery'])
+        for key in ('Bio_RAM','Sleep_Sync_Index','Swiss_Grey_Weather_Modifier'):
+            if key in bio: result['bio'][key]=number(bio[key],key,-.5 if key=='Swiss_Grey_Weather_Modifier' else 0,.5 if key=='Swiss_Grey_Weather_Modifier' else 100)
+        if 'reduced_fog' in bio:
+            if type(bio['reduced_fog']) is not bool: raise ValueError('INVALID_BOOLEAN')
+            result['bio']['reduced_fog']=bio['reduced_fog']
+        if 'recovery' in bio:
+            if bio['recovery'] not in {'Відпочинок','Сон','Чай'}: raise ValueError('AUTOMATIC_RECOVERY_NOT_ALLOWED')
+            result['bio']['recovery']=bio['recovery']
+        if 'debuff_hours' in bio:
+            hours=number(bio['debuff_hours'],'DEBUFF_HOURS',0,48,True)
+            result['bio']['debuff_until_step']=result['life']['tick']+hours*4 if hours else None
+            result['bio']['debuff_reason']=text(bio.get('debuff_reason','Добровільна самооцінка'),100) if hours else None
+        elif ('Bio_RAM' in bio and bio['Bio_RAM']<30) or ('Sleep_Sync_Index' in bio and bio['Sleep_Sync_Index']<40):
+            result['bio']['debuff_until_step']=result['life']['tick']+32
+            result['bio']['debuff_reason']='Сценарний поріг самооцінки: Bio_RAM <30 або Sleep Sync <40; 8 год'
+        cfg=keys(payload.get('config',{}),['trust_min','trust_max','trust_k','gemeinde_deadline','build_per_hour','confidence_assumption','b2b_uplift_assumption'])
+        for key,value in cfg.items():
+            if key=='gemeinde_deadline':
+                if value is not None and timestamp(value).year not in {2026,2027,2028}: raise ValueError('DEADLINE_SCENARIO_2026_2028')
+                result['config'][key]=value
+            else: result['config'][key]=number(value,key,0,5 if key=='trust_k' else 100)
+        if result['config']['trust_min']>result['config']['trust_max']: raise ValueError('INVALID_TRUST_BOUNDS')
+    else: raise ValueError('UNKNOWN_COMMAND')
+    return refresh(result)
+
+
+def public_state(state):
+    result=refresh(deepcopy(state))
+    result['rules']={id:{'id':id,'active':r['active']['sha256'] if r.get('active') else None,
+        'pending':r['pending']['sha256'] if r.get('pending') else None,
+        'format':(r.get('pending') or r.get('active') or {}).get('format'),
+        'history':[v['sha256'] for v in r['history']]} for id,r in result['rules'].items()}
+    result['game_theory']=comparison()
+    return result

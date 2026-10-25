@@ -1,0 +1,41 @@
+{
+  "status": "HOLD",
+  "requested_model": "google/gemini-4-argon",
+  "effort": "high",
+  "total_approved_cap_usd": 1.0,
+  "actual_provider_calls": 1,
+  "actual_spend_usd": 0.173274,
+  "remaining_usd": 0.826726,
+  "independent_output_acceptance": false,
+  "reason": "Verified truncated first hop, zero visible text; canonical continuation preparation passed transport identity checks but completion planner rejected its reserve. No further generation.",
+  "receipt": {
+    "dispatch_id": "tm-req-a7e3ea98722fd79095e08454",
+    "task_id": "sovereign-repairs-530-argon-mcp",
+    "event": "dispatch_terminal",
+    "status": "failed_receipted",
+    "provider_calls": 1,
+    "cost": 0.173274,
+    "cost_status": "recorded",
+    "cost_evidence_type": "provider_usage_cost",
+    "receipt_state": "verified",
+    "requested_model": "google/gemini-4-argon",
+    "actual_model": "google/gemini-4-argon",
+    "route_identity_verified": true,
+    "generation_id": "gen-1792942489-0mIC5Wr8cYnfFbSkYHsv",
+    "reason": "output_truncated",
+    "truncated": true,
+    "prompt_tokens": 6637,
+    "completion_tokens": 16000,
+    "reasoning_tokens": 15997,
+    "visible_chars": 0,
+    "output_request_sha256": "f0d5338358148ff1ea5a81eba797dc4b2e41baba53ba52981372ce03ac189eaa",
+    "request_sha256": "233d28da48fa7044a37780a1244039cbb6d3b28eeb4136d9b38e00f3faaf2cb6",
+    "response_sha256": "4cbb0e22c9541c4a37f35ae54435c7780ef6704efadd551bb0f138b2900bf9f4"
+  },
+  "canonical_receipt_row_sha256": "22e502846a206ffa4a82fa17ed54c96e964d9b82800d01c2554ff956dfacf6d4",
+  "unexecuted": [
+    "reference renderer review",
+    "JSON tails review"
+  ],
+  "limits": "Published metadata is not an authenticated provider billing query for an external reader. The local canonical receipt was independently read; failed output is not accepted."
+}

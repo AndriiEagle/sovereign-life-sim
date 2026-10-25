@@ -1,0 +1,307 @@
+{
+  "base": "7e1b314f010c114fdde6d8cd387601442652f76c",
+  "boundary": "Complete listed source bytes; required unlisted imports/assets remain in the same repository.",
+  "files": [
+    {
+      "path": "simulation-core/persistence.py",
+      "bytes": 6511,
+      "sha256": "9ef724ecc8f8e94ccdff054a4ab620a9cede41b650a72614d2de104fe6f60993",
+      "parts": [
+        {
+          "path": "source/01-01.txt",
+          "bytes": 6511,
+          "line_start": 1,
+          "line_end": 157,
+          "sha256": "9ef724ecc8f8e94ccdff054a4ab620a9cede41b650a72614d2de104fe6f60993"
+        }
+      ]
+    },
+    {
+      "path": "simulation-core/contracts.py",
+      "bytes": 1295,
+      "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134",
+      "parts": [
+        {
+          "path": "source/02-01.txt",
+          "bytes": 1295,
+          "line_start": 1,
+          "line_end": 36,
+          "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134"
+        }
+      ]
+    },
+    {
+      "path": "simulation-core/unified_tick.py",
+      "bytes": 17909,
+      "sha256": "42a7f2999d27ccbc89ae14117a34ab05ecdb0924b84cc8834148d31e12943525",
+      "parts": [
+        {
+          "path": "source/03-01.txt",
+          "bytes": 11934,
+          "line_start": 1,
+          "line_end": 202,
+          "sha256": "56236eb1f463a535e96664ca7dbc7e28b72673a5701cfcd4c7ce3da621bd6391"
+        },
+        {
+          "path": "source/03-02.txt",
+          "bytes": 5975,
+          "line_start": 203,
+          "line_end": 290,
+          "sha256": "67a73c53ce5ee66d6b211ea12455898c148ac5409c5d141f6346cefe70e52ab4"
+        }
+      ]
+    },
+    {
+      "path": "ai-architect/runtime.py",
+      "bytes": 12482,
+      "sha256": "ad49e041d18b5c06e0cec49af3507e045540309e25a04e515e4648f62edf08af",
+      "parts": [
+        {
+          "path": "source/04-01.txt",
+          "bytes": 11918,
+          "line_start": 1,
+          "line_end": 182,
+          "sha256": "9b78fce722323450df444d22dca1dc2bcf312393a5f1954eb17af47046428e66"
+        },
+        {
+          "path": "source/04-02.txt",
+          "bytes": 564,
+          "line_start": 183,
+          "line_end": 190,
+          "sha256": "4d3b6f751ef7aeb25dbf95d0bd91ad57f4759d781e2809daae570f5e74a56e2b"
+        }
+      ]
+    },
+    {
+      "path": "ai-architect/ruleforge.py",
+      "bytes": 4843,
+      "sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47",
+      "parts": [
+        {
+          "path": "source/05-01.txt",
+          "bytes": 4843,
+          "line_start": 1,
+          "line_end": 78,
+          "sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47"
+        }
+      ]
+    },
+    {
+      "path": "engine-isometric-ui/app.mjs",
+      "bytes": 14373,
+      "sha256": "56efc8ae54848ea0ea6f862c5df33ef248efe8e968dafd31feef3b99fef1c901",
+      "parts": [
+        {
+          "path": "source/06-01.txt",
+          "bytes": 11874,
+          "line_start": 1,
+          "line_end": 100,
+          "sha256": "eb5b5fc7c9a3608c36c2ce656972359f3f3616a7d9028b963b9d4d7c525aff50"
+        },
+        {
+          "path": "source/06-02.txt",
+          "bytes": 2499,
+          "line_start": 101,
+          "line_end": 127,
+          "sha256": "1d653a86e0054722e35bf2a1f3f6a65bf1022914ebfea41cad1f5e44c35dfffa"
+        }
+      ]
+    },
+    {
+      "path": "engine-isometric-ui/emberglass.mjs",
+      "bytes": 8938,
+      "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700",
+      "parts": [
+        {
+          "path": "source/07-01.txt",
+          "bytes": 8938,
+          "line_start": 1,
+          "line_end": 135,
+          "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700"
+        }
+      ]
+    },
+    {
+      "path": "mcp-bridge/command-queue.mjs",
+      "bytes": 1708,
+      "sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952",
+      "parts": [
+        {
+          "path": "source/08-01.txt",
+          "bytes": 1708,
+          "line_start": 1,
+          "line_end": 36,
+          "sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952"
+        }
+      ]
+    },
+    {
+      "path": "mcp-bridge/client.py",
+      "bytes": 3120,
+      "sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187",
+      "parts": [
+        {
+          "path": "source/09-01.txt",
+          "bytes": 3120,
+          "line_start": 1,
+          "line_end": 56,
+          "sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187"
+        }
+      ]
+    },
+    {
+      "path": "scripts/serve.py",
+      "bytes": 9974,
+      "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda",
+      "parts": [
+        {
+          "path": "source/10-01.txt",
+          "bytes": 9974,
+          "line_start": 1,
+          "line_end": 163,
+          "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda"
+        }
+      ]
+    },
+    {
+      "path": "scripts/mcp_server.py",
+      "bytes": 1613,
+      "sha256": "f8c31a6e00bd983c9fdf8976ecb4531cfe8a315dee6f5e5ea314e82662aa8381",
+      "parts": [
+        {
+          "path": "source/11-01.txt",
+          "bytes": 1613,
+          "line_start": 1,
+          "line_end": 40,
+          "sha256": "f8c31a6e00bd983c9fdf8976ecb4531cfe8a315dee6f5e5ea314e82662aa8381"
+        }
+      ]
+    },
+    {
+      "path": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "bytes": 10390,
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "parts": [
+        {
+          "path": "source/12-01.txt",
+          "bytes": 10390,
+          "line_start": 1,
+          "line_end": 251,
+          "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1"
+        }
+      ]
+    },
+    {
+      "path": "simulation-core/game-forge/sim/params.json",
+      "bytes": 42824,
+      "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+      "parts": [
+        {
+          "path": "source/13-01.txt",
+          "bytes": 11985,
+          "line_start": 1,
+          "line_end": 586,
+          "sha256": "23ae34fc47e7de68b3e30f274e8e0a8b097ecc6718150e15c0496e9b8453d0f4"
+        },
+        {
+          "path": "source/13-02.txt",
+          "bytes": 11993,
+          "line_start": 587,
+          "line_end": 1181,
+          "sha256": "6c0139a5abc696969cac31fda834ac6f7f59e5cb37da6dd688f3b9a84b3df52b"
+        },
+        {
+          "path": "source/13-03.txt",
+          "bytes": 11979,
+          "line_start": 1182,
+          "line_end": 1776,
+          "sha256": "024ae236c867f204f7373b7677ef38e8fc8844012b6eb180c3b59d6e5ffe8c0b"
+        },
+        {
+          "path": "source/13-04.txt",
+          "bytes": 6867,
+          "line_start": 1777,
+          "line_end": 2100,
+          "sha256": "ab59cfe2c1e3dff477e9bb8383043d03a56ff57f796c12a2ce697f29df8c7898"
+        }
+      ]
+    },
+    {
+      "path": "CONTEXT_MANIFEST.json",
+      "bytes": 64202,
+      "sha256": "5b8c38c2941824fcf8265a2e0d7f0f626e3461931180689791e210ae2c160025",
+      "parts": [
+        {
+          "path": "source/14-01.txt",
+          "bytes": 11986,
+          "line_start": 1,
+          "line_end": 260,
+          "sha256": "ee658733cd84787f265ac2b7d7353dfaa73b3a3f2a26f43b110f669d73194f31"
+        },
+        {
+          "path": "source/14-02.txt",
+          "bytes": 11978,
+          "line_start": 261,
+          "line_end": 554,
+          "sha256": "6c37f5217ec8823e08daf55cdd416ff4d9ebc33122fb8c43bade9ffae96fc8d7"
+        },
+        {
+          "path": "source/14-03.txt",
+          "bytes": 11856,
+          "line_start": 555,
+          "line_end": 848,
+          "sha256": "01d406b435a87365f817ad8f7db9cb1c10c647b96f68c1f7014798cb676bfdd1"
+        },
+        {
+          "path": "source/14-04.txt",
+          "bytes": 11950,
+          "line_start": 849,
+          "line_end": 1097,
+          "sha256": "ab33e07b3073dbd95cd136c607dd17e7a69df4333bafb4b21843d90e9e8ad528"
+        },
+        {
+          "path": "source/14-05.txt",
+          "bytes": 11937,
+          "line_start": 1098,
+          "line_end": 1264,
+          "sha256": "7d1df18dbb479bf0569b4bc05f569951dc621a766be99d5af8c67f27ce0c2f47"
+        },
+        {
+          "path": "source/14-06.txt",
+          "bytes": 4495,
+          "line_start": 1265,
+          "line_end": 1352,
+          "sha256": "3dd0f3f7d4cef13bd4e7fb5f28617229c9d6db66bf92e1c4bb4b459d00525ada"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_returned_repairs.py",
+      "bytes": 7040,
+      "sha256": "07259b391d9c26cb6a1fc438eeca06b0261d6b46e8943c38391b8baa9850790f",
+      "parts": [
+        {
+          "path": "source/15-01.txt",
+          "bytes": 7040,
+          "line_start": 1,
+          "line_end": 143,
+          "sha256": "07259b391d9c26cb6a1fc438eeca06b0261d6b46e8943c38391b8baa9850790f"
+        }
+      ]
+    },
+    {
+      "path": "tests/retry-ack.test.mjs",
+      "bytes": 1731,
+      "sha256": "e263eb18bb44c9ab381ea076447b743778f3775650792c4780b439f438ae3897",
+      "parts": [
+        {
+          "path": "source/16-01.txt",
+          "bytes": 1731,
+          "line_start": 1,
+          "line_end": 34,
+          "sha256": "e263eb18bb44c9ab381ea076447b743778f3775650792c4780b439f438ae3897"
+        }
+      ]
+    }
+  ]
+}

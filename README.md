@@ -1,6 +1,6 @@
 # Sovereign і Argon
 
-Для незалежного хмарного аудитора: почни з [AUDIT_CONTEXT.md](AUDIT_CONTEXT.md) → [AUDIT_PROMPT.uk.md](AUDIT_PROMPT.uk.md), звір точний published SHA й [свіжий portable baseline](audit/cloud-audit-baseline.json). Історична runtime-база цього review package — `290cea886ed6c820a9dc3a1bcea47b7f7b17258f`; решта контексту доступна в цьому GitHub tree. 18.10.2026 Андрій прямо доручив повторний public-показ цього repo для аудиту; попередній private rollback виконано, job PAUSED, нового закриття не заплановано. Live visibility перевіряється в GitHub.
+Current recovered audit repairs: [HANDOFF](audit/repairs-20261025/HANDOFF.md), [EXTERNAL_PROMPT](audit/repairs-20261025/EXTERNAL_PROMPT.md), [SOURCE_MANIFEST](audit/repairs-20261025/SOURCE_MANIFEST.json). Branch codex/audit-repairs-530-20261025; base7e1b314. Historical reports below are context. The receipted Argon attempt was truncated and remains HOLD; local component checks passed.
 
 Два окремі локальні застосунки. Sovereign — сценарний симулятор проєктів, ресурсів і cashflow. Argon — завершена коротка пригодницька глава «Останній трамвай», у яку можна пограти. Усі CHF, події, енергія й прогрес вигадані; фактичні особисті показники залишаються невідомими.
 

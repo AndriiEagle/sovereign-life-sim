@@ -1,0 +1,294 @@
+      "status": "SOURCE_SNAPSHOTS_AND_REFERENCE_ONLY",
+      "role": "Original isometric source seams copied inactive; proprietary visuals excluded",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot_inactive",
+      "evidence": [
+        {
+          "report": "audit/visual-sources.json"
+        },
+        {
+          "report": "audit/visual-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "Owned atlas/manifest and state-adapter closure for archived renderer",
+        "No native game proof",
+        "No public/commercial rights grant for snapshots"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "emberglass-archived-canvas",
+        "emberglass-current-original"
+      ]
+    },
+    {
+      "id": "memento",
+      "title": "Memento Vivere / Gemeinde viewers",
+      "local_roots": [
+        "D:\\Memento_Vivere_Gemeinde_Pilot",
+        "D:\\gemeinde-mockup"
+      ],
+      "status": "SOURCE_REFERENCE_ONLY",
+      "role": "Truthful presentation-state, dashboard/viewer composition patterns",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "report": "audit/visual-sources.json"
+        },
+        {
+          "report": "audit/visual-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "React/Tailwind/framer-motion import closure needed for original viewer",
+        "No fresh DB, voice, participant or customer acceptance"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "memento-react",
+        "gemeinde-react"
+      ]
+    }
+  ],
+  "active_simulator": {
+    "framework": "HTML/CSS + ES modules with authenticated Python loopback runtime",
+    "renderer": "Canvas 2D Emberglass projection/sprites in the active adapter; original generated alpine PNG scenery, owned live SVG node assets, DOM forms/HUD",
+    "core": "simulation-core/unified_tick.py",
+    "server": "scripts/serve.py",
+    "durability": "simulation-core/persistence.py",
+    "argon": "argon-game/README.md",
+    "current_source_baseline": "8f60a10bef2e3c014d03091d61f6ec4fdd748db0 (base before visual refinement; use published HEAD and package hashes for current source)",
+    "source_evidence": "audit/visual-refinement-acceptance.json; DESIGN.md; older runtime component evidence remains explicitly pinned",
+    "component_status_rule": "Current source and phase2_runtime supersede historical Phase 1 catalog activation flags."
+  },
+  "framework_inventory": [
+    {
+      "id": "sovereign-web",
+      "project_id": "sovereign-life-sim",
+      "ui_framework": "Vanilla HTML/CSS + browser ES modules",
+      "renderer": "DOM/CSS transforms; procedural isometric buildings",
+      "runtime": "Python 3.11+ localhost allowlist server; modern browser; Node >=20 for tests",
+      "npm_dependencies": [],
+      "active_in_simulator": true,
+      "source_refs": [
+        "sovereign-package",
+        "sovereign-view",
+        "sovereign-app",
+        "sovereign-css"
+      ],
+      "acceptance": "Prior task-530 browser actions, geometry, narrow viewport and JSON export accepted; unchanged UI in Step 3."
+    },
+    {
+      "id": "game-forge-godot",
+      "project_id": "game-forge",
+      "ui_framework": "Godot Control/PanelContainer/HFlowContainer + GDScript",
+      "renderer": "Godot 2D CanvasItem/AnimatedSprite2D, gl_compatibility",
+      "engine_version": "Godot 4 family; exact installed runtime not verified in Step 3",
+      "source_refs": [
+        "game-forge-project",
+        "game-forge-dialog",
+        "game-forge-hero"
+      ],
+      "active_in_simulator": false,
+      "integration": "Only pure Python sim snapshot is already included. Native Godot UI needs a host/runtime port."
+    },
+    {
+      "id": "emberglass-archived-canvas",
+      "project_id": "living-arcanum",
+      "ui_framework": "Classic browser JavaScript IIFE/global + CommonJS export",
+      "renderer": "CanvasRenderingContext2D, 128x64 isometric tiles, owned Image atlas required",
+      "source_refs": [
+        "emberglass-renderer",
+        "emberglass-worldpack"
+      ],
+      "active_in_simulator": false,
+      "integration": "Two exact snapshots included inactive. Math helpers can run without atlas; full render cannot."
+    },
+    {
+      "id": "emberglass-current-original",
+      "project_id": "living-arcanum",
+      "ui_framework": "Original current web application with Vite build tooling",
+      "renderer": "Canvas 2D source seam; full current app not run here",
+      "source_refs": [
+        "emberglass-package"
+      ],
+      "active_in_simulator": false,
+      "limit": "Current original package has dependencies; zero npm dependencies applies only to active Sovereign demo, not this app."
+    },
+    {
+      "id": "arcanum-cards",
+      "project_id": "arcanum-card",
+      "ui_framework": "Classic JavaScript DOM + CSS cards",
+      "renderer": "DOM cards; Canvas 2D particle overlay",
+      "source_refs": [
+        "arcanum-game",
+        "arcanum-html"
+      ],
+      "active_in_simulator": false,
+      "integration": "Reference only; narrative/assets/rights and state contract require review before copying."
+    },
+    {
+      "id": "lego-godot",
+      "project_id": "lego-godot",
+      "ui_framework": "Godot/GDScript",
+      "renderer": "Project declares Godot 4.7 / Forward Plus",
+      "source_refs": [
+        "lego-project"
+      ],
+      "active_in_simulator": false,
+      "limit": "Declared project configuration is not proof of installed engine or a successful native render."
+    },
+    {
+      "id": "memento-react",
+      "project_id": "memento",
+      "ui_framework": "Next.js / React / Tailwind",
+      "renderer": "React DOM; not a game engine",
+      "declared_versions": {
+        "next": "^16.2.4",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "tailwindcss": "^4.2.2"
+      },
+      "source_refs": [
+        "memento-package",
+        "memento-dialog",
+        "memento-state",
+        "memento-transcript"
+      ],
+      "active_in_simulator": false,
+      "integration": "Component references only; original imports/hooks/data/assets required."
+    },
+    {
+      "id": "gemeinde-react",
+      "project_id": "memento",
+      "ui_framework": "Next.js / React / Tailwind / framer-motion",
+      "renderer": "React DOM with motion components",
+      "declared_versions": {
+        "next": "16.3.0",
+        "react": "19.2.8",
+        "react-dom": "19.2.8",
+        "tailwindcss": "^4",
+        "framer-motion": "^13.0.0"
+      },
+      "source_refs": [
+        "gemeinde-package",
+        "gemeinde-cards"
+      ],
+      "active_in_simulator": false,
+      "integration": "Reference only; do not copy external stock photos or assume brand/license clearance."
+    },
+    {
+      "id": "creator-remotion",
+      "project_id": "creator-income-os",
+      "ui_framework": "React + Remotion media composition",
+      "renderer": "Remotion video pipeline; Three.js/@remotion/three available as declared dependencies",
+      "declared_versions": {
+        "react": "^19.1.1",
+        "remotion": "^4.0.376",
+        "@remotion/three": "4.0.467",
+        "three": "^0.185.1"
+      },
+      "source_refs": [
+        "remotion-package",
+        "remotion-chart"
+      ],
+      "active_in_simulator": false,
+      "limit": "Three.js belongs to the separate media factory; it is not the simulator renderer. No media build/render accepted in Step 3."
+    },
+    {
+      "id": "synera-preview",
+      "project_id": "synera",
+      "ui_framework": "Audited web_launch surface: HTML/CSS + JavaScript browser modules",
+      "renderer": "Browser DOM; Node ESM HTTP preview server",
+      "source_refs": [
+        "synera-preview-server",
+        "synera-preview-html"
+      ],
+      "active_in_simulator": false,
+      "limit": "This describes the pinned web preview surface, not every historical Synera client."
+    }
+  ],
+  "framework_scope_limit": "No PixiJS/Phaser evidence in the inspected entrypoints/package manifests. This is not a disk-wide absence claim. Versions are declared ranges, not installed runtime measurements.",
+  "reusable_components": [
+    {
+      "id": "resource-hud",
+      "category": "resources",
+      "title": "Гроші, день, шкала енергії",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app",
+        "sovereign-css"
+      ],
+      "package_entrypoint": "engine-isometric-ui/index.html + app.mjs + styles.css",
+      "dependencies": [
+        "simulation-core/model.mjs"
+      ],
+      "integration_work": "Можна використати зараз у поточному DOM; зберегти існуючі id й action contract.",
+      "proof_limit": "Синтетичні ресурси; немає банку або вимірювання здоровʼя."
+    },
+    {
+      "id": "focus-actions",
+      "category": "panels",
+      "title": "Панель проєкту, статус і кнопки дій",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "engine-isometric-ui/app.mjs: details/render/act",
+      "dependencies": [
+        "DOM nodes, model transition"
+      ],
+      "integration_work": "Можна використати зараз; це інформаційна панель, не modal dialogue.",
+      "proof_limit": "Кнопка моделює дію; не запускає Synera/Instagram/Fiverr."
+    },
+    {
+      "id": "event-feed",
+      "category": "logs",
+      "title": "Журнал подій і JSON-експорт",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "mcp-bridge/events.mjs",
+      "dependencies": [
+        "Browser Blob/URL APIs"
+      ],
+      "integration_work": "Можна використати зараз для явних локальних дій.",
+      "proof_limit": "In-memory ring 200 подій, останні 5 у UI; reload очищає; real MCP NOT_CONNECTED."
+    },
+    {
+      "id": "procedural-buildings",
+      "category": "sprites",
+      "title": "Пʼять CSS-будівель і ізометрична карта",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-css"
+      ],
+      "package_entrypoint": "engine-isometric-ui/styles.css",
+      "dependencies": [
+        "CSS transforms + semantic buttons"
+      ],
+      "integration_work": "Готові в поточному DOM без атласу й зовнішніх зображень.",
+      "proof_limit": "Це процедурні форми, не raster sprite sheet; нові sprites не заявлені."
+    },
+    {
+      "id": "iso-projection-picking",
+      "category": "geometry",
+      "title": "Ізометрична проєкція, inverse, picking, autotile helpers",
+      "status": "READY_PURE_HELPERS_INACTIVE",
+      "source_refs": [
+        "emberglass-renderer"
+      ],
+      "package_entrypoint": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "dependencies": [
+        "Browser global EmberIsoKitRenderer or CommonJS/VM loader"
+      ],

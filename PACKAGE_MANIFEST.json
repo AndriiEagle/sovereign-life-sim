@@ -49,8 +49,8 @@
     },
     {
       "path": "ai-architect/runtime.py",
-      "sha256": "607237b8e7023bc917cd5ce7790d24578e8e2b12823563ee250ca0ffac3c99ce",
-      "bytes": 11559
+      "sha256": "ad49e041d18b5c06e0cec49af3507e045540309e25a04e515e4648f62edf08af",
+      "bytes": 12482
     },
     {
       "path": "ai-architect/sandbox.py",
@@ -201,6 +201,186 @@
       "path": "audit/repair-triage.json",
       "sha256": "17dff0df9c9513d6ed59ddc6b7680881add470286d992a8de16dbfa7ad1cefe7",
       "bytes": 2193
+    },
+    {
+      "path": "audit/repairs-20261025/build_reader.py",
+      "sha256": "287c62ef0e32fe554bbc1ac52622ab1f13a219f1ff56db34b6233cb414b5afaa",
+      "bytes": 2876
+    },
+    {
+      "path": "audit/repairs-20261025/EXTERNAL_PROMPT.md",
+      "sha256": "3760bd35f556f3dd3a4e670a15b6871fedb5df7e5a1fdbfe2d75adac6fb1036b",
+      "bytes": 2338
+    },
+    {
+      "path": "audit/repairs-20261025/GUARD_CHECKS.json",
+      "sha256": "c13e9b1767d06fb26df880bd27cd7502ecd64cb3cfd83fd00eda37aa45b457ab",
+      "bytes": 13788
+    },
+    {
+      "path": "audit/repairs-20261025/HANDOFF.md",
+      "sha256": "cdfcdafb4dfd9b234762c36853f21ba0c5158633e0ecee43919cc6393d9e5112",
+      "bytes": 3765
+    },
+    {
+      "path": "audit/repairs-20261025/PORTABLE_CHECKS.json",
+      "sha256": "974260da8c9d2dc1161110b313e8554fc42a2546896520ba2bcac4ecfad77375",
+      "bytes": 5044
+    },
+    {
+      "path": "audit/repairs-20261025/PROVIDER_REVIEW.json",
+      "sha256": "07a175cf38ddcb50bc9a488018e0e0b115ddd75fa6296709a83753df411f79cc",
+      "bytes": 1815
+    },
+    {
+      "path": "audit/repairs-20261025/run_checks.py",
+      "sha256": "317dd1a7112db4f0cbbbad836dc76bc42a0ec7150a8dde71877658a8677e60c6",
+      "bytes": 2902
+    },
+    {
+      "path": "audit/repairs-20261025/source/01-01.txt",
+      "sha256": "9ef724ecc8f8e94ccdff054a4ab620a9cede41b650a72614d2de104fe6f60993",
+      "bytes": 6511
+    },
+    {
+      "path": "audit/repairs-20261025/source/02-01.txt",
+      "sha256": "af423cd7c0a1fd2bfe156f7c88fc6ed64b4bd215b73c6efc18c4292cbcc57134",
+      "bytes": 1295
+    },
+    {
+      "path": "audit/repairs-20261025/source/03-01.txt",
+      "sha256": "56236eb1f463a535e96664ca7dbc7e28b72673a5701cfcd4c7ce3da621bd6391",
+      "bytes": 11934
+    },
+    {
+      "path": "audit/repairs-20261025/source/03-02.txt",
+      "sha256": "67a73c53ce5ee66d6b211ea12455898c148ac5409c5d141f6346cefe70e52ab4",
+      "bytes": 5975
+    },
+    {
+      "path": "audit/repairs-20261025/source/04-01.txt",
+      "sha256": "9b78fce722323450df444d22dca1dc2bcf312393a5f1954eb17af47046428e66",
+      "bytes": 11918
+    },
+    {
+      "path": "audit/repairs-20261025/source/04-02.txt",
+      "sha256": "4d3b6f751ef7aeb25dbf95d0bd91ad57f4759d781e2809daae570f5e74a56e2b",
+      "bytes": 564
+    },
+    {
+      "path": "audit/repairs-20261025/source/05-01.txt",
+      "sha256": "62816e3f23ea260ae5ab7d0baaf44b15e9a60902ee03631342fe82d12928ca47",
+      "bytes": 4843
+    },
+    {
+      "path": "audit/repairs-20261025/source/06-01.txt",
+      "sha256": "eb5b5fc7c9a3608c36c2ce656972359f3f3616a7d9028b963b9d4d7c525aff50",
+      "bytes": 11874
+    },
+    {
+      "path": "audit/repairs-20261025/source/06-02.txt",
+      "sha256": "1d653a86e0054722e35bf2a1f3f6a65bf1022914ebfea41cad1f5e44c35dfffa",
+      "bytes": 2499
+    },
+    {
+      "path": "audit/repairs-20261025/source/07-01.txt",
+      "sha256": "ca777a16762b41106c0273e98921c4e803c55d40dd12686f305cb4f510749700",
+      "bytes": 8938
+    },
+    {
+      "path": "audit/repairs-20261025/source/08-01.txt",
+      "sha256": "b7af5360a43411d774d048882a48c19df15438562faf98741b43efde2981f952",
+      "bytes": 1708
+    },
+    {
+      "path": "audit/repairs-20261025/source/09-01.txt",
+      "sha256": "170832ae1c5ec95134e526a65a67bce3f919df0f4f411a527059c2a969173187",
+      "bytes": 3120
+    },
+    {
+      "path": "audit/repairs-20261025/source/10-01.txt",
+      "sha256": "892c7cd48170365b6b9694eef79d8908aeea41660d201d5907ffd9ee4fa00eda",
+      "bytes": 9974
+    },
+    {
+      "path": "audit/repairs-20261025/source/11-01.txt",
+      "sha256": "f8c31a6e00bd983c9fdf8976ecb4531cfe8a315dee6f5e5ea314e82662aa8381",
+      "bytes": 1613
+    },
+    {
+      "path": "audit/repairs-20261025/source/12-01.txt",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390
+    },
+    {
+      "path": "audit/repairs-20261025/source/13-01.txt",
+      "sha256": "23ae34fc47e7de68b3e30f274e8e0a8b097ecc6718150e15c0496e9b8453d0f4",
+      "bytes": 11985
+    },
+    {
+      "path": "audit/repairs-20261025/source/13-02.txt",
+      "sha256": "6c0139a5abc696969cac31fda834ac6f7f59e5cb37da6dd688f3b9a84b3df52b",
+      "bytes": 11993
+    },
+    {
+      "path": "audit/repairs-20261025/source/13-03.txt",
+      "sha256": "024ae236c867f204f7373b7677ef38e8fc8844012b6eb180c3b59d6e5ffe8c0b",
+      "bytes": 11979
+    },
+    {
+      "path": "audit/repairs-20261025/source/13-04.txt",
+      "sha256": "ab59cfe2c1e3dff477e9bb8383043d03a56ff57f796c12a2ce697f29df8c7898",
+      "bytes": 6867
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-01.txt",
+      "sha256": "ee658733cd84787f265ac2b7d7353dfaa73b3a3f2a26f43b110f669d73194f31",
+      "bytes": 11986
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-02.txt",
+      "sha256": "6c37f5217ec8823e08daf55cdd416ff4d9ebc33122fb8c43bade9ffae96fc8d7",
+      "bytes": 11978
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-03.txt",
+      "sha256": "01d406b435a87365f817ad8f7db9cb1c10c647b96f68c1f7014798cb676bfdd1",
+      "bytes": 11856
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-04.txt",
+      "sha256": "ab33e07b3073dbd95cd136c607dd17e7a69df4333bafb4b21843d90e9e8ad528",
+      "bytes": 11950
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-05.txt",
+      "sha256": "7d1df18dbb479bf0569b4bc05f569951dc621a766be99d5af8c67f27ce0c2f47",
+      "bytes": 11937
+    },
+    {
+      "path": "audit/repairs-20261025/source/14-06.txt",
+      "sha256": "3dd0f3f7d4cef13bd4e7fb5f28617229c9d6db66bf92e1c4bb4b459d00525ada",
+      "bytes": 4495
+    },
+    {
+      "path": "audit/repairs-20261025/source/15-01.txt",
+      "sha256": "07259b391d9c26cb6a1fc438eeca06b0261d6b46e8943c38391b8baa9850790f",
+      "bytes": 7040
+    },
+    {
+      "path": "audit/repairs-20261025/source/16-01.txt",
+      "sha256": "e263eb18bb44c9ab381ea076447b743778f3775650792c4780b439f438ae3897",
+      "bytes": 1731
+    },
+    {
+      "path": "audit/repairs-20261025/SOURCE_MANIFEST.json",
+      "sha256": "8ab6855f95d58a753853289b3366f4bab722e643ae7a451672c0f199aaa991b0",
+      "bytes": 9319
+    },
+    {
+      "path": "audit/repairs-20261025/TASKS.md",
+      "sha256": "e27042ffeb2738685c170692d43f5067dbd3f3ad1fe9d1c52704bae72a10bae4",
+      "bytes": 822
     },
     {
       "path": "audit/repeat-journal-20261018/01-journal-1.md",
@@ -419,8 +599,8 @@
     },
     {
       "path": "engine-isometric-ui/app.mjs",
-      "sha256": "10c6c5888d35d0fa540aa086114e6b3413c3d2d53746b6d82470dc782596c7b8",
-      "bytes": 14171
+      "sha256": "56efc8ae54848ea0ea6f862c5df33ef248efe8e968dafd31feef3b99fef1c901",
+      "bytes": 14373
     },
     {
       "path": "engine-isometric-ui/assets/visual/ART_DIRECTION.md",
@@ -474,13 +654,13 @@
     },
     {
       "path": "EXTERNAL_PROMPT.md",
-      "sha256": "c9fa82ac62b4e671c4dce6e038420edea76e7cd6be2c271277220d8b5bab53ea",
-      "bytes": 2547
+      "sha256": "5fc5a25a196fcd257d0d3c6c3d9939803c2f85f2310c45e29b2ac55830d6b4d0",
+      "bytes": 264
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "f47d414655012f96c054182141aec1557879a2c1dafcb86b9d97d886416dcd51",
-      "bytes": 7797
+      "sha256": "296410d34b62cb3331d91c93cbb956f250ac522ceb515400f18abeeeb1eddd62",
+      "bytes": 250
     },
     {
       "path": "mcp-bridge/client.py",
@@ -514,8 +694,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "6a6d8ca8479cedb87a9facd7e00e605829228e53384e2e0c45c0a4afbfb8d4ce",
-      "bytes": 11408
+      "sha256": "0e072576c30e78d654839944127ab8a2ac888fbd58aacbd0fbd4bb62e5bacbcc",
+      "bytes": 11039
     },
     {
       "path": "repairs/apply_hardening.py",
@@ -614,8 +794,8 @@
     },
     {
       "path": "scripts/verify.py",
-      "sha256": "b254c7a91b10894f10405e952ab848e8bcdc2e99ad766e506cb2eb3a8c688e35",
-      "bytes": 6834
+      "sha256": "e5de409784435fcb09e821561ca35f25c3dc85a46fa026bce18df9133cb8c037",
+      "bytes": 6862
     },
     {
       "path": "scripts/verify_mcp.py",
@@ -684,8 +864,8 @@
     },
     {
       "path": "simulation-core/persistence.py",
-      "sha256": "bceaa99608eb24b6783ca740e44a2f6f7dd8cb7cba6fd740b6329a3a732acab7",
-      "bytes": 5671
+      "sha256": "9ef724ecc8f8e94ccdff054a4ab620a9cede41b650a72614d2de104fe6f60993",
+      "bytes": 6511
     },
     {
       "path": "simulation-core/plugins/README.md",
@@ -719,8 +899,8 @@
     },
     {
       "path": "simulation-core/unified_tick.py",
-      "sha256": "4f13745e5237ba5136caeb529828aa0aa6eb505d3fb2b8ef5e951033ebadd20b",
-      "bytes": 17557
+      "sha256": "42a7f2999d27ccbc89ae14117a34ab05ecdb0924b84cc8834148d31e12943525",
+      "bytes": 17909
     },
     {
       "path": "simulation-core/upstream-tests/test_cli.py",
@@ -739,8 +919,8 @@
     },
     {
       "path": "TASKS.md",
-      "sha256": "287bc10bd8f785f0aebd424b66d953e76f9845d7c571bc0000bdb72842cc81fd",
-      "bytes": 3783
+      "sha256": "969a12d6e5990230a36c302f49dd1c23b15bb7030032caf97e80124e95074cea",
+      "bytes": 246
     },
     {
       "path": "TERRA_SUMMARY.uk.md",
@@ -773,6 +953,11 @@
       "bytes": 1537
     },
     {
+      "path": "tests/retry-ack.test.mjs",
+      "sha256": "e263eb18bb44c9ab381ea076447b743778f3775650792c4780b439f438ae3897",
+      "bytes": 1731
+    },
+    {
       "path": "tests/scenario-forms.test.mjs",
       "sha256": "54f8a04eca95142cd79d75164898a7e39ebe60403dc3be7b4e19704b6e579afd",
       "bytes": 3190
@@ -801,6 +986,11 @@
       "path": "tests/test_phase2.py",
       "sha256": "b92324fa3cc6cfa49fe139e7f38383170147ace64054d32545c16ef427cd8f4f",
       "bytes": 17607
+    },
+    {
+      "path": "tests/test_returned_repairs.py",
+      "sha256": "07259b391d9c26cb6a1fc438eeca06b0261d6b46e8943c38391b8baa9850790f",
+      "bytes": 7040
     },
     {
       "path": "tests/test_server.py",

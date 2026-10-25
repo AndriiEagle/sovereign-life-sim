@@ -79,12 +79,18 @@ class Runtime:
                 trial=deepcopy(state)
                 for id,rule in state['rules'].items():
                     if rule.get('pending'):
+                        version=rule['pending']['sha256']
                         try:
                             ops=evaluate(rule['pending'],trial,self.sandbox)
                             trial=apply_operations(trial,ops,id,charge=rule['pending']['sha256'] not in rule['applied'])
                             operations[id]=ops
+                            if rule.get('pending_rollback')==version:rule['history'].pop()
                         except (ValueError,OSError) as error:
                             errors[id]=str(error).split(':')[0];rule['pending']=None
+                            for job in state.get('jobs',{}).values():
+                                if job.get('status')=='PENDING_TICK' and job.get('rule_id')==id and job.get('sha256')==version:
+                                    job.update(status='ERROR',error=errors[id])
+                        rule.pop('pending_rollback',None)
                 state=advance(state,steps,payload.get('action','rest'),operations)
                 self.ensure_assets(state);result['rule_errors']=errors
                 summary=dict(steps=steps,action=payload.get('action','rest'),rule_errors=errors)
@@ -110,8 +116,15 @@ class Runtime:
             elif name=='rollback_rule':
                 keys(payload,['rule_id'],['rule_id']);id=identifier(payload['rule_id']);rule=state['rules'].get(id)
                 if not rule:raise ValueError('UNKNOWN_RULE')
-                if rule['pending']:rule['pending']=None
-                elif rule['history']:rule['pending']=rule['history'].pop()
+                if rule['pending']:
+                    version=rule['pending']['sha256'];rule['pending']=None
+                    rule.pop('pending_rollback',None)
+                    for job in state.get('jobs',{}).values():
+                        if job.get('status')=='PENDING_TICK' and job.get('rule_id')==id and job.get('sha256')==version:
+                            job['status']='CANCELED'
+                elif rule['history']:
+                    rule['pending']=rule['history'][-1]
+                    rule['pending_rollback']=rule['pending']['sha256']
                 else:
                     rule['active']=None
                     for n in state['nodes']:
@@ -155,9 +168,8 @@ class Runtime:
                 rule=validate_rule(data)
                 with self.store.lock:
                     state=stage(self.store.get(),rule,self.sandbox);self.persist_rule(rule)
-                    state['jobs'][job_id]['status']='PENDING_TICK'
-                    state['jobs'][job_id]['rule_id']=rule['id']
-                    self.store.commit('rule_ready',dict(job_id=job_id,rule_id=rule['id']),'system',job_id+'-ready',{},state)
+                    state['jobs'][job_id].update(status='PENDING_TICK',rule_id=rule['id'],sha256=rule['sha256'])
+                    self.store.commit('rule_ready',dict(job_id=job_id,rule_id=rule['id'],sha256=rule['sha256']),'system',job_id+'-ready',{},state)
                 self.execute('tick',{'steps':1,'action':'rest'},job_id+'-activate','system')
             else:
                 asset=self.assets.accept_image(payload['node'],data,payload['variant'])

@@ -1,0 +1,294 @@
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "coiffeur-site",
+      "title": "Coiffeur website prototype",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\coiffeur-sipo-winterthur"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing static website delivery reference; customer assets excluded",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\coiffeur-sipo-winterthur\\README.md",
+          "sha256": "20cd74d812fa998cfcb7bf8da2c771e4558065e8ca0ff1b142bdcc6676520c82",
+          "bytes": 733,
+          "locator": "whole named source file",
+          "claim": "Existing static website delivery reference; customer assets excluded",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "lego-godot",
+      "title": "LEGO LLM visualization / Godot",
+      "local_roots": [
+        "D:\\lego-llm-viz-godot"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Godot source reference, no current rendering proof",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "D:\\lego-llm-viz-godot\\main.gd",
+          "sha256": "9b64cd6d7f838829b41972e107f1d1327e9d5d197d90871edd3fc6643c067b28",
+          "bytes": 6944,
+          "locator": "whole named source file",
+          "claim": "Godot source reference, no current rendering proof",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "lego-godot"
+      ]
+    },
+    {
+      "id": "arcanum-card",
+      "title": "Arcanum card roguelike prototype",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Historical game prototype, lore/rights review needed",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\arcanum_card_roguelike\\game.js",
+          "sha256": "db2cf61ec3145267788ee15deb1173faf5e45b5c564ec7e96742cdc3a946d898",
+          "bytes": 24281,
+          "locator": "whole named source file",
+          "claim": "Historical game prototype, lore/rights review needed",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "arcanum-cards"
+      ]
+    },
+    {
+      "id": "control-room",
+      "title": "Control Room",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\control_room"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing diagnostic owner; source reference only, no new monitor",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\control_room\\README.md",
+          "sha256": "d725ec23dd7a5f042b59b09de52671508162cc8d5a229538ef21e195253848c4",
+          "bytes": 6245,
+          "locator": "whole named source file",
+          "claim": "Existing diagnostic owner; source reference only, no new monitor",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "conductor",
+      "title": "Conductor Revenue Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab"
+      ],
+      "status": "SOURCE_COPIED_SEE_COMPONENT_ACCEPTANCE",
+      "role": "Portable stdlib Decimal economics, explicit labor/cost and scenario limits",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\revenue_lab\\core.py",
+          "sha256": "3ac7b095e6a91de02d0b44b0571f5dbda8cbe81e5a8e72a68497d9c35bd81d5d",
+          "bytes": 9957,
+          "locator": "whole named source file",
+          "claim": "Quote and scenario implementation",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\LICENSE_AND_RIGHTS.md",
+          "sha256": "496a04df1d60eb279a175d876178d02f754fe732937955003268eaf23254889e",
+          "bytes": 906,
+          "locator": "whole named source file",
+          "claim": "Recipient may reuse original code and templates",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Not a live marketplace/payment connector",
+        "No forecast, tax/AHV/benefits or customer proof"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "fiverr",
+      "title": "Fiverr / B2B adapter candidate",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab",
+        "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\business"
+      ],
+      "status": "NO_LIVE_ADAPTER_EVIDENCE_IN_CHECKED_SCOPE",
+      "role": "Offline planning node only",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\conductor-revenue-lab\\research\\13_OFFICIAL_MARKETPLACE_MCP.uk.md",
+          "sha256": "b46f5ed67bc31ddda4565d9a19e0c99667c095a0a0e03c38ccf2319a0407fe35",
+          "bytes": 4668,
+          "locator": "whole named source file",
+          "claim": "Dated marketplace/MCP research, not a live Fiverr execution",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Exact Fiverr API/terms/account adapter not accepted",
+        "No orders, buyer acceptance or payouts verified",
+        "Do not scrape or auto-send proposals"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [],
+      "integration_status_ref": "#/integration_status/fiverr"
+    },
+    {
+      "id": "mirofish",
+      "title": "MiroFish upstream",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813"
+      ],
+      "status": "PINNED_REFERENCE_ONLY",
+      "role": "Agent simulation architecture inspiration, no imported code/services",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813\\package.json",
+          "sha256": "72c69194bf934484ca67fddc63c6c9fd38ffd240bbdefee9360671d62b24c342",
+          "bytes": 723,
+          "locator": "whole named source file",
+          "claim": "Local upstream declares AGPL-3.0",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\Desktop_2026_August\\01_Projects\\MiroFish_UPSTREAM_20260813\\LICENSE",
+          "sha256": "6f1e622c82a380075843bb084a7ec3b1f1d12a4a02526d75e78b0924a860aa75",
+          "bytes": 35184,
+          "locator": "whole named source file",
+          "claim": "Exact local license snapshot",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Runtime not exercised",
+        "No prediction-accuracy evidence",
+        "License/dependency/API/privacy review before adoption"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "source_ref": {
+        "repo": "https://github.com/666ghj/MiroFish",
+        "commit": "b5b53acc57189a4a42e44a23e149dc655c98fe82"
+      },
+      "framework_refs": []
+    },
+    {
+      "id": "synera",
+      "title": "Synera",
+      "local_roots": [
+        "D:\\synera-reviewed-mobile-20261013",
+        "D:\\synera-main-fresh-20261017",
+        "D:\\synera-main-review-20261017",
+        "D:\\synera-launch-01a0cea0",
+        "C:\\Users\\Andrii\\Desktop\\synera-premium-pwa-variant"
+      ],
+      "status": "CURRENT_REMOTE_CI_METADATA_SUCCESS_LIVE_HOLD",
+      "role": "Product/demo candidate for Gilbert; keep original project separate",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "report": "audit/synera-sources.json"
+        },
+        {
+          "report": "audit/synera-sources-review.json"
+        }
+      ],
+      "open_gates": [
+        "live signed-JWT two-account flow",
+        "current Neon schema/recovery and approved rollout",
+        "physical Android acceptance",
+        "physical iPhone/Safari acceptance",
+        "Gilbert's explicit acceptance"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "source_ref": {
+        "repo": "https://github.com/AndriiEagle/synera_-MVPplus-",
+        "commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+        "ci": {
+          "status": "VERIFIED",
+          "workflow": "CI",
+          "run_id": 39053215224,
+          "conclusion": "success",
+          "url": "https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224"
+        },
+        "historical_reviewed_commit": "76e189756f807cf8a6cf553cc687c626ac16ffff"
+      },
+      "framework_refs": [
+        "synera-preview"
+      ],
+      "integration_status_ref": "#/integration_status/synera"
+    },
+    {
+      "id": "living-arcanum",
+      "title": "Living Arcanum / Virgil / archived Emberglass",
+      "local_roots": [
+        "D:\\virgil-autoplay-agent",
+        "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo"
+      ],

@@ -1,0 +1,260 @@
+{
+  "schema": "sovereign.context-manifest.v1",
+  "task": 530,
+  "as_of": "2026-10-18",
+  "timezone": "Europe/Zurich",
+  "objective": "Private, modular source-pinned foundation for Sovereign Life RTS / Cashflow 2.0, 2026–2028",
+  "destination": {
+    "owner": "AndriiEagle",
+    "repository": "sovereign-life-sim",
+    "visibility": "public",
+    "default_visibility": "private",
+    "visibility_recorded_for_date": "2026-10-18",
+    "live_visibility_requires_readback": true,
+    "branch": "codex/sovereign-life-sim-530",
+    "reason": "Independent simulator/aggregation product; existing narrative game, mod and commercial projects retain their canonical owners.",
+    "phase2_push_authorization": {
+      "date": "2026-10-18",
+      "source": "Direct user instruction to implement and push even while this repository remains Public.",
+      "scope": "This branch and reviewed Phase 2 source only; no secrets, raw runtime data, other repositories, or new public/commercial license."
+    },
+    "prior_public_review_window": {
+      "request": {
+        "authorization": "Direct user request in task 530 on 2026-10-17: make this repository public now, write an external review prompt, return it private tomorrow, record the scoped exception in global memory.",
+        "repository_id": 1423646041,
+        "scope": "This prepared repository, read-only external review; no blanket license, paid dispatch, implementation, remote writes or permission to publish other work.",
+        "return_private_at": "2026-10-18T09:00:00+02:00",
+        "timezone": "Europe/Zurich",
+        "automation_id": "sovereign-private",
+        "automation_status_at_recording": "ACTIVE_SCHEDULED_NOT_EXECUTED",
+        "rule_single_occurrence": true,
+        "live_visibility_authority": "GitHub repository metadata; schedule/configuration is not execution proof.",
+        "runtime_limit": "Local Codex host, internet and existing GitHub authentication must be available.",
+        "copies_limit": "Private restoration cannot erase previously downloaded copies."
+      },
+      "status": "COMPLETE_PRIVATE_RETURN_VERIFIED",
+      "actual_private_readback_at_utc": "2026-10-18T07:03:30.258019+00:00",
+      "automation_status": "PAUSED"
+    },
+    "current_public_review": {
+      "authorization": "Direct user instruction on 2026-10-18 to make this canonical repository public again and publish complete relevant context plus a rigorous cloud audit prompt.",
+      "repository_id": 1423646041,
+      "purpose": "Read-only independent cloud audit of this prepared repository.",
+      "return_private_at": null,
+      "new_automation_created": false,
+      "previous_restore_automation": "sovereign-private",
+      "previous_restore_status": "PAUSED",
+      "scope_limit": "No new license, paid calls, accounts, raw chats/runtime data, other-repository publication or implementation."
+    },
+    "visual_followup_authorization": {
+      "date": "2026-10-18",
+      "source": "Direct user request to verify the returned audit, repair confirmed issues, perform our own visual audit and improve the simulator to an artistic 8–9/10 with generated imagery.",
+      "scope": "Task-scoped reviewed source, original generated visual asset and sanitized evidence on this existing branch; no paid provider inference, credentials, raw chats, production actions or other repositories."
+    }
+  },
+  "coverage": {
+    "kind": "BOUNDED_SOURCE_AUDIT",
+    "complete_disk_or_chat_scan": false,
+    "included": "Named working-project roots, current refs, exact source files and selected portable modules.",
+    "excluded": [
+      "raw chats/sessions",
+      "secret/env/account files",
+      "customer profiles/media",
+      "native game binaries/ART",
+      "caches/vendor installs/backups",
+      "private personal journal excerpts"
+    ],
+    "limit": "No claim that every file on Sol was read or every runtime and commercial outcome verified."
+  },
+  "projects": [
+    {
+      "id": "game-forge",
+      "title": "Game Forge: narrative game and pure life-simulation seam",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\game-forge"
+      ],
+      "status": "SOURCE_COPIED_SEE_COMPONENT_ACCEPTANCE",
+      "role": "Existing pure 15-minute money/energy/skills/habits transition; owned source snapshots reused.",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "snapshot",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\core.py",
+          "sha256": "8b9e5fca3a0f2854182fb03512a4294b9230c8cfb683cb9b08bc23172ab1c931",
+          "bytes": 14486,
+          "locator": "whole named source file",
+          "claim": "Pure step and parameter loader",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        },
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\game-forge\\sim\\params.json",
+          "sha256": "406fa0db3f52fc2e12e8becdf54a9b0b4620461ab4c501bb1b0c788ec7c8243b",
+          "bytes": 42824,
+          "locator": "whole named source file",
+          "claim": "Game assumptions and parameter provenance; not a personal health profile",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "Browser/Godot parity adapter absent",
+        "No new narrative/native gameplay acceptance",
+        "Public/commercial rights require separate review"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "game-forge-godot"
+      ]
+    },
+    {
+      "id": "brand-social-os",
+      "title": "Brand Social OS / Instagram",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing approve-first content preparation owner",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\brand-social-os\\scripts\\brand-os.js",
+          "sha256": "2dbc1ae558081b465fa5808c73e13342bf903f1961ba49f7751e2705db0066f6",
+          "bytes": 74218,
+          "locator": "whole named source file",
+          "claim": "Existing approve-first content preparation owner",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [],
+      "integration_status_ref": "#/integration_status/instagram"
+    },
+    {
+      "id": "creator-income-os",
+      "title": "Creator Income OS / media pipeline",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing media-job and rendering preparation owner",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\creator-income-os\\scripts\\creator-os.js",
+          "sha256": "420ace9973704ae341339d5ae7605563621780b65f30bba549687b1f1eabca11",
+          "bytes": 53377,
+          "locator": "whole named source file",
+          "claim": "Existing media-job and rendering preparation owner",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": [
+        "creator-remotion"
+      ],
+      "integration_status_ref": "#/integration_status/instagram"
+    },
+    {
+      "id": "revenue-defense",
+      "title": "Revenue Defense / first-paid-work research",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\ki-monetization-20261003"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Dated commercial hypothesis and finite customer acceptance approach",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\ki-monetization-20261003\\REPORT.uk.md",
+          "sha256": "60c5c1dfa7e7fed34c40aaebff801e1ace41539484c0206f2bcf9f1017486df0",
+          "bytes": 21282,
+          "locator": "whole named source file",
+          "claim": "Dated commercial hypothesis and finite customer acceptance approach",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "visual-voice-lab",
+      "title": "Visual Voice Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\visual-voice-lab"
+      ],
+      "status": "SOURCE_PRESENT_NOT_RUNTIME_VERIFIED",
+      "role": "Existing approval-first voice-to-storyboard prototype",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "reference",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\visual-voice-lab\\package.json",
+          "sha256": "a50970203c86d9b4ac26735e8ad94d957e8012474f0fd315537b1fa417bd2b92",
+          "bytes": 557,
+          "locator": "whole named source file",
+          "claim": "Existing approval-first voice-to-storyboard prototype",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,
+      "paid_customer_count": null,
+      "framework_refs": []
+    },
+    {
+      "id": "agency-backlog",
+      "title": "Future Autonomous Agency Lab",
+      "local_roots": [
+        "C:\\Users\\Andrii\\Desktop\\KI\\future-autonomous-agency-lab"
+      ],
+      "status": "PARKED",
+      "role": "Explicitly parked architecture backlog, not an active company",
+      "readiness_percent": null,
+      "readiness_reason": "No current shared denominator and full user-workflow oracle establish a percentage.",
+      "reuse_mode": "parked",
+      "evidence": [
+        {
+          "path": "C:\\Users\\Andrii\\Desktop\\KI\\future-autonomous-agency-lab\\README.md",
+          "sha256": "6ac30b5e76cfdd935a8515496d244a67212b703cc9ca33adc471c99005c7a5ae",
+          "bytes": 2102,
+          "locator": "whole named source file",
+          "claim": "Explicitly parked architecture backlog, not an active company",
+          "verdict": "SOURCE_PRESENT_NOT_RUNTIME_ACCEPTANCE"
+        }
+      ],
+      "open_gates": [
+        "No fresh end-to-end execution in task 530",
+        "No accepted payment/revenue proof in this audit",
+        "No automatic external effects"
+      ],
+      "revenue_actual": null,

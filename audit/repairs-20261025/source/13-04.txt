@@ -1,0 +1,324 @@
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "dream"
+        }
+      ]
+    },
+    "balanced": {
+      "light": true,
+      "schedule": [
+        {
+          "start": {
+            "value": 0,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 7,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        },
+        {
+          "start": {
+            "value": 7,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 8,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "exercise"
+        },
+        {
+          "start": {
+            "value": 8,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "work"
+        },
+        {
+          "start": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 13,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 13,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 16,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "study"
+        },
+        {
+          "start": {
+            "value": 16,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "dream"
+        },
+        {
+          "start": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 22,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        }
+      ]
+    },
+    "procrastinator": {
+      "light": false,
+      "schedule": [
+        {
+          "start": {
+            "value": 0,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 3,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        },
+        {
+          "start": {
+            "value": 3,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 10,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "sleep"
+        },
+        {
+          "start": {
+            "value": 10,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "rest"
+        },
+        {
+          "start": {
+            "value": 12,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        },
+        {
+          "start": {
+            "value": 18,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 20,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "alcohol"
+        },
+        {
+          "start": {
+            "value": 20,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "end": {
+            "value": 24,
+            "unit": "hour",
+            "corridor": [
+              0,
+              24
+            ],
+            "source": "design"
+          },
+          "action": "screen"
+        }
+      ]
+    }
+  },
+  "scenario_weather_cycle": [
+    "gray_wet",
+    "golden_autumn",
+    "neutral",
+    "gray_wet"
+  ]
+}

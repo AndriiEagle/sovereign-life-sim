@@ -1,0 +1,100 @@
+import {createMap,titleFor,syncProjectButtons} from './emberglass.mjs';
+import {cents,expenseRule,towerParams} from './scenario-forms.mjs';
+import {createDurableQueue} from '../mcp-bridge/command-queue.mjs';
+const $=id=>document.getElementById(id);let state,token,map,stream,reconnectTimer,busy=false;
+let commandBusy=false;
+const commandQueue=createDurableQueue({storage:sessionStorage,key:'sovereign.pending.v1',
+  send:request=>api('/api/command',{command:request.action,payload:request.payload,request_id:request.request_id}),
+  acknowledged:(response,pending)=>response?.result?.request_id===pending.request_id&&Number.isInteger(response.result.event_id)});
+let messageTimer;const eventIds=new Set();
+function notice(message){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(messageTimer);messageTimer=setTimeout(()=>$('notice').hidden=true,6000);}
+async function session(){const response=await fetch('/api/session');if(!response.ok)throw Error('LOCAL_SESSION_UNAVAILABLE');token=(await response.json()).token;}
+async function api(path,body,retry=true){
+  const response=await fetch(path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json','Authorization':'Bearer '+token}:{},body:body?JSON.stringify(body):undefined});
+  if(response.status===401&&retry){await session();return api(path,body,false);}
+  const data=await response.json();if(!response.ok)throw Object.assign(Error(data.error||'REQUEST_FAILED'),{status:response.status});return data;
+}
+async function act(command,payload={},retry=false){
+  if(commandBusy)throw Error('Попередня дія ще виконується.');
+  commandBusy=true;
+  try{
+    const data=await (retry?commandQueue.retry():commandQueue.execute(command,payload,state.revision));
+    state=data.state;render();return data.result;
+  }finally{commandBusy=false;$('retry-command').hidden=!commandQueue.hasPending();}
+}
+async function activateRule(payload){
+  const result=await act('forge_rule',payload);
+  if(result.status==='PENDING_TICK'){
+    const activation=await act('tick',{steps:1,action:'rest'});
+    if(activation.rule_errors?.[result.rule_id])throw Error(activation.rule_errors[result.rule_id]);
+    if(state.rules[result.rule_id]?.active!==result.sha256)throw Error('RULE_NOT_ACTIVE');
+  }
+  return result;
+}
+function button(label,handler,className){const b=document.createElement('button');b.textContent=label;if(className)b.className=className;b.addEventListener('click',()=>Promise.resolve(handler()).catch(e=>notice(e.message)));return b;}
+function theory(){
+  const chart=$('theory-chart');chart.replaceChildren();$('theory-legend').replaceChildren();
+  const colors=['#d6b783','#9fbe91','#91bec1'],names=['Рятівник','Tit-for-Tat','Вихід після порушення'];
+  const values=state.game_theory.flatMap(s=>s.history.map(r=>r.cumulative[0]));const max=Math.max(1,...values),min=Math.min(0,...values);
+  state.game_theory.forEach((s,i)=>{
+    const points=s.history.map(r=>`${20+(r.round-1)/19*560},${140-(r.cumulative[0]-min)/(max-min)*120}`).join(' ');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','polyline');path.setAttribute('points',points);path.setAttribute('fill','none');path.setAttribute('stroke',colors[i]);path.setAttribute('stroke-width','3');chart.append(path);
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');const last=points.split(' ').at(-1).split(',');dot.setAttribute('cx',last[0]);dot.setAttribute('cy',last[1]);dot.setAttribute('r','4');dot.setAttribute('fill',colors[i]);chart.append(dot);
+    const span=document.createElement('span');span.style.borderColor=colors[i];span.textContent=`${names[i]}: ${s.cumulative[0]} · енергія −${s.energy[0]} · експл. ${(s.exploitation_rate[0]*100).toFixed(0)}% (${s.completed_rounds} р.)`;$('theory-legend').append(span);
+  });
+}
+function render(){
+  if(!state)return;map?.update(state);$('cash').textContent=`CHF ${(state.economy.cash_cents/100).toLocaleString('de-CH',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
+  $('day').textContent=`ДЕНЬ ${Math.floor(state.life.tick/96)+1}`;$('energy').textContent=`${state.bio.Bio_RAM.toFixed(1)} / 100`;$('energy-bar').style.width=state.bio.Bio_RAM+'%';
+  $('sim-time').textContent=new Date(state.sim_time).toLocaleString('uk-UA',{timeZone:'Europe/Zurich'});$('revision').textContent=`REV ${state.revision} · SYNTHETIC`;
+  $('runway').textContent=`Ігровий запас · runway ${state.economy.runway_days??'∞'} днів · фактичні гроші невідомі`;
+  $('trust').textContent=state.economy.gilbert_trust_index.toFixed(1);$('trust').title=state.economy.trust_formula;
+  $('quest').textContent=state.quest.hours_remaining===null?'Не активований':`${state.quest.hours_remaining.toFixed(2)} год`;$('activate-quest').disabled=state.quest.start_step!==null;
+  $('gemeinde').textContent=state.economy.gemeinde_status==='UNCONFIGURED'?'Не налаштовано':`${state.economy.gemeinde_days_remaining} днів`;
+  $('bridge-state').textContent=state.bridge.status;$('sandbox-status').textContent=`Python: ${state.capabilities.python.status}`;
+  $('retry-command').hidden=!commandQueue.hasPending();
+  $('scenario-multiplier').textContent=`Надходження ×${state.config.revenue_multiplier??1} · явне сценарне припущення`;
+  $('use-provider').disabled=state.capabilities.provider.status!=='CONFIGURED_NOT_LIVE_VERIFIED';if($('use-provider').disabled)$('use-provider').checked=false;
+  const focus=state.nodes.find(n=>n.id===state.selected);$('focus-name').textContent=focus?titleFor(focus):'Обери вузол';$('focus-status').textContent=focus?`ХВИЛЯ ${focus.wave} · ${focus.status}`:'—';
+  $('focus-description').textContent=focus?`Наступний крок: ${focus.status==='Queued'?'дочекайся вільного слота у фокусі':focus.status==='FOCUSED'?'виділи годину на роботу або заверши етап':focus.status==='SHIPPED'?'задай припущення для cashflow':'переглянь параметри сценарію'}.`:'';
+  $('focus-source-status').textContent=focus?.source_status||'Джерело не вказано';
+  $('focus-progress').textContent=focus?`${focus.progress.toFixed(1)}%`:'—';
+  $('focus-progress-bar').style.width=(focus?.progress||0)+'%';
+  $('work').disabled=focus?.status!=='FOCUSED';$('ship').disabled=focus?.status!=='FOCUSED';$('cashflow').disabled=focus?.status!=='SHIPPED';
+  const asset=focus&&state.assets[focus.id];if(asset){$('asset-preview').src=asset.url;$('asset-origin').textContent=`${asset.origin}\n${asset.status} · SHA ${asset.sha256.slice(0,10)}`;}
+  $('node-economics').textContent=focus?`База CHF/день: +${focus.revenue_day_cents/100} / −${focus.cost_day_cents/100}. Старт списано: CHF ${(focus.setup_paid_cents??0)/100}. ROI після списання: ${state.economy.ROI[focus.id]??'базу не задано'}.`:'';
+  if(focus&&document.activeElement?.tagName!=='INPUT'){
+    for(const [id,key]of[['daily-income','revenue_day_cents'],['daily-cost','cost_day_cents'],['roi-base','setup_cents']])$(id).value=(focus[key]/100).toFixed(2);
+    $('auto-deduct-setup').checked=focus.auto_deduct_setup??false;
+  }
+  $('node-count').textContent=`${state.nodes.length} вузлів · ${state.nodes.filter(n=>n.status==='FOCUSED').length}/2 у фокусі`;
+  syncProjectButtons($('nodes'),state.nodes,state.selected,id=>act('select_node',{node_id:id}).catch(e=>notice(e.message)));
+  $('rules').replaceChildren(...Object.values(state.rules).map(r=>{const div=document.createElement('div');div.textContent=`${r.id} · ${r.pending?'PENDING_TICK':r.active?'ACTIVE':'DISABLED'} · ${r.format||'—'}`;div.append(button('Відкотити',()=>act('rollback_rule',{rule_id:r.id})));return div;}));
+  $('recovery').textContent=state.bio.debuff_active?`${state.bio.debuff_reason}: будівництво ×0.6 до тіку ${state.bio.debuff_until_step}. Одна дія: ${state.bio.recovery}.`:'Дебаф не активний. Параметри — добровільна самооцінка сценарію.';
+  if(document.activeElement?.tagName!=='INPUT'){
+    $('bio-ram').value=state.bio.Bio_RAM.toFixed(1);$('sleep-sync').value=state.bio.Sleep_Sync_Index.toFixed(1);$('weather').value=state.bio.Swiss_Grey_Weather_Modifier;$('reduced-fog').checked=state.bio.reduced_fog;
+  }
+  theory();
+}
+function record(event){if(eventIds.has(event.seq))return;eventIds.add(event.seq);const li=document.createElement('li');li.textContent=`#${event.seq} · ${event.type} · ${event.source}`;$('events').prepend(li);while($('events').children.length>10)$('events').lastChild.remove();}
+function connect(){
+  stream?.close();clearTimeout(reconnectTimer);stream=new EventSource('/api/mcp/stream?after='+state.revision);
+  stream.onopen=()=>{$('connection').textContent='● ЛОКАЛЬНО · ЗБЕРЕЖЕНО';};
+  stream.addEventListener('state',async e=>{record(JSON.parse(e.data));try{state=await api('/api/state');render();}catch(error){notice(error.message);}});
+  stream.onerror=()=>{stream.close();$('connection').textContent='Відновлення зв’язку…';reconnectTimer=setTimeout(async()=>{try{await session();state=await api('/api/state');render();connect();}catch{connect();}},1500);};
+}
+for(const [id,name,payload]of[['work','tick',{hours:1,action:'work'}],['rest','tick',{hours:1,action:'rest'}],['next-day','tick',{days:1,action:'rest'}],['activate-quest','activate_quest',{}]])$(id).addEventListener('click',()=>act(name,payload).catch(e=>notice(e.message)));
+for(const [id,status]of[['ship','SHIPPED'],['cashflow','ACTIVE_CASHFLOW']])$(id).addEventListener('click',()=>act('node_status',{node_id:state.selected,status}).catch(e=>notice(e.message)));
+$('regenerate').addEventListener('click',()=>act('regenerate_asset',{node_id:state.selected,use_provider:$('use-provider').checked}).catch(e=>notice(e.message)));
+$('economics-form').addEventListener('submit',async e=>{e.preventDefault();try{await act('configure_node',{node_id:state.selected,revenue_day_cents:cents($('daily-income').value),cost_day_cents:cents($('daily-cost').value),...towerParams($('roi-base').value,$('auto-deduct-setup').checked)});}catch(error){notice(error.message);}});
+$('zoom-in').addEventListener('click',()=>map?.zoom(.1));$('zoom-out').addEventListener('click',()=>map?.zoom(-.1));
+$('example-bot').addEventListener('click',()=>$('prompt').value='Додай нову башту доходу на базі нового бота');$('example-client').addEventListener('click',()=>$('prompt').value='Додай клієнта з агентною поведінкою в стилі MiroFish');
+$('bio-form').addEventListener('submit',async e=>{e.preventDefault();try{const bio={Bio_RAM:Number($('bio-ram').value),Sleep_Sync_Index:Number($('sleep-sync').value),Swiss_Grey_Weather_Modifier:Number($('weather').value),reduced_fog:$('reduced-fog').checked};if($('debuff-hours').value!=='')bio.debuff_hours=Number($('debuff-hours').value);await act('update_params',{bio});}catch(error){notice(error.message);}});
+$('architect-form').addEventListener('submit',async e=>{
+  e.preventDefault();if(busy)return;busy=true;$('forge').disabled=true;
+  try{
+    const params=towerParams($('new-tower-setup').value,$('new-tower-deduct').checked);
+    const payload={prompt:$('prompt').value,format:$('rule-format').value,use_provider:$('use-provider').checked};
+    if(params.setup_cents||params.auto_deduct_setup)payload.template_params=params;
+    const result=await activateRule(payload);
+    $('architect-status').textContent=result.status==='QUEUED'?`Генерація: ${result.job_id}`:`Правило ${result.rule_id} перевірено.`;

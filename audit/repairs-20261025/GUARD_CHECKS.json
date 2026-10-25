@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "observed_utc": "2026-10-25T15:35:37.329235+00:00",
+  "base": "7e1b314f010c114fdde6d8cd387601442652f76c",
+  "fingerprints": {
+    "ai-architect/runtime.py": "ad49e041d18b5c06e0cec49af3507e045540309e25a04e515e4648f62edf08af",
+    "simulation-core/unified_tick.py": "42a7f2999d27ccbc89ae14117a34ab05ecdb0924b84cc8834148d31e12943525",
+    "simulation-core/persistence.py": "9ef724ecc8f8e94ccdff054a4ab620a9cede41b650a72614d2de104fe6f60993",
+    "engine-isometric-ui/app.mjs": "56efc8ae54848ea0ea6f862c5df33ef248efe8e968dafd31feef3b99fef1c901",
+    "tests/test_returned_repairs.py": "07259b391d9c26cb6a1fc438eeca06b0261d6b46e8943c38391b8baa9850790f",
+    "tests/retry-ack.test.mjs": "e263eb18bb44c9ab381ea076447b743778f3775650792c4780b439f438ae3897",
+    "scripts/verify.py": "e5de409784435fcb09e821561ca35f25c3dc85a46fa026bce18df9133cb8c037"
+  },
+  "checks": [
+    {
+      "mode": "current",
+      "command": [
+        "python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_returned_repairs.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 5 tests in 1.641s\n\nOK\n",
+      "accepted": true
+    },
+    {
+      "mode": "current",
+      "command": [
+        "node.EXE",
+        "--test",
+        "tests/retry-ack.test.mjs"
+      ],
+      "exit_code": 0,
+      "output": "✔ actual retry handler: success (5.6727ms)\n✔ actual retry handler: failed_tick (4.4817ms)\n✔ actual retry handler: wrong_active_version (2.8292ms)\n✔ actual retry handler: activation_error (2.2251ms)\nℹ tests 4\nℹ suites 0\nℹ pass 4\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 244.1784\n",
+      "accepted": true
+    },
+    {
+      "mode": "preimage",
+      "command": [
+        "python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_returned_repairs.py",
+        "-q"
+      ],
+      "exit_code": 1,
+      "output": "======================================================================\nFAIL: test_bad_complete_records_preserve_journal_and_release_lease (test_returned_repairs.ReturnedRepairsTests.test_bad_complete_records_preserve_journal_and_release_lease) (value={})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 120, in test_bad_complete_records_preserve_journal_and_release_lease\n    opened = Store(self.directory, initial)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<subject>\\simulation-core\\persistence.py\", line 65, in __init__\n    self._recover()\n  File \"<subject>\\simulation-core\\persistence.py\", line 85, in _recover\n    checksum = row.pop('sha256')\n               ^^^^^^^^^^^^^^^^^\nKeyError: 'sha256'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 122, in test_bad_complete_records_preserve_journal_and_release_lease\n    self.assertIs(type(error), ValueError)\nAssertionError: <class 'KeyError'> is not <class 'ValueError'>\n\n======================================================================\nFAIL: test_bad_complete_records_preserve_journal_and_release_lease (test_returned_repairs.ReturnedRepairsTests.test_bad_complete_records_preserve_journal_and_release_lease) (value=[])\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 120, in test_bad_complete_records_preserve_journal_and_release_lease\n    opened = Store(self.directory, initial)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<subject>\\simulation-core\\persistence.py\", line 65, in __init__\n    self._recover()\n  File \"<subject>\\simulation-core\\persistence.py\", line 85, in _recover\n    checksum = row.pop('sha256')\n               ^^^^^^^^^^^^^^^^^\nTypeError: 'str' object cannot be interpreted as an integer\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 122, in test_bad_complete_records_preserve_journal_and_release_lease\n    self.assertIs(type(error), ValueError)\nAssertionError: <class 'TypeError'> is not <class 'ValueError'>\n\n======================================================================\nFAIL: test_bad_complete_records_preserve_journal_and_release_lease (test_returned_repairs.ReturnedRepairsTests.test_bad_complete_records_preserve_journal_and_release_lease) (value=None)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 120, in test_bad_complete_records_preserve_journal_and_release_lease\n    opened = Store(self.directory, initial)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<subject>\\simulation-core\\persistence.py\", line 65, in __init__\n    self._recover()\n  File \"<subject>\\simulation-core\\persistence.py\", line 85, in _recover\n    checksum = row.pop('sha256')\n               ^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'pop'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 122, in test_bad_complete_records_preserve_journal_and_release_lease\n    self.assertIs(type(error), ValueError)\nAssertionError: <class 'AttributeError'> is not <class 'ValueError'>\n\n======================================================================\nFAIL: test_bad_complete_records_preserve_journal_and_release_lease (test_returned_repairs.ReturnedRepairsTests.test_bad_complete_records_preserve_journal_and_release_lease) (value=123)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 120, in test_bad_complete_records_preserve_journal_and_release_lease\n    opened = Store(self.directory, initial)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<subject>\\simulation-core\\persistence.py\", line 65, in __init__\n    self._recover()\n  File \"<subject>\\simulation-core\\persistence.py\", line 85, in _recover\n    checksum = row.pop('sha256')\n               ^^^^^^^\nAttributeError: 'int' object has no attribute 'pop'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 122, in test_bad_complete_records_preserve_journal_and_release_lease\n    self.assertIs(type(error), ValueError)\nAssertionError: <class 'AttributeError'> is not <class 'ValueError'>\n\n======================================================================\nFAIL: test_cancelled_rollback_keeps_history_and_duplicate_after_restart (test_returned_repairs.ReturnedRepairsTests.test_cancelled_rollback_keeps_history_and_duplicate_after_restart)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 79, in test_cancelled_rollback_keeps_history_and_duplicate_after_restart\n    self.assertEqual(self.app.get()['rules'][raw['id']]['history'], [first])\nAssertionError: Lists differ: [] != ['ef0b557cfc9f6f60b745c9a24ca848273464f7bed128577dc35c24f32ff0bb14']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n'ef0b557cfc9f6f60b745c9a24ca848273464f7bed128577dc35c24f32ff0bb14'\n\n- []\n+ ['ef0b557cfc9f6f60b745c9a24ca848273464f7bed128577dc35c24f32ff0bb14']\n\n======================================================================\nFAIL: test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge (test_returned_repairs.ReturnedRepairsTests.test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge) (status='SHIPPED')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 57, in test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge\n    with self.assertRaisesRegex(ValueError, 'DISABLED_NODE_LOCKED'):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge (test_returned_repairs.ReturnedRepairsTests.test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge) (status='ACTIVE_CASHFLOW')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 57, in test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge\n    with self.assertRaisesRegex(ValueError, 'DISABLED_NODE_LOCKED'):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge (test_returned_repairs.ReturnedRepairsTests.test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge) (status='FOCUSED')\n----------------------------------------------------------------------\nValueError: INVALID_STATUS_TRANSITION\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 57, in test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge\n    with self.assertRaisesRegex(ValueError, 'DISABLED_NODE_LOCKED'):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"DISABLED_NODE_LOCKED\" does not match \"INVALID_STATUS_TRANSITION\"\n\n======================================================================\nFAIL: test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge (test_returned_repairs.ReturnedRepairsTests.test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 63, in test_disabled_node_cannot_bypass_rollback_and_reactivation_does_not_recharge\n    self.assertIn(node['status'], ('FOCUSED', 'Queued'))\nAssertionError: 'ACTIVE_CASHFLOW' not found in ('FOCUSED', 'Queued')\n\n======================================================================\nFAIL: test_rejected_provider_activation_is_terminal_and_version_bound (test_returned_repairs.ReturnedRepairsTests.test_rejected_provider_activation_is_terminal_and_version_bound)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<subject>\\tests\\test_returned_repairs.py\", line 104, in test_rejected_provider_activation_is_terminal_and_version_bound\n    self.assertEqual(jobs[result['job_id']]['status'], 'ERROR')\nAssertionError: 'PENDING_TICK' != 'ERROR'\n- PENDING_TICK\n+ ERROR\n\n\n----------------------------------------------------------------------\nRan 5 tests in 1.153s\n\nFAILED (failures=10)\n",
+      "accepted": true
+    },
+    {
+      "mode": "preimage",
+      "command": [
+        "node.EXE",
+        "--test",
+        "tests/retry-ack.test.mjs"
+      ],
+      "exit_code": 1,
+      "output": "✔ actual retry handler: success (3.0136ms)\n✖ actual retry handler: failed_tick (2.374ms)\n✖ actual retry handler: wrong_active_version (1.8514ms)\n✔ actual retry handler: activation_error (1.3556ms)\nℹ tests 4\nℹ suites 0\nℹ pass 2\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 177.4255\n\n✖ failing tests:\n\ntest at tests\\retry-ack.test.mjs:13:3\n✖ actual retry handler: failed_tick (2.374ms)\n  AssertionError [ERR_ASSERTION]: Rejected activation must preserve the user form\n  \n  1 !== 0\n  \n      at TestContext.<anonymous> (file:///D:/AI_DEPOT/artifacts/codex-capability-refresh-20261025/sovereign-preimage-ja52y34o/subject/tests/retry-ack.test.mjs:30:12)\n      at async Test.run (node:internal/test_runner/test:1313:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: 1,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at tests\\retry-ack.test.mjs:13:3\n✖ actual retry handler: wrong_active_version (1.8514ms)\n  AssertionError [ERR_ASSERTION]: Rejected activation must preserve the user form\n  \n  1 !== 0\n  \n      at TestContext.<anonymous> (file:///D:/AI_DEPOT/artifacts/codex-capability-refresh-20261025/sovereign-preimage-ja52y34o/subject/tests/retry-ack.test.mjs:30:12)\n      at async Test.run (node:internal/test_runner/test:1313:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: 1,\n    expected: 0,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+      "accepted": true
+    }
+  ],
+  "limits": "Synthetic state and stubbed DOM/HTTP; no live browser, provider or Linux durability acceptance."
+}

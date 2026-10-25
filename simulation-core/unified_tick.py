@@ -145,7 +145,10 @@ def apply_operations(state, operations, owner, charge=True):
             if type(auto) is not bool: raise ValueError('INVALID_BOOLEAN')
             fields = dict(title=title, kind=op.get('kind','tower'), auto_deduct_setup=auto,
                           **{k:number(op.get(k,0),k,0,100000000,True) for k in ('revenue_day_cents','cost_day_cents','setup_cents')})
-            if existing: existing.update(fields)
+            if existing:
+                existing.update(fields)
+                if existing['status']=='DISABLED':
+                    existing['status']='FOCUSED' if sum(n['status']=='FOCUSED' for n in candidate['nodes'])<2 else 'Queued'
             else:
                 existing=dict(id=id, manifest_id=None, source_status='GENERATED_SCENARIO',
                     status='Queued', wave=4, progress=0., net_cents=0, owner_rule=owner,
@@ -186,7 +189,8 @@ def advance(state, steps=4, action='rest', rule_operations=None):
             rule['active'], rule['pending'] = pending, None
             rule['applied'] = sorted(set(rule['applied']+[version]))
             for job in result.get('jobs',{}).values():
-                if job.get('rule_id')==id:job['status']='ACTIVE'
+                if job.get('rule_id')==id and job.get('sha256')==version and job.get('status')=='PENDING_TICK':
+                    job['status']='ACTIVE'
     for _ in range(steps):
         refresh(result)
         before = result['life']['tick']
@@ -226,6 +230,7 @@ def command(state, name, payload):
         n = node(result,payload['node_id']); target=payload['status']
         if target not in {'FOCUSED','SHIPPED','ACTIVE_CASHFLOW'}: raise ValueError('INVALID_STATUS')
         old = n['status']
+        if old == 'DISABLED': raise ValueError('DISABLED_NODE_LOCKED')
         if target == old: return refresh(result)
         if old == 'Queued': raise ValueError('QUEUED_NODE_LOCKED')
         if target=='FOCUSED' or (old in COMPLETE and target != 'ACTIVE_CASHFLOW'):

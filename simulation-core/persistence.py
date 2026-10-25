@@ -81,10 +81,22 @@ class Store:
                 with self.path.open('r+b') as handle:
                     handle.truncate(good); handle.flush(); os.fsync(handle.fileno())
                 break
-            row = json.loads(line)
-            checksum = row.pop('sha256')
-            if digest(row) != checksum or row['seq'] != len(self.rows) + 1 or row['previous'] != (self.rows[-1]['sha256'] if self.rows else '0' * 64):
-                raise ValueError('JOURNAL_CORRUPT')
+            try:
+                row = json.loads(line)
+                if (not isinstance(row, dict) or row['schema'] != 'sovereign.event.v2'
+                        or type(row['seq']) is not int
+                        or any(not isinstance(row[key], str) for key in
+                               ('sha256', 'previous', 'request_id', 'fingerprint', 'type', 'source'))
+                        or any(not isinstance(row[key], dict) for key in ('payload', 'state', 'result'))
+                        or type(row['sim_time']) not in (str, int)
+                        or type(row['state']['revision']) is not int
+                        or type(row['state']['sim_time']) not in (str, int)):
+                    raise ValueError('JOURNAL_CORRUPT')
+                checksum = row.pop('sha256')
+                if digest(row) != checksum or row['seq'] != len(self.rows) + 1 or row['previous'] != (self.rows[-1]['sha256'] if self.rows else '0' * 64):
+                    raise ValueError('JOURNAL_CORRUPT')
+            except (KeyError, TypeError, ValueError):
+                raise ValueError('JOURNAL_CORRUPT') from None
             row['sha256'] = checksum
             self.rows.append(row)
             self.requests[row['request_id']] = row

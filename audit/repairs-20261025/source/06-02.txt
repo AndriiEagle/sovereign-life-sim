@@ -1,0 +1,27 @@
+    if(result.status==='PENDING_TICK')$('architect-status').textContent='Правило активовано. Вузол і візуал збережено.';
+  }catch(error){$('architect-status').textContent=error.message;notice(error.message);}finally{busy=false;$('forge').disabled=false;}
+});
+$('expense-form').addEventListener('submit',async e=>{
+  e.preventDefault();if(busy)return;busy=true;$('expense-submit').disabled=true;
+  try{
+    const rule=expenseRule({id:'expense-'+crypto.randomUUID(),title:$('expense-title').value,amount:$('expense-amount').value,multiplier:$('expense-multiplier').value,bio:$('expense-bio').value});
+    await activateRule({rule});$('expense-status').textContent='Витрату й задані припущення застосовано та збережено.';
+    $('expense-form').reset();
+  }catch(error){$('expense-status').textContent=error.message;notice(error.message);}
+  finally{busy=false;$('expense-submit').disabled=false;}
+});
+$('retry-command').addEventListener('click',async()=>{
+  try{
+    const result=await act(undefined,{},true);
+    const errors=Object.values(result.rule_errors||{});
+    if(errors.length)throw Error(errors.join('; '));
+    if(result.status==='PENDING_TICK'){
+      const activation=await act('tick',{steps:1,action:'rest'});
+      if(activation.rule_errors?.[result.rule_id])throw Error(activation.rule_errors[result.rule_id]);
+      if(state.rules[result.rule_id]?.active!==result.sha256)throw Error('RULE_NOT_ACTIVE');
+    }
+    $('expense-form').reset();notice('Дію підтверджено. Повторного списання немає.');
+  }catch(error){notice(error.message);}
+});
+$('export').addEventListener('click',async()=>{try{const data=await api('/api/events');const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='sovereign-local-events.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(error){notice(error.message);}});
+try{await session();state=await api('/api/state');try{map=await createMap($('map'),id=>act('select_node',{node_id:id}).catch(e=>notice(e.message)));}catch(error){$('renderer-state').textContent='Помилка рендерера';notice(error.message);}render();for(const event of (await api('/api/events')).events.slice(-10))record(event);connect();}catch(error){$('connection').textContent='Сервер недоступний';notice(error.message);}

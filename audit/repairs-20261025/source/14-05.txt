@@ -1,0 +1,167 @@
+      "Step-3 source hashes supersede older source hashes only for the named files; old reports preserved.",
+      "Local synthetic source probes prove preparation boundaries only; pinned source and CI do not prove production.",
+      "Unknown state remains unknown, never a readiness percentage."
+    ]
+  },
+  "visual_candidates": [
+    {
+      "id": "emberglass-inventory-crafting-core",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\core.js",
+      "sha256": "858ba0728b8fe2f7b2e6cecd347140af66a0d7625b7f0c7b3dd076d1735b9ed8",
+      "bytes": 15121,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Archived CommonJS/browser-stdlib state logic exposes inventory, recipe, item-use, choice, and hydration behavior suitable only as an adaptation reference for a cashflow/resource simulation.",
+      "precise_locator": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\docs\\potential-reuse\\CATALOG.json:317-356; core.js:82-135 and :235 as recorded by the catalogue.",
+      "runtime_dependencies": "Node/CommonJS or browser global; no UI/assets for its component checks.",
+      "license_conditions": "PRIVATE_CONTINUATION_ONLY in CATALOG.json:356; no permissive license found in the bounded source roots. Preserve notices and obtain public/commercial clearance before copying or release.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "A component selfcheck recorded by the prior catalogue is not a current simulator, UI, save, native-game, or customer acceptance result.",
+      "blockers": [
+        "Private-continuation rights only",
+        "Replace historical Arcanum/Virgil/Tarant IDs and lore",
+        "No current runtime acceptance executed",
+        "No full save/render/gameplay acceptance"
+      ]
+    },
+    {
+      "id": "emberglass-living-world-contract",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\living-world.js",
+      "sha256": "ff2c5668f8779d0f2c578f3bee52e355d1690e3a362c309c5051526b35d5d201",
+      "bytes": 24534,
+      "status": "NEEDS_REVIEW",
+      "claim": "Archived declarative world-pack lifecycle and quest-state candidate with validation, staging, approval, activation, and rollback concepts.",
+      "precise_locator": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\docs\\potential-reuse\\CATALOG.json:359-403; living-world.js:175-224 and :297-315 as recorded by the catalogue.",
+      "runtime_dependencies": "Node built-ins for component checks; browser global only for a proposed renderer adapter.",
+      "license_conditions": "PRIVATE_CONTINUATION_ONLY in CATALOG.json:403; no permissive license found.",
+      "reuse_mode": "parked",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Catalogue records component selfchecks only and explicit lifecycle defects; no current independent acceptance was run.",
+      "blockers": [
+        "Private-continuation rights only",
+        "Optional item adapter may permit a quest step",
+        "Staged mutation needs revalidation/hash binding",
+        "Rollback is incomplete for awarded items/flags/memory",
+        "Four referenced production PNGs intentionally absent"
+      ]
+    },
+    {
+      "id": "memento-presentation-state-machine",
+      "exact_path": "D:\\Memento_Vivere_Gemeinde_Pilot\\components\\echo\\ui\\echo-call-presentation-state.ts",
+      "sha256": "29c5a6059acacff5b7297fc74d6773c943a8da957c9b912328e1240894e83be6",
+      "bytes": 5073,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Small TypeScript pure-state derivation separates a truthful connection/call state from visual tone and one-shot arrival/departure cues; it could inform a simulator HUD state contract after independent rewrite.",
+      "precise_locator": "echo-call-presentation-state.ts:1-133; companion source test echo-call-presentation-state.test.ts exists with SHA256 d41286561ecb5a26aaf2e10835527f8af1b9058b1d0ed9208f8d13ccb2dde06e.",
+      "runtime_dependencies": "TypeScript type-only imports from the Memento application; adaptation can reduce this to an original local state union.",
+      "license_conditions": "No LICENSE/COPYING file found by bounded scan in this private project; copy/extraction is blocked until owner and redistribution terms are explicit.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Source and test presence were observed; no test or UI runtime was executed in this audit.",
+      "blockers": [
+        "License/redistribution closure missing",
+        "Imports are application-specific",
+        "Voice-call semantics require original simulator states",
+        "Source test has not been run in this audit"
+      ]
+    },
+    {
+      "id": "living-arcanum-art-authenticity-audit",
+      "exact_path": "D:\\virgil-autoplay-agent\\asset_taste_lab\\art_authenticity.py",
+      "sha256": "9d9c0fad7d1b61acd971f8a285ac6eb40a871284ffdce7dd705ed6c56509de95",
+      "bytes": 5104,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Python audit detects custom-named Arcanum ART files that are byte-identical to stock/loose assets and states its own file-level proof boundary.",
+      "precise_locator": "art_authenticity.py:22-42 and :42-130; virgil-autoplay-agent/AGENTS.md:57-77; ACTIVE_INTEGRATION_STATUS.md:55-58.",
+      "runtime_dependencies": "Python plus local .arcanum_art and .arcanum_dat modules and an Arcanum DAT/game directory.",
+      "license_conditions": "No repository license was found at the bounded root. It is coupled to proprietary Arcanum formats and must not carry Arcanum content into the new project.",
+      "reuse_mode": "reference",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Bytes and explicit limitations are present; no engine rendering or independent current run was performed.",
+      "blockers": [
+        "Arcanum-specific dependency closure",
+        "No license clearance",
+        "Only byte-level authenticity",
+        "AGENTS.md requires an in-game screenshot for rendered-art verification"
+      ]
+    },
+    {
+      "id": "living-arcanum-visual-manifest",
+      "exact_path": "D:\\virgil-autoplay-agent\\living_arcanum\\content_manifest.json",
+      "sha256": "688e6e163e80ec28f079b61bb88e06622b5241ead19794564d822d7c997cc6f1",
+      "bytes": 6278,
+      "status": "NEEDS_REVIEW",
+      "claim": "Manifest names 14 item and five schematic records and marks them PRESENT_BUT_UNTESTED; it is evidence of a staged Arcanum content registry, not portable visuals or gameplay proof.",
+      "precise_locator": "content_manifest.json:1-30; virgil-autoplay-agent/AGENTS.md:67-73; ACTIVE_INTEGRATION_STATUS.md:55-58, :75-81, :284.",
+      "runtime_dependencies": "Arcanum data/proto/ART/MES/engine chain; generated source PNGs and binary art routes are outside a generic web simulator contract.",
+      "license_conditions": "Source-proprietary game visuals and any derived item art are reference-only. No portable license/dependency closure is present.",
+      "reuse_mode": "reference",
+      "completion_percentage": null,
+      "completion_percentage_reason": "The manifest and status file expressly distinguish file-level staging from in-game proof.",
+      "blockers": [
+        "Proprietary/derived visual content cannot be imported",
+        "No in-game screenshot",
+        "Schematic PNG/manifest alone is explicitly not integration",
+        "Original lore/IDs require replacement"
+      ]
+    },
+    {
+      "id": "emberglass-isometric-renderer-camera-input",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-kit-renderer.js",
+      "sha256": "09164e04af25db090867c6cf831dd23816cc3cd949e50df99fef815a71cf96f1",
+      "bytes": 10390,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Self-contained Canvas/DOM renderer seam provides isometric world/screen transforms, 12x12 camera bounds, click-to-tile selection, atlas initialization, deterministic depth/layer ordering, and a render function.",
+      "source_locators": [
+        "iso-kit-renderer.js:29-76 transforms, bounds, clickTarget",
+        "iso-kit-renderer.js:105-118 atlas initialization",
+        "iso-kit-renderer.js:138-158 asset gate/draw",
+        "iso-kit-renderer.js:201-249 render and exported API",
+        "docs/potential-reuse/CATALOG.json:78-84 exact snapshot/hash/rights"
+      ],
+      "runtime_dependencies": "Browser CanvasRenderingContext2D and Image for real rendering; Node/CommonJS or browser global wrapper. It requires a manifest, promoted/runtime asset metadata, and an atlas image at initialization.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned archived work. CATALOG.json:84 retains NO_NEW_PUBLIC_OR_COMMERCIAL_LICENSE; preserve notices and resolve public/commercial terms separately.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No manifest/atlas was loaded and no Canvas/browser render or click test was run.",
+      "blockers": [
+        "Needs original owned atlas and manifest",
+        "Hard-coded 12x12 grid and Emberglass asset-ID conventions",
+        "No current UI acceptance",
+        "Do not reuse proprietary/derived Arcanum visuals"
+      ]
+    },
+    {
+      "id": "emberglass-isometric-worldpack-validation",
+      "exact_path": "D:\\AI_DEPOT\\handoffs\\game-forge-audit-20261017\\arcanum-repo\\references\\potential-reuse\\emberglass\\iso-worldpack-v11.js",
+      "sha256": "d4c6407061eb9921cdc66e4c971609420aa8ab506d34a65760488dbbaa78c92c",
+      "bytes": 11428,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Paired CommonJS/browser-global validator defines a narrow 12x12 world-pack schema, validates asset IDs and map objects, computes reachability, and rejects some unsafe generated prompts.",
+      "source_locators": [
+        "iso-worldpack-v11.js:3-18 schema keys/statuses/layers",
+        "iso-worldpack-v11.js:41-86 connector/reachability",
+        "iso-worldpack-v11.js:88-98 asset validation",
+        "iso-worldpack-v11.js:99-171 pack validation/API export",
+        "docs/potential-reuse/CATALOG.json:69-75 exact snapshot/hash/rights"
+      ],
+      "runtime_dependencies": "No imported package; Node/CommonJS or browser global. Its valid packs still require the renderer's original owned atlas/manifest and an external item/state adapter.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK; CATALOG.json:75 still leaves public/commercial redistribution unresolved.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "Source was inspected only. Prior catalogue selfcheck is historical and cannot establish current renderer/UI acceptance.",
+      "blockers": [
+        "Hard-coded 12x12 grid/version/Emberglass IDs",
+        "Existing catalogue identifies optional adapter, stale-content and rollback gaps",
+        "No current UI/gameplay proof",
+        "Asset/license closure must use original owned visuals"
+      ]
+    },
+    {
+      "id": "gemeinde-alpine-glass-static-hud-composition",
+      "exact_path": "D:\\gemeinde-mockup\\src\\components\\variants\\AlpineGlass.tsx",
+      "sha256": "8635f6e12b4a8b48a724404811e40e009b29ea7ba1dd475c7edf842d11200808",
+      "bytes": 5242,
+      "status": "PRESENT_BUT_UNTESTED",
+      "claim": "Static responsive React/Tailwind visual composition for a hero and card-based dashboard; the inspected entry page selects it through a local useState toggle.",
+      "source_locators": [

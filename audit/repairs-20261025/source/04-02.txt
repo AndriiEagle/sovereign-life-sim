@@ -1,0 +1,8 @@
+                state=self.store.get();state.setdefault('jobs',{}).setdefault(job_id,{})['status']='ERROR'
+                if kind=='image':
+                    asset=state['assets'].get(payload['node']['id'],{})
+                    if asset.get('variant')==payload['variant']:asset.update(status='READY',provider_status='ERROR')
+                self.store.commit('generation_failed',dict(job_id=job_id,code='GENERATION_FAILED'),'system',job_id+'-failed',{},state)
+
+    def close(self):
+        self.jobs.shutdown(wait=True,cancel_futures=True);self.store.close()

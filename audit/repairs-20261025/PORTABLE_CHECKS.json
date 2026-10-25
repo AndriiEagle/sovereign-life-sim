@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "facts": {
+    "source_copies": 17,
+    "projects": 16,
+    "seed_unknowns_preserved": true
+  },
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "upstream-tests",
+        "-q"
+      ],
+      "cwd": "simulation-core",
+      "exit_code": 0,
+      "elapsed_seconds": 0.437,
+      "summary": "----------------------------------------------------------------------\nRan 65 tests in 0.098s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sim/tests",
+        "-t",
+        ".",
+        "-q"
+      ],
+      "cwd": "simulation-core\\game-forge",
+      "exit_code": 0,
+      "elapsed_seconds": 51.313,
+      "summary": "----------------------------------------------------------------------\nRan 14 tests in 51.002s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-q"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 13.265,
+      "summary": "----------------------------------------------------------------------\nRan 71 tests in 12.206s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test",
+        "tests/model.test.mjs",
+        "tests/events.test.mjs",
+        "tests/iso-helpers.test.mjs",
+        "tests/emberglass.test.mjs",
+        "tests/argon-client.test.mjs",
+        "tests/scenario-forms.test.mjs",
+        "tests/retry-ack.test.mjs"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.688,
+      "summary": "867ms)\n✔ actual UI checklist leaves the presentation incomplete after an honest ending (4.0023ms)\n✔ live adapter places 100 stable IDs inside the original 12x12 world (20.7701ms)\n✔ crowded labels preserve selection and never cover one another (1.2401ms)\n✔ label plates and buildings select their actual project, empty scenery does not (0.9115ms)\n✔ missing art keeps the map usable; high-DPI pixels do not move click targets (21.6588ms)\n✔ state refresh retains the selected project button and its keyboard target (1.7259ms)\n✔ typed event export preserves order while exposing bounded retention (7.1392ms)\n✔ no free-form payload, external action or foreign node enters events (1.6278ms)\n✔ invalid clock output cannot corrupt event DTO or advance its sequence (2.0178ms)\n✔ isometric projection round-trips coordinates across height, origin and scale (3.3688ms)\n✔ tile picking finds the projected cell and rejects points outside the map (5.9585ms)\n✔ work consumes resource without inventing money or actual payment (2.764ms)\n✔ no sales still costs money, including a negative balance (0.675ms)\n✔ exhaustion blocks work and rest does not overflow (1.2886ms)\n✔ foreign actions, nodes and real-world modes are rejected (0.6577ms)\n✔ actual retry handler: success (6.5137ms)\n✔ actual retry handler: failed_tick (4.2258ms)\n✔ actual retry handler: wrong_active_version (2.6316ms)\n✔ actual retry handler: activation_error (5.9933ms)\n✔ UI expresses explicit synthetic modifiers and exact cents; plain expense infers none (8.2458ms)\n✔ simulator lost-ack retry after reload reuses one request and one expense (3.9076ms)\n✔ actual simulator UI retries the durable command rather than creating a new request (5.7842ms)\nℹ tests 26\nℹ suites 0\nℹ pass 26\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 536.0795\n"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "scripts/scenario.py",
+        "--ticks",
+        "96",
+        "--action",
+        "rest",
+        "--seed",
+        "42"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.469,
+      "summary": "{\n  \"status\": \"SYNTHETIC_NOT_PERSONAL_OR_FORECAST\",\n  \"source\": \"unified_tick + game-forge + Conductor\",\n  \"start\": {\n    \"tick\": 0,\n    \"energy\": 0.55,\n    \"burnout\": 0.4,\n    \"balance_cents\": 20000\n  },\n  \"finish\": {\n    \"tick\": 96,\n    \"energy\": 0.5058833990559315,\n    \"burnout\": 0.37669874732157566,\n    \"balance_cents\": 18200\n  },\n  \"action\": \"rest\",\n  \"real_payment\": \"NOT_CONNECTED\"\n}\n"
+    }
+  ],
+  "phase2_status": "BLOCKED_SANDBOX",
+  "capabilities": {
+    "python": {
+      "status": "BLOCKED_SANDBOX",
+      "reason": "Rootless OCI runtime and pinned image are required."
+    },
+    "paid_providers": "NOT_RUN",
+    "live_synera": "NOT_RUN",
+    "image_validator": "PRESENT"
+  },
+  "boundary": "Local component/source acceptance. Browser and official MCP SDK roundtrip have separate observed receipts. Python requires real isolation; no live Synera or paid-provider acceptance is implied."
+}

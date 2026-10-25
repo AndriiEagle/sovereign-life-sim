@@ -1,0 +1,88 @@
+        "src/app/page.tsx:3-31 imports/local variant selection",
+        "src/components/variants/AlpineGlass.tsx:3-6 external UI imports/component entry",
+        "src/components/variants/AlpineGlass.tsx:6-131 static visual composition"
+      ],
+      "runtime_dependencies": "React, Tailwind CSS, framer-motion, and lucide-react, as declared in D:\\gemeinde-mockup\\package.json. No imported game renderer/camera/state model was observed.",
+      "rights_conditions": "PRIVATE_COPY_AUTHORIZED_BY_CURRENT_TASK for Andrii-owned code. The bounded scan found no LICENSE/COPYING file; public/commercial redistribution remains NEEDS_REVIEW.",
+      "reuse_mode": "adapt",
+      "completion_percentage": null,
+      "completion_percentage_reason": "No build, browser, responsiveness, accessibility, or visual acceptance run occurred.",
+      "blockers": [
+        "Not a game/HUD engine",
+        "Requires original cashflow-simulator copy/text/state mapping",
+        "Dependency closure includes framer-motion and lucide-react",
+        "No current UI acceptance"
+      ]
+    }
+  ],
+  "latest_evidence_precedence": [
+    "audit/visual-sources-review.json supersedes rights conclusions in initial report",
+    "audit/synera-sources-review.json adds exact current-main and CI metadata to initial report"
+  ],
+  "provider_calls": 0,
+  "provider_usd": "0.00",
+  "subscription_savings": null,
+  "phase2_runtime": {
+    "base_commit": "ec0ac62336d305c44653268215a066ceb1101cad",
+    "implemented_on": "2026-10-18",
+    "status": "LOCAL_IMPLEMENTATION_PYTHON_ISOLATION_BLOCKED",
+    "core": "simulation-core/unified_tick.py",
+    "server": "scripts/serve.py",
+    "mcp_adapter": "scripts/mcp_server.py",
+    "architect": "ai-architect",
+    "python": "BLOCKED_SANDBOX",
+    "paid_providers": "DISABLED_NOT_LIVE_VERIFIED",
+    "acceptance": "audit/phase2-acceptance.json",
+    "followup": {
+      "reviewed_base_commit": "08555703a19f85aacbf3497012e3c1b910d74d88",
+      "scope": "audit/argon-followup-scope.md",
+      "acceptance": "audit/argon-followup-acceptance.json",
+      "audit_prompt": "AUDIT_PROMPT.uk.md",
+      "features": [
+        "one-time opt-in tower setup debit",
+        "explicit expense KPI hypotheses",
+        "durable browser request IDs",
+        "MCP startup and session-rotation roundtrip",
+        "current-only runtime documentation"
+      ],
+      "argon_game": "argon-game/README.md",
+      "python": "BLOCKED_SANDBOX",
+      "live_synera": "NOT_RUN",
+      "model_sessions": "NOT_CONNECTED"
+    }
+  },
+  "historical_catalog_scope": {
+    "as_of": "2026-10-17",
+    "fields": [
+      "framework_inventory",
+      "reusable_components",
+      "visual_candidates",
+      "step3_evidence",
+      "integration_status"
+    ],
+    "limit": "Dated source/reuse assessment, not current runtime activation or a new live acceptance. See active_simulator, phase2_runtime and AUDIT_CONTEXT.md for current implementation and gates."
+  },
+  "cloud_audit": {
+    "context": "AUDIT_CONTEXT.md",
+    "entrypoint": "EXTERNAL_PROMPT.md",
+    "contract": "AUDIT_PROMPT.uk.md",
+    "baseline": "audit/cloud-audit-baseline.json",
+    "runtime_base_commit": "290cea886ed6c820a9dc3a1bcea47b7f7b17258f",
+    "external_execution": "RETURNED_README_ONLY_NO_CODE_OR_RUNTIME_AUDIT",
+    "source_and_test_files_unchanged": false,
+    "baseline_scope": "Historical checks on 290cea8; latest UI/source changes require the separate visual acceptance receipt.",
+    "returned_report_triage": "audit/returned-audit-triage.uk.md",
+    "literal_url_bootstrap": "CLOUD_AUDIT_START.uk.md"
+  },
+  "visual_refinement": {
+    "date": "2026-10-18",
+    "design_contract": "DESIGN.md",
+    "acceptance": "audit/visual-refinement-acceptance.json",
+    "art": "engine-isometric-ui/assets/visual/sovereign-island-v1.png",
+    "art_provenance": "engine-isometric-ui/assets/visual/ART_DIRECTION.md",
+    "method": "Built-in imagegen; no API credential or paid provider worker route used. Image-tool billing was not reported.",
+    "target": "8–9/10 artistic target; requires human judgment, not a measured completion percentage.",
+    "scope": "Sovereign UI, map overlays, keyboard focus and responsive interaction; frozen snapshots and simulation economics preserved."
+  },
+  "provider_accounting_scope": "External API/provider-worker calls in this task only; built-in imagegen tool billing is unavailable, see visual_refinement."
+}

@@ -1,0 +1,249 @@
+      "integration_work": "Точний snapshot уже в пакеті; підʼєднати global/adapter, передавати scale/origin і 12x12 heights.",
+      "proof_limit": "Самостійні helpers не дорівнюють прийнятому full atlas render; див. tests/iso-helpers.test.mjs."
+    },
+    {
+      "id": "canvas-atlas-renderer",
+      "category": "renderer",
+      "title": "Canvas 2D atlas renderer",
+      "status": "REQUIRES_ASSETS_AND_STATE_ADAPTER",
+      "source_refs": [
+        "emberglass-renderer",
+        "emberglass-worldpack"
+      ],
+      "package_entrypoint": "engine-isometric-ui/reference-source/iso-kit-renderer.js",
+      "dependencies": [
+        "Owned atlas image",
+        "promoted manifest/metadata",
+        "worldpack/state adapter"
+      ],
+      "integration_work": "Додати оригінальні assets і точний world contract; пройти camera/depth/click QA.",
+      "proof_limit": "Не вставляється повністю зараз; атлас не перенесено, renderer inactive."
+    },
+    {
+      "id": "godot-dialogue",
+      "category": "dialogs",
+      "title": "Вікно діалогу game-forge",
+      "status": "REQUIRES_NATIVE_HOST_AND_DEPENDENCY_CLOSURE",
+      "source_refs": [
+        "game-forge-dialog"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Godot runtime",
+        "GameState autoload",
+        "word_blur.gdshader",
+        "dialogue data/localized content"
+      ],
+      "integration_work": "У Godot переносити після повного closure; у браузері потрібен окремий DOM adapter.",
+      "proof_limit": "Source reference, не drop-in модуль нинішнього вебсимулятора; native playtest не виконано."
+    },
+    {
+      "id": "godot-hero",
+      "category": "sprites",
+      "title": "AnimatedSprite2D герой",
+      "status": "REQUIRES_ASSETS_AND_RIGHTS",
+      "source_refs": [
+        "game-forge-hero"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Godot",
+        "hero.json",
+        "walk_area/background_space",
+        "owned textures/animation frames"
+      ],
+      "integration_work": "Перевірити image paths і права; перенести closure або створити нові власні sprites.",
+      "proof_limit": "Не включено в repo; жодних proprietary Arcanum/Outlive assets."
+    },
+    {
+      "id": "inventory-crafting",
+      "category": "inventory",
+      "title": "Inventory/crafting logic Emberglass",
+      "status": "REFERENCE_LOGIC_ONLY",
+      "source_refs": [
+        "emberglass-legacy-core"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "Living module",
+        "item/recipe schema",
+        "approved lore and item IDs",
+        "inventory UI adapter"
+      ],
+      "integration_work": "Використовувати лише після dependency/rights/state review; UI інвентаря ще не зібрано.",
+      "proof_limit": "Логіка count/addItem/craft не є готовим візуальним інвентарем; цей core не скопійовано."
+    },
+    {
+      "id": "react-dialog-transcript",
+      "category": "dialogs",
+      "title": "Echo call overlay та transcript",
+      "status": "REQUIRES_REACT_PORT_AND_DEPENDENCY_CLOSURE",
+      "source_refs": [
+        "memento-dialog",
+        "memento-state",
+        "memento-transcript"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Next/Tailwind",
+        "Echo hooks/types",
+        "i18n/content",
+        "asset catalog"
+      ],
+      "integration_work": "Порт у DOM або свідомий перехід на React; зберегти правдиві call states.",
+      "proof_limit": "Не активний voice module; поточний hash state helper зафіксовано заново."
+    },
+    {
+      "id": "react-dashboard-cards",
+      "category": "panels",
+      "title": "Gemeinde AlpineGlass cards",
+      "status": "REQUIRES_REACT_PORT",
+      "source_refs": [
+        "gemeinde-cards",
+        "gemeinde-package"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Next/Tailwind/framer-motion",
+        "lucide icons"
+      ],
+      "integration_work": "Порт карток і layout після brand/license review; без сторонніх фото.",
+      "proof_limit": "Не готові vanilla DOM компоненти; runtime/build не перевірявся."
+    },
+    {
+      "id": "video-bar-chart",
+      "category": "charts",
+      "title": "Remotion animated bar chart",
+      "status": "REFERENCE_VIDEO_COMPONENT",
+      "source_refs": [
+        "remotion-chart",
+        "remotion-package"
+      ],
+      "package_entrypoint": null,
+      "dependencies": [
+        "React/Remotion",
+        "frame clock",
+        "chart data adapter"
+      ],
+      "integration_work": "Можна адаптувати для відео з установленою медіафабрикою; для live гри потрібен інший time/data adapter.",
+      "proof_limit": "Офлайн chart на кадрах відео; live фінансовий графік не реалізовано."
+    },
+    {
+      "id": "turn-clock",
+      "category": "timers",
+      "title": "Лічильник дня та explicit next-day",
+      "status": "ALREADY_ACTIVE",
+      "source_refs": [
+        "sovereign-view",
+        "sovereign-app"
+      ],
+      "package_entrypoint": "simulation-core/model.mjs",
+      "dependencies": [
+        "Explicit user action"
+      ],
+      "integration_work": "Використати поточний turn clock; для годинника реального часу спочатку визначити pause/resume/save contract.",
+      "proof_limit": "Готового прийнятого countdown/Pomodoro scheduler у перенесеному пакеті немає."
+    }
+  ],
+  "integration_status": {
+    "synera": {
+      "owner": "AndriiEagle/synera_-MVPplus-",
+      "status": "PINNED_SOURCE_AND_CI_SUCCESS_LIVE_HOLD",
+      "source_commit": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+      "ci": {
+        "run_id": 39053215224,
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4abbd06aa6faa98a69a6bcad4fec4470e11e7676",
+        "url": "https://github.com/AndriiEagle/synera_-MVPplus-/actions/runs/39053215224",
+        "verification": "GitHub metadata refreshed in Step 3; not a deployed user-flow result"
+      },
+      "source_refs": [
+        "synera-preview-server",
+        "synera-preview-html"
+      ],
+      "works_in_evidence": [
+        "Pinned web preview source, asset allowlist/config, cascade API handler present.",
+        "Current/Night Map product surface and prior synthetic journey source/tests documented in audit/synera-sources*.json.",
+        "Exact current-main CI success; historical 668 Node PASS / 1 SKIP and 39 browser PASS remain attached only to their prior source slice."
+      ],
+      "disabled_or_unverified": [
+        "profile-ai and journey-ai disabled without explicit --local-ai; pinned server returns HTTP 503 in that mode.",
+        "No Step-3 server/browser/provider/Neon/production execution.",
+        "CI success does not prove deployed JWT identity, receiver acceptance, backup/recovery or physical devices."
+      ],
+      "last_connections": [
+        "Exact approved rollout + Neon migrations/backup/recovery readback.",
+        "Two real signed-JWT accounts: profile -> mutual terms -> invitation -> receiver acceptance, including withdrawal/blocked result.",
+        "Physical Android and iPhone/Safari install/update/resume/keyboard/draft checks.",
+        "Reviewable demo and Gilbert explicit yes/no/next step; no evidence of accepted payment."
+      ],
+      "next_acceptance": "Follow five actions in SYNERA_LAUNCH_CHECKLIST.md; remain preview until live/device/customer gates close.",
+      "not_just_missing_key": true
+    },
+    "instagram": {
+      "owner": "KI/brand-social-os + KI/creator-income-os",
+      "status": "LOCAL_SYNTHETIC_PREPARATION_PASS_LIVE_PUBLISH_HOLD",
+      "source_refs": [
+        "brand-cli",
+        "creator-cli",
+        "remotion-package"
+      ],
+      "fresh_probe": "audit/step3-content-probe.json",
+      "works_verified": [
+        "Brand CLI one-day sprint with Instagram variant.",
+        "Existing plan-month .items feeds existing create-media-jobs CLI without a new field adapter.",
+        "One disconnected synthetic Instagram account -> script.md, captions.srt, render-spec.json, scene_graph.json, remotion-props.json.",
+        "Approval pending/draft-only preserved; invalid zero-day request rejected; four Suno approval/voice guard tests pass."
+      ],
+      "source_present_not_executed": [
+        "Remotion/FFmpeg/ISO route contracts, approval export, analytics import/summarize commands."
+      ],
+      "last_connections": [
+        "Human-approved factual creative, owned/licensed assets, actual renderer -> fully decoded and visually accepted MP4.",
+        "Authoritative account/channel and exact Meta/Postiz/OmniSocials owner contract; live authentication/capability readback before any upload.",
+        "Explicit approved publish -> platform post ID/receipt -> readback of real published result.",
+        "Analytics import tied to actual post ID; customer/order/payout evidence if income is claimed."
+      ],
+      "proof_limits": [
+        "No original env/account config read or copied; no real account access.",
+        "No MP4/render/upload/social post/analytics/revenue accepted.",
+        "No claim credentials are globally missing; live provider state was not probed."
+      ],
+      "next_acceptance": "Accept one local real rendered reel, then separately authorize and verify one live channel operation.",
+      "not_just_missing_key": true
+    },
+    "fiverr": {
+      "owner": "Conductor Revenue Lab + Creator Income OS business references",
+      "status": "OFFLINE_ECONOMICS_ACCEPTED_NO_LIVE_ADAPTER_EVIDENCE_IN_CHECKED_SCOPE",
+      "source_refs": [
+        "conductor-core"
+      ],
+      "works_verified": [
+        "Copied stdlib Decimal scenario/quote module and its 65 upstream tests accepted in task 530.",
+        "Explicit labor/cost assumptions and scenario-not-forecast outputs."
+      ],
+      "source_present_not_execution": [
+        "Dated Fiverr/marketplace research and B2B offer/delivery references."
+      ],
+      "last_connections": [
+        "Resolve authorized Fiverr API/terms/account owner and supported operation, rather than invent a generic scraper.",
+        "Human-accepted offer + one actual buyer/order -> approved delivery -> explicit buyer acceptance.",
+        "Order/fees/payout receipt tied to the same delivery; distinguish scenario totals from settled income."
+      ],
+      "checked_scope": [
+        "Conductor research and reusable economics",
+        "brand-social-os/scripts/brand-os.js",
+        "creator-income-os/scripts/creator-os.js and named business references"
+      ],
+      "proof_limits": [
+        "No accepted Fiverr live adapter/order/delivery/payout in this scope.",
+        "No claim that every Fiverr script anywhere on disk is absent."
+      ],
+      "next_acceptance": "First accepted delivery workflow and authoritative order/payment receipt; do not auto-send proposals."
+    }
+  },
+  "step3_evidence": {
+    "sources": "audit/step3-source-evidence.json",
+    "content_probe": "audit/step3-content-probe.json",
+    "precedence": [

@@ -113,9 +113,12 @@ $('expense-form').addEventListener('submit',async e=>{
 $('retry-command').addEventListener('click',async()=>{
   try{
     const result=await act(undefined,{},true);
+    const errors=Object.values(result.rule_errors||{});
+    if(errors.length)throw Error(errors.join('; '));
     if(result.status==='PENDING_TICK'){
       const activation=await act('tick',{steps:1,action:'rest'});
       if(activation.rule_errors?.[result.rule_id])throw Error(activation.rule_errors[result.rule_id]);
+      if(state.rules[result.rule_id]?.active!==result.sha256)throw Error('RULE_NOT_ACTIVE');
     }
     $('expense-form').reset();notice('Дію підтверджено. Повторного списання немає.');
   }catch(error){notice(error.message);}
